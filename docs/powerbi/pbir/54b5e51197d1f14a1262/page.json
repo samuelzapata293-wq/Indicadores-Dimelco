@@ -1,0 +1,153 @@
+{
+ "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+ "name": "54b5e51197d1f14a1262",
+ "displayName": "DISP SOSTENIMIENTO",
+ "displayOption": "FitToPage",
+ "height": 720,
+ "width": 1280,
+ "filterConfig": {
+  "filters": [
+   {
+    "name": "a6dad3e177226969f86a",
+    "field": {
+     "Column": {
+      "Expression": {
+       "SourceRef": {
+        "Entity": "DIM_EQUIPOS"
+       }
+      },
+      "Property": "Descripcion"
+     }
+    },
+    "type": "Categorical",
+    "filter": {
+     "Version": 2,
+     "From": [
+      {
+       "Name": "d",
+       "Entity": "DIM_EQUIPOS",
+       "Type": 0
+      }
+     ],
+     "Where": [
+      {
+       "Condition": {
+        "In": {
+         "Expressions": [
+          {
+           "Column": {
+            "Expression": {
+             "SourceRef": {
+              "Source": "d"
+             }
+            },
+            "Property": "Descripcion"
+           }
+          }
+         ],
+         "Values": [
+          [
+           {
+            "Literal": {
+             "Value": "'DESATADOR DE ROCAS SCALEMIN'"
+            }
+           }
+          ],
+          [
+           {
+            "Literal": {
+             "Value": "'DESATADOR DE ROCAS SCALEMIN No.2'"
+            }
+           }
+          ],
+          [
+           {
+            "Literal": {
+             "Value": "'EMPERNADOR BOLTEC EPIROC N°1'"
+            }
+           }
+          ],
+          [
+           {
+            "Literal": {
+             "Value": "'EMPERNADOR BOLTEC S10 S EPIROC N°2'"
+            }
+           }
+          ]
+         ]
+        }
+       }
+      }
+     ]
+    },
+    "howCreated": "User"
+   }
+  ]
+ },
+ "objects": {
+  "background": [
+   {
+    "properties": {
+     "image": {
+      "image": {
+       "name": {
+        "expr": {
+         "Literal": {
+          "Value": "'Plantilla presentación minas perforadoras 15-3-26 .jpg'"
+         }
+        }
+       },
+       "url": {
+        "expr": {
+         "ResourcePackageItem": {
+          "PackageName": "RegisteredResources",
+          "PackageType": 1,
+          "ItemName": "Plantilla_presentaci_n_minas_p24125626035429215.jpg"
+         }
+        }
+       },
+       "scaling": {
+        "expr": {
+         "Literal": {
+          "Value": "'Normal'"
+         }
+        }
+       }
+      }
+     },
+     "transparency": {
+      "expr": {
+       "Literal": {
+        "Value": "0D"
+       }
+      }
+     }
+    }
+   }
+  ],
+  "outspace": [
+   {
+    "properties": {
+     "image": {
+      "image": {
+       "name": {
+        "expr": {
+         "Literal": {
+          "Value": "''"
+         }
+        }
+       },
+       "url": {
+        "expr": {
+         "Literal": {
+          "Value": "''"
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+ "name": "defa6e81c543d1e4456d",
+ "displayName": "ToolTip Res",
+ "displayOption": "ActualSize",
+ "height": 240,
+ "width": 320,
+ "filterConfig": {
+  "filters": [
+   {
+    "name": "c97547ae29a3b3176d77",
+    "field": {
+     "Column": {
+      "Expression": {
+       "SourceRef": {
+        "Entity": "DIM_RESPONSABLE"
+       }
+      },
+      "Property": "RESPONSABLE"
+     }
+    },
+    "type": "Categorical",
+    "filter": {
+     "Version": 2,
+     "From": [
+      {
+       "Name": "d",
+       "Entity": "DIM_RESPONSABLE",
+       "Type": 0
+      }
+     ],
+     "Where": [
+      {
+       "Condition": {
+        "Not": {
+         "Expression": {
+          "In": {
+           "Expressions": [
+            {
+             "Column": {
+              "Expression": {
+               "SourceRef": {
+                "Source": "d"
+               }
+              },
+              "Property": "RESPONSABLE"
+             }
+            }
+           ],
+           "Values": [
+            [
+             {
+              "Literal": {
+               "Value": "null"
+              }
+             }
+            ]
+           ]
+          }
+         }
+        }
+       }
+      }
+     ]
+    },
+    "howCreated": "User",
+    "objects": {
+     "general": [
+      {
+       "properties": {
+        "isInvertedSelectionMode": {
+         "expr": {
+          "Literal": {
+           "Value": "true"
+          }
+         }
+        }
+       }
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "visibility": "HiddenInViewMode",
+ "type": "Tooltip"
+}

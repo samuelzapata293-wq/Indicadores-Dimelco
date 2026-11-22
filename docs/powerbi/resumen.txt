@@ -1,0 +1,269 @@
+# MODELO (conceptualschema)
+
+## HECHOS_DATAMES_NPI_PP  cols=23 medidas=0
+  columnas: IDEQUIPO, Aviso, Fecha Inicio averia, Hora inicio averia, Fecha Fin de avería, Hora fin averia, Duración parada (Mins), Desc de Paro, IDResponsable, CodFalla, TextodelaFalla, IDTIPODEMANTTO, Resumen de la actividad, DesEquipo, Duracion del paro (Horas), Tipo de Paro, Tipo de Paro(PP/NPI), Responsable, DISP, Minutos_Paro_Ajustados, _F/H Fin, _F/H Inicio, _Paro Total (min)
+
+## DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## HECHOS_HMOTOR_D (oculta)  cols=9 medidas=0
+  columnas: Documento med., Punto de medida, Horas_Diesel, Diferencia, OT, TipoHorometro, Creado por, Fecha, Equipo
+
+## DIM_TIPODETRABAJO  cols=2 medidas=0
+  columnas: IDTIPODETRABAJO, Desc
+
+## DIM_EQUIPOS  cols=3 medidas=0
+  columnas: IDEQUIPO, Descripcion, Familia
+
+## DIM_RESPONSABLE  cols=4 medidas=0
+  columnas: IDResponsable, Denominacion, RESPONSABLE, DISPONIBILIDAD
+
+## DIM_TIPOMANTTO  cols=2 medidas=0
+  columnas: IDTIPO DE MANTTO, DESCRIPCION
+
+## HECHOS_H-ELEC-P (oculta)  cols=10 medidas=0
+  columnas: FechaHorometro_ELEC_P, Documento med., Punto de medida, ValMed/ValTotCn, Valor contador, Diferencia, OT, TipoHorometro, Creado por, Equipo
+
+## Metricas  cols=1 medidas=40
+  columnas: Metricas
+  medidas: TiempoDeParoMecanico, Disponibilidad %, Tiempo_Programado, MTBF_Horas, MTTR_Horas, Confiabilidad_24h, Top_5_Paros_Prolongados, Variacion_Horometro_Diesel, Variacion_Motor_Electrico, MetaDispSimba, MetaDispBoomer, MetaDispSostenimiento, MetaDipCamiones, PresupuestoPrev/Sem, ProbabilidadDeFalla, TiempoDeParoGeneral, TiempoDeParoMtbf, Brecha_Disponibilidad, MetaDispCargadorasFlotaVieja, MetaDispCargadorasBP, Indisponibilidad%, Horas_Diesel_Periodo_Interpolado, Horas_Diesel_Registradas, Horas_Electrico_Registradas, TiempoOperadoPorEquipo, Horas_Electrico_Periodo_Interpolado, tiempoOPInterpolado, Tiempo_Prog (Util), Utilizacion_%, RelacionDiesel/Electrico, Semaforo_Proactivo, HSelecConf, %Indisponibilidad, HSelecDisp, Tiempo_Prog (18HRS), Disponibilidad %(18HRS), DeltaDisp, TiempoTotalParo(Hora), MetaDispPorEquipo, T_PARO(AVERIAS)
+
+## DIM_TIEMPO  cols=28 medidas=0
+  columnas: Date, Fecha, Año, Mes, Dia, FechaSk, Semestre, Cuatrimestre, Trimestre, Bimestre, Semana, AñoMes, DiaSemana, NbAño, NbSemestre, NbSemestreAño, NbCuatrimestre, NbCuatrimestreAño, NbTrimestre, NbTrimestreAño, NbBimestre, NbBimestreAño, NbMes, nbMes3L, NbDia, NbSemana, NdDiaSemana, MinutosDia
+
+## LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## DIMHOROMETROS (oculta)  cols=4 medidas=0
+  columnas: IDEQUIPO, DESCHOROMETRO, TIPOHOROMETRO, PUNTODEMEDIDA
+
+## HECHOS (iw39)  cols=20 medidas=0
+  columnas: Ubicac.técnica, Clase de orden, Orden, Fecha creación, Status sistema, Texto breve, Equipo, Denominación, Grupo planif., Puesto trabajo, Fe.inic.extrema, Fe.fin extrema, Pto.tbjo.resp., Plan mantenim., Pos.mantenim., TotGen. (plan), TotalGen.(real), Status usuario, Aviso, Fecha ref.
+
+## LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## HECHOS_H-ELEC (oculta)  cols=10 medidas=0
+  columnas: Fecha, Documento med., Punto de medida, ValMed/ValTotCn, Horas_Electrico, Diferencia, OT, TipoHorometro, Creado por, Equipo
+
+## HECHOS_H-PERC (oculta)  cols=10 medidas=0
+  columnas: Fecha, Documento med., Punto de medida, ValMed/ValTotCn, Horas_Percusion1, Diferencia, OT, TipoHorometro, Creado por, Equipo
+
+## HECHOS_H-PERC (2) (oculta)  cols=10 medidas=0
+  columnas: Fecha, Documento med., Punto de medida, ValMed/ValTotCn, Horas_Percusion2, Diferencia, OT, TipoHorometro, Creado por, Equipo
+
+## HORO_CONSOL  cols=9 medidas=0
+  columnas: Fecha, Equipo, Max_Diesel, Max_Electrico, Max_Percusion1, Max_Percusion2, HorometroElecAjustado, Punto de medida, TIPOHOROMETRO
+
+## ResultadosCostoXHora  cols=9 medidas=7
+  columnas: SAP, EQUIPO , META (Costo/h), Costo/h (Semana), Horas, ACUMULADO MES (Costo/h), COMENTARIOS, Nro, Acumulado Mes(H)
+  medidas: Meta(Costo/h), Costo /h, IconoCosto, IconoCostoAcum, AcumCostoMes, IconoCostoN, IconoCostoM
+
+## ResUtilizacion  cols=5 medidas=0
+  columnas: SAP, EQUIPO , % utilizacion , %utilizacion Mes, SemAcum(Mes)
+
+## RelHorometros  cols=8 medidas=2
+  columnas: IDEquipo, Descripción , Motor Eléctrico (Sem), Motor Diesel (Sem), % Relación (Sem), Motor Eléctrico Mes, Motor Diesel (Mes), % Relación (Mes)
+  medidas: RelElec/Diesel Sem, RelElec/Diesel(Mes)
+
+## HECHOSMOVMERC  cols=15 medidas=0
+  columnas: Orden, Material, DescMaterial, Ctd, UdM, Importe(NIO), Cl.movimiento, Fecha de referencia, DescEquipo, Importe (USD), Semana, MES, Acumulado , ACTIVIDAD, CATEGORIA
+
+## Dim_Tiempo_Costo  cols=27 medidas=0
+  columnas: Date, Fecha, Año, Mes, Dia, FechaSk, Semestre, Cuatrimestre, Trimestre, Bimestre, Semana, AñoMes, DiaSemana, NbAño, NbSemestre, NbSemestreAño, NbCuatrimestre, NbCuatrimestreAño, NbTrimestre, NbTrimestreAño, NbBimestre, NbBimestreAño, NbMes, nbMes3L, NbDia, NbSemana, NdDiaSemana
+
+## LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## Metas2026  cols=6 medidas=5
+  columnas: Mes, Familia, Meta_Disponibilidad, Meta_MTTR, Meta_MTBF, Meta_Confiabilidad
+  medidas: Meta_Indisponibilidad, Meta_Disp, Color_Disponibilidad, Brecha_Disp, _Debug_Ponderacion
+
+## Confiabilidad  cols=2 medidas=0
+  columnas: Confiabilidad, Horas
+
+## AnalisisCostos  cols=6 medidas=4
+  columnas: SAP, Equipo, Indicador, Mes, Semana, Valor
+  medidas: TotalHoras, TCostoxHora, LineaBase, Utilizacion Semanal %
+
+## AnalisisCostosMes  cols=6 medidas=2
+  columnas: SAP, Equipo, Indicador, Mes, Semana, Valor
+  medidas: Costo_Hora_Acumulado, Utilizacion Mensual %
+
+## Var_t: Disp  cols=2 medidas=0
+  columnas: Var_t: Disp, Horas
+
+## Metricas (2)  cols=1 medidas=17
+  columnas: Columna1
+  medidas: _Cantidad Fallas NPI, Paro General 24h, Paro NPI Mtto 24h, Paro General 18h, Paro NPI Mtto 18h, Paro General Ventana, Paro NPI Ventana, Disp Din %, MTTR_H, MTBF_H, Brecha_Disp dn, Título Ventana, Min Paro Ventana, Dif, Hrs Paro Ventana, Disp Acum %, Disp Acum Final
+
+## LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+## LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3  cols=7 medidas=0
+  columnas: Date, Año, NroMes, Mes, NroTrimestre, Trimestre, Día
+
+
+# PAGINAS
+
+## ToolTip  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## RESUMEN DISP DIMELCO  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## CONFIABILIDAD Y COSTOS  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## DISP SIMBA  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## DISP MENSUAL  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## DISP SOSTENIMIENTO  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## RESUMEN DISP.  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## DISP CAMIONES  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## DISP JUMBO  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## DISP SCOOTRAM ST3.5  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## PORTADA  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## D CONFIABILIDAD Y COSTOS  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## DISP SCOOTRAM ST1030  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## ToolTip Res  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+
+## HOROMETROS  ordinal=None visibility=None size=NonexNone
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 
+  - ? x=0 y=0 w=0 h=0 "" 

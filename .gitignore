@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-web/
+release/
+*.local
+.env
+.env.*
+__pycache__/
+capturas/
+DATOS_CONEXION.txt
+SECRETO_GITHUB.txt
+tsconfig.tsbuildinfo

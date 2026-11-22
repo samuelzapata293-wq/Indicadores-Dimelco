@@ -1,0 +1,145 @@
+pageOrder: ["bc74db5c38050a897e1a", "37883e104c86de962f8c", "91119f2777461943c198", "54b5e51197d1f14a1262", "ad2aa9663586c253fd8b", "c0d72630c74d4588480f", "8e13d62e84c5f4a20f9f", "8325bb538018e2da82ad", "4a0240ee6b80d76bd026", "338aeff5eb9169511f60", "bf927d6b7926b7ca80f5", "f1adcce25526b2029fce", "0c195c350088c0c12572", "defa6e81c543d1e4456d", "312842b7e02e886332e7"] active=8325bb538018e2da82ad
+
+## None [None] NonexNone visibility=None type=None
+  - barChart [0,0 320x120] T='Meta de indisponibilidad'  {"Series": ["HECHOS_DATAMES_NPI_PP[DISP]"], "Y": ["Metricas[%Indisponibilidad] (M)"]}
+  - tableEx [0,120 320x120] T=''  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]=\"Responsable\"", "Metricas[%Indisponibilidad] (M)=\"% Indisp\"", "Metricas (2)[Hrs Paro Ventana] (M)=\"Tiempo de Paro(Hrs)\""]}
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 860x50]  TXT=MTTR-MTBF (Z4 NPI MEC-ELC) 
+  - slicer [0,109 255x120] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - slicer [266,109 255x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - slicer [532,109 255x61] mode='Basic' T='Var t: Conf.'  {"Values": ["Confiabilidad[Confiabilidad]"]}
+  - tableEx [0,236 1211x450]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"EQUIPO\"", "DIM_EQUIPOS[Descripcion]=\"DENOMINACION\"", "Metricas[T_PARO(AVERIAS)] (M)", "Metricas[MTTR_Horas] (M)=\"MTTR (Horas)\"", "Metricas[MTBF_Horas] (M)=\"MTBF (Horas)\"", "Metas2026[Meta_Disp] (M)", "Metricas[Disponibilidad %] (M)=\"Disponibilidad %\""]} FILTROS=DIM_EQUIPOS[Descripcion]:[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "Descripcion"}}], "Values": 
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [56,32 1208x96]  TXT=MTTR-MTBF-DISP.-CONF. (Z4 NPI MEC-ELC)  
+  - slicer [781,106 405x61] mode='Basic' T='Semana'  {"Values": ["AnalisisCostos[Semana]"]}
+  - slicer [1186,106 98x61] mode='Dropdown' T='Mes'  {"Values": ["AnalisisCostosMes[Mes]"]}
+  - slicer [0,107 231x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - slicer [231,107 168x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - slicer [400,107 381x61] mode='Basic' T='Var t: Confiabilidad.'  {"Values": ["Confiabilidad[Confiabilidad]"]}
+  - tableEx [0,216 1300x468]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"EQUIPO\"", "DIM_EQUIPOS[Descripcion]=\"DENOMINACION\"", "Metricas[MTTR_Horas] (M)=\"MTTR (Horas)\"", "Metricas[MTBF_Horas] (M)=\"MTBF (Horas)\"", "Metricas[Disponibilidad %] (M)=\"Disp. %\"", "Metricas[Confiabilidad_24h] (M)=\"Confiabilidad\"", "Metricas[ProbabilidadDeFalla] (M)=\"Probabilidad de Falla\"", "AnalisisCostos[Utilizacion Semanal %] (M)=\"% Utilización \"", "AnalisisCostosMes[Utilizacion Mensual %] (M)=\"% Utilización Mes\"", "AnalisisCostos[LineaBase] (M)=\"Meta (Costo/h)\"", "AnalisisCostos[TotalHoras] (M)=\"Horas\"", "AnalisisCostos[TCostoxHora] (M)=\"Costo /h\"", "AnalisisCostosMes[Costo_Hora_Acumulado] (M)=\"Costo Acumulado Mes\""]}
+  - image [0,673 198x46]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 355x50]  TXT=DISPONIBILIDADES 
+  - slicer [0,106 240x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - lineClusteredColumnComboChart [246,106 811x338] T='Tiro Largo'  {"Category": ["DIM_EQUIPOS[Descripcion]"], "Y": ["Metricas (2)[Disp Din %] (M)=\"Disponibilidad %\""], "Y2": ["Metas2026[Meta_Disp] (M)"]} FILTROS=DIM_EQUIPOS[Descripcion]:[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "Descripcion"}}], "Values": 
+  - shape [981,141 155x34] T=''  
+  - slicer [0,177 240x62] mode='Basic' T='Var t: Disp'  {"Values": ["Var_t: Disp[Var_t: Disp]"]}
+  - shape [981,191 155x34] T=''  
+  - slicer [0,240 240x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - tableEx [0,445 1280x225]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"Sap\"", "HECHOS_DATAMES_NPI_PP[DesEquipo]=\"Equipo\"", "Agg(HECHOS_DATAMES_NPI_PP[Aviso])=\"Aviso\"", "HECHOS_DATAMES_NPI_PP[Desc de Paro]=\"Descripcion del Paro\"", "HECHOS_DATAMES_NPI_PP[_F/H Inicio]", "HECHOS_DATAMES_NPI_PP[_F/H Fin]", "Metricas (2)[Hrs Paro Ventana] (M)", "HECHOS_DATAMES_NPI_PP[Responsable]", "HECHOS_DATAMES_NPI_PP[Tipo de Paro(PP/NPI)]=\"Tipo de Paro\""]} FILTROS=Metricas (2)[Hrs Paro Ventana] (M):[{"Condition": {"Comparison": {"ComparisonKind": 1, "Left": {"Measure": {"Expression": {"SourceRef": {"Source": "m"}}, "Property": "Hrs Paro Ventana"}}, "Right"
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 355x50]  TXT=DISPONIBILIDADES 
+  - lineChart [275,105 1003x561] T='Evolucion Semanal de disponibilidades %'  {"Category": ["DIM_TIEMPO[NbSemana]"], "Rows": ["DIM_EQUIPOS[Descripcion]"], "Y": ["Metricas (2)[Disp Din %] (M)=\"Disponibilidad%\""], "Y2": ["Metas2026[Meta_Disp] (M)=\"Meta Disp\""]} FILTROS=DIM_EQUIPOS[Descripcion]:[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "Descripcion"}}], "Values":  ; H({"Expression": {"Hierarchy": {"Expression": {"PropertyVariationSource": {"Expres):[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "l"}}, "Property": "Mes"}}], "Values": [[{"Lite
+  - slicer [0,106 240x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - slicer [0,177 240x62] mode='Basic' T='Var t: Disp'  {"Values": ["Var_t: Disp[Var_t: Disp]"]}
+  - slicer [0,240 240x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - slicer [0,360 275x218] mode='Basic' T='DISP. GLOBAL'  {"Values": ["DIM_EQUIPOS[Familia]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 355x50]  TXT=DISPONIBILIDADES 
+  - slicer [0,106 240x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - lineClusteredColumnComboChart [246,106 811x338] T='Equipos de Sostenimiento'  {"Category": ["DIM_EQUIPOS[Descripcion]"], "Y": ["Metricas (2)[Disp Din %] (M)"], "Y2": ["Metas2026[Meta_Disp] (M)"]} FILTROS=DIM_EQUIPOS[Descripcion]:[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "Descripcion"}}], "Values": 
+  - shape [1009,147 155x34] T=''  
+  - slicer [0,177 240x62] mode='Basic' T='Var t: Disp'  {"Values": ["Var_t: Disp[Var_t: Disp]"]}
+  - shape [1009,197 155x34] T=''  
+  - slicer [0,240 240x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - tableEx [0,445 1280x225]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"Sap\"", "HECHOS_DATAMES_NPI_PP[DesEquipo]=\"Equipo\"", "Agg(HECHOS_DATAMES_NPI_PP[Aviso])=\"Aviso\"", "HECHOS_DATAMES_NPI_PP[Desc de Paro]=\"Descripcion del Paro\"", "HECHOS_DATAMES_NPI_PP[_F/H Inicio]", "HECHOS_DATAMES_NPI_PP[_F/H Fin]", "Metricas (2)[Hrs Paro Ventana] (M)", "HECHOS_DATAMES_NPI_PP[Responsable]", "HECHOS_DATAMES_NPI_PP[Tipo de Paro(PP/NPI)]=\"Tipo de Paro\""]} FILTROS=Metricas (2)[Hrs Paro Ventana] (M):[{"Condition": {"Comparison": {"ComparisonKind": 1, "Left": {"Measure": {"Expression": {"SourceRef": {"Source": "m"}}, "Property": "Hrs Paro Ventana"}}, "Right"
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 860x50]  TXT=DISIPONIBILIDAD-MTTR-MTBF (Z4 NPI MEC-ELC) 
+  - tableEx [255,81 991x473]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"EQUIPO\"", "DIM_EQUIPOS[Descripcion]=\"DENOMINACION\"", "Metricas (2)[MTTR_H] (M)=\"MTTR_Horas\"", "Metricas (2)[MTBF_H] (M)=\"MTBF_Horas\"", "Metas2026[Meta_Disp] (M)", "Metricas (2)[Disp Din %] (M)=\"Disponibilidad %\"", "Metricas[Confiabilidad_24h] (M)=\"Confiabilidad %\"", "Metricas[ProbabilidadDeFalla] (M)=\"Prob. de Falla\""]}
+  - slicer [0,106 255x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - slicer [0,176 255x61] mode='Basic' T='Var t: Conf.'  {"Values": ["Confiabilidad[Confiabilidad]"]}
+  - slicer [0,239 254x62] mode='Basic' T='Var t: Disp'  {"Values": ["Var_t: Disp[Var_t: Disp]"]}
+  - slicer [0,302 254x119] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - tableEx [328,536 915x178]   {"Values": ["DIM_EQUIPOS[Familia]", "Metricas (2)[MTTR_H] (M)=\"MTTR (Horas)\"", "Metricas (2)[MTBF_H] (M)=\"MTBF (Horas)\"", "Metricas (2)[Disp Din %] (M)=\"Disponibilidad %\"", "Metricas[Confiabilidad_24h] (M)=\"Confiabilidad %\"", "Metricas[ProbabilidadDeFalla] (M)=\"Probabilidad de Falla\""]}
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 355x50]  TXT=DISPONIBILIDADES 
+  - slicer [0,106 240x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - lineClusteredColumnComboChart [246,106 811x338] T='Camiones Bajo Perfil'  {"Category": ["DIM_EQUIPOS[Descripcion]"], "Y": ["Metricas (2)[Disp Din %] (M)=\"Disponibilidad %\""]}
+  - slicer [0,176 240x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - tableEx [0,445 1280x225]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"Sap\"", "HECHOS_DATAMES_NPI_PP[DesEquipo]=\"Equipo\"", "Agg(HECHOS_DATAMES_NPI_PP[Aviso])=\"Aviso\"", "HECHOS_DATAMES_NPI_PP[Desc de Paro]=\"Descripcion del Paro\"", "HECHOS_DATAMES_NPI_PP[_F/H Inicio]", "HECHOS_DATAMES_NPI_PP[_F/H Fin]", "Metricas (2)[Hrs Paro Ventana] (M)", "HECHOS_DATAMES_NPI_PP[Responsable]", "HECHOS_DATAMES_NPI_PP[Tipo de Paro(PP/NPI)]=\"Tipo de Paro\""]} FILTROS=HECHOS_DATAMES_NPI_PP[Desc de Paro]:[{"Condition": {"Not": {"Expression": {"Contains": {"Left": {"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "Desc de Paro"}}, "Right": {"L ; Metricas (2)[Hrs Paro Ventana] (M):[{"Condition": {"Comparison": {"ComparisonKind": 1, "Left": {"Measure": {"Expression": {"SourceRef": {"Source": "m"}}, "Property": "Hrs Paro Ventana"}}, "Right"
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 355x50]  TXT=DISPONIBILIDADES 
+  - slicer [0,106 240x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - lineClusteredColumnComboChart [246,106 811x338] T='Perforación Mecánizada'  {"Category": ["DIM_EQUIPOS[Descripcion]"], "Y": ["Metricas (2)[Disp Din %] (M)=\"Disponibilidad %\""], "Y2": ["Metas2026[Meta_Disp] (M)"]} FILTROS=DIM_EQUIPOS[Descripcion]:[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "Descripcion"}}], "Values": 
+  - shape [981,141 155x34] T=''  
+  - slicer [0,177 240x62] mode='Basic' T='Var t: Disp'  {"Values": ["Var_t: Disp[Var_t: Disp]"]}
+  - shape [981,191 155x34] T=''  
+  - slicer [0,240 240x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - tableEx [0,445 1280x225]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"Sap\"", "HECHOS_DATAMES_NPI_PP[DesEquipo]=\"Equipo\"", "Agg(HECHOS_DATAMES_NPI_PP[Aviso])=\"Aviso\"", "HECHOS_DATAMES_NPI_PP[Desc de Paro]=\"Descripcion del Paro\"", "HECHOS_DATAMES_NPI_PP[_F/H Inicio]", "HECHOS_DATAMES_NPI_PP[_F/H Fin]", "Metricas (2)[Hrs Paro Ventana] (M)", "HECHOS_DATAMES_NPI_PP[Responsable]", "HECHOS_DATAMES_NPI_PP[Tipo de Paro(PP/NPI)]=\"Tipo de Paro\""]} FILTROS=Metricas (2)[Hrs Paro Ventana] (M):[{"Condition": {"Comparison": {"ComparisonKind": 1, "Left": {"Measure": {"Expression": {"SourceRef": {"Source": "m"}}, "Property": "Hrs Paro Ventana"}}, "Right"
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 355x50]  TXT=DISPONIBILIDADES 
+  - lineClusteredColumnComboChart [246,106 812x338] T='Cargadoras Bajo Perfil'  {"Category": ["DIM_EQUIPOS[Descripcion]"], "Y": ["Metricas (2)[Disp Din %] (M)"], "Y2": ["Metas2026[Meta_Disp] (M)"]} FILTROS=DIM_EQUIPOS[Descripcion]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "Descripcion"}}], "Values": [[{"Literal": {"Value":
+  - slicer [0,106 240x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - shape [981,141 155x34] T=''  
+  - slicer [0,177 240x62] mode='Basic' T='Var t: Disp'  {"Values": ["Var_t: Disp[Var_t: Disp]"]}
+  - shape [981,191 155x34] T=''  
+  - slicer [0,240 240x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - tableEx [0,445 1280x225]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"Sap\"", "HECHOS_DATAMES_NPI_PP[DesEquipo]=\"Equipo\"", "Agg(HECHOS_DATAMES_NPI_PP[Aviso])=\"Aviso\"", "HECHOS_DATAMES_NPI_PP[Desc de Paro]=\"Descripcion del Paro\"", "HECHOS_DATAMES_NPI_PP[_F/H Inicio]", "HECHOS_DATAMES_NPI_PP[_F/H Fin]", "Metricas (2)[Hrs Paro Ventana] (M)", "HECHOS_DATAMES_NPI_PP[Responsable]", "HECHOS_DATAMES_NPI_PP[Tipo de Paro(PP/NPI)]=\"Tipo de Paro\""]} FILTROS=Metricas (2)[Hrs Paro Ventana] (M):[{"Condition": {"Comparison": {"ComparisonKind": 1, "Left": {"Measure": {"Expression": {"SourceRef": {"Source": "m"}}, "Property": "Hrs Paro Ventana"}}, "Right"
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - image [0,0 1280x720]   
+  - textbox [16,123 956x98]  TXT=PRESENTACIÓN DE INDICADORES DE MANTENIMIENTO   MINERÍA MECANIZADA 
+  - pageNavigator [16,456 1216x70] T='INDICE DE CONTENIDO'  
+  - image [0,641 198x78]   
+  - textbox [725,683 555x36]  TXT=Data actualizada: 01 al 20 de noviembre 2026 
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [56,32 1208x96]  TXT=MTTR-MTBF-DISP.-CONF. (Z4 NPI MEC-ELC)  
+  - slicer [781,106 405x61] mode='Basic' T='Semana'  {"Values": ["AnalisisCostos[Semana]"]}
+  - slicer [1186,106 98x61] mode='Dropdown' T='Mes'  {"Values": ["AnalisisCostosMes[Mes]"]}
+  - slicer [0,107 231x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - slicer [231,107 168x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - slicer [400,107 381x61] mode='Basic' T='Var t: Confiabilidad.'  {"Values": ["Confiabilidad[Confiabilidad]"]}
+  - slicer [400,165 381x51] mode='Basic' T='Var t: Disponibilidad'  {"Values": ["Var_t: Disp[Var_t: Disp]"]} FILTROS=Var_t: Disp[Var_t: Disp]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "v"}}, "Property": "Var_t: Disp"}}], "Values": [[{"Literal": {"Value":
+  - tableEx [0,216 1300x468]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"EQUIPO\"", "DIM_EQUIPOS[Descripcion]=\"DENOMINACION\"", "Metricas[MTTR_Horas] (M)=\"MTTR (Horas)\"", "Metricas[MTBF_Horas] (M)=\"MTBF (Horas)\"", "Metricas[Disponibilidad %] (M)=\"Disp. %\"", "Metricas[Confiabilidad_24h] (M)=\"Confiabilidad\"", "Metricas[ProbabilidadDeFalla] (M)=\"Probabilidad de Falla\"", "AnalisisCostos[Utilizacion Semanal %] (M)=\"% Utilización \"", "AnalisisCostosMes[Utilizacion Mensual %] (M)=\"% Utilización Mes\"", "AnalisisCostos[LineaBase] (M)=\"Meta (Costo/h)\"", "AnalisisCostos[TotalHoras] (M)=\"Horas\"", "AnalisisCostos[TCostoxHora] (M)=\"Costo /h\"", "AnalisisCostosMes[Costo_Hora_Acumulado] (M)=\"Costo Acumulado Mes\""]}
+  - image [0,673 198x46]   
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 355x50]  TXT=DISPONIBILIDADES 
+  - lineClusteredColumnComboChart [246,106 1016x338] T='Cargadoras Bajo Perfil'  {"Category": ["DIM_EQUIPOS[Descripcion]"], "Y": ["Metricas (2)[Disp Din %] (M)"], "Y2": ["Metas2026[Meta_Disp] (M)"]} FILTROS=DIM_EQUIPOS[Descripcion]:[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "Descripcion"}}], "Values": 
+  - slicer [0,106 240x70] mode='Between' T='Periodo de tiempo'  {"Values": ["DIM_TIEMPO[Fecha]"]}
+  - slicer [0,177 240x62] mode='Basic' T='Var t: Disp'  {"Values": ["Var_t: Disp[Var_t: Disp]"]}
+  - slicer [0,240 240x121] mode='Basic' T='DISP. GLOBAL'  {"Values": ["HECHOS_DATAMES_NPI_PP[DISP]"]} FILTROS=DIM_RESPONSABLE[DISPONIBILIDAD]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "DISPONIBILIDAD"}}], "Values": [[{"Literal": {"Valu ; HECHOS_DATAMES_NPI_PP[DISP]:[{"Condition": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "h"}}, "Property": "DISP"}}], "Values": [[{"Literal": {"Value": "'Mecá
+  - shape [148,350 155x34] T=''  
+  - shape [148,400 155x34] T=''  
+  - tableEx [0,436 1280x225]   {"Values": ["DIM_EQUIPOS[IDEQUIPO]=\"Sap\"", "HECHOS_DATAMES_NPI_PP[DesEquipo]=\"Equipo\"", "Agg(HECHOS_DATAMES_NPI_PP[Aviso])=\"Aviso\"", "HECHOS_DATAMES_NPI_PP[Desc de Paro]=\"Descripcion del Paro\"", "HECHOS_DATAMES_NPI_PP[_F/H Inicio]", "HECHOS_DATAMES_NPI_PP[_F/H Fin]", "Metricas (2)[Hrs Paro Ventana] (M)", "HECHOS_DATAMES_NPI_PP[Responsable]", "HECHOS_DATAMES_NPI_PP[Tipo de Paro(PP/NPI)]=\"Tipo de Paro\""]} FILTROS=Metricas (2)[Hrs Paro Ventana] (M):[{"Condition": {"Comparison": {"ComparisonKind": 1, "Left": {"Measure": {"Expression": {"SourceRef": {"Source": "m"}}, "Property": "Hrs Paro Ventana"}}, "Right"
+  - image [0,668 198x51]   
+
+## None [None] NonexNone visibility=None type=None
+  - tableEx [0,0 320x240]   {"Values": ["DIM_RESPONSABLE[RESPONSABLE]=\"Responsable\"", "HECHOS_DATAMES_NPI_PP[Tipo de Paro(PP/NPI)]=\"Tipo de Paro\"", "Metricas[%Indisponibilidad] (M)=\"%Indisp.\"", "Metricas (2)[Hrs Paro Ventana] (M)=\"Tiempo (H)\""]} FILTROS=DIM_RESPONSABLE[RESPONSABLE]:[{"Condition": {"Not": {"Expression": {"In": {"Expressions": [{"Column": {"Expression": {"SourceRef": {"Source": "d"}}, "Property": "RESPONSABLE"}}], "Values": 
+
+## None [None] NonexNone visibility=None type=None
+  - actionButton [0,0 100x40]   
+  - textbox [55,31 1036x50]  TXT=Relación Motor Eléctrico vs Motor Diesel: Hemco Nicaragua 
+  - textbox [586,181 265x31]  TXT=Semana 22 
+  - textbox [851,181 260x31]  TXT=Acumulado Mayo 
+  - tableEx [240,213 893x261]   {"Values": ["RelHorometros[IDEquipo]=\"SAP\"", "RelHorometros[Descripción ]", "Agg(RelHorometros[Motor Eléctrico (Sem)])=\"Motor Eléctrico\"", "Agg(RelHorometros[Motor Diesel (Sem)])=\"Motor Diesel\"", "Agg(RelHorometros[% Relación (Sem)])=\"% Relación\"", "Agg(RelHorometros[Motor Eléctrico Mes])=\"Motor Eléctrico\"", "Agg(RelHorometros[Motor Diesel (Mes)])=\"Motor Diesel\"", "Agg(RelHorometros[% Relación (Mes)])=\"% Relación\""]}
+  - image [0,668 198x51]   

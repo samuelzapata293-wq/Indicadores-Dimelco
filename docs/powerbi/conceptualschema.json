@@ -1,0 +1,4945 @@
+{
+ "url": "https://wabi-west-us-e-primary-api.analysis.windows.net/public/reports/conceptualschema",
+ "request": {
+  "modelIds": [
+   3031522
+  ]
+ },
+ "response": {
+  "schemas": [
+   {
+    "modelId": 3031522,
+    "schema": {
+     "Entities": [
+      {
+       "Name": "HECHOS_DATAMES_NPI_PP",
+       "EdmName": "Sandbox.HECHOS_DATAMES_NPI_PP",
+       "Properties": [
+        {
+         "Name": "IDEQUIPO",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "a78f4362-1b2d-4be5-9150-cdbb89f6219d"
+        },
+        {
+         "Name": "Aviso",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "57717598-2869-41af-b447-545d5abb36d7"
+        },
+        {
+         "Name": "Fecha Inicio averia",
+         "EdmName": "Fecha_Inicio_averia",
+         "DataType": 7,
+         "FormatString": "%d/%M/yyyy",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "937abc24-1a3e-4057-b8e5-893b8bad3e8a"
+        },
+        {
+         "Name": "Hora inicio averia",
+         "EdmName": "Hora_inicio_averia",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "693ea2ca-4829-41fd-ac1b-bd32e090bd70"
+        },
+        {
+         "Name": "Fecha Fin de avería",
+         "EdmName": "Fecha_Fin_de_avería",
+         "DataType": 7,
+         "FormatString": "%d/%M/yyyy",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "0892e4e2-20e8-4570-b041-87cbcc432cc1"
+        },
+        {
+         "Name": "Hora fin averia",
+         "EdmName": "Hora_fin_averia",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "02529e04-0ae2-412e-8754-eb9956d1314d"
+        },
+        {
+         "Name": "Duración parada (Mins)",
+         "EdmName": "Duración_parada__Mins_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "62fb134f-7c4f-4191-9237-eda701082853"
+        },
+        {
+         "Name": "Desc de Paro",
+         "EdmName": "Desc_de_Paro",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e87bf8a9-ce2b-4f09-87c7-667e4d246db9"
+        },
+        {
+         "Name": "IDResponsable",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e70c96c3-d4f3-498a-8131-194795f96a46"
+        },
+        {
+         "Name": "CodFalla",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "7d5afaab-fb6f-4a52-9f80-40734f2e721e"
+        },
+        {
+         "Name": "TextodelaFalla",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e8d60f12-a204-4733-a1b9-0c13201f3ab0"
+        },
+        {
+         "Name": "IDTIPODEMANTTO",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "87c2af6b-2aeb-4c6b-a268-19af0df638e7"
+        },
+        {
+         "Name": "Resumen de la actividad",
+         "EdmName": "Resumen_de_la_actividad",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "37ddd293-0386-43a9-8313-ea96efad05ec"
+        },
+        {
+         "Name": "DesEquipo",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "19318e44-0437-4d9c-b660-61ace04707e0"
+        },
+        {
+         "Name": "Duracion del paro (Horas)",
+         "EdmName": "Duracion_del_paro__Horas_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c5f18b58-13e5-451a-8860-8a58e00e1c8f"
+        },
+        {
+         "Name": "Tipo de Paro",
+         "EdmName": "Tipo_de_Paro",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "c4907850-3cc3-4e24-81b1-b765c45048d3"
+        },
+        {
+         "Name": "Tipo de Paro(PP/NPI)",
+         "EdmName": "Tipo_de_Paro_PP_NPI_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "2185a11d-b582-40f5-ad25-96b353abcae0"
+        },
+        {
+         "Name": "Responsable",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "71dd9fe9-9a9c-4f45-9398-0b7f9a881649"
+        },
+        {
+         "Name": "DISP",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "766e1ae9-f8bc-4ac0-a3a4-5a9b988b4832"
+        },
+        {
+         "Name": "Minutos_Paro_Ajustados",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "ee069eb5-16af-48a1-8a45-8d5fcf0d2019"
+        },
+        {
+         "Name": "_F/H Fin",
+         "EdmName": "v_F_H_Fin",
+         "DataType": 7,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "6a2cd858-a587-42e7-bdc9-e041be1a9cfd"
+        },
+        {
+         "Name": "_F/H Inicio",
+         "EdmName": "v_F_H_Inicio",
+         "DataType": 7,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "e7c8638c-f787-4f50-ac9b-8cd1e5fee99b"
+        },
+        {
+         "Name": "_Paro Total (min)",
+         "EdmName": "v_Paro_Total__min_",
+         "DataType": 3,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "285e7b37-3aef-423e-bd1a-781c3b8fef4e"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_RESPONSABLE_IDResponsable",
+         "Active": true,
+         "TargetEntity": "DIM_RESPONSABLE",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIPOMANTTO_IDTIPO DE MANTTO",
+         "Active": true,
+         "TargetEntity": "DIM_TIPOMANTTO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIEMPO_Fecha",
+         "Active": false,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "1f334256-1bcb-40e9-b61a-21964f9d437e"
+      },
+      {
+       "Name": "DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3",
+       "EdmName": "Sandbox.DateTableTemplate_01de78c2_214a_404e_a121_4092a5ea3cd3",
+       "Private": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "ec334409-ab1c-4a39-b4fc-8cdb91d777d4"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "0a993ffa-ed1e-418b-a44b-31911a104146"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "d2200acb-3019-4d14-9e43-d11a2b355228"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "accd0487-5d62-4974-b162-92afb92d9d4b"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "a30d3ed3-f4a7-4ca5-8b7d-324417c7379b"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "13c3c0d7-6745-4922-804c-565f52d58365"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "1ab8f26e-2ccd-4c28-b730-6498fdd1dce1"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "e3629ffe-83ea-40ea-afab-16cbd47507f5"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "5f9df722-9ca3-4c57-9a53-2d3de830f77a"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "e83f2b48-4015-486b-a4ab-be1fcbc82374"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "f9ce494c-6616-4002-a015-d4bd28d601ee"
+          }
+         ],
+         "StableName": "717eab41-d929-4c8f-99d0-eb90225d9756"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "87dbfbc6-33b8-4b81-9aef-e33dc2a671a3"
+      },
+      {
+       "Name": "LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3",
+       "EdmName": "Sandbox.LocalDateTable_96673174_eddf_4549_8663_bbdafbe552e3",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f7153936-3b21-42d9-8db3-75d6bbf51a4f"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "ba28ee46-84d0-4f71-843c-8226e83a6e1b"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "98370858-85ac-4eb8-bf09-66c5f2311a44"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "3bd9af88-ef5d-406e-b038-7ca2812fcb7c"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "48a5245c-e2e1-42a9-a5ca-613ea2aa58c1"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "be71741a-894a-4bb5-aab3-940811bf429c"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "cee3f528-84e2-4d00-a9be-e57282f8024e"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "f2bd215e-a760-415d-b469-f914e49a7afc"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "3a88ef85-2198-4aa8-b6e6-14a28afb0ba2"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "419d3ecb-86f9-4bb0-974f-e7cdcc514032"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "89d40e55-1deb-406c-9528-268bf7ce41bd"
+          }
+         ],
+         "StableName": "05990069-a39b-4f7e-a697-8c7a3cecc036"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "a32b73c3-731c-499c-a99c-6232ba15c0b0"
+      },
+      {
+       "Name": "HECHOS_HMOTOR_D",
+       "EdmName": "Sandbox.HECHOS_HMOTOR_D",
+       "Hidden": true,
+       "Properties": [
+        {
+         "Name": "Documento med.",
+         "EdmName": "Documento_med_",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "828f2559-b3a8-46f6-af44-8018abdf0d00"
+        },
+        {
+         "Name": "Punto de medida",
+         "EdmName": "Punto_de_medida",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "29760167-1747-4a1b-b1a9-66c94ee5f296"
+        },
+        {
+         "Name": "Horas_Diesel",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "2f6ce2c5-0965-4167-beee-a03791525134"
+        },
+        {
+         "Name": "Diferencia",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "d6006f54-7493-4fad-8465-7dddf7e0fed8"
+        },
+        {
+         "Name": "OT",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "ee8d02c4-33eb-458b-9bdb-90ab0538462c"
+        },
+        {
+         "Name": "TipoHorometro",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "42c87b46-15e0-42cd-ae78-a76014e90a14"
+        },
+        {
+         "Name": "Creado por",
+         "EdmName": "Creado_por",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "6c60df63-b85e-4616-b981-4aee94333f24"
+        },
+        {
+         "Name": "Fecha",
+         "DataType": 7,
+         "Hidden": true,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "96619893-8918-45fa-8ad1-9144c347afba"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "86191db4-5b6b-4ce3-a51f-88b52812a876"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO2",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIEMPO_Fecha2",
+         "Active": true,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIMHOROMETROS_PUNTODEMEDIDA",
+         "Active": true,
+         "TargetEntity": "DIMHOROMETROS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "7f154a00-11a0-403d-8fa2-7051063e2746"
+      },
+      {
+       "Name": "DIM_TIPODETRABAJO",
+       "EdmName": "Sandbox.DIM_TIPODETRABAJO",
+       "Properties": [
+        {
+         "Name": "IDTIPODETRABAJO",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "6a798cbb-708d-4a44-ac88-cfb872f7cf5b"
+        },
+        {
+         "Name": "Desc",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "9518367f-dc97-4d8c-ad53-0ecea4e03c87"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "824c332e-6c8f-4409-83bc-d376753c09f0"
+      },
+      {
+       "Name": "DIM_EQUIPOS",
+       "EdmName": "Sandbox.DIM_EQUIPOS",
+       "Properties": [
+        {
+         "Name": "IDEQUIPO",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "15cde6a9-a4a2-47be-acce-178b9c52dfda"
+        },
+        {
+         "Name": "Descripcion",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "cd13f8d6-7b40-4c42-9b64-7cd9f9e54735"
+        },
+        {
+         "Name": "Familia",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "672dc43c-327f-441b-8fd2-4d6aa096e7b9"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "ResultadosCostoXHora_SAP",
+         "Active": true,
+         "TargetEntity": "ResultadosCostoXHora",
+         "SourceMultiplicity": 0,
+         "TargetMultiplicity": 0,
+         "CrossFilterDirection": 1
+        },
+        {
+         "Name": "ResUtilizacion_SAP",
+         "Active": true,
+         "TargetEntity": "ResUtilizacion",
+         "SourceMultiplicity": 0,
+         "TargetMultiplicity": 0,
+         "CrossFilterDirection": 1
+        },
+        {
+         "Name": "RelHorometros_IDEquipo",
+         "Active": true,
+         "TargetEntity": "RelHorometros",
+         "SourceMultiplicity": 0,
+         "TargetMultiplicity": 0,
+         "CrossFilterDirection": 1
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "f9785789-9c91-4ee7-9db2-585d80d656d0"
+      },
+      {
+       "Name": "DIM_RESPONSABLE",
+       "EdmName": "Sandbox.DIM_RESPONSABLE",
+       "Properties": [
+        {
+         "Name": "IDResponsable",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "2a205306-fa18-45d1-8e72-b050e57db22e"
+        },
+        {
+         "Name": "Denominacion",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "7ba93382-e0bc-4d37-935e-f5eda80decf2"
+        },
+        {
+         "Name": "RESPONSABLE",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "af58a832-e093-40ba-94ca-cb8ded540300"
+        },
+        {
+         "Name": "DISPONIBILIDAD",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "8a7327aa-e779-45b2-8c95-ffc1b41e5a31"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "8e99ce8b-a686-45b9-9e51-f02e8400cdf9"
+      },
+      {
+       "Name": "DIM_TIPOMANTTO",
+       "EdmName": "Sandbox.DIM_TIPOMANTTO",
+       "Properties": [
+        {
+         "Name": "IDTIPO DE MANTTO",
+         "EdmName": "IDTIPO_DE_MANTTO",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "94633a12-6b41-469d-a5e9-8736538e3b39"
+        },
+        {
+         "Name": "DESCRIPCION",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "0fc31fca-1bb2-44ca-afea-518fb218a444"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "c6fb9c22-028a-4174-b523-cb6ac26a6940"
+      },
+      {
+       "Name": "HECHOS_H-ELEC-P",
+       "EdmName": "Sandbox.HECHOS_H_ELEC_P",
+       "Hidden": true,
+       "Properties": [
+        {
+         "Name": "FechaHorometro_ELEC_P",
+         "DataType": 7,
+         "Hidden": true,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "253dc79c-9a2d-425f-8603-fe2647a82fd2"
+        },
+        {
+         "Name": "Documento med.",
+         "EdmName": "Documento_med_",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "e15d265c-b958-418d-b655-6b7a05df0c15"
+        },
+        {
+         "Name": "Punto de medida",
+         "EdmName": "Punto_de_medida",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "cd633573-488d-4e51-9789-28d3d88ca029"
+        },
+        {
+         "Name": "ValMed/ValTotCn",
+         "EdmName": "ValMed_ValTotCn",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "939c1e87-c0b1-4944-aaad-b1daeda9cc8c"
+        },
+        {
+         "Name": "Valor contador",
+         "EdmName": "Valor_contador",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "9a2cb30f-e515-4947-a564-f181513e7866"
+        },
+        {
+         "Name": "Diferencia",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "537afec6-cac1-476a-aace-de040ce6acd9"
+        },
+        {
+         "Name": "OT",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "59c8cdff-3413-4b94-96bc-0210c743f636"
+        },
+        {
+         "Name": "TipoHorometro",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b8087d3f-f925-4bdf-9b3c-542ca374a98d"
+        },
+        {
+         "Name": "Creado por",
+         "EdmName": "Creado_por",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "5e3f62cd-bb4c-42f5-9460-4c544b76ab6f"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "87524413-342e-4291-9993-74731246aec8"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO6",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIEMPO_Fecha3",
+         "Active": true,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIMHOROMETROS_PUNTODEMEDIDA2",
+         "Active": true,
+         "TargetEntity": "DIMHOROMETROS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "be694733-b6ba-4c64-964b-77483e7ed51b"
+      },
+      {
+       "Name": "Metricas",
+       "EdmName": "Sandbox.Metricas",
+       "Properties": [
+        {
+         "Name": "Metricas",
+         "EdmName": "Metricas2",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "3ea3a6c6-74a9-4304-a915-08a861b6b710"
+        },
+        {
+         "Name": "TiempoDeParoMecanico",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "344b192f-7053-4506-871c-445cc6fde4f1"
+        },
+        {
+         "Name": "Disponibilidad %",
+         "EdmName": "Disponibilidad__",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "18b86d07-4517-4e8b-ab7c-f47b5868dad2"
+        },
+        {
+         "Name": "Tiempo_Programado",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "5a1f67f1-5c9e-44eb-8966-7df84bd01ef2"
+        },
+        {
+         "Name": "MTBF_Horas",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "5198853f-846d-499c-ae93-08e6008b3a42"
+        },
+        {
+         "Name": "MTTR_Horas",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "0f90ac7f-f48c-4a53-aaac-6ba6a40b0d6c"
+        },
+        {
+         "Name": "Confiabilidad_24h",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "15fab430-5d6c-40a7-a85b-24c1349e87f5"
+        },
+        {
+         "Name": "Top_5_Paros_Prolongados",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "93896c6d-9f22-494a-946d-50888772f049"
+        },
+        {
+         "Name": "Variacion_Horometro_Diesel",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "9af38ea6-1a23-45cb-b578-78411e77d55f"
+        },
+        {
+         "Name": "Variacion_Motor_Electrico",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "8b719ab2-6937-4c61-abd0-67af64224c00"
+        },
+        {
+         "Name": "MetaDispSimba",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "be1118ec-faf0-4b72-8e87-556ae75c099d"
+        },
+        {
+         "Name": "MetaDispBoomer",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "cd4ffd83-1042-4a1a-b895-e38da4ad8cd3"
+        },
+        {
+         "Name": "MetaDispSostenimiento",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "fd4d161a-a17a-4913-a198-b3f7ec908ca5"
+        },
+        {
+         "Name": "MetaDipCamiones",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "17c0c396-2101-4048-8474-5eaee341f7cf"
+        },
+        {
+         "Name": "PresupuestoPrev/Sem",
+         "EdmName": "PresupuestoPrev_Sem",
+         "DataType": 3,
+         "FormatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+         "Measure": {},
+         "StableName": "920df1cc-b943-4d06-9657-1da4a52f708b"
+        },
+        {
+         "Name": "ProbabilidadDeFalla",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "223f88ee-b807-47a3-b83c-8450aa3b8796"
+        },
+        {
+         "Name": "TiempoDeParoGeneral",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "05defccc-507c-4e38-9365-30e98e989ab4"
+        },
+        {
+         "Name": "TiempoDeParoMtbf",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "02c0a7ce-8203-4f5e-ba26-1d5b09018f4a"
+        },
+        {
+         "Name": "Brecha_Disponibilidad",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "c740aa09-0812-4860-9556-ce5e6fdaa687"
+        },
+        {
+         "Name": "MetaDispCargadorasFlotaVieja",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "8107ec0f-6974-4ff7-8085-1f1b1cc6da3b"
+        },
+        {
+         "Name": "MetaDispCargadorasBP",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "39e66158-57c5-45f0-a1f4-73ed6e96308b"
+        },
+        {
+         "Name": "Indisponibilidad%",
+         "EdmName": "Indisponibilidad_",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "a9a077b7-bb72-4345-8958-251ff08afd5a"
+        },
+        {
+         "Name": "Horas_Diesel_Periodo_Interpolado",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "22d434b1-97d8-49e3-b9b2-2980ed69bb38"
+        },
+        {
+         "Name": "Horas_Diesel_Registradas",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "0059e93e-e129-452d-91fd-1b2bbec96924"
+        },
+        {
+         "Name": "Horas_Electrico_Registradas",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "c923b3ab-fd18-4bba-b6ed-ad51af7eaf13"
+        },
+        {
+         "Name": "TiempoOperadoPorEquipo",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "4112045e-599d-4e46-8fba-1265ff14257d"
+        },
+        {
+         "Name": "Horas_Electrico_Periodo_Interpolado",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "f721ad89-9a85-4f7f-9412-27028afe2955"
+        },
+        {
+         "Name": "tiempoOPInterpolado",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "03af5b32-c894-4d1d-a5f5-03e6771c834d"
+        },
+        {
+         "Name": "Tiempo_Prog (Util)",
+         "EdmName": "Tiempo_Prog__Util_",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "9f17c9a2-5bbb-4cab-bea3-069e50ef5b9f"
+        },
+        {
+         "Name": "Utilizacion_%",
+         "EdmName": "Utilizacion__",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Measure": {},
+         "StableName": "7da091d8-6231-4e14-a0e2-a246cb5a35c1"
+        },
+        {
+         "Name": "RelacionDiesel/Electrico",
+         "EdmName": "RelacionDiesel_Electrico",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "751f6b69-e336-47d9-9f9c-db61a7a70fa6"
+        },
+        {
+         "Name": "Semaforo_Proactivo",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "5ec50050-3b52-4ab7-a514-8f5a73dbc6fb"
+        },
+        {
+         "Name": "HSelecConf",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "9bc4d30e-9d7e-4fd8-8045-21eb0e6104ea"
+        },
+        {
+         "Name": "%Indisponibilidad",
+         "EdmName": "v_Indisponibilidad",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "afa61492-7e94-466b-88ef-9f659a25d010"
+        },
+        {
+         "Name": "HSelecDisp",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "db60e445-2c4e-4ca3-9d0e-6b23ccf6982c"
+        },
+        {
+         "Name": "Tiempo_Prog (18HRS)",
+         "EdmName": "Tiempo_Prog__18HRS_",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "6018fd69-653b-46cc-a110-009b12ca819b"
+        },
+        {
+         "Name": "Disponibilidad %(18HRS)",
+         "EdmName": "Disponibilidad___18HRS_",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "77e9949c-6f34-499e-820d-6023e2bc7ca3"
+        },
+        {
+         "Name": "DeltaDisp",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "5726264b-1b8f-4858-adce-10343825d0e4"
+        },
+        {
+         "Name": "TiempoTotalParo(Hora)",
+         "EdmName": "TiempoTotalParo_Hora_",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "055350b4-7062-4a1d-95b8-7000210acea4"
+        },
+        {
+         "Name": "MetaDispPorEquipo",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "4a6dbd57-3855-4bea-b027-fcc6bdcb86ff"
+        },
+        {
+         "Name": "T_PARO(AVERIAS)",
+         "EdmName": "T_PARO_AVERIAS_",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "1bda7c23-265d-4104-bd7b-8ca8a92a5db2"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "7840e49e-a79f-43ff-8c87-842edaad0a45"
+      },
+      {
+       "Name": "DIM_TIEMPO",
+       "EdmName": "Sandbox.DIM_TIEMPO",
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "8fcadc21-9faa-4ce1-92f2-fab217863fa1"
+        },
+        {
+         "Name": "Fecha",
+         "DataType": 7,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "d9a58eba-9175-43b2-928e-36e80aa1c279"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "a9b77bd2-42da-47ac-b589-2a1fabf30d4b"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "a3a01ce4-d352-470d-9c2d-a689d8d4a267"
+        },
+        {
+         "Name": "Dia",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "1e6da453-88f1-47e4-8601-ce56a105c360"
+        },
+        {
+         "Name": "FechaSk",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "961b198b-d529-4681-8cc9-2cded38797e3"
+        },
+        {
+         "Name": "Semestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c5790f8a-bb17-4177-bde0-0d5fd98b2280"
+        },
+        {
+         "Name": "Cuatrimestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c8fd53f8-690b-41a2-8f0c-a338fdb0f262"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "64201c16-36c9-4c42-ac3d-ee0204c0a42f"
+        },
+        {
+         "Name": "Bimestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "dcb4a6d7-84ea-47b2-b364-8470b5eec7bb"
+        },
+        {
+         "Name": "Semana",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "564f6c3b-07f6-4130-8f18-9a71d2f6308e"
+        },
+        {
+         "Name": "AñoMes",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "6de47279-797e-45d4-a9d3-3df05f375e3c"
+        },
+        {
+         "Name": "DiaSemana",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "f2fc5937-16e6-4935-aec3-e8ed5dc2f25a"
+        },
+        {
+         "Name": "NbAño",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c5af26a1-ec89-4f56-b0db-74514f344b5b"
+        },
+        {
+         "Name": "NbSemestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "22e2ccdd-8af4-497d-834d-4623bea8dd6f"
+        },
+        {
+         "Name": "NbSemestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "23f890b4-0f58-4bcb-8d40-0f0d917134f5"
+        },
+        {
+         "Name": "NbCuatrimestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "9369c52e-de2e-4e4d-b527-5cdf70e46eac"
+        },
+        {
+         "Name": "NbCuatrimestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "962f3161-758c-4879-92a4-1b6c8fd06a62"
+        },
+        {
+         "Name": "NbTrimestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "41f392b7-0e47-4cf2-9fb3-21e712979444"
+        },
+        {
+         "Name": "NbTrimestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "783868a7-eacf-4acd-b9cd-5ba8ecdf9d38"
+        },
+        {
+         "Name": "NbBimestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f8ebca80-917a-4512-a809-c8277f7f2456"
+        },
+        {
+         "Name": "NbBimestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f36c023a-187e-4f7f-abf3-8c5678fc8034"
+        },
+        {
+         "Name": "NbMes",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e351a1ec-a253-4071-a769-01d6f49e048b"
+        },
+        {
+         "Name": "nbMes3L",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "5c219601-3838-4448-8812-01c58c518dc3"
+        },
+        {
+         "Name": "NbDia",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "d8a4da30-1d1e-449e-b8e4-f1ada7bc8ef2"
+        },
+        {
+         "Name": "NbSemana",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "Semana"
+          ]
+         },
+         "StableName": "aedc4784-527a-45e7-ab5b-f68178fd7f9b"
+        },
+        {
+         "Name": "NdDiaSemana",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "60e34558-4376-45cc-89f8-818458ddfa46"
+        },
+        {
+         "Name": "MinutosDia",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c81ec697-599f-4930-9755-6d34c1763d41"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "d1e63941-e015-4c43-ad32-99315de65ff6"
+      },
+      {
+       "Name": "LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af",
+       "EdmName": "Sandbox.LocalDateTable_7483ee39_3c4f_4b85_92bf_d5e05983b7af",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "37635164-c813-45c8-99ca-0e0454ccd326"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "7f5848ae-d789-423e-afb9-23af66b20773"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "9c8fd441-8088-45e5-b8ad-cfb8c1a100f1"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "2786f412-34a8-4c6f-bd3c-e6735018fca5"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "a2b08ab2-6152-40d8-8c99-082991d76f9c"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "5d141493-d9a7-4505-af5a-fd77bf42d4e3"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "3d79f886-94e5-4bf9-b424-c2ca960f722f"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "f5f7782a-e020-43e3-abff-a495223881f5"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "bc6f9296-0b7f-4dad-aeb5-474fc6cbfc0f"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "bba06c5a-2aea-4adf-8bd7-64b62b1ceb9c"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "abd6e4e8-bd65-48a9-a9e1-061becf309ea"
+          }
+         ],
+         "StableName": "415b4eaa-fdec-4dc2-9f98-3304d29627a2"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "533effc0-b4c5-43e9-9cfd-a78beca5ec8e"
+      },
+      {
+       "Name": "LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996",
+       "EdmName": "Sandbox.LocalDateTable_69315bca_df3f_4271_ae99_0fdfaebf6996",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b48ef5eb-74d0-4f3f-8d58-52914db518ad"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "49ef3443-259d-4856-be0e-acf8696be461"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e386bb16-2e6e-4fd6-b4d6-ee8d2d43b3af"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "7a43192c-7171-47d2-966d-4e976405c02d"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f3dd3231-cdbd-4525-85eb-2baacee672ab"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "c6321531-86c0-4e82-8511-bc24f8001fb2"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "eeeb4ad3-bf3e-47e9-b92b-c643de8e5da3"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "8133146a-a9d5-47d5-9aa2-323aa06bf1be"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "538b5678-396d-47ba-a121-6b0c64dd9f27"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "3aeb6fd1-b0d8-4608-9123-347a46a1d2d9"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "726eed76-176a-4b41-8059-aeda93a3ad75"
+          }
+         ],
+         "StableName": "d3de36e5-0df3-428f-8f04-9e43af051094"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "a23fddac-9420-4539-93eb-14151c68f8cd"
+      },
+      {
+       "Name": "DIMHOROMETROS",
+       "EdmName": "Sandbox.DIMHOROMETROS",
+       "Hidden": true,
+       "Properties": [
+        {
+         "Name": "IDEQUIPO",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "6bcfd089-06f0-4553-8481-8097dd651d76"
+        },
+        {
+         "Name": "DESCHOROMETRO",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "072f7578-f8cc-422a-aa21-760111d9b937"
+        },
+        {
+         "Name": "TIPOHOROMETRO",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "edea2a03-b0de-420a-9ac7-21f2bc755b97"
+        },
+        {
+         "Name": "PUNTODEMEDIDA",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "babee506-04d2-480a-a27d-6b1061bc097b"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO7",
+         "Active": false,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0,
+         "CrossFilterDirection": 1
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "fadc2094-700e-4342-b511-d335cb1127cc"
+      },
+      {
+       "Name": "HECHOS (iw39)",
+       "EdmName": "Sandbox.HECHOS__iw39_",
+       "Properties": [
+        {
+         "Name": "Ubicac.técnica",
+         "EdmName": "Ubicac_técnica",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "40b46be7-ed2a-432c-9826-293394b90488"
+        },
+        {
+         "Name": "Clase de orden",
+         "EdmName": "Clase_de_orden",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "5646a282-20a7-4f88-b5eb-957d421a8555"
+        },
+        {
+         "Name": "Orden",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "64ee229d-97e2-4094-83f1-6374fdf7e5ab"
+        },
+        {
+         "Name": "Fecha creación",
+         "EdmName": "Fecha_creación",
+         "DataType": 7,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "23c87b91-f2c6-4675-b296-30df2c65786c"
+        },
+        {
+         "Name": "Status sistema",
+         "EdmName": "Status_sistema",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "be1e13ce-d99b-43d3-a599-81cdb44d00e1"
+        },
+        {
+         "Name": "Texto breve",
+         "EdmName": "Texto_breve",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "bb88208e-7d71-41b9-8a21-cbf645765b64"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "5069de80-db03-4e61-be75-d5d97b9d1757"
+        },
+        {
+         "Name": "Denominación",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "22aa05b4-6e65-4797-b7a9-38bd751c7d0f"
+        },
+        {
+         "Name": "Grupo planif.",
+         "EdmName": "Grupo_planif_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "45606689-ebb3-43e6-b8ff-697f088a2950"
+        },
+        {
+         "Name": "Puesto trabajo",
+         "EdmName": "Puesto_trabajo",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e088c098-aeb5-49e1-b771-9aa2aeb85cf3"
+        },
+        {
+         "Name": "Fe.inic.extrema",
+         "EdmName": "Fe_inic_extrema",
+         "DataType": 7,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "9a47c842-338e-4d8b-bf55-0853d6507c82"
+        },
+        {
+         "Name": "Fe.fin extrema",
+         "EdmName": "Fe_fin_extrema",
+         "DataType": 7,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "45dc4653-51a8-4f3a-9ea7-821d0bc0be9b"
+        },
+        {
+         "Name": "Pto.tbjo.resp.",
+         "EdmName": "Pto_tbjo_resp_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e70c0cfb-1b0f-4149-906b-5e709b20f796"
+        },
+        {
+         "Name": "Plan mantenim.",
+         "EdmName": "Plan_mantenim_",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "6b51983a-f485-4f62-a799-d0dd0c0b2fbb"
+        },
+        {
+         "Name": "Pos.mantenim.",
+         "EdmName": "Pos_mantenim_",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "04593ebd-3377-42a6-a79c-ea2773aaa4a6"
+        },
+        {
+         "Name": "TotGen. (plan)",
+         "EdmName": "TotGen___plan_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "80afdecc-9e4d-4a58-8a34-6024180797d7"
+        },
+        {
+         "Name": "TotalGen.(real)",
+         "EdmName": "TotalGen__real_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "f81261d4-2fc6-474c-8122-dcdc8e6484ba"
+        },
+        {
+         "Name": "Status usuario",
+         "EdmName": "Status_usuario",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "15373737-d944-41d0-9003-b8ec9c9df6fc"
+        },
+        {
+         "Name": "Aviso",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "127ed9df-d2e7-45dc-8bb3-32caebbf15ca"
+        },
+        {
+         "Name": "Fecha ref.",
+         "EdmName": "Fecha_ref_",
+         "DataType": 7,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "48d2dd29-1894-4dff-b083-73beaab633d5"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO8",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "HECHOSMOVMERC_Orden",
+         "Active": true,
+         "TargetEntity": "HECHOSMOVMERC",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 2,
+         "CrossFilterDirection": 1
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "367175e1-9ef8-496b-a3f9-fe9080dc7ad3"
+      },
+      {
+       "Name": "LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff",
+       "EdmName": "Sandbox.LocalDateTable_36ce07fd_2639_4e1b_9b40_534de5645bff",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "bca3c876-59f7-4c06-ba43-02acee4feabc"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "fd992326-d55f-4e8b-91ae-79ecc3b1e8ab"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "905b7cb2-5a22-4cce-9e57-2d9c72620865"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "9005b56a-d799-45d3-a47e-3bfd34b8b462"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "97a6087d-b06c-426d-91a4-4f1cc78f52ad"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "dfe32108-64b2-4d3f-81eb-df7442fb8948"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "9a23a811-22c7-4e66-bc8e-2c98c7757f11"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "342acdf1-7881-4de9-babb-3a6c43e32aca"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "3ac12688-5221-4e85-8fbd-8d3b6f34a9c6"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "17944b5f-6636-48ce-9dc2-e6beb7121f88"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "eacff606-12fd-4b90-809c-119bbfa53158"
+          }
+         ],
+         "StableName": "cfa096ae-3b51-47b4-85cc-126fcbea0820"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "f4d55db1-5cef-45e5-ad07-8e5d8c5d1a23"
+      },
+      {
+       "Name": "LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6",
+       "EdmName": "Sandbox.LocalDateTable_17805f94_a6a7_4927_a7a7_25e5c68766a6",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "704dd7d4-21a5-4b20-a0da-134bf5867511"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e100afa9-62c2-4e54-9c05-a2e8be1b244c"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "70a12dc9-3344-4f83-a549-054ad4be7217"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "a053e655-206b-45e6-96e2-7cb870db1f78"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "a980bedb-a9c1-42fe-b2a3-a7e9bf24524c"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "85a67612-1a26-42bb-8d79-2daa8a4a85dd"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e064937e-636c-4f34-83df-b539f2fc9e91"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "1b35ab8e-0f84-4e32-b64d-c0af772b8bdc"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "a0eed9d9-20b1-40d1-bff6-0f6d2926675d"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "6afb125a-7e1a-47de-b1a6-e3c6fc2f7573"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "80770213-9aa4-44a0-9d54-7934fa25374a"
+          }
+         ],
+         "StableName": "0f9efac1-6dec-4570-8f49-a87077daebbf"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "a6461b81-30de-49bc-a89b-788b4d6ce78d"
+      },
+      {
+       "Name": "LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6",
+       "EdmName": "Sandbox.LocalDateTable_34ae4b33_62f0_4f0b_bae1_82e81b08c6a6",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "936a8f25-f163-4967-a26c-4df5bd6660b6"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e0f4b591-8215-4e2f-b5df-684027906205"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b831d8f6-0be2-4d50-9306-083acf27a990"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "56a17875-24b3-4cc0-b963-e22b3642195c"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b321884e-319b-4392-8ffd-810aab86d18e"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "ed7abe0b-7ef6-4968-9e97-b09f2c0cd186"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "87da7150-4b68-4cb1-a791-2043ca8eebf0"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "1e294d6a-08c2-41a2-851a-cf7d44cad399"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "764bd61a-dbe3-4bac-a988-bed86cb36c98"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "13dc1548-3b02-4828-b503-02eff1a326c6"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "425f38e6-ebef-4f4a-84dd-6019605573ed"
+          }
+         ],
+         "StableName": "698a3992-0f53-40f9-a6d9-8c32cba54985"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "6eb1f89a-08c3-4be2-b875-a81bbbb2bb41"
+      },
+      {
+       "Name": "LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041",
+       "EdmName": "Sandbox.LocalDateTable_ba582b7f_0142_4640_b2cc_e8e0a3574041",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "22571b16-f9c3-44c8-b3da-294c427d6188"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "ef3a9f83-fa3a-4ae0-89b3-7d9244c74693"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "8d73701f-84a7-4ab0-bb01-91731f63049d"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "5b5f1e63-331a-4eb7-ada7-726ebdf89130"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "05ba410d-2051-4fca-a067-c998cc88df4d"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "b0aa0215-0d8e-466d-820f-464af9575581"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "c86e5274-0bbe-4bab-975f-b440c0567ea4"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "057a0c97-9795-4921-8af9-2e54c9f9e36f"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "7339ee1d-e250-4fc8-bb4b-133f331d21c6"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "d1c95c01-f9ba-4075-9653-f306ed26c1d3"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "f0363e79-2cc3-45e4-8ff1-69d391b7ebc0"
+          }
+         ],
+         "StableName": "503487dc-f7f0-47a2-b700-848fc2ca537a"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "d58a442a-edd0-4f7c-a731-bf493d9c68c4"
+      },
+      {
+       "Name": "HECHOS_H-ELEC",
+       "EdmName": "Sandbox.HECHOS_H_ELEC",
+       "Hidden": true,
+       "Properties": [
+        {
+         "Name": "Fecha",
+         "DataType": 7,
+         "Hidden": true,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "6290503d-bdcd-4903-82b8-aeac21804646"
+        },
+        {
+         "Name": "Documento med.",
+         "EdmName": "Documento_med_",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "1418919e-ef37-4485-a4d9-f5751588a1df"
+        },
+        {
+         "Name": "Punto de medida",
+         "EdmName": "Punto_de_medida",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "96a996b4-a271-4b53-8cec-6c976bb22e8d"
+        },
+        {
+         "Name": "ValMed/ValTotCn",
+         "EdmName": "ValMed_ValTotCn",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "0e04ec45-efc0-4df3-b5bb-e23a6942d490"
+        },
+        {
+         "Name": "Horas_Electrico",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "9721fe17-7c03-4269-ab71-296ac3900de5"
+        },
+        {
+         "Name": "Diferencia",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "106edc9b-2126-410f-912e-6571161c4ab7"
+        },
+        {
+         "Name": "OT",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "3117c924-6809-4073-946e-e561d2c16ace"
+        },
+        {
+         "Name": "TipoHorometro",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "a36f32a3-acc5-4232-b0b6-6c53d9aa4f18"
+        },
+        {
+         "Name": "Creado por",
+         "EdmName": "Creado_por",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "a17e213b-b84f-4f15-91a7-f891a42c9500"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "ac2b2b57-e433-473c-a6f8-bb641fff7766"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIMHOROMETROS_PUNTODEMEDIDA3",
+         "Active": true,
+         "TargetEntity": "DIMHOROMETROS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIEMPO_Fecha5",
+         "Active": true,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO9",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "8e1a3398-45d4-45d3-86db-dc191542b079"
+      },
+      {
+       "Name": "HECHOS_H-PERC",
+       "EdmName": "Sandbox.HECHOS_H_PERC",
+       "Hidden": true,
+       "Properties": [
+        {
+         "Name": "Fecha",
+         "DataType": 7,
+         "Hidden": true,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "31608a0b-5bf0-4123-bba1-1cac0f95f481"
+        },
+        {
+         "Name": "Documento med.",
+         "EdmName": "Documento_med_",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "93a1efd6-384e-4847-afdc-7a75d01158a1"
+        },
+        {
+         "Name": "Punto de medida",
+         "EdmName": "Punto_de_medida",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "4ed8f6cb-ac3e-4c33-b26a-8321a6b7dc24"
+        },
+        {
+         "Name": "ValMed/ValTotCn",
+         "EdmName": "ValMed_ValTotCn",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "4f2a7d18-e692-4622-bfac-f73a6e73c3d1"
+        },
+        {
+         "Name": "Horas_Percusion1",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "9d371312-a991-4739-bd97-6411d62cfbc8"
+        },
+        {
+         "Name": "Diferencia",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "3333ff21-b0b6-48cf-bb87-16b647e5bcae"
+        },
+        {
+         "Name": "OT",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "63e78f43-f93e-46bd-a88b-3286d66dae74"
+        },
+        {
+         "Name": "TipoHorometro",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e48bb9a1-f8a4-43aa-a607-8ec88944ed50"
+        },
+        {
+         "Name": "Creado por",
+         "EdmName": "Creado_por",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "3189e0bc-5026-464b-8cbd-30a72be5c51c"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "92323c49-08b9-4f92-a381-2ec60d51e730"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIMHOROMETROS_PUNTODEMEDIDA4",
+         "Active": true,
+         "TargetEntity": "DIMHOROMETROS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIEMPO_Fecha6",
+         "Active": true,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO10",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "76ab96f5-d7e8-4241-b5dd-06619d094bd9"
+      },
+      {
+       "Name": "HECHOS_H-PERC (2)",
+       "EdmName": "Sandbox.HECHOS_H_PERC__2_",
+       "Hidden": true,
+       "Properties": [
+        {
+         "Name": "Fecha",
+         "DataType": 7,
+         "Hidden": true,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "ebeeb1fd-a14f-46f1-821c-d3520ded0d1e"
+        },
+        {
+         "Name": "Documento med.",
+         "EdmName": "Documento_med_",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "ff09efba-9238-4166-ae97-3cf5374899f5"
+        },
+        {
+         "Name": "Punto de medida",
+         "EdmName": "Punto_de_medida",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "668af5ee-77ea-43c0-9ed9-e1ccedcc2d7c"
+        },
+        {
+         "Name": "ValMed/ValTotCn",
+         "EdmName": "ValMed_ValTotCn",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "3b054a28-2e62-4a99-a2da-9b24c38d1884"
+        },
+        {
+         "Name": "Horas_Percusion2",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "d3181848-970d-444c-aa4c-d2669b0f2521"
+        },
+        {
+         "Name": "Diferencia",
+         "DataType": 3,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "57482c26-f0e6-49e6-917e-58e22c2d0c21"
+        },
+        {
+         "Name": "OT",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "1174e844-42f7-4572-a732-1f5fb06d7cfb"
+        },
+        {
+         "Name": "TipoHorometro",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "3711cce1-78f9-41b0-b9fa-b78230535c1a"
+        },
+        {
+         "Name": "Creado por",
+         "EdmName": "Creado_por",
+         "DataType": 1,
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "8c72c2d2-6cce-459d-97b5-226e5b3a1fe0"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 4,
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "0c331260-8428-43ae-994e-3ac695635b5d"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIMHOROMETROS_PUNTODEMEDIDA5",
+         "Active": true,
+         "TargetEntity": "DIMHOROMETROS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIEMPO_Fecha7",
+         "Active": true,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO11",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "39535409-0f7c-4a93-8b01-f3a3aa78c095"
+      },
+      {
+       "Name": "HORO_CONSOL",
+       "EdmName": "Sandbox.HORO_CONSOL",
+       "Properties": [
+        {
+         "Name": "Fecha",
+         "DataType": 7,
+         "FormatString": "%d/%M/yyyy",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "87ddf6b3-c56a-44b2-ac93-667e6215bee1"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b451f601-28b6-4135-9100-669f788e6cee"
+        },
+        {
+         "Name": "Max_Diesel",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "0bf37941-a0eb-481b-8fb6-3596ccf7c2bc"
+        },
+        {
+         "Name": "Max_Electrico",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "104c0d52-dec7-4d65-a81c-f997ea08c6e9"
+        },
+        {
+         "Name": "Max_Percusion1",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "6a0f7f13-344b-4580-92a6-e04d55cb6639"
+        },
+        {
+         "Name": "Max_Percusion2",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "50054257-9233-4e12-a5a2-ad629bb5fc91"
+        },
+        {
+         "Name": "HorometroElecAjustado",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "99a5a100-c842-42aa-9d43-3283662a6106"
+        },
+        {
+         "Name": "Punto de medida",
+         "EdmName": "Punto_de_medida",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "c11f5121-00ec-4124-a7b9-765a101002a8"
+        },
+        {
+         "Name": "TIPOHOROMETRO",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "53a0afc1-5dce-424c-8e9d-5b55b6bb3b76"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO12",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_TIEMPO_Fecha8",
+         "Active": true,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIMHOROMETROS_PUNTODEMEDIDA6",
+         "Active": true,
+         "TargetEntity": "DIMHOROMETROS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "b632d10f-316f-4031-a516-d9fe7fdf32bf"
+      },
+      {
+       "Name": "ResultadosCostoXHora",
+       "EdmName": "Sandbox.ResultadosCostoXHora",
+       "Properties": [
+        {
+         "Name": "SAP",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "fdfd691b-34ea-47d4-98b5-5c71502ee88a"
+        },
+        {
+         "Name": "EQUIPO ",
+         "EdmName": "EQUIPO_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "6b64085d-8483-489d-9e6a-e5a3e5f6bb6f"
+        },
+        {
+         "Name": "META (Costo/h)",
+         "EdmName": "META__Costo_h_",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c3bacf60-118d-43c5-9406-8c7d65db4e20"
+        },
+        {
+         "Name": "Costo/h (Semana)",
+         "EdmName": "Costo_h__Semana_",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "5fcc7f4a-3427-4ae0-8f30-6876f9ae423f"
+        },
+        {
+         "Name": "Horas",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "0b770b11-5255-4b72-82b3-b25e3be35fc7"
+        },
+        {
+         "Name": "ACUMULADO MES (Costo/h)",
+         "EdmName": "ACUMULADO_MES__Costo_h_",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "01900e45-ba55-4d24-8a01-8e2da7c5125d"
+        },
+        {
+         "Name": "COMENTARIOS",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f2518f2a-f76d-47b4-8441-f634c7c227e5"
+        },
+        {
+         "Name": "Nro",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "2ffc9038-d13b-42a8-9a52-d866c42b3bca"
+        },
+        {
+         "Name": "Acumulado Mes(H)",
+         "EdmName": "Acumulado_Mes_H_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "09ed7f70-ed84-40d5-a960-30e02e263e0e"
+        },
+        {
+         "Name": "Meta(Costo/h)",
+         "EdmName": "Meta_Costo_h_",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Measure": {
+          "DistributiveAggregate": 0,
+          "DistributiveBy": [
+           "ResultadosCostoXHora"
+          ]
+         },
+         "StableName": "84a6a4d1-bfcd-4a5f-9657-406896c0d298"
+        },
+        {
+         "Name": "Costo /h",
+         "EdmName": "Costo__h",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Measure": {
+          "DistributiveAggregate": 0,
+          "DistributiveBy": [
+           "ResultadosCostoXHora"
+          ]
+         },
+         "StableName": "ab45426b-8b32-4faa-bfa1-45ab1c7e5013"
+        },
+        {
+         "Name": "IconoCosto",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "68282ad9-1e3c-4dac-b799-186a030a27b8"
+        },
+        {
+         "Name": "IconoCostoAcum",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "87570caf-85fb-4775-ac63-9a79d9f9332d"
+        },
+        {
+         "Name": "AcumCostoMes",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Measure": {
+          "DistributiveAggregate": 0,
+          "DistributiveBy": [
+           "ResultadosCostoXHora"
+          ]
+         },
+         "StableName": "f5969611-1882-41e0-a401-330e57b09c7f"
+        },
+        {
+         "Name": "IconoCostoN",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "142415da-02d8-4887-b2b0-bf33688cc9e4"
+        },
+        {
+         "Name": "IconoCostoM",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "113953f9-b100-49d4-8b58-465e83a30761"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO13",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 0,
+         "TargetMultiplicity": 0,
+         "CrossFilterDirection": 1
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "177c54f0-c672-4c94-a590-a505cfeec2b1"
+      },
+      {
+       "Name": "ResUtilizacion",
+       "EdmName": "Sandbox.ResUtilizacion",
+       "Properties": [
+        {
+         "Name": "SAP",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "25d26312-47e5-4318-9e20-f10eb5641439"
+        },
+        {
+         "Name": "EQUIPO ",
+         "EdmName": "EQUIPO_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "5ca52ad8-1730-4944-aba4-6b31103cf3b3"
+        },
+        {
+         "Name": "% utilizacion ",
+         "EdmName": "v__utilizacion_",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "1eb31ac8-9317-4b2d-85d3-37eafcbdbd04"
+        },
+        {
+         "Name": "%utilizacion Mes",
+         "EdmName": "v_utilizacion_Mes",
+         "DataType": 3,
+         "FormatString": "0.00\\ %;-0.00\\ %;0.00\\ %",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "e7247a0e-c171-409c-a4b1-ab21a3e16887"
+        },
+        {
+         "Name": "SemAcum(Mes)",
+         "EdmName": "SemAcum_Mes_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "7adb7b98-c50e-4d56-adb8-5cf9f2537da4"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO14",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 0,
+         "TargetMultiplicity": 0,
+         "CrossFilterDirection": 1
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "8ac06ac0-dc19-4a8c-ae9a-5231590dfc71"
+      },
+      {
+       "Name": "RelHorometros",
+       "EdmName": "Sandbox.RelHorometros",
+       "Properties": [
+        {
+         "Name": "IDEquipo",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "55ae246c-e5bb-4ecb-a2b8-0f031bb4d293"
+        },
+        {
+         "Name": "Descripción ",
+         "EdmName": "Descripción_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "3a95e73a-8171-446e-8d24-fd06b10ce286"
+        },
+        {
+         "Name": "Motor Eléctrico (Sem)",
+         "EdmName": "Motor_Eléctrico__Sem_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "766b5060-e001-4717-88ee-cb9976df9428"
+        },
+        {
+         "Name": "Motor Diesel (Sem)",
+         "EdmName": "Motor_Diesel__Sem_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "3fd8f9f2-e566-4a50-8a0e-3c6a5986483d"
+        },
+        {
+         "Name": "% Relación (Sem)",
+         "EdmName": "v__Relación__Sem_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "4fc3ca3e-2b90-42e4-ba31-ee8b93493339"
+        },
+        {
+         "Name": "Motor Eléctrico Mes",
+         "EdmName": "Motor_Eléctrico_Mes",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "44f19947-dd4a-4b5d-82c8-624b1b36d49d"
+        },
+        {
+         "Name": "Motor Diesel (Mes)",
+         "EdmName": "Motor_Diesel__Mes_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "516169df-8ab7-48b2-abff-151a5d16de1c"
+        },
+        {
+         "Name": "% Relación (Mes)",
+         "EdmName": "v__Relación__Mes_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "ac79f55c-e7dc-4c04-9410-acd84ef797f5"
+        },
+        {
+         "Name": "RelElec/Diesel Sem",
+         "EdmName": "RelElec_Diesel_Sem",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "048fbf25-9a9a-4e50-a7a4-7a95a87e780f"
+        },
+        {
+         "Name": "RelElec/Diesel(Mes)",
+         "EdmName": "RelElec_Diesel_Mes_",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "52416a8a-8e0e-44ff-87d4-d374838154c1"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO15",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 0,
+         "TargetMultiplicity": 0,
+         "CrossFilterDirection": 1
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "5ffd112b-59f9-42b0-8653-2660d1005097"
+      },
+      {
+       "Name": "HECHOSMOVMERC",
+       "EdmName": "Sandbox.HECHOSMOVMERC",
+       "Properties": [
+        {
+         "Name": "Orden",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "9567dfcc-7e94-4325-b2c2-2d2af3c9c33f"
+        },
+        {
+         "Name": "Material",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "b90a2483-c0ae-4fb9-adc1-186867e72730"
+        },
+        {
+         "Name": "DescMaterial",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f78673e5-8645-45e9-9068-55bef767ba73"
+        },
+        {
+         "Name": "Ctd",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "eaea69f2-afe5-4360-8178-b83a9aede041"
+        },
+        {
+         "Name": "UdM",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "282c35dc-cb4b-41bb-9c17-4d55b84f1a6b"
+        },
+        {
+         "Name": "Importe(NIO)",
+         "EdmName": "Importe_NIO_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "bc0f5566-24f8-4171-b8e2-283f18f291a8"
+        },
+        {
+         "Name": "Cl.movimiento",
+         "EdmName": "Cl_movimiento",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "b9f38893-fd36-4eb9-b3f7-137409bd8187"
+        },
+        {
+         "Name": "Fecha de referencia",
+         "EdmName": "Fecha_de_referencia",
+         "DataType": 7,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "77065f5c-df1d-4668-a89b-fd3da4e36776"
+        },
+        {
+         "Name": "DescEquipo",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "8f99c1ee-c0f6-4e39-94ff-33712cfe28c4"
+        },
+        {
+         "Name": "Importe (USD)",
+         "EdmName": "Importe__USD_",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "5bef0215-a3cf-489e-a579-f081f8201445"
+        },
+        {
+         "Name": "Semana",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "4e6efa8f-6450-444c-b360-b4f55299fc47"
+        },
+        {
+         "Name": "MES",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "6f80c9c6-373c-49dc-832c-b74f8db4c19d"
+        },
+        {
+         "Name": "Acumulado ",
+         "EdmName": "Acumulado_",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "35418fbe-f6f3-4633-b00e-3d76be48e931"
+        },
+        {
+         "Name": "ACTIVIDAD",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b4ec4f29-b048-44d9-afa4-9cd8dd81712d"
+        },
+        {
+         "Name": "CATEGORIA",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "02974b16-5860-44fc-9f4a-e66ad4eb407e"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "Dim_Tiempo_Costo_Fecha",
+         "Active": true,
+         "TargetEntity": "Dim_Tiempo_Costo",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "0163ac4c-c9ba-42d3-bed6-34be792ba4c4"
+      },
+      {
+       "Name": "Dim_Tiempo_Costo",
+       "EdmName": "Sandbox.Dim_Tiempo_Costo",
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "9dcb7007-a4dc-4af3-b223-cb7bda05849b"
+        },
+        {
+         "Name": "Fecha",
+         "DataType": 7,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1,
+          "Variations": [
+           {
+            "Name": "Variación",
+            "Default": true,
+            "NavigationProperty": "LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62_Date",
+            "DefaultHierarchy": "Jerarquía de fechas"
+           }
+          ]
+         },
+         "StableName": "f70512f3-c15a-4069-b9de-d452238661f3"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "55810431-b9e5-4e95-83e8-652c09159b83"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "1c7ab69a-2f17-440f-ad23-4e377d229f6c"
+        },
+        {
+         "Name": "Dia",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "fdfa53cf-c95f-4cbe-b5fc-c1fa6e101ed6"
+        },
+        {
+         "Name": "FechaSk",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "707b75b5-4db6-41d4-90e2-83fc5054b200"
+        },
+        {
+         "Name": "Semestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "fcb6f095-461b-4c32-935a-35829148ce4c"
+        },
+        {
+         "Name": "Cuatrimestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "cdaa0df1-8431-4de4-adc6-024c79994f53"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "2913f5fc-d3b0-49a4-bf6c-5d79a070432a"
+        },
+        {
+         "Name": "Bimestre",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "1346e4d5-927d-400f-a251-4c3ab96b4136"
+        },
+        {
+         "Name": "Semana",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "484b890f-f5fd-426d-93bd-04fd3d094bd9"
+        },
+        {
+         "Name": "AñoMes",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "0c6a4d67-da29-4220-8aad-294a6675a8e5"
+        },
+        {
+         "Name": "DiaSemana",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "9a7a8f60-91de-4e5b-928d-cd8d1fc3363d"
+        },
+        {
+         "Name": "NbAño",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c8d15a2b-4e99-4140-98f0-1ec4e5b9e5a6"
+        },
+        {
+         "Name": "NbSemestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "99e55c56-5a76-488a-89e4-d31cb176b5f5"
+        },
+        {
+         "Name": "NbSemestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "81c865c4-9aff-45a3-a73b-34d8a0ef7a76"
+        },
+        {
+         "Name": "NbCuatrimestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "594220e4-744b-4f2f-a0b4-f9de8732e2cf"
+        },
+        {
+         "Name": "NbCuatrimestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "30235b80-55db-43e0-8255-cf81b9722df4"
+        },
+        {
+         "Name": "NbTrimestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "2436b23e-3fe5-4246-a0d6-f769fff75852"
+        },
+        {
+         "Name": "NbTrimestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "0929fc7d-b0dd-4e80-974b-09a299897b58"
+        },
+        {
+         "Name": "NbBimestre",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "bcebe373-ffbc-4fb9-a66e-a79d5ba9f659"
+        },
+        {
+         "Name": "NbBimestreAño",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "61b1b317-f1f4-4b5d-b696-e2c311de9514"
+        },
+        {
+         "Name": "NbMes",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "cc983bfe-8150-4629-9b3c-903d2130376f"
+        },
+        {
+         "Name": "nbMes3L",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "bcbfce20-d0a4-4f99-890a-dfa4a8f3c9ec"
+        },
+        {
+         "Name": "NbDia",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "a10efc0a-885a-49a2-ac63-28b92e561bf0"
+        },
+        {
+         "Name": "NbSemana",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "d76d075a-648a-4fa9-8755-5627042069ce"
+        },
+        {
+         "Name": "NdDiaSemana",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "240f0769-3a7c-4177-a857-83f890e56d43"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62_Date",
+         "Active": true,
+         "TargetEntity": "LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "43460423-03d6-4b41-82da-a1341fec972f"
+      },
+      {
+       "Name": "LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333",
+       "EdmName": "Sandbox.LocalDateTable_c4bbd9c2_49f5_42e7_b97f_6e26294e3333",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e35b3586-f699-46ab-9346-9182a00af1a8"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "3d72d43f-4459-44c5-bb6c-2f0d7ee43a52"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "4785106c-7874-4310-8085-8d19ed60513a"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "e6f4e07a-18de-4bc9-bf00-5aea2ebeb766"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "1382949c-08c4-4f3f-a88c-33871e26d9f5"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "d44d139b-6fe1-4338-a427-237f1e816e27"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "ca201849-8cb6-4778-b622-c4070d41f8b3"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "e1dde574-d9a8-4324-93fd-a5905276f46e"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "1c20ed6f-7f93-430a-80be-47a3dd69ec5e"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "bec17f7b-c44f-49ed-b1d7-a6ade296ed39"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "9f533a00-6b86-4879-a156-0a1a6c2da265"
+          }
+         ],
+         "StableName": "6abdfa13-5a7e-4ee7-80ef-0da77f4fcd2b"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "278fbdf0-1352-4bf8-9043-34d28cb21472"
+      },
+      {
+       "Name": "LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62",
+       "EdmName": "Sandbox.LocalDateTable_a1d42e7a_efac_41eb_963e_38ac57656b62",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b276fee2-c0ed-4d84-bb71-c12fe11bc178"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "d7d14471-9152-4a38-ae23-d1debc3d7284"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "0aa97035-d5df-4163-b903-a9934663e488"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "f13652f3-6d63-4682-a48e-488e27b460f3"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "c7add46d-907b-46ab-8739-960315c6e1b8"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "faba78df-bfca-4c41-a34a-cc84d1b6bd97"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "2608c18d-300d-4b25-bb15-908039d6b388"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "579e87bd-3626-43d8-a330-ec8a951cff12"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "0fec55f2-35e8-4c1c-9a99-d5eb9f1eb4a0"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "727a98e7-87ac-415a-8f45-fe1771b2bf6e"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "339daf84-3c5b-455c-86e7-a36dee0f6d19"
+          }
+         ],
+         "StableName": "b2a2ff32-59af-419b-aebd-b3b3eac323cb"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "1740a0b7-7fd9-4d13-80bf-d9276636519b"
+      },
+      {
+       "Name": "Metas2026",
+       "EdmName": "Sandbox.Metas2026",
+       "Properties": [
+        {
+         "Name": "Mes",
+         "DataType": 7,
+         "FormatString": "D",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "8c9c1efb-2599-4e10-9ed4-5ca54411cbf8"
+        },
+        {
+         "Name": "Familia",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "651989b8-07df-4b43-aa1a-a6a896e83fe1"
+        },
+        {
+         "Name": "Meta_Disponibilidad",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "ff84a800-5e83-42b6-8424-3ac7dd77b5c8"
+        },
+        {
+         "Name": "Meta_MTTR",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "76354239-20f9-4bf0-93e9-285e417b47a8"
+        },
+        {
+         "Name": "Meta_MTBF",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f33f39ce-573e-485f-b60b-4ef847d2230d"
+        },
+        {
+         "Name": "Meta_Confiabilidad",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "26532795-db9f-4ba3-a08e-18e8b0304cc6"
+        },
+        {
+         "Name": "Meta_Indisponibilidad",
+         "DataType": 3,
+         "FormatString": "0%;-0%;0%",
+         "Measure": {},
+         "StableName": "b6eca559-586b-46d7-80fc-6c3d8064542e"
+        },
+        {
+         "Name": "Meta_Disp",
+         "DataType": 3,
+         "FormatString": "0%;-0%;0%",
+         "Measure": {},
+         "StableName": "33cf92d1-d006-4040-8428-44e279d181cf"
+        },
+        {
+         "Name": "Color_Disponibilidad",
+         "DataType": 1,
+         "Measure": {},
+         "StableName": "2b2c9eb3-aa4c-4ce9-969d-1d020990dc9d"
+        },
+        {
+         "Name": "Brecha_Disp",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "4ba62601-5c92-4d9d-a5c2-b33ca28ad73e"
+        },
+        {
+         "Name": "_Debug_Ponderacion",
+         "EdmName": "v_Debug_Ponderacion",
+         "DataType": 1,
+         "Measure": {},
+         "StableName": "0a534e55-0af9-449f-9682-5eeee97bd793"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_TIEMPO_Fecha9",
+         "Active": true,
+         "TargetEntity": "DIM_TIEMPO",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        },
+        {
+         "Name": "DIM_EQUIPOS_Descripcion",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "b07a504a-02e1-4a81-b663-8d22c82a0b12"
+      },
+      {
+       "Name": "Confiabilidad",
+       "EdmName": "Sandbox.Confiabilidad",
+       "Properties": [
+        {
+         "Name": "Confiabilidad",
+         "EdmName": "Confiabilidad2",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "c3de91d7-427f-418c-a6e3-724bc7fc6745"
+        },
+        {
+         "Name": "Horas",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "565e9ecb-184a-41a0-a5d1-ee90b3fbd514"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "b2b4b2de-66f3-40a9-aad9-ed9583b16fb1"
+      },
+      {
+       "Name": "AnalisisCostos",
+       "EdmName": "Sandbox.AnalisisCostos",
+       "Properties": [
+        {
+         "Name": "SAP",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "fc19e8e4-e5c9-411a-aecd-971101144331"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "c6bc7ade-d253-4949-9f6d-a1527f7171bc"
+        },
+        {
+         "Name": "Indicador",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "8a6620c4-02d3-47ba-87c2-ceaf85908090"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "aef4dce4-334d-4b81-9cfc-afdd5572ceea"
+        },
+        {
+         "Name": "Semana",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "54b7f5b5-effb-4b8f-95b2-0fd26135d68e"
+        },
+        {
+         "Name": "Valor",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "c74c0970-6d72-4f73-928f-bbf5ad2c9d5c"
+        },
+        {
+         "Name": "TotalHoras",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "ae96e599-7c43-46f1-ad2f-3440d0b5e769"
+        },
+        {
+         "Name": "TCostoxHora",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Measure": {},
+         "StableName": "c8ca49e5-8f96-4a12-a332-c34fdda0de64"
+        },
+        {
+         "Name": "LineaBase",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Measure": {},
+         "StableName": "82ebed88-a4de-4c79-8aaf-468b6c66f23f"
+        },
+        {
+         "Name": "Utilizacion Semanal %",
+         "EdmName": "Utilizacion_Semanal__",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "c58faf5c-1457-4cc1-9ca9-6ab8c96fd718"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO16",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "2392fba7-73a2-499a-a617-ff6c82720687"
+      },
+      {
+       "Name": "AnalisisCostosMes",
+       "EdmName": "Sandbox.AnalisisCostosMes",
+       "Properties": [
+        {
+         "Name": "SAP",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "0154b2d6-d7c8-4a1e-8394-d7a49dd2fae7"
+        },
+        {
+         "Name": "Equipo",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "5985b788-37e5-4608-9d92-ded78e08e3f1"
+        },
+        {
+         "Name": "Indicador",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f450b4c5-c099-464e-acfa-0db07f20cfdb"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "9db01f85-3ec3-4128-be9b-eefd0a2859c3"
+        },
+        {
+         "Name": "Semana",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "d44208f5-adff-4d16-a477-a3fc30415591"
+        },
+        {
+         "Name": "Valor",
+         "DataType": 3,
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "a64a67cd-278f-414d-bf58-9223fe0a6797"
+        },
+        {
+         "Name": "Costo_Hora_Acumulado",
+         "DataType": 3,
+         "FormatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+         "Measure": {},
+         "StableName": "2124edf5-fe8f-4277-9403-3ba21f9fdcfd"
+        },
+        {
+         "Name": "Utilizacion Mensual %",
+         "EdmName": "Utilizacion_Mensual__",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "70ce8262-0bdd-4a2b-b117-0c7a83981830"
+        }
+       ],
+       "NavigationProperties": [
+        {
+         "Name": "DIM_EQUIPOS_IDEQUIPO17",
+         "Active": true,
+         "TargetEntity": "DIM_EQUIPOS",
+         "SourceMultiplicity": 2,
+         "TargetMultiplicity": 0
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "98e9f7b4-a2b6-46cd-80f9-d7964b08057a"
+      },
+      {
+       "Name": "Var_t: Disp",
+       "EdmName": "Sandbox.Var_t__Disp",
+       "Properties": [
+        {
+         "Name": "Var_t: Disp",
+         "EdmName": "Var_t__Disp2",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "13bb2595-3f71-47fd-a77f-03b6a3e29a24"
+        },
+        {
+         "Name": "Horas",
+         "DataType": 4,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 2
+         },
+         "StableName": "478c634d-ccfc-42e5-a0c0-4395e2f9b2d5"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "188332ff-86ee-489b-a642-2ba1b6325a22"
+      },
+      {
+       "Name": "Metricas (2)",
+       "EdmName": "Sandbox.Metricas__2_",
+       "Properties": [
+        {
+         "Name": "Columna1",
+         "DataType": 1,
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "3a3d9551-8770-46ec-824b-4522892e0253"
+        },
+        {
+         "Name": "_Cantidad Fallas NPI",
+         "EdmName": "v_Cantidad_Fallas_NPI",
+         "DataType": 4,
+         "FormatString": "0",
+         "Measure": {},
+         "StableName": "01b0b7ca-ea63-4f77-93f5-b548d7f0321f"
+        },
+        {
+         "Name": "Paro General 24h",
+         "EdmName": "Paro_General_24h",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "5ceee5d7-651e-4ea0-a671-e84b95221119"
+        },
+        {
+         "Name": "Paro NPI Mtto 24h",
+         "EdmName": "Paro_NPI_Mtto_24h",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "03ced4eb-a011-475a-8dcd-7ed83347cf76"
+        },
+        {
+         "Name": "Paro General 18h",
+         "EdmName": "Paro_General_18h",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "f8fe8aa0-818c-4f32-b23c-316373fa8c12"
+        },
+        {
+         "Name": "Paro NPI Mtto 18h",
+         "EdmName": "Paro_NPI_Mtto_18h",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "460b9c9a-5fc7-4965-81a6-c28262023515"
+        },
+        {
+         "Name": "Paro General Ventana",
+         "EdmName": "Paro_General_Ventana",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "195ab986-e259-4b51-93e3-828b30f0c087"
+        },
+        {
+         "Name": "Paro NPI Ventana",
+         "EdmName": "Paro_NPI_Ventana",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "54723eb5-2ef4-4d5e-81cb-babbc8784097"
+        },
+        {
+         "Name": "Disp Din %",
+         "EdmName": "Disp_Din__",
+         "DataType": 3,
+         "FormatString": "0%;-0%;0%",
+         "Measure": {},
+         "StableName": "f0ee5035-ccc1-4640-b4cd-4c05f20856dd"
+        },
+        {
+         "Name": "MTTR_H",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "853c8435-e029-4e6d-a7ff-b39f4b0f91bf"
+        },
+        {
+         "Name": "MTBF_H",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "8bbbd699-b025-4850-99c4-2137d9bcda49"
+        },
+        {
+         "Name": "Brecha_Disp dn",
+         "EdmName": "Brecha_Disp_dn",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "b8c98c4a-3c82-43e9-a205-9f80c8c47960"
+        },
+        {
+         "Name": "Título Ventana",
+         "EdmName": "Título_Ventana",
+         "DataType": 1,
+         "Measure": {},
+         "StableName": "10f9bf68-fe07-4d21-ad71-58bdf88987f5"
+        },
+        {
+         "Name": "Min Paro Ventana",
+         "EdmName": "Min_Paro_Ventana",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "234bb5b0-6b29-440a-bac9-db9b47c7b12c"
+        },
+        {
+         "Name": "Dif",
+         "DataType": 3,
+         "Measure": {},
+         "StableName": "60ff8c40-2a8d-4433-9e09-d67c4e8ef6de"
+        },
+        {
+         "Name": "Hrs Paro Ventana",
+         "EdmName": "Hrs_Paro_Ventana",
+         "DataType": 3,
+         "FormatString": "0.00",
+         "Measure": {},
+         "StableName": "b80956fb-f40e-4847-890c-b0ef544db7a5"
+        },
+        {
+         "Name": "Disp Acum %",
+         "EdmName": "Disp_Acum__",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "c30a2346-c744-4b72-8ef3-567bd77c7321"
+        },
+        {
+         "Name": "Disp Acum Final",
+         "EdmName": "Disp_Acum_Final",
+         "DataType": 3,
+         "FormatString": "0.00%;-0.00%;0.00%",
+         "Measure": {},
+         "StableName": "1575089e-29a2-4013-95e2-95f2babb13a0"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "ea9f6fc0-c92a-40be-81c5-6012f07a3628"
+      },
+      {
+       "Name": "LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75",
+       "EdmName": "Sandbox.LocalDateTable_32ebe947_7ba6_4f50_9dee_756d1ff26e75",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "e12d822c-39c4-471c-9f45-e2a6abdce8cf"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "eea37a0c-75d8-433e-8c14-d2ec446f1d50"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "c1e18c13-fef7-45d4-a619-6259d10aedf4"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "3af9e36c-1fe8-4a58-ae94-12dd03abf1ed"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "f8f37b22-25b4-4676-a888-a6ffaee2420c"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "d6eedc47-11bb-4971-8282-6d90bb6aa11f"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b9b7b6e7-ca1b-49f6-b405-61be5b9b598d"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "e90ead0b-0ee7-44cd-a6ed-dd39c245a891"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "140fa4e1-8083-4446-83b5-907c46427577"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "fe580f97-6615-490f-bf56-abbf436253b8"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "86e7d37c-8fd7-47f3-98c4-ff25129c473f"
+          }
+         ],
+         "StableName": "96eb71b0-1531-47e2-9331-388b78130a27"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "1506e3e0-6167-4b11-99ef-a7368d23c94d"
+      },
+      {
+       "Name": "LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3",
+       "EdmName": "Sandbox.LocalDateTable_dd22223c_2998_47b7_9dec_eeac043b86c3",
+       "ShowAsVariationsOnly": true,
+       "Properties": [
+        {
+         "Name": "Date",
+         "DataType": 7,
+         "DataCategory": "PaddedDateTableDates",
+         "Hidden": true,
+         "FormatString": "G",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b88ae558-2865-4c1c-8561-151f08e57e36"
+        },
+        {
+         "Name": "Año",
+         "DataType": 4,
+         "DataCategory": "Years",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "529b51ab-a279-44a4-947a-231aa9cacdbe"
+        },
+        {
+         "Name": "NroMes",
+         "DataType": 4,
+         "DataCategory": "MonthOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "d20680b0-dbf3-46db-a5b6-c89920807ec5"
+        },
+        {
+         "Name": "Mes",
+         "DataType": 1,
+         "DataCategory": "Months",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroMes"
+          ]
+         },
+         "StableName": "32a22587-4476-4a78-84e3-2e72c3b4d357"
+        },
+        {
+         "Name": "NroTrimestre",
+         "DataType": 4,
+         "DataCategory": "QuarterOfYear",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "b5ee8215-27f6-4849-866d-9f730b91d4a4"
+        },
+        {
+         "Name": "Trimestre",
+         "DataType": 1,
+         "DataCategory": "Quarters",
+         "Hidden": true,
+         "Column": {
+          "DefaultAggregate": 1,
+          "OrderBy": [
+           "NroTrimestre"
+          ]
+         },
+         "StableName": "0960b976-1316-464d-a081-1027d3940d49"
+        },
+        {
+         "Name": "Día",
+         "DataType": 4,
+         "DataCategory": "DayOfMonth",
+         "Hidden": true,
+         "FormatString": "0",
+         "Column": {
+          "DefaultAggregate": 1
+         },
+         "StableName": "62ef0fd5-93e3-4e6d-be78-c7b30961784d"
+        }
+       ],
+       "Hierarchies": [
+        {
+         "Name": "Jerarquía de fechas",
+         "Levels": [
+          {
+           "Name": "Año",
+           "Column": "Año",
+           "StableName": "ac82e5e6-61ad-462b-ba30-13010f6dbb36"
+          },
+          {
+           "Name": "Trimestre",
+           "Column": "Trimestre",
+           "StableName": "0274f5bd-3bdf-441b-9f20-4211fc84b9fe"
+          },
+          {
+           "Name": "Mes",
+           "Column": "Mes",
+           "StableName": "b45b3433-014e-417a-afcc-d19f226a6992"
+          },
+          {
+           "Name": "Día",
+           "Column": "Día",
+           "StableName": "198ec88e-0ddd-45b4-80ca-4ffb47e44871"
+          }
+         ],
+         "StableName": "47ebdf68-d4f9-4648-a94f-293df96909de"
+        }
+       ],
+       "Capabilities": {
+        "CanEditStorageMode": false,
+        "SupportsClustering": false,
+        "SupportsBinByCount": false
+       },
+       "StableName": "d7ead1ae-e277-4c01-b9fe-6cf05e9bc23c"
+      }
+     ],
+     "Capabilities": {
+      "SupportsMedian": true,
+      "SupportsPercentile": true,
+      "SupportsScopedEval": true,
+      "SupportsStringMinMax": true,
+      "SupportsMultiTableTupleFilters": true,
+      "SupportsTimeIntelligenceQuickMeasures": true,
+      "SupportsBinnedLineSample": true,
+      "SupportsOverlappingPointsSample": true,
+      "SupportsInsights": true,
+      "SupportsQna": true,
+      "SupportsInstanceFilters": true,
+      "Insights": {
+       "SupportsDistributionFactors": true,
+       "SupportsExplainChange": true,
+       "SupportsExplore": true,
+       "SupportsKeyDrivers": true,
+       "SupportsRelatedInsights": true,
+       "SupportsDecomposition": true,
+       "SupportsExplainAnomalies": true,
+       "SupportsCompatibleFields": true,
+       "SupportsQuerySuggestions": true,
+       "SupportsExplainVarianceToTarget": true,
+       "SupportsGenerateSummaries": true
+      },
+      "SupportsSubqueryRegrouping": true,
+      "SupportsTopNPerLevel": true,
+      "SupportsScopedAggregates": true,
+      "SupportsExtensionColumns": true,
+      "IsQnaEnabled": true,
+      "SupportsScopedDataReduction": true,
+      "TransformCapabilities": {
+       "SupportedTransforms": [
+        "KMeansClustering",
+        "SpatialClustering",
+        "AggregateSummary",
+        "DetectAnomaly",
+        "SampleAndDetectAnomaly",
+        "SampleTimeSeriesData",
+        "LargestCategorySummary",
+        "TopRightHandCornerSummary",
+        "TrendSummary",
+        "ChangeSummary",
+        "RegionWithMostPointsSummary",
+        "LargestDifferenceSummary",
+        "CorrelationSummary",
+        "Unpivot",
+        "ExtractTrend",
+        "LargestDivergenceSummary",
+        "HighPointLowPointSummary"
+       ]
+      },
+      "SupportsGroupSynchronization": true,
+      "SupportsSparklineData": true,
+      "SupportsVisualCalculations": true,
+      "SupportsNestedInTableFilters": true,
+      "IsNaturalLanguageSupported": true,
+      "IsNaturalLanguageEnabled": true
+     }
+    },
+    "error": null
+   }
+  ]
+ }
+}

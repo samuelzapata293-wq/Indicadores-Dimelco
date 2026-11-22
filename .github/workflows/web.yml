@@ -1,0 +1,67 @@
+name: Web de indicadores (GitHub Pages)
+
+# Publica la app como sitio web en GitHub Pages.
+# La conexión a Supabase se toma de las variables del repositorio (Settings > Secrets and variables > Actions > Variables):
+# SUPABASE_URL y SUPABASE_ANON_KEY. La llave anon es pública por diseño de Supabase; la seguridad
+# depende de las políticas de la base, no de esconder esta llave.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['docs/**', 'tools/**', 'supabase/**', '**.md']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      # Mientras GitHub Pages no esté activado (Settings > Pages > Source: GitHub Actions),
+      # el flujo avisa y no publica, sin marcar error.
+      - name: Verificar GitHub Pages
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type 2>/dev/null | grep -q workflow; then
+            echo "listo=si" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::No se publica: active Settings > Pages > Build and deployment > Source: GitHub Actions"
+            echo "listo=no" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.pages.outputs.listo == 'si'
+        uses: actions/checkout@v4
+      - if: steps.pages.outputs.listo == 'si'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - if: steps.pages.outputs.listo == 'si'
+        run: npm ci --no-audit --no-fund
+      - name: Probar
+        if: steps.pages.outputs.listo == 'si'
+        run: npm test
+      - name: Compilar sitio
+        if: steps.pages.outputs.listo == 'si'
+        env:
+          VITE_SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+        run: npm run build:web
+      - if: steps.pages.outputs.listo == 'si'
+        uses: actions/configure-pages@v5
+      - if: steps.pages.outputs.listo == 'si'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-web
+      - id: despliegue
+        if: steps.pages.outputs.listo == 'si'
+        uses: actions/deploy-pages@v4

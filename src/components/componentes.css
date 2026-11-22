@@ -1,7 +1,7 @@
 /* Componentes visuales reutilizables (réplica del reporte Power BI) */
 
 /* Disposición: lateral de segmentadores + principal */
-.pbi-pagina { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; align-items: start; }
+.pbi-pagina { display: grid; grid-template-columns: var(--pbi-lateral, 260px) minmax(0, 1fr); gap: 16px; align-items: start; }
 .pbi-lateral { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .pbi-principal { min-width: 0; display: flex; flex-direction: column; gap: 16px; }
 
@@ -87,11 +87,11 @@
 .paneles-leyenda { display: flex; gap: 14px; padding: 8px 4px; font-size: 14px; color: #555; }
 .paneles-leyenda .punto { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 4px; }
 .paneles-rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.paneles-rejilla.con-scroll { max-height: 640px; overflow-y: auto; }
+.paneles-rejilla.con-scroll { max-height: 660px; overflow-y: auto; }
 .panel-sem { border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 6px 8px 0; min-width: 0; }
 .panel-sem:nth-child(2n) { border-right: 0; }
 .panel-sem-titulo { margin: 6px 0 0 10px; font-size: 14px; font-weight: 400; color: #333; }
-.panel-sem-lienzo { width: 100%; height: 380px; }
+.panel-sem-lienzo { width: 100%; height: 290px; }
 
 /* Tabla */
 .tabla-pbi { overflow: auto; width: 100%; background: #fff; }
@@ -123,13 +123,13 @@
 .tabla-pbi td { padding: 4px 8px; border-bottom: 1px solid #e3e3e3; vertical-align: middle; }
 .tabla-pbi tbody tr:last-child td { border-bottom: 0; }
 .tabla-pbi td.np { white-space: nowrap; }
-.tabla-pbi table { min-width: 640px; }
 .tabla-pbi .der { text-align: right; }
 .tabla-pbi td.vacio { text-align: center; color: var(--texto-suave); padding: 16px; }
 .semaforo { display: inline-block; width: 16px; height: 16px; border-radius: 50%; vertical-align: middle; margin-right: 8px; }
 
 /* Bajo 900 px: segmentadores arriba en fila; gráfico y tabla a todo el ancho */
 @media (max-width: 899px) {
+  .tabla-pbi table { min-width: 640px; }
   .pbi-pagina { grid-template-columns: minmax(0, 1fr); }
   .pbi-lateral { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; }
   .pbi-lateral .seg { flex: 1 1 240px; min-width: 0; }

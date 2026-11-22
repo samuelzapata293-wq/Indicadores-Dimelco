@@ -8,6 +8,10 @@ describe("textoDataActualizada", () => {
     );
   });
 
+  it("mismo día: una sola fecha", () => {
+    expect(textoDataActualizada("2026-11-01", "2026-11-01")).toBe("Data actualizada: 01 de noviembre 2026");
+  });
+
   it("cambia el mes dentro del mismo año", () => {
     expect(textoDataActualizada("2026-10-28", "2026-11-20")).toBe(
       "Data actualizada: 28 de octubre al 20 de noviembre 2026",

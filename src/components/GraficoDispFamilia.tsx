@@ -6,10 +6,10 @@ import "./componentes.css";
 export interface EquipoDisp {
   id: string;
   nombre: string;
-  /** Disponibilidad real, fracción 0..1. */
-  disp: number;
-  /** Meta, fracción 0..1. */
-  meta: number;
+  /** Disponibilidad real, fracción 0..1 (null = en blanco). */
+  disp: number | null;
+  /** Meta, fracción 0..1 (null = en blanco). */
+  meta: number | null;
   /** Color de la columna (COLORES.verdeCumple o COLORES.naranjaNoCumple). */
   color: string;
 }
@@ -28,7 +28,7 @@ export default function GraficoDispFamilia({ titulo, equipos, seleccionado, onCl
   const angosto = ancho / Math.max(equipos.length, 1) < 150;
   const option = useMemo(() => {
     const lineas = equipos.length > 4 || angosto ? 3 : 2;
-    const tope = Math.max(1, ...equipos.map((e) => Math.max(e.disp, e.meta))) * 1.12;
+    const tope = Math.max(1, ...equipos.map((e) => Math.max(e.disp ?? 0, e.meta ?? 0))) * 1.12;
     return {
       animation: false,
       grid: { left: 8, right: 8, top: 36, bottom: 8, containLabel: true },
@@ -66,7 +66,7 @@ export default function GraficoDispFamilia({ titulo, equipos, seleccionado, onCl
           label: {
             show: true,
             position: "top",
-            formatter: (p: { value: number }) => pct0(p.value),
+            formatter: (p: { value: number | null }) => pct0(p.value),
             backgroundColor: COLORES.amarilloEtiqueta,
             color: "#444",
             fontSize: 13,
@@ -84,11 +84,11 @@ export default function GraficoDispFamilia({ titulo, equipos, seleccionado, onCl
           lineStyle: { color: COLORES.metaLinea, width: 2 },
           data: equipos.map((e) => ({
             value: e.meta,
-            label: { position: e.meta - e.disp > 0.05 ? "top" : "bottom" },
+            label: { position: (e.meta ?? 0) - (e.disp ?? 0) > 0.05 ? "top" : "bottom" },
           })),
           label: {
             show: true,
-            formatter: (p: { value: number }) => pct0(p.value),
+            formatter: (p: { value: number | null }) => pct0(p.value),
             backgroundColor: COLORES.grisEtiqueta,
             color: "#fff",
             fontSize: 13,

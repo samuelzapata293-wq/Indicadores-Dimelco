@@ -9,9 +9,12 @@ interface Props {
   titulo?: string;
   valor: Periodo;
   onChange: (valor: Periodo) => void;
+  /** Primer y último día seleccionables (rango de los datos), "aaaa-mm-dd". */
+  min?: string;
+  max?: string;
 }
 
-export default function SegmentadorPeriodo({ titulo = "Periodo de tiempo", valor, onChange }: Props) {
+export default function SegmentadorPeriodo({ titulo = "Periodo de tiempo", valor, onChange, min, max }: Props) {
   return (
     <section className="seg">
       <h3 className="seg-cabecera">{titulo}</h3>
@@ -21,7 +24,8 @@ export default function SegmentadorPeriodo({ titulo = "Periodo de tiempo", valor
           className="seg-fecha"
           aria-label="Desde"
           value={valor.desde}
-          max={valor.hasta || undefined}
+          min={min || undefined}
+          max={valor.hasta || max || undefined}
           onChange={(e) => e.target.value && onChange({ ...valor, desde: e.target.value })}
         />
         <input
@@ -29,7 +33,8 @@ export default function SegmentadorPeriodo({ titulo = "Periodo de tiempo", valor
           className="seg-fecha"
           aria-label="Hasta"
           value={valor.hasta}
-          min={valor.desde || undefined}
+          min={valor.desde || min || undefined}
+          max={max || undefined}
           onChange={(e) => e.target.value && onChange({ ...valor, hasta: e.target.value })}
         />
       </div>

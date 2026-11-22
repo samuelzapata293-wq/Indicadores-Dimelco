@@ -6,10 +6,12 @@ import logo from "../assets/logo_dimelco_mineros.png";
 interface Props {
   // Sin título no hay banda superior (así se muestra la Portada).
   titulo?: string;
+  /** Contenido más ancho (páginas del tablero con tablas). */
+  amplio?: boolean;
   children: ReactNode;
 }
 
-export default function Layout({ titulo, children }: Props) {
+export default function Layout({ titulo, amplio, children }: Props) {
   const { session, esAdmin, cerrarSesion } = useAuth();
 
   return (
@@ -26,7 +28,7 @@ export default function Layout({ titulo, children }: Props) {
         </header>
       )}
 
-      <main className="contenido">{children}</main>
+      <main className={amplio ? "contenido contenido-amplio" : "contenido"}>{children}</main>
 
       <footer className="pie">
         <img src={logo} alt="Dimelco Mineros" className="pie-logo" />

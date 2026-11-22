@@ -1,0 +1,103 @@
+// Plantilla de las páginas de familia (Simba, Jumbo, Sostenimiento, ST3.5 y ST1030):
+// gráfico de disponibilidad por equipo con filtro cruzado sobre la tabla de paros.
+
+import { useDeferredValue, useMemo, useState } from "react";
+import ConModelo from "../components/ConModelo";
+import DisposicionPbi from "../components/DisposicionPbi";
+import { useFiltros } from "../components/Filtros";
+import GraficoDispFamilia, { type EquipoDisp } from "../components/GraficoDispFamilia";
+import SegmentadorBotones from "../components/SegmentadorBotones";
+import SegmentadorLista from "../components/SegmentadorLista";
+import SegmentadorPeriodo from "../components/SegmentadorPeriodo";
+import TablaPbi, { type ColumnaPbi } from "../components/TablaPbi";
+import type { Contexto, HorasDisp } from "../medidas/contexto";
+import type { Modelo } from "../medidas/modelo";
+import { graficoFamilia, tablaParos, type FilaParo } from "../medidas/visuales";
+import { OPCIONES_DISP } from "./opciones";
+
+interface Props {
+  /** Título del gráfico ("Tiro Largo"). */
+  titulo: string;
+  /** id_equipo de las columnas del gráfico. */
+  equiposGrafico: readonly number[];
+  /** id_equipo de la tabla de paros (en ST3.5 y ST1030, los 8 scoops). */
+  equiposTabla: readonly number[];
+}
+
+const COLUMNAS: ColumnaPbi<FilaParo>[] = [
+  { id: "sap", titulo: "Sap", valor: (f) => f.sap },
+  { id: "equipo", titulo: "Equipo", valor: (f) => f.equipo },
+  { id: "aviso", titulo: "Aviso", valor: (f) => f.aviso },
+  { id: "descripcion", titulo: "Descripción del Paro", valor: (f) => f.descripcion },
+  { id: "inicio", titulo: "_F/H Inicio", valor: (f) => f.inicio, formato: "fechaHora" },
+  { id: "fin", titulo: "_F/H Fin", valor: (f) => f.fin, formato: "fechaHora" },
+  { id: "hrs", titulo: "Hrs Paro Ventana", valor: (f) => f.hrsParoVentana, formato: "horas" },
+  { id: "responsable", titulo: "Responsable", valor: (f) => f.responsable, sinPartir: true },
+  { id: "tipo", titulo: "Tipo de Paro", valor: (f) => f.tipoParo, sinPartir: true },
+];
+
+function Contenido({ modelo, titulo, equiposGrafico, equiposTabla }: Props & { modelo: Modelo }) {
+  const f = useFiltros();
+  const [equipo, setEquipo] = useState<string | null>(null);
+
+  // El contexto se difiere: al mover un filtro, la interfaz responde primero y el cálculo sigue después.
+  const ctxBase = useDeferredValue(
+    useMemo(
+      () => ({ ini: f.periodo.desde, fin: f.periodo.hasta, disp: f.disp, hDisp: f.hDisp, tConf: f.tConf }),
+      [f.periodo, f.disp, f.hDisp, f.tConf],
+    ),
+  );
+
+  const filasGrafico = useMemo(() => {
+    const ctx: Contexto = { ...ctxBase, equipos: [...equiposGrafico] };
+    return graficoFamilia(modelo, ctx);
+  }, [modelo, ctxBase, equiposGrafico]);
+
+  const equipos = useMemo<EquipoDisp[]>(
+    () =>
+      filasGrafico.map((r) => ({ id: String(r.id), nombre: r.descripcion, disp: r.dispDin, meta: r.metaDisp, color: r.color })),
+    [filasGrafico],
+  );
+
+  const filasTabla = useMemo(() => {
+    const ctx: Contexto = { ...ctxBase, equipos: [...equiposTabla] };
+    return tablaParos(modelo, ctx);
+  }, [modelo, ctxBase, equiposTabla]);
+
+  // Filtro cruzado: clic en una columna del gráfico deja en la tabla solo ese equipo.
+  const filasVisibles = useMemo(
+    () => (equipo ? filasTabla.filter((r) => String(r.sap) === equipo) : filasTabla),
+    [filasTabla, equipo],
+  );
+
+  const lateral = (
+    <>
+      <SegmentadorPeriodo valor={f.periodo} onChange={f.setPeriodo} min={f.rango.min} max={f.rango.max} />
+      <SegmentadorBotones
+        titulo="Var t: Disp"
+        opciones={[{ valor: 18, etiqueta: "18 hrs" }, { valor: 24, etiqueta: "24 hrs" }]}
+        valor={f.hDisp}
+        onChange={(v) => f.setHDisp(v as HorasDisp)}
+      />
+      <SegmentadorLista titulo="DISP. GLOBAL" opciones={OPCIONES_DISP} seleccion={f.disp} onChange={f.setDisp} />
+    </>
+  );
+
+  return (
+    <DisposicionPbi lateral={lateral}>
+      <GraficoDispFamilia titulo={titulo} equipos={equipos} seleccionado={equipo} onClickEquipo={setEquipo} />
+      <TablaPbi
+        datos={filasVisibles}
+        columnas={COLUMNAS}
+        ordenInicial={{ id: "hrs", desc: true }}
+        alturaMax={300}
+        idFila={(r, i) => `${r.sap}-${r.aviso}-${r.inicioSerial}-${i}`}
+        mensajeVacio="Sin paros en el periodo."
+      />
+    </DisposicionPbi>
+  );
+}
+
+export default function PaginaFamilia(props: Props) {
+  return <ConModelo>{(modelo) => <Contenido modelo={modelo} {...props} />}</ConModelo>;
+}

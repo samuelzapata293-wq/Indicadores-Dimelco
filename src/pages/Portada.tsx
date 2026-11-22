@@ -46,6 +46,9 @@ export function textoDataActualizada(fechaMin?: string, fechaMax?: string): stri
   const hasta = leerFecha(fechaMax);
   if (!desde || !hasta) return "Data actualizada: sin datos cargados";
 
+  if (desde.anio === hasta.anio && desde.mes === hasta.mes && desde.dia === hasta.dia) {
+    return `Data actualizada: ${dosDigitos(desde.dia)} de ${MESES[desde.mes - 1]} ${desde.anio}`;
+  }
   if (desde.anio !== hasta.anio) {
     return `Data actualizada: ${dosDigitos(desde.dia)} de ${MESES[desde.mes - 1]} ${desde.anio} al ${dosDigitos(hasta.dia)} de ${MESES[hasta.mes - 1]} ${hasta.anio}`;
   }

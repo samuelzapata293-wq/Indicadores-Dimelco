@@ -128,3 +128,10 @@ Valores iniciales de los segmentadores, tomados del reporte guardado: Periodo de
 - Hora fin "24:00:00" aparece en 911 filas; hora inicio "24:00:00" en 33.
 - Equipo y Aviso vienen como texto en la mayoría de filas y como número en 669.
 - Fila sin equipo en Tabla5: 2 700 (se descartan); sin fecha fin: 3. Paros válidos: 11 622.
+
+## 7. Decisiones tras validar el motor (S4)
+
+- Tabla de paros de ST3.5 y ST1030: en Power BI las dos usan el mismo filtro y muestran los paros de los 8 scoops (100362, 618486, 618270, 100615, 100635, 100655, 100656, 100657), aunque cada gráfico muestra solo sus equipos. La app replica a Power BI; el gráfico usa los equipos de la sección 4 y la tabla los 8 scoops. Se puede cambiar en `src/medidas/contexto.ts` si se decide separarlas.
+- Tabla de paros: Power BI agrupa por Sap, Equipo, Descripción, inicio, fin, Responsable y Tipo de Paro; Aviso es la suma de avisos del grupo y las horas se suman. Texto sin distinguir mayúsculas, se muestra la primera grafía cargada.
+- Disp Mensual: el fin inicial del periodo es el mismo que el general (fecha de inicio más reciente de paros); el 05/11 de la captura fue una elección manual.
+- El selector de fechas se limita al rango 2025-01-01 a 2026-12-31 (calendario del modelo) y al rango de datos cargados; fuera de ese rango el DAX no tiene fechas.

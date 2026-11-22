@@ -1,27 +1,89 @@
 import { Link } from "react-router-dom";
+import fondo from "../assets/portada_mineros.png";
+import logo from "../assets/logo_dimelco_mineros.png";
+import "./portada.css";
 
-const secciones = [
-  { ruta: "/simba", nombre: "Simba" },
-  { ruta: "/jumbo", nombre: "Jumbo" },
-  { ruta: "/sostenimiento", nombre: "Sostenimiento" },
-  { ruta: "/st35", nombre: "ST 35" },
-  { ruta: "/st1030", nombre: "ST 1030" },
-  { ruta: "/resumen", nombre: "Resumen" },
-  { ruta: "/mensual", nombre: "Mensual" },
+const botones = [
+  { ruta: "/simba", texto: "DISP SIMBA" },
+  { ruta: "/jumbo", texto: "DISP JUMBO" },
+  { ruta: "/sostenimiento", texto: "DISP SOSTENIMIENTO" },
+  { ruta: "/st35", texto: "DISP SCOOTRAM ST3.5" },
+  { ruta: "/st1030", texto: "DISP SCOOTRAM ST1030" },
+  { ruta: "/resumen", texto: "RESUMEN DISP." },
+  { ruta: "/mensual", texto: "DISP MENSUAL" },
 ];
 
-export default function Portada() {
+const MESES = [
+  "enero", "febrero", "marzo", "abril", "mayo", "junio",
+  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+];
+
+interface FechaPartes {
+  anio: number;
+  mes: number; // 1 a 12
+  dia: number;
+}
+
+// Lee "aaaa-mm-dd". Devuelve undefined si el texto no es una fecha válida.
+function leerFecha(texto: string | undefined): FechaPartes | undefined {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(texto ?? "");
+  if (!m) return undefined;
+  const anio = Number(m[1]);
+  const mes = Number(m[2]);
+  const dia = Number(m[3]);
+  const valida = new Date(Date.UTC(anio, mes - 1, dia));
+  if (valida.getUTCFullYear() !== anio || valida.getUTCMonth() !== mes - 1 || valida.getUTCDate() !== dia) {
+    return undefined;
+  }
+  return { anio, mes, dia };
+}
+
+const dosDigitos = (n: number) => String(n).padStart(2, "0");
+
+// Texto del rango de datos que muestra la portada, en español.
+export function textoDataActualizada(fechaMin?: string, fechaMax?: string): string {
+  const desde = leerFecha(fechaMin);
+  const hasta = leerFecha(fechaMax);
+  if (!desde || !hasta) return "Data actualizada: sin datos cargados";
+
+  if (desde.anio !== hasta.anio) {
+    return `Data actualizada: ${dosDigitos(desde.dia)} de ${MESES[desde.mes - 1]} ${desde.anio} al ${dosDigitos(hasta.dia)} de ${MESES[hasta.mes - 1]} ${hasta.anio}`;
+  }
+  if (desde.mes !== hasta.mes) {
+    return `Data actualizada: ${dosDigitos(desde.dia)} de ${MESES[desde.mes - 1]} al ${dosDigitos(hasta.dia)} de ${MESES[hasta.mes - 1]} ${hasta.anio}`;
+  }
+  return `Data actualizada: ${dosDigitos(desde.dia)} al ${dosDigitos(hasta.dia)} de ${MESES[hasta.mes - 1]} ${hasta.anio}`;
+}
+
+interface Props {
+  fechaMin?: string; // aaaa-mm-dd
+  fechaMax?: string; // aaaa-mm-dd
+}
+
+export default function Portada({ fechaMin, fechaMax }: Props) {
   return (
-    <section className="portada">
-      <h1 className="portada-titulo">Indicadores de mantenimiento</h1>
-      <p className="nota">Disponibilidad de equipos mineros. Contenido provisional.</p>
-      <nav className="tarjetas-secciones" aria-label="Secciones">
-        {secciones.map((s) => (
-          <Link key={s.ruta} to={s.ruta} className="tarjeta-seccion">
-            {s.nombre}
+    <section className="portada" aria-labelledby="portada-titulo">
+      <img className="portada-fondo" src={fondo} alt="" />
+
+      <h1 id="portada-titulo" className="portada-h1">
+        <span>PRESENTACIÓN DE INDICADORES DE MANTENIMIENTO</span>{" "}
+        <span>MINERÍA MECANIZADA</span>
+      </h1>
+
+      <nav className="portada-botones" aria-label="Secciones">
+        {botones.map((b) => (
+          <Link key={b.ruta} to={b.ruta} className="portada-boton">
+            {b.texto}
           </Link>
         ))}
       </nav>
+
+      <div className="portada-pie">
+        <div className="portada-logo">
+          <img src={logo} alt="Dimelco Mineros" />
+        </div>
+        <p className="portada-fecha">{textoDataActualizada(fechaMin, fechaMax)}</p>
+      </div>
     </section>
   );
 }

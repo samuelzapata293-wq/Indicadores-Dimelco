@@ -3,7 +3,8 @@ import { tablaParos } from "../../src/medidas/visuales";
 import { cargarDatos, cargarFixture, cargarModelo, Comparador, contextoDeFixture, mostrarResultados, resultados } from "./ayudas";
 
 // Tablas de paros de las cinco páginas de familia. Power BI las ordena distinto en cada captura
-// (Hrs desc, IDEQUIPO asc, _F/H Fin desc), así que el conjunto de filas se compara sin orden.
+// (Hrs desc, IDEQUIPO asc, _F/H Fin desc), así que el conjunto de filas se compara sin orden y el
+// orden solo se compara en las páginas que Power BI dejó ordenadas por horas (Simba, Jumbo y ST3.5).
 const grafiasDeLaMuestra = new Set(cargarDatos().paros.map((p) => p.desc_paro));
 
 const TABLAS = [
@@ -81,5 +82,31 @@ describe.each(TABLAS)("tabla de paros $pagina ($fixture)", ({ fixture, pagina })
 
   afterAll(() => {
     if (fixture === TABLAS[TABLAS.length - 1].fixture) mostrarResultados("tablas de paros");
+  });
+});
+
+// Orden de la tabla: horas de mayor a menor (valor exacto) y, en empates, Sap, Descripción del Paro,
+// inicio y fin ascendentes. Con "inicio descendente" justo después de Sap coinciden las 20 filas
+// visibles de las capturas, pero fallan filas posteriores (p. ej. q_022_1, posiciones 27 y 28:
+// 618487 con 3 h); con Descripción antes del inicio coinciden las 179 filas de los tres fixtures.
+const ORDENADAS_POR_HORAS = [
+  { fixture: "q_022_1", pagina: "Disp Simba" },
+  { fixture: "q_017_1", pagina: "Disp Jumbo" },
+  { fixture: "q_010_0", pagina: "Disp Scooptram ST3.5" },
+];
+
+describe.each(ORDENADAS_POR_HORAS)("orden de la tabla de paros $pagina ($fixture)", ({ fixture }) => {
+  const modelo = cargarModelo();
+  const fx = cargarFixture(fixture);
+  const filas = tablaParos(modelo, contextoDeFixture(modelo, fx));
+  const esperado = fx.filas.map((f) => [Number(f["DIM_EQUIPOS.IDEQUIPO"]), f["Sum(HECHOS_DATAMES_NPI_PP.Aviso)"], f["HECHOS_DATAMES_NPI_PP._F/H Inicio"]]);
+  const obtenido = filas.map((f) => [f.sap, f.aviso, f.inicio]);
+
+  it("las primeras 20 filas salen en el mismo orden que Power BI (las visibles en la captura)", () => {
+    expect(obtenido.slice(0, 20)).toEqual(esperado.slice(0, 20));
+  });
+
+  it("todas las filas salen en el mismo orden que Power BI", () => {
+    expect(obtenido).toEqual(esperado);
   });
 });

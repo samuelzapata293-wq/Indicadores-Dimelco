@@ -16,6 +16,9 @@ import {
 } from "./medidas";
 import { equiposValidos, type Modelo, type ParoModelo } from "./modelo";
 
+/** Comparación de texto sin distinguir mayúsculas, como el orden de Power BI. */
+const COLACION = new Intl.Collator("es", { sensitivity: "accent" });
+
 /** Contexto de un solo conjunto de equipos (una fila, una columna o una familia). */
 function conEquipos(ctx: Contexto, equipos: number[]): Contexto {
   return { ...ctx, equipos };
@@ -79,8 +82,8 @@ export interface FilaParo {
  * fin, Responsable y Tipo de Paro (texto sin distinguir mayúsculas): las filas del Excel idénticas en
  * esas columnas (avisos repetidos) salen como una sola fila, con el aviso sumado y las horas de
  * ventana de todas ellas.
- * Solo se muestran las filas con Hrs Paro Ventana > 0, de mayor a menor (desempate: sap, inicio,
- * aviso; Power BI no documenta el desempate y en las capturas no sigue una regla simple).
+ * Solo se muestran las filas con Hrs Paro Ventana > 0, de mayor a menor. Los empates se ordenan
+ * como Power BI: Sap, Descripción del Paro, inicio y fin (todo ascendente).
  * `equipoSeleccionado` filtra la tabla a ese equipo (clic en una columna del gráfico).
  */
 export function tablaParos(modelo: Modelo, ctx: Contexto, equipoSeleccionado?: number | null): FilaParo[] {
@@ -115,9 +118,19 @@ export function tablaParos(modelo: Modelo, ctx: Contexto, equipoSeleccionado?: n
       tipoParo: p.tipoParoPpNpi,
     });
   }
-  // Las horas traen ruido de punto flotante (12.000000000058): se comparan redondeadas para que los empates sean empates.
-  const redondeo = (h: number) => Math.round(h * 1e6);
-  salida.sort((a, b) => redondeo(b.hrsParoVentana) - redondeo(a.hrsParoVentana) || a.sap - b.sap || a.inicioSerial - b.inicioSerial || a.aviso - b.aviso);
+  // Orden de Power BI: primero la medida (Hrs Paro Ventana) de mayor a menor con su valor exacto,
+  // ruido de punto flotante incluido (12.000000000058 va antes que 12, y el motor lo reproduce igual
+  // que el DAX); los empates siguen el orden de las columnas de la tabla: Sap, Equipo, Descripción
+  // (sin distinguir mayúsculas), inicio y fin.
+  salida.sort(
+    (a, b) =>
+      b.hrsParoVentana - a.hrsParoVentana ||
+      a.sap - b.sap ||
+      COLACION.compare(a.descripcion, b.descripcion) ||
+      a.inicioSerial - b.inicioSerial ||
+      a.finSerial - b.finSerial ||
+      a.aviso - b.aviso,
+  );
   return salida;
 }
 

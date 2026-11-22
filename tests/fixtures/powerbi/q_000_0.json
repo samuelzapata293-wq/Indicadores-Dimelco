@@ -1,0 +1,67 @@
+{
+  "origen": "q_000.json",
+  "consulta": 0,
+  "pagina": "Resumen Disp.",
+  "pagina_numero": 7,
+  "asignacion_pagina": "campos (Metricas MTTR/MTBF/Confiabilidad) -> Resumen Disp.",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "Var t: Conf.",
+    "descripcion": "Opciones de Confiabilidad[Confiabilidad]"
+  },
+  "campos": [
+    {
+      "nombre": "Confiabilidad.Confiabilidad",
+      "campo": "Confiabilidad[Confiabilidad]",
+      "alias_visual": "Confiabilidad"
+    }
+  ],
+  "filtros": {
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    },
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "DESATADOR DE ROCAS SCALEMIN",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3",
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "PERFORADORA BOOMER 282 EPIROC No. 03",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "PERFORADORA BOOMER 282 EPIROC No.03",
+        "DESATADOR DE ROCAS SCALEMIN No.2"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"Confiabilidad.Confiabilidad": "12 hrs"},
+    {"Confiabilidad.Confiabilidad": "18 hrs"},
+    {"Confiabilidad.Confiabilidad": "24 hrs"}
+  ]
+}

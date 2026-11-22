@@ -1,0 +1,99 @@
+{
+  "origen": "q_000.json",
+  "consulta": 1,
+  "pagina": "Resumen Disp.",
+  "pagina_numero": 7,
+  "asignacion_pagina": "campos (Metricas MTTR/MTBF/Confiabilidad) -> Resumen Disp.",
+  "visual": {
+    "tipo": "tableEx",
+    "titulo": "",
+    "descripcion": "Tabla por Familia: MTTR/MTBF/Disponibilidad/Confiabilidad/Prob. de Falla"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.Familia",
+      "campo": "DIM_EQUIPOS[Familia]",
+      "alias_visual": "Familia"
+    },
+    {
+      "nombre": "Metricas (2).MTTR_H",
+      "campo": "Metricas (2)[MTTR_H] (M)",
+      "alias_visual": "MTTR (Horas)"
+    },
+    {
+      "nombre": "Metricas (2).MTBF_H",
+      "campo": "Metricas (2)[MTBF_H] (M)",
+      "alias_visual": "MTBF (Horas)"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disponibilidad %"
+    },
+    {
+      "nombre": "Metricas.Confiabilidad_24h",
+      "campo": "Metricas[Confiabilidad_24h] (M)",
+      "alias_visual": "Confiabilidad %"
+    },
+    {
+      "nombre": "Metricas.ProbabilidadDeFalla",
+      "campo": "Metricas[ProbabilidadDeFalla] (M)",
+      "alias_visual": "Probabilidad de Falla"
+    }
+  ],
+  "filtros": {
+    "Confiabilidad[Confiabilidad]": {
+      "in": [
+        "18 hrs"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    },
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "DESATADOR DE ROCAS SCALEMIN",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3",
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "PERFORADORA BOOMER 282 EPIROC No. 03",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "PERFORADORA BOOMER 282 EPIROC No.03",
+        "DESATADOR DE ROCAS SCALEMIN No.2"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.Familia": "TIRO LARGO", "Metricas (2).MTTR_H": 6.174806201543529, "Metricas (2).MTBF_H": 27.313565891479726, "Metricas (2).Disp Din %": 0.7697800925927974, "Metricas.Confiabilidad_24h": 0.5173616238622005, "Metricas.ProbabilidadDeFalla": 0.4826383761377995},
+    {"DIM_EQUIPOS.Familia": "PERFORACION MECANIZADA", "Metricas (2).MTTR_H": 4.569871794881272, "Metricas (2).MTBF_H": 23.12243589742642, "Metricas (2).Disp Din %": 0.7827083333328725, "Metricas.Confiabilidad_24h": 0.4591103450612047, "Metricas.ProbabilidadDeFalla": 0.5408896549387954},
+    {"DIM_EQUIPOS.Familia": "EQUIPOS DE SOSTENIMIENTO", "Metricas (2).MTTR_H": 16.843452380961804, "Metricas (2).MTBF_H": 17.44226190475248, "Metricas (2).Disp Din %": 0.47421006944405236, "Metricas.Confiabilidad_24h": 0.3563021229144353, "Metricas.ProbabilidadDeFalla": 0.6436978770855647},
+    {"DIM_EQUIPOS.Familia": "CARGADORAS BP FLOTA 3.5", "Metricas (2).MTTR_H": 77.28571428573092, "Metricas (2).MTBF_H": 59.85714285712623, "Metricas (2).Disp Din %": 0.41458333333321207, "Metricas.Confiabilidad_24h": 0.7402879917499763, "Metricas.ProbabilidadDeFalla": 0.2597120082500237},
+    {"DIM_EQUIPOS.Familia": "CARGADORAS BP", "Metricas (2).MTTR_H": 20.716363636372527, "Metricas (2).MTBF_H": 31.647272727263836, "Metricas (2).Disp Din %": 0.5753819444442949, "Metricas.Confiabilidad_24h": 0.5662218084275322, "Metricas.ProbabilidadDeFalla": 0.4337781915724678}
+  ]
+}

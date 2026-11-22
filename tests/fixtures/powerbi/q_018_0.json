@@ -1,0 +1,74 @@
+{
+  "origen": "q_018.json",
+  "consulta": 0,
+  "pagina": "Disp Jumbo",
+  "pagina_numero": 3,
+  "asignacion_pagina": "filtro de pagina DIM_EQUIPOS[Descripcion] IN (...)",
+  "visual": {
+    "tipo": "lineClusteredColumnComboChart",
+    "titulo": "Perforación Mecánizada",
+    "descripcion": "Disp Din % (columnas) y Meta_Disp (linea) por equipo"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "Descripcion"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disponibilidad %"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta_Disp"
+    },
+    {
+      "nombre": "Metas2026.Color_Disponibilidad",
+      "campo": "Metas2026[Color_Disponibilidad] (M)",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Metricas.MetaDispSimba",
+      "campo": "Metricas[MetaDispSimba] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "not_in": [
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02"
+      ],
+      "in": [
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "PERFORADORA BOOMER 282 EPIROC No. 03"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    }
+  },
+  "campos_sin_valores": [
+    "Metricas.MetaDispSimba"
+  ],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.Descripcion": "PERFORADORA BOOMER 282 EPIROC No. 01", "Metricas (2).Disp Din %": 0.6385069444448164, "Metas2026.Meta_Disp": 0.8083, "Metas2026.Color_Disponibilidad": "#F89221"},
+    {"DIM_EQUIPOS.Descripcion": "PERFORADORA BOOMER 282 EPIROC No. 02", "Metricas (2).Disp Din %": 0.8162152777760638, "Metas2026.Meta_Disp": 0.7885, "Metas2026.Color_Disponibilidad": "#00493C"},
+    {"DIM_EQUIPOS.Descripcion": "PERFORADORA BOOMER 282 EPIROC No. 03", "Metricas (2).Disp Din %": 0.8934027777777374, "Metas2026.Meta_Disp": 0.7918, "Metas2026.Color_Disponibilidad": "#00493C"}
+  ]
+}

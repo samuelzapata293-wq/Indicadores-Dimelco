@@ -1,0 +1,44 @@
+{
+  "origen": "q_011.json",
+  "consulta": 0,
+  "pagina": "Disp Sostenimiento",
+  "pagina_numero": 4,
+  "asignacion_pagina": "mismo filtro de pagina DIM_EQUIPOS[Descripcion] que un visual de la pagina",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "Periodo de tiempo",
+    "descripcion": "Min/Max de DIM_TIEMPO[Fecha] (rango del slicer Between)"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_TIEMPO.Fecha",
+      "campo": "DIM_TIEMPO[Fecha]",
+      "alias_visual": "Fecha"
+    },
+    {
+      "nombre": "Min(DIM_TIEMPO.Fecha)",
+      "campo": "Min(DIM_TIEMPO[Fecha])",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Max(DIM_TIEMPO.Fecha)",
+      "campo": "Max(DIM_TIEMPO[Fecha])",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "DESATADOR DE ROCAS SCALEMIN",
+        "DESATADOR DE ROCAS SCALEMIN No.2",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"Min(DIM_TIEMPO.Fecha)": "2025-01-01T00:00:00", "Max(DIM_TIEMPO.Fecha)": "2026-12-31T00:00:00"}
+  ]
+}

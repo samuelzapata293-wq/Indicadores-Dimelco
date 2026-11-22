@@ -1,0 +1,127 @@
+{
+  "origen": "q_001.json",
+  "consulta": 0,
+  "pagina": "Resumen Disp.",
+  "pagina_numero": 7,
+  "asignacion_pagina": "campos (Metricas MTTR/MTBF/Confiabilidad) -> Resumen Disp.",
+  "visual": {
+    "tipo": "tableEx",
+    "titulo": "",
+    "descripcion": "Tabla EQUIPO/DENOMINACION/MTTR/MTBF/Meta/Disp/Confiabilidad/Prob. de Falla"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.IDEQUIPO",
+      "campo": "DIM_EQUIPOS[IDEQUIPO]",
+      "alias_visual": "EQUIPO"
+    },
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "DENOMINACION"
+    },
+    {
+      "nombre": "Metricas (2).MTTR_H",
+      "campo": "Metricas (2)[MTTR_H] (M)",
+      "alias_visual": "MTTR_Horas"
+    },
+    {
+      "nombre": "Metricas (2).MTBF_H",
+      "campo": "Metricas (2)[MTBF_H] (M)",
+      "alias_visual": "MTBF_Horas"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta_Disp"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disponibilidad %"
+    },
+    {
+      "nombre": "Metricas.Confiabilidad_24h",
+      "campo": "Metricas[Confiabilidad_24h] (M)",
+      "alias_visual": "Confiabilidad %"
+    },
+    {
+      "nombre": "Metricas.ProbabilidadDeFalla",
+      "campo": "Metricas[ProbabilidadDeFalla] (M)",
+      "alias_visual": "Prob. de Falla"
+    },
+    {
+      "nombre": "Metricas (2).Brecha_Disp dn",
+      "campo": "Metricas (2)[Brecha_Disp dn] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "Confiabilidad[Confiabilidad]": {
+      "in": [
+        "18 hrs"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    },
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "DESATADOR DE ROCAS SCALEMIN",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3",
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "PERFORADORA BOOMER 282 EPIROC No. 03",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "PERFORADORA BOOMER 282 EPIROC No.03",
+        "DESATADOR DE ROCAS SCALEMIN No.2"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.IDEQUIPO": "100362", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)", "Metricas (2).MTTR_H": 10.16666666668607, "Metricas (2).MTBF_H": 69.83333333331393, "Metas2026.Meta_Disp": 0.7308, "Metricas (2).Disp Din %": 0.8291666666664241, "Metricas.Confiabilidad_24h": 0.772783333076885, "Metricas.ProbabilidadDeFalla": 0.22721666692311504, "Metricas (2).Brecha_Disp dn": 0.09836666666642413},
+    {"DIM_EQUIPOS.IDEQUIPO": "618486", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP 3.50 N°6", "Metricas (2).MTTR_H": 480, "Metricas (2).MTBF_H": 0, "Metas2026.Meta_Disp": 0.706, "Metricas (2).Disp Din %": 0, "Metricas.Confiabilidad_24h": 0, "Metricas.ProbabilidadDeFalla": 1, "Metricas (2).Brecha_Disp dn": -0.706},
+    {"DIM_EQUIPOS.IDEQUIPO": "618270", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).MTTR_H": 480, "Metricas (2).MTBF_H": 0, "Metas2026.Meta_Disp": 0.7489, "Metricas (2).Disp Din %": 0, "Metricas.Confiabilidad_24h": 0, "Metricas.ProbabilidadDeFalla": 1, "Metricas (2).Brecha_Disp dn": -0.7489},
+    {"DIM_EQUIPOS.IDEQUIPO": "100615", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).MTTR_H": 13.736111111094942, "Metricas (2).MTBF_H": 26.263888888905058, "Metas2026.Meta_Disp": 0.8001000000000001, "Metricas (2).Disp Din %": 0.6336805555558385, "Metricas.Confiabilidad_24h": 0.5039129894550629, "Metricas.ProbabilidadDeFalla": 0.4960870105449371, "Metricas (2).Brecha_Disp dn": -0.16641944444416168},
+    {"DIM_EQUIPOS.IDEQUIPO": "100635", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).MTTR_H": 29.130952380963468, "Metricas (2).MTBF_H": 39.440476190465105, "Metas2026.Meta_Disp": 0.8166, "Metricas (2).Disp Din %": 0.5418402777777374, "Metricas.Confiabilidad_24h": 0.633570536026507, "Metricas.ProbabilidadDeFalla": 0.36642946397349296, "Metricas (2).Brecha_Disp dn": -0.27475972222226264},
+    {"DIM_EQUIPOS.IDEQUIPO": "100655", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).MTTR_H": 9.82222222222481, "Metricas (2).MTBF_H": 70.17777777777519, "Metas2026.Meta_Disp": 0.7308, "Metricas (2).Disp Din %": 0.8095138888889778, "Metricas.Confiabilidad_24h": 0.7737616099724356, "Metricas.ProbabilidadDeFalla": 0.2262383900275644, "Metricas (2).Brecha_Disp dn": 0.07871388888897779},
+    {"DIM_EQUIPOS.IDEQUIPO": "100656", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).MTTR_H": 7.218518518551718, "Metricas (2).MTBF_H": 46.11481481478162, "Metas2026.Meta_Disp": 0.7308, "Metricas (2).Disp Din %": 0.8146527777771553, "Metricas.Confiabilidad_24h": 0.6768334189901554, "Metricas.ProbabilidadDeFalla": 0.32316658100984463, "Metricas (2).Brecha_Disp dn": 0.08385277777715527},
+    {"DIM_EQUIPOS.IDEQUIPO": "100657", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).MTTR_H": 8.337500000014552, "Metricas (2).MTBF_H": 15.662499999985448, "Metas2026.Meta_Disp": 0.7849, "Metricas (2).Disp Din %": 0.6526041666660604, "Metricas.Confiabilidad_24h": 0.3168769281911099, "Metricas.ProbabilidadDeFalla": 0.6831230718088901, "Metricas (2).Brecha_Disp dn": -0.13229583333393968},
+    {"DIM_EQUIPOS.IDEQUIPO": "618321", "DIM_EQUIPOS.Descripcion": "DESATADOR DE ROCAS SCALEMIN", "Metricas (2).MTTR_H": 480, "Metricas (2).MTBF_H": 0, "Metas2026.Meta_Disp": 0.2918, "Metricas (2).Disp Din %": 0, "Metricas.Confiabilidad_24h": 0, "Metricas.ProbabilidadDeFalla": 1, "Metricas (2).Brecha_Disp dn": -0.2918},
+    {"DIM_EQUIPOS.IDEQUIPO": "100647", "DIM_EQUIPOS.Descripcion": "DESATADOR DE ROCAS SCALEMIN No.2", "Metricas (2).MTTR_H": 49.90666666670004, "Metricas (2).MTBF_H": 46.09333333329996, "Metas2026.Meta_Disp": 0.8022, "Metricas (2).Disp Din %": 0.4801388888885413, "Metricas.Confiabilidad_24h": 0.6767103069742736, "Metricas.ProbabilidadDeFalla": 0.3232896930257264, "Metricas (2).Brecha_Disp dn": -0.32206111111145874},
+    {"DIM_EQUIPOS.IDEQUIPO": "618320", "DIM_EQUIPOS.Descripcion": "EMPERNADOR BOLTEC EPIROC N°1", "Metricas (2).MTTR_H": 3.8636363636495927, "Metricas (2).MTBF_H": 17.954545454532227, "Metas2026.Meta_Disp": 0.8083, "Metricas (2).Disp Din %": 0.7666666666656965, "Metricas.Confiabilidad_24h": 0.3669492787313871, "Metricas.ProbabilidadDeFalla": 0.633050721268613, "Metricas (2).Brecha_Disp dn": -0.041633333334303524},
+    {"DIM_EQUIPOS.IDEQUIPO": "621321", "DIM_EQUIPOS.Descripcion": "EMPERNADOR BOLTEC S10 S EPIROC N°2", "Metricas (2).MTTR_H": 4.596428571431066, "Metricas (2).MTBF_H": 12.546428571426077, "Metas2026.Meta_Disp": 0.8067, "Metricas (2).Disp Din %": 0.6500347222219716, "Metricas.Confiabilidad_24h": 0.23819366417439747, "Metricas.ProbabilidadDeFalla": 0.7618063358256025, "Metricas (2).Brecha_Disp dn": -0.1566652777780284},
+    {"DIM_EQUIPOS.IDEQUIPO": "618487", "DIM_EQUIPOS.Descripcion": "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1", "Metricas (2).MTTR_H": 7.721296296290045, "Metricas (2).MTBF_H": 18.945370370376622, "Metas2026.Meta_Disp": 0.8067, "Metricas (2).Disp Din %": 0.6604513888891234, "Metricas.Confiabilidad_24h": 0.38670227757793535, "Metricas.ProbabilidadDeFalla": 0.6132977224220646, "Metricas (2).Brecha_Disp dn": -0.14624861111087661},
+    {"DIM_EQUIPOS.IDEQUIPO": "100618", "DIM_EQUIPOS.Descripcion": "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2", "Metricas (2).MTTR_H": 4.3911111111054195, "Metricas (2).MTBF_H": 27.60888888889458, "Metas2026.Meta_Disp": 0.8166, "Metricas (2).Disp Din %": 0.8127777777779557, "Metricas.Confiabilidad_24h": 0.5210215159046556, "Metricas.ProbabilidadDeFalla": 0.4789784840953444, "Metricas (2).Brecha_Disp dn": -0.0038222222220443136},
+    {"DIM_EQUIPOS.IDEQUIPO": "100660", "DIM_EQUIPOS.Descripcion": "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3", "Metricas (2).MTTR_H": 6.066666666656966, "Metricas (2).MTBF_H": 41.933333333343036, "Metas2026.Meta_Disp": 0.8013, "Metricas (2).Disp Din %": 0.8361111111113132, "Metricas.Confiabilidad_24h": 0.6509953483480092, "Metricas.ProbabilidadDeFalla": 0.3490046516519908, "Metricas (2).Brecha_Disp dn": 0.03481111111131319},
+    {"DIM_EQUIPOS.IDEQUIPO": "618269", "DIM_EQUIPOS.Descripcion": "PERFORADORA BOOMER 282 EPIROC No. 01", "Metricas (2).MTTR_H": 5.572435897432465, "Metricas (2).MTBF_H": 12.889102564105997, "Metas2026.Meta_Disp": 0.8083, "Metricas (2).Disp Din %": 0.6385069444448164, "Metricas.Confiabilidad_24h": 0.2474544950803307, "Metricas.ProbabilidadDeFalla": 0.7525455049196693, "Metricas (2).Brecha_Disp dn": -0.16979305555518365},
+    {"DIM_EQUIPOS.IDEQUIPO": "100636", "DIM_EQUIPOS.Descripcion": "PERFORADORA BOOMER 282 EPIROC No. 02", "Metricas (2).MTTR_H": 3.79901960787966, "Metricas (2).MTBF_H": 24.4362745097674, "Metas2026.Meta_Disp": 0.7885, "Metricas (2).Disp Din %": 0.8162152777760638, "Metricas.Confiabilidad_24h": 0.47873415794477225, "Metricas.ProbabilidadDeFalla": 0.5212658420552277, "Metricas (2).Brecha_Disp dn": 0.027715277776063862},
+    {"DIM_EQUIPOS.IDEQUIPO": "620903", "DIM_EQUIPOS.Descripcion": "PERFORADORA BOOMER 282 EPIROC No. 03", "Metricas (2).MTTR_H": 3.129629629625318, "Metricas (2).MTBF_H": 50.203703703708015, "Metas2026.Meta_Disp": 0.7918, "Metricas (2).Disp Din %": 0.8934027777777374, "Metricas.Confiabilidad_24h": 0.6986961774415246, "Metricas.ProbabilidadDeFalla": 0.30130382255847543, "Metricas (2).Brecha_Disp dn": 0.10160277777773741}
+  ]
+}

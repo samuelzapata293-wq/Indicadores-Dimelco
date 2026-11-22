@@ -1,0 +1,43 @@
+{
+  "origen": "q_020.json",
+  "consulta": 0,
+  "pagina": "Disp Simba",
+  "pagina_numero": 2,
+  "asignacion_pagina": "mismo filtro de pagina DIM_EQUIPOS[Descripcion] que un visual de la pagina",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "Periodo de tiempo",
+    "descripcion": "Min/Max de DIM_TIEMPO[Fecha] (rango del slicer Between)"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_TIEMPO.Fecha",
+      "campo": "DIM_TIEMPO[Fecha]",
+      "alias_visual": "Fecha"
+    },
+    {
+      "nombre": "Min(DIM_TIEMPO.Fecha)",
+      "campo": "Min(DIM_TIEMPO[Fecha])",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Max(DIM_TIEMPO.Fecha)",
+      "campo": "Max(DIM_TIEMPO[Fecha])",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"Min(DIM_TIEMPO.Fecha)": "2025-01-01T00:00:00", "Max(DIM_TIEMPO.Fecha)": "2026-12-31T00:00:00"}
+  ]
+}

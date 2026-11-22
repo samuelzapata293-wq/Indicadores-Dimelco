@@ -1,0 +1,82 @@
+{
+  "origen": "q_008.json",
+  "consulta": 0,
+  "pagina": "Disp Scooptram ST3.5",
+  "pagina_numero": 5,
+  "asignacion_pagina": "equipos del grafico (Wagner y SCOOP 3.50 N°6)",
+  "visual": {
+    "tipo": "lineClusteredColumnComboChart",
+    "titulo": "Cargadoras Bajo Perfil",
+    "descripcion": "Disp Din % (columnas) y Meta_Disp (linea) por equipo"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "Descripcion"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disp Din %"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta_Disp"
+    },
+    {
+      "nombre": "Metas2026.Color_Disponibilidad",
+      "campo": "Metas2026[Color_Disponibilidad] (M)",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Metricas.MetaDispSimba",
+      "campo": "Metricas[MetaDispSimba] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6"
+      ],
+      "in#2": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    }
+  },
+  "campos_sin_valores": [
+    "Metricas.MetaDispSimba"
+  ],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)", "Metricas (2).Disp Din %": 0.8291666666664241, "Metas2026.Meta_Disp": 0.7308, "Metas2026.Color_Disponibilidad": "#00493C"},
+    {"DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP 3.50 N°6", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.706, "Metas2026.Color_Disponibilidad": "#F89221"}
+  ]
+}

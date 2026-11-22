@@ -1,0 +1,61 @@
+{
+  "origen": "q_003.json",
+  "consulta": 0,
+  "pagina": "Resumen Disp.",
+  "pagina_numero": 7,
+  "asignacion_pagina": "mismo filtro de pagina DIM_EQUIPOS[Descripcion] que un visual de la pagina",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "Periodo de tiempo",
+    "descripcion": "Min/Max de DIM_TIEMPO[Fecha] (rango del slicer Between)"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_TIEMPO.Fecha",
+      "campo": "DIM_TIEMPO[Fecha]",
+      "alias_visual": "Fecha"
+    },
+    {
+      "nombre": "Min(DIM_TIEMPO.Fecha)",
+      "campo": "Min(DIM_TIEMPO[Fecha])",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Max(DIM_TIEMPO.Fecha)",
+      "campo": "Max(DIM_TIEMPO[Fecha])",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "DESATADOR DE ROCAS SCALEMIN",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3",
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "PERFORADORA BOOMER 282 EPIROC No. 03",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "PERFORADORA BOOMER 282 EPIROC No.03",
+        "DESATADOR DE ROCAS SCALEMIN No.2"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"Min(DIM_TIEMPO.Fecha)": "2025-01-01T00:00:00", "Max(DIM_TIEMPO.Fecha)": "2026-12-31T00:00:00"}
+  ]
+}

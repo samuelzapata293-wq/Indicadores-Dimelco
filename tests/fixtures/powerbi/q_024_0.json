@@ -1,0 +1,213 @@
+{
+  "origen": "q_024.json",
+  "consulta": 0,
+  "pagina": "Disp Mensual",
+  "pagina_numero": 8,
+  "asignacion_pagina": "campos (DIM_TIEMPO[NbSemana] + Series por equipo) -> Disp Mensual",
+  "visual": {
+    "tipo": "lineChart",
+    "titulo": "Evolucion Semanal de disponibilidades %",
+    "descripcion": "Categoria=DIM_TIEMPO[NbSemana], Series=DIM_EQUIPOS[Descripcion]"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_TIEMPO.NbSemana",
+      "campo": "DIM_TIEMPO[NbSemana]",
+      "alias_visual": "NbSemana"
+    },
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "Descripcion"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disponibilidad%"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta Disp"
+    },
+    {
+      "nombre": "Metricas.MetaDispSimba",
+      "campo": "Metricas[MetaDispSimba] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "not_in": [
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02"
+      ],
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02",
+        "DESATADOR DE ROCAS SCALEMIN",
+        "DESATADOR DE ROCAS SCALEMIN No.2",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3",
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "PERFORADORA BOOMER 282 EPIROC No. 03"
+      ]
+    },
+    "LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996[Mes]": {
+      "not_in": [
+        null
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_EQUIPOS[Familia]": {
+      "in": [
+        "CARGADORAS BP"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-07-01T00:00:00",
+      "<": "2026-11-06T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    }
+  },
+  "campos_sin_valores": [
+    "Metricas.MetaDispSimba"
+  ],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_TIEMPO.NbSemana": "Sem 27/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.3088, "DIM_TIEMPO.NbSemana_orden": 27},
+    {"DIM_TIEMPO.NbSemana": "Sem 28/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.3088, "DIM_TIEMPO.NbSemana_orden": 28},
+    {"DIM_TIEMPO.NbSemana": "Sem 29/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.3088, "DIM_TIEMPO.NbSemana_orden": 29},
+    {"DIM_TIEMPO.NbSemana": "Sem 30/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.3088, "DIM_TIEMPO.NbSemana_orden": 30},
+    {"DIM_TIEMPO.NbSemana": "Sem 31/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.3683714285714286, "DIM_TIEMPO.NbSemana_orden": 31},
+    {"DIM_TIEMPO.NbSemana": "Sem 32/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7258000000000001, "DIM_TIEMPO.NbSemana_orden": 32},
+    {"DIM_TIEMPO.NbSemana": "Sem 33/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7258000000000001, "DIM_TIEMPO.NbSemana_orden": 33},
+    {"DIM_TIEMPO.NbSemana": "Sem 34/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7258000000000001, "DIM_TIEMPO.NbSemana_orden": 34},
+    {"DIM_TIEMPO.NbSemana": "Sem 35/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7258000000000001, "DIM_TIEMPO.NbSemana_orden": 35},
+    {"DIM_TIEMPO.NbSemana": "Sem 36/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7125857142857143, "DIM_TIEMPO.NbSemana_orden": 36},
+    {"DIM_TIEMPO.NbSemana": "Sem 37/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7073, "DIM_TIEMPO.NbSemana_orden": 37},
+    {"DIM_TIEMPO.NbSemana": "Sem 38/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7073, "DIM_TIEMPO.NbSemana_orden": 38},
+    {"DIM_TIEMPO.NbSemana": "Sem 39/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7073, "DIM_TIEMPO.NbSemana_orden": 39},
+    {"DIM_TIEMPO.NbSemana": "Sem 40/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7090571428571428, "DIM_TIEMPO.NbSemana_orden": 40},
+    {"DIM_TIEMPO.NbSemana": "Sem 41/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7114, "DIM_TIEMPO.NbSemana_orden": 41},
+    {"DIM_TIEMPO.NbSemana": "Sem 42/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7114, "DIM_TIEMPO.NbSemana_orden": 42},
+    {"DIM_TIEMPO.NbSemana": "Sem 43/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7114, "DIM_TIEMPO.NbSemana_orden": 43},
+    {"DIM_TIEMPO.NbSemana": "Sem 44/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7114, "DIM_TIEMPO.NbSemana_orden": 44},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7489, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 27/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.9237731481480296, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 27},
+    {"DIM_TIEMPO.NbSemana": "Sem 28/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.8947916666677754, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 28},
+    {"DIM_TIEMPO.NbSemana": "Sem 29/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.7832357804228585, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 29},
+    {"DIM_TIEMPO.NbSemana": "Sem 30/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.8938492063482825, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 30},
+    {"DIM_TIEMPO.NbSemana": "Sem 31/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.9523809523806059, "Metas2026.Meta_Disp": 0.7265571428571428, "DIM_TIEMPO.NbSemana_orden": 31},
+    {"DIM_TIEMPO.NbSemana": "Sem 32/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.8809523809520344, "Metas2026.Meta_Disp": 0.7923, "DIM_TIEMPO.NbSemana_orden": 32},
+    {"DIM_TIEMPO.NbSemana": "Sem 33/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.7803571428552719, "Metas2026.Meta_Disp": 0.7923, "DIM_TIEMPO.NbSemana_orden": 33},
+    {"DIM_TIEMPO.NbSemana": "Sem 34/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.9350198412700722, "Metas2026.Meta_Disp": 0.7923, "DIM_TIEMPO.NbSemana_orden": 34},
+    {"DIM_TIEMPO.NbSemana": "Sem 35/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.7635912698408772, "Metas2026.Meta_Disp": 0.7923, "DIM_TIEMPO.NbSemana_orden": 35},
+    {"DIM_TIEMPO.NbSemana": "Sem 36/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.6428571428571429, "Metas2026.Meta_Disp": 0.7137285714285715, "DIM_TIEMPO.NbSemana_orden": 36},
+    {"DIM_TIEMPO.NbSemana": "Sem 37/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.7341269841282545, "Metas2026.Meta_Disp": 0.6823, "DIM_TIEMPO.NbSemana_orden": 37},
+    {"DIM_TIEMPO.NbSemana": "Sem 38/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.08928571428571429, "Metas2026.Meta_Disp": 0.6823, "DIM_TIEMPO.NbSemana_orden": 38},
+    {"DIM_TIEMPO.NbSemana": "Sem 39/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.6726190476183547, "Metas2026.Meta_Disp": 0.6823, "DIM_TIEMPO.NbSemana_orden": 39},
+    {"DIM_TIEMPO.NbSemana": "Sem 40/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.9097222222221067, "Metas2026.Meta_Disp": 0.7429857142857142, "DIM_TIEMPO.NbSemana_orden": 40},
+    {"DIM_TIEMPO.NbSemana": "Sem 41/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.7916666666673596, "Metas2026.Meta_Disp": 0.8239, "DIM_TIEMPO.NbSemana_orden": 41},
+    {"DIM_TIEMPO.NbSemana": "Sem 42/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.8624999999987527, "Metas2026.Meta_Disp": 0.8239, "DIM_TIEMPO.NbSemana_orden": 42},
+    {"DIM_TIEMPO.NbSemana": "Sem 43/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.7961309523806059, "Metas2026.Meta_Disp": 0.8239, "DIM_TIEMPO.NbSemana_orden": 43},
+    {"DIM_TIEMPO.NbSemana": "Sem 44/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.9664682539680923, "Metas2026.Meta_Disp": 0.8239, "DIM_TIEMPO.NbSemana_orden": 44},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.6555555555547471, "Metas2026.Meta_Disp": 0.8001000000000001, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 27/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.4277, "DIM_TIEMPO.NbSemana_orden": 27},
+    {"DIM_TIEMPO.NbSemana": "Sem 28/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.4277, "DIM_TIEMPO.NbSemana_orden": 28},
+    {"DIM_TIEMPO.NbSemana": "Sem 29/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.4277, "DIM_TIEMPO.NbSemana_orden": 29},
+    {"DIM_TIEMPO.NbSemana": "Sem 30/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.4277, "DIM_TIEMPO.NbSemana_orden": 30},
+    {"DIM_TIEMPO.NbSemana": "Sem 31/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.48325714285714294, "DIM_TIEMPO.NbSemana_orden": 31},
+    {"DIM_TIEMPO.NbSemana": "Sem 32/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.8166, "DIM_TIEMPO.NbSemana_orden": 32},
+    {"DIM_TIEMPO.NbSemana": "Sem 33/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.8166, "DIM_TIEMPO.NbSemana_orden": 33},
+    {"DIM_TIEMPO.NbSemana": "Sem 34/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.8166, "DIM_TIEMPO.NbSemana_orden": 34},
+    {"DIM_TIEMPO.NbSemana": "Sem 35/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.8166, "DIM_TIEMPO.NbSemana_orden": 35},
+    {"DIM_TIEMPO.NbSemana": "Sem 36/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.4966484788352058, "Metas2026.Meta_Disp": 0.8098142857142856, "DIM_TIEMPO.NbSemana_orden": 36},
+    {"DIM_TIEMPO.NbSemana": "Sem 37/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.7971230158717455, "Metas2026.Meta_Disp": 0.8071, "DIM_TIEMPO.NbSemana_orden": 37},
+    {"DIM_TIEMPO.NbSemana": "Sem 38/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.9047619047622513, "Metas2026.Meta_Disp": 0.8071, "DIM_TIEMPO.NbSemana_orden": 38},
+    {"DIM_TIEMPO.NbSemana": "Sem 39/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.8020833333326404, "Metas2026.Meta_Disp": 0.8071, "DIM_TIEMPO.NbSemana_orden": 39},
+    {"DIM_TIEMPO.NbSemana": "Sem 40/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.6022817460335708, "Metas2026.Meta_Disp": 0.8169142857142857, "DIM_TIEMPO.NbSemana_orden": 40},
+    {"DIM_TIEMPO.NbSemana": "Sem 41/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.7242063492064647, "Metas2026.Meta_Disp": 0.83, "DIM_TIEMPO.NbSemana_orden": 41},
+    {"DIM_TIEMPO.NbSemana": "Sem 42/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 1, "Metas2026.Meta_Disp": 0.83, "DIM_TIEMPO.NbSemana_orden": 42},
+    {"DIM_TIEMPO.NbSemana": "Sem 43/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.9816468253962479, "Metas2026.Meta_Disp": 0.83, "DIM_TIEMPO.NbSemana_orden": 43},
+    {"DIM_TIEMPO.NbSemana": "Sem 44/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.8531746031751807, "Metas2026.Meta_Disp": 0.83, "DIM_TIEMPO.NbSemana_orden": 44},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.7986111111109494, "Metas2026.Meta_Disp": 0.8166, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 27/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.9809027777773736, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 27},
+    {"DIM_TIEMPO.NbSemana": "Sem 28/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.9880952380948916, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 28},
+    {"DIM_TIEMPO.NbSemana": "Sem 29/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.9166666666663202, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 29},
+    {"DIM_TIEMPO.NbSemana": "Sem 30/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.9523809523806059, "Metas2026.Meta_Disp": 0.7156, "DIM_TIEMPO.NbSemana_orden": 30},
+    {"DIM_TIEMPO.NbSemana": "Sem 31/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.6598280423277174, "Metas2026.Meta_Disp": 0.7286142857142857, "DIM_TIEMPO.NbSemana_orden": 31},
+    {"DIM_TIEMPO.NbSemana": "Sem 32/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.8831415343925723, "Metas2026.Meta_Disp": 0.8067, "DIM_TIEMPO.NbSemana_orden": 32},
+    {"DIM_TIEMPO.NbSemana": "Sem 33/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.8062698412686586, "Metas2026.Meta_Disp": 0.8067, "DIM_TIEMPO.NbSemana_orden": 33},
+    {"DIM_TIEMPO.NbSemana": "Sem 34/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.41684358465551796, "Metas2026.Meta_Disp": 0.8067, "DIM_TIEMPO.NbSemana_orden": 34},
+    {"DIM_TIEMPO.NbSemana": "Sem 35/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.601124338624816, "Metas2026.Meta_Disp": 0.8067, "DIM_TIEMPO.NbSemana_orden": 35},
+    {"DIM_TIEMPO.NbSemana": "Sem 36/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.8095238095224236, "Metas2026.Meta_Disp": 0.8189857142857141, "DIM_TIEMPO.NbSemana_orden": 36},
+    {"DIM_TIEMPO.NbSemana": "Sem 37/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.8839285714296109, "Metas2026.Meta_Disp": 0.8239, "DIM_TIEMPO.NbSemana_orden": 37},
+    {"DIM_TIEMPO.NbSemana": "Sem 38/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.632936507935353, "Metas2026.Meta_Disp": 0.8239, "DIM_TIEMPO.NbSemana_orden": 38},
+    {"DIM_TIEMPO.NbSemana": "Sem 39/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.8988095238091773, "Metas2026.Meta_Disp": 0.8239, "DIM_TIEMPO.NbSemana_orden": 39},
+    {"DIM_TIEMPO.NbSemana": "Sem 40/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.9107142857132463, "Metas2026.Meta_Disp": 0.8140857142857143, "DIM_TIEMPO.NbSemana_orden": 40},
+    {"DIM_TIEMPO.NbSemana": "Sem 41/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.8392857142857143, "Metas2026.Meta_Disp": 0.801, "DIM_TIEMPO.NbSemana_orden": 41},
+    {"DIM_TIEMPO.NbSemana": "Sem 42/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.93769841269802, "Metas2026.Meta_Disp": 0.801, "DIM_TIEMPO.NbSemana_orden": 42},
+    {"DIM_TIEMPO.NbSemana": "Sem 43/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.7405753968258588, "Metas2026.Meta_Disp": 0.801, "DIM_TIEMPO.NbSemana_orden": 43},
+    {"DIM_TIEMPO.NbSemana": "Sem 44/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.9880952380948916, "Metas2026.Meta_Disp": 0.801, "DIM_TIEMPO.NbSemana_orden": 44},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.6186111111106584, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 27/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.9166666666660603, "Metas2026.Meta_Disp": 0.7383, "DIM_TIEMPO.NbSemana_orden": 27},
+    {"DIM_TIEMPO.NbSemana": "Sem 28/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.7857142857153251, "Metas2026.Meta_Disp": 0.7383, "DIM_TIEMPO.NbSemana_orden": 28},
+    {"DIM_TIEMPO.NbSemana": "Sem 29/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.883928571427532, "Metas2026.Meta_Disp": 0.7383, "DIM_TIEMPO.NbSemana_orden": 29},
+    {"DIM_TIEMPO.NbSemana": "Sem 30/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.7936491402100988, "Metas2026.Meta_Disp": 0.7383, "DIM_TIEMPO.NbSemana_orden": 30},
+    {"DIM_TIEMPO.NbSemana": "Sem 31/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.9225496031743076, "Metas2026.Meta_Disp": 0.7495571428571429, "DIM_TIEMPO.NbSemana_orden": 31},
+    {"DIM_TIEMPO.NbSemana": "Sem 32/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.727508267196494, "Metas2026.Meta_Disp": 0.8171, "DIM_TIEMPO.NbSemana_orden": 32},
+    {"DIM_TIEMPO.NbSemana": "Sem 33/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.6249685846570563, "Metas2026.Meta_Disp": 0.8171, "DIM_TIEMPO.NbSemana_orden": 33},
+    {"DIM_TIEMPO.NbSemana": "Sem 34/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.8334374999997506, "Metas2026.Meta_Disp": 0.8171, "DIM_TIEMPO.NbSemana_orden": 34},
+    {"DIM_TIEMPO.NbSemana": "Sem 35/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.9345370370366644, "Metas2026.Meta_Disp": 0.8171, "DIM_TIEMPO.NbSemana_orden": 35},
+    {"DIM_TIEMPO.NbSemana": "Sem 36/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.7410714285703891, "Metas2026.Meta_Disp": 0.7892428571428571, "DIM_TIEMPO.NbSemana_orden": 36},
+    {"DIM_TIEMPO.NbSemana": "Sem 37/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.898809523808138, "Metas2026.Meta_Disp": 0.7781, "DIM_TIEMPO.NbSemana_orden": 37},
+    {"DIM_TIEMPO.NbSemana": "Sem 38/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.9469246031741412, "Metas2026.Meta_Disp": 0.7781, "DIM_TIEMPO.NbSemana_orden": 38},
+    {"DIM_TIEMPO.NbSemana": "Sem 39/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.9523809523816453, "Metas2026.Meta_Disp": 0.7781, "DIM_TIEMPO.NbSemana_orden": 39},
+    {"DIM_TIEMPO.NbSemana": "Sem 40/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.9642857142857143, "Metas2026.Meta_Disp": 0.7888142857142857, "DIM_TIEMPO.NbSemana_orden": 40},
+    {"DIM_TIEMPO.NbSemana": "Sem 41/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.8601207010568552, "Metas2026.Meta_Disp": 0.8031, "DIM_TIEMPO.NbSemana_orden": 41},
+    {"DIM_TIEMPO.NbSemana": "Sem 42/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.9523809523806059, "Metas2026.Meta_Disp": 0.8031, "DIM_TIEMPO.NbSemana_orden": 42},
+    {"DIM_TIEMPO.NbSemana": "Sem 43/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 1, "Metas2026.Meta_Disp": 0.8031, "DIM_TIEMPO.NbSemana_orden": 43},
+    {"DIM_TIEMPO.NbSemana": "Sem 44/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.8273809523806059, "Metas2026.Meta_Disp": 0.8031, "DIM_TIEMPO.NbSemana_orden": 44},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.8916666666656965, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 27/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.755, "DIM_TIEMPO.NbSemana_orden": 27},
+    {"DIM_TIEMPO.NbSemana": "Sem 28/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.5684226190465519, "Metas2026.Meta_Disp": 0.755, "DIM_TIEMPO.NbSemana_orden": 28},
+    {"DIM_TIEMPO.NbSemana": "Sem 29/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.7277463624351574, "Metas2026.Meta_Disp": 0.755, "DIM_TIEMPO.NbSemana_orden": 29},
+    {"DIM_TIEMPO.NbSemana": "Sem 30/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.7767857142857143, "Metas2026.Meta_Disp": 0.755, "DIM_TIEMPO.NbSemana_orden": 30},
+    {"DIM_TIEMPO.NbSemana": "Sem 31/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.9325396825391051, "Metas2026.Meta_Disp": 0.7635142857142857, "DIM_TIEMPO.NbSemana_orden": 31},
+    {"DIM_TIEMPO.NbSemana": "Sem 32/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.8432539682533908, "Metas2026.Meta_Disp": 0.8145999999999999, "DIM_TIEMPO.NbSemana_orden": 32},
+    {"DIM_TIEMPO.NbSemana": "Sem 33/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.9543650793639245, "Metas2026.Meta_Disp": 0.8145999999999999, "DIM_TIEMPO.NbSemana_orden": 33},
+    {"DIM_TIEMPO.NbSemana": "Sem 34/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.6478174603190772, "Metas2026.Meta_Disp": 0.8145999999999999, "DIM_TIEMPO.NbSemana_orden": 34},
+    {"DIM_TIEMPO.NbSemana": "Sem 35/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.6967261904750818, "Metas2026.Meta_Disp": 0.8145999999999999, "DIM_TIEMPO.NbSemana_orden": 35},
+    {"DIM_TIEMPO.NbSemana": "Sem 36/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.7837301587309672, "Metas2026.Meta_Disp": 0.8122428571428572, "DIM_TIEMPO.NbSemana_orden": 36},
+    {"DIM_TIEMPO.NbSemana": "Sem 37/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.9285714285714286, "Metas2026.Meta_Disp": 0.8113, "DIM_TIEMPO.NbSemana_orden": 37},
+    {"DIM_TIEMPO.NbSemana": "Sem 38/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.9632936507935353, "Metas2026.Meta_Disp": 0.8113, "DIM_TIEMPO.NbSemana_orden": 38},
+    {"DIM_TIEMPO.NbSemana": "Sem 39/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.845734126984358, "Metas2026.Meta_Disp": 0.8113, "DIM_TIEMPO.NbSemana_orden": 39},
+    {"DIM_TIEMPO.NbSemana": "Sem 40/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.934523809523463, "Metas2026.Meta_Disp": 0.8050428571428572, "DIM_TIEMPO.NbSemana_orden": 40},
+    {"DIM_TIEMPO.NbSemana": "Sem 41/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.8928571428571429, "Metas2026.Meta_Disp": 0.7967000000000001, "DIM_TIEMPO.NbSemana_orden": 41},
+    {"DIM_TIEMPO.NbSemana": "Sem 42/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.8402777777778933, "Metas2026.Meta_Disp": 0.7967000000000001, "DIM_TIEMPO.NbSemana_orden": 42},
+    {"DIM_TIEMPO.NbSemana": "Sem 43/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.9261904761910306, "Metas2026.Meta_Disp": 0.7967000000000001, "DIM_TIEMPO.NbSemana_orden": 43},
+    {"DIM_TIEMPO.NbSemana": "Sem 44/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.8111111111117809, "Metas2026.Meta_Disp": 0.7967000000000001, "DIM_TIEMPO.NbSemana_orden": 44},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.30069444444379767, "Metas2026.Meta_Disp": 0.7849, "DIM_TIEMPO.NbSemana_orden": 45}
+  ]
+}

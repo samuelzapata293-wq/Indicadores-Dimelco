@@ -1,0 +1,51 @@
+{
+  "origen": "q_009.json",
+  "consulta": 0,
+  "pagina": "Disp Scooptram ST3.5",
+  "pagina_numero": 5,
+  "asignacion_pagina": "filtro de pagina compartido ST3.5/ST1030; asignada por orden de captura (visual ST mas cercano)",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "Var t: Disp",
+    "descripcion": "Opciones de Var_t: Disp[Var_t: Disp]"
+  },
+  "campos": [
+    {
+      "nombre": "Var_t: Disp.Var_t: Disp",
+      "campo": "Var_t: Disp[Var_t: Disp]",
+      "alias_visual": "Var_t: Disp"
+    }
+  ],
+  "filtros": {
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    },
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"Var_t: Disp.Var_t: Disp": "18 hrs"},
+    {"Var_t: Disp.Var_t: Disp": "24 hrs"}
+  ]
+}

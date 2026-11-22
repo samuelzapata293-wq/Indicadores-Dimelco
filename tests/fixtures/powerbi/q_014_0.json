@@ -1,0 +1,56 @@
+{
+  "origen": "q_014.json",
+  "consulta": 0,
+  "pagina": "Disp Sostenimiento",
+  "pagina_numero": 4,
+  "asignacion_pagina": "mismo filtro de pagina DIM_EQUIPOS[Descripcion] que un visual de la pagina",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "DISP. GLOBAL",
+    "descripcion": "Opciones de HECHOS_DATAMES_NPI_PP[DISP]"
+  },
+  "campos": [
+    {
+      "nombre": "HECHOS_DATAMES_NPI_PP.DISP",
+      "campo": "HECHOS_DATAMES_NPI_PP[DISP]",
+      "alias_visual": "DISP"
+    }
+  ],
+  "filtros": {
+    "DIM_RESPONSABLE[DISPONIBILIDAD]": {
+      "in": [
+        "DISP. MECANICA",
+        "DISP. OPERACION"
+      ]
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "in": [
+        "Mecánica",
+        "Operacional"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "DESATADOR DE ROCAS SCALEMIN",
+        "DESATADOR DE ROCAS SCALEMIN No.2",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"HECHOS_DATAMES_NPI_PP.DISP": "Mecánica"},
+    {"HECHOS_DATAMES_NPI_PP.DISP": "Operacional"}
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "origen": "q_013.json",
+  "consulta": 0,
+  "pagina": "Disp Sostenimiento",
+  "pagina_numero": 4,
+  "asignacion_pagina": "filtro de pagina DIM_EQUIPOS[Descripcion] IN (...)",
+  "visual": {
+    "tipo": "lineClusteredColumnComboChart",
+    "titulo": "Equipos de Sostenimiento",
+    "descripcion": "Disp Din % (columnas) y Meta_Disp (linea) por equipo"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "Descripcion"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disp Din %"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta_Disp"
+    },
+    {
+      "nombre": "Metas2026.Color_Disponibilidad",
+      "campo": "Metas2026[Color_Disponibilidad] (M)",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Metricas.MetaDispSimba",
+      "campo": "Metricas[MetaDispSimba] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "not_in": [
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02"
+      ],
+      "in": [
+        "DESATADOR DE ROCAS SCALEMIN",
+        "DESATADOR DE ROCAS SCALEMIN No.2",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    }
+  },
+  "campos_sin_valores": [
+    "Metricas.MetaDispSimba"
+  ],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.Descripcion": "DESATADOR DE ROCAS SCALEMIN", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.2918, "Metas2026.Color_Disponibilidad": "#F89221"},
+    {"DIM_EQUIPOS.Descripcion": "DESATADOR DE ROCAS SCALEMIN No.2", "Metricas (2).Disp Din %": 0.4801388888885413, "Metas2026.Meta_Disp": 0.8022, "Metas2026.Color_Disponibilidad": "#F89221"},
+    {"DIM_EQUIPOS.Descripcion": "EMPERNADOR BOLTEC EPIROC N°1", "Metricas (2).Disp Din %": 0.7666666666656965, "Metas2026.Meta_Disp": 0.8083, "Metas2026.Color_Disponibilidad": "#F89221"},
+    {"DIM_EQUIPOS.Descripcion": "EMPERNADOR BOLTEC S10 S EPIROC N°2", "Metricas (2).Disp Din %": 0.6500347222219716, "Metas2026.Meta_Disp": 0.8067, "Metas2026.Color_Disponibilidad": "#F89221"}
+  ]
+}

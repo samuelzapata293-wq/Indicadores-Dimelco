@@ -1,0 +1,55 @@
+{
+  "origen": "q_022.json",
+  "consulta": 0,
+  "pagina": "Disp Simba",
+  "pagina_numero": 2,
+  "asignacion_pagina": "mismo filtro de pagina DIM_EQUIPOS[Descripcion] que un visual de la pagina",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "DISP. GLOBAL",
+    "descripcion": "Opciones de HECHOS_DATAMES_NPI_PP[DISP]"
+  },
+  "campos": [
+    {
+      "nombre": "HECHOS_DATAMES_NPI_PP.DISP",
+      "campo": "HECHOS_DATAMES_NPI_PP[DISP]",
+      "alias_visual": "DISP"
+    }
+  ],
+  "filtros": {
+    "DIM_RESPONSABLE[DISPONIBILIDAD]": {
+      "in": [
+        "DISP. MECANICA",
+        "DISP. OPERACION"
+      ]
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "in": [
+        "Mecánica",
+        "Operacional"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"HECHOS_DATAMES_NPI_PP.DISP": "Mecánica"},
+    {"HECHOS_DATAMES_NPI_PP.DISP": "Operacional"}
+  ]
+}

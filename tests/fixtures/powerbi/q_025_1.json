@@ -1,0 +1,79 @@
+{
+  "origen": "q_025.json",
+  "consulta": 1,
+  "pagina": "Disp Mensual",
+  "pagina_numero": 8,
+  "asignacion_pagina": "mismo filtro de pagina DIM_EQUIPOS[Descripcion] que un visual de la pagina",
+  "visual": {
+    "tipo": "slicer",
+    "titulo": "DISP. GLOBAL",
+    "descripcion": "Opciones de DIM_EQUIPOS[Familia]"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.Familia",
+      "campo": "DIM_EQUIPOS[Familia]",
+      "alias_visual": "Familia"
+    }
+  ],
+  "filtros": {
+    "DIM_RESPONSABLE[DISPONIBILIDAD]": {
+      "in": [
+        "DISP. MECANICA",
+        "DISP. OPERACION"
+      ]
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "in": [
+        "Mecánica",
+        "Operacional"
+      ],
+      "not_in": [
+        "Operacional"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-07-01T00:00:00",
+      "<": "2026-11-06T00:00:00"
+    },
+    "DIM_EQUIPOS[Descripcion]": {
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02",
+        "DESATADOR DE ROCAS SCALEMIN",
+        "DESATADOR DE ROCAS SCALEMIN No.2",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3",
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "PERFORADORA BOOMER 282 EPIROC No. 03"
+      ]
+    }
+  },
+  "campos_sin_valores": [],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.Familia": "CARGADORAS BP"},
+    {"DIM_EQUIPOS.Familia": "CARGADORAS BP FLOTA 3.5"},
+    {"DIM_EQUIPOS.Familia": "EQUIPOS DE SOSTENIMIENTO"},
+    {"DIM_EQUIPOS.Familia": "PERFORACION MECANIZADA"},
+    {"DIM_EQUIPOS.Familia": "TIRO LARGO"}
+  ]
+}

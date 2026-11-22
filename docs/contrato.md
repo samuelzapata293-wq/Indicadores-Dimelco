@@ -1,102 +1,130 @@
 # Contrato de datos y medidas
 
-Borrador v0 (22/11/2026). Fuente: modelo y definición del reporte publicado `Analisis de indicadores 15-09-2026.pbix` (ver `docs/powerbi/`). Las secciones marcadas PENDIENTE se cierran cuando lleguen el Excel de entrada y el DAX.
+Versión 1 (22/11/2026). Fuente: `Analisis de indicadores 15-09-2026.pbix` y `LIBRO MAESTRO ABRIL 15-09-2026.xlsx`. El DAX completo está en `docs/powerbi/modelo/medidas.md`, el Power Query en `docs/powerbi/modelo/power_query.md` y las relaciones en `docs/powerbi/modelo/relaciones.csv`. Este documento manda: si el código y este contrato no coinciden, se corrige uno de los dos y se deja constancia aquí.
 
-## 1. Tablas de entrada (hojas del Excel)
+## 1. Entrada: tablas del Excel
 
-Nombres de columna tal como están en el modelo de Power BI. La correspondencia con las hojas reales del Excel queda PENDIENTE.
+El importador lee las tablas de Excel por nombre (objetos Tabla, no rangos fijos). Solo se cargan estas cinco; el resto del libro (costos, horómetros, materiales, OT) queda para la fase 2.
 
-### paros (HECHOS_DATAMES_NPI_PP)
+### 1.1 paros: `Tabla2`, hoja "Data Mes" (cabecera en la fila 6, unas 20 600 filas, 14 325 con aviso)
 
-| Columna PBI | Campo app | Tipo | Uso |
-|---|---|---|---|
-| IDEQUIPO | id_equipo | texto | relación con equipos |
-| Aviso | aviso | texto | tabla de paros |
-| Fecha Inicio averia / Hora inicio averia | inicio | fecha-hora | ventana de paro |
-| Fecha Fin de avería / Hora fin averia | fin | fecha-hora | ventana de paro |
-| Duración parada (Mins) | duracion_min | número | |
-| Desc de Paro | desc_paro | texto | tabla de paros; la tabla de Disp Camiones excluye "0" |
-| IDResponsable | id_responsable | texto | relación con responsables |
-| CodFalla, TextodelaFalla | cod_falla, texto_falla | texto | |
-| IDTIPODEMANTTO | id_tipo_mantto | texto | |
-| Resumen de la actividad | resumen | texto | |
-| DesEquipo | des_equipo | texto | tabla de paros |
-| Duracion del paro (Horas) | duracion_h | número | |
-| Tipo de Paro, Tipo de Paro(PP/NPI) | tipo_paro, tipo_paro_pp_npi | texto | tabla de paros |
-| Responsable | responsable | texto | tabla de paros |
-| DISP | disp | texto | segmentador DISP. GLOBAL (Mecánica / Operacional). Columna calculada: PENDIENTE DAX |
-| Minutos_Paro_Ajustados, _F/H Inicio, _F/H Fin, _Paro Total (min) | | | columnas calculadas: PENDIENTE DAX |
+| Columna Excel | Campo app | Transformación (igual que Power Query) |
+|---|---|---|
+| Equipo | id_equipo | entero |
+| Denominación | (no se usa) | se descarta; la descripción viene de equipos |
+| Aviso | aviso | entero. Fila sin aviso: se descarta |
+| Inicio avería | fecha_inicio | fecha |
+| Hora in-avería | hora_inicio | texto "hh:mm[:ss]"; "24:00:00" se cambia por "00:00:00" (solo en inicio) |
+| Fin de avería | fecha_fin | fecha. Fila sin fecha fin: se descarta |
+| Hora fin avería | hora_fin | texto "hh:mm[:ss]" sin reemplazo ("24:00:00" suma un día) |
+| Duración parada | duracion_min | número (minutos) |
+| Descripción | desc_paro | texto |
+| Grupo de codigos | id_responsable | texto (T-MTO-ME, T-MTO-EL, T-OPE-MP, T-FES-NI, ...) |
+| Codificación | cod_falla | texto |
+| Codif-txt-cód- | texto_falla | texto |
+| Status usuario | id_tipo_mantto | texto (PP, NPI, EPP) |
+| Tipo de Paro(PP/NPI) | tipo_paro_pp_npi | texto |
+| Resumen de actividad | resumen | texto |
 
-### equipos (DIM_EQUIPOS)
+Además: fila cuyo equipo no está en `equipos` se descarta (en Power Query: unión izquierda y filtro DesEquipo no nulo).
 
-IDEQUIPO (texto), Descripcion (texto), Familia (texto: TIRO LARGO, PERFORACION MECANIZADA, EQUIPOS DE SOSTENIMIENTO, CARGADORAS BP FLOTA 3.5, CARGADORAS BP).
+Campos derivados (se calculan en la app, no se guardan):
 
-### responsables (DIM_RESPONSABLE)
+- `inicio` = fecha_inicio + hora_inicio; `fin` = fecha_fin + hora_fin (fecha-hora local, sin zona horaria).
+- `tipo_paro` = texto después del primer espacio de `resumen` en formato Nombre Propio (Text.Proper).
+- `disp`: si id_responsable contiene "-MTO-" es "Mecánica"; si contiene "-OPE-" u "-OPH-" es "Operacional"; si no, el propio id_responsable.
+- `responsable`: igual que `disp` pero con "Mantenimiento" y "Operación".
+- `minutos_ajustados` = INT(duracion_min / 1440) * 1080 + MIN(MOD(duracion_min, 1440), 1080).
 
-IDResponsable, Denominacion, RESPONSABLE, DISPONIBILIDAD. Los tooltips excluyen RESPONSABLE nulo y "FUERA ESTADISTICA" (fase 2).
+### 1.2 equipos: `Tabla5`, hoja "Parametros" (25 filas)
 
-### metas (Metas2026)
+Equipo → id_equipo (entero), Denominacion del Objeto → descripcion (texto; varias traen espacios al inicio o al final: se recortan), Familia → familia.
 
-Mes, Familia, Meta_Disponibilidad, Meta_MTTR, Meta_MTBF, Meta_Confiabilidad. La medida `Meta_Disp` pondera por equipo o familia según el filtro (existe `_Debug_Ponderacion`): PENDIENTE DAX.
+Familias: ACARREO MECANIZADO, CARGADORAS BP FLOTA 3.5, CARGADORAS BP, EQUIPOS DE SOSTENIMIENTO, TIRO LARGO, PERFORACION MECANIZADA.
 
-### Parámetros
+### 1.3 responsables: `Tabla18`, hoja "Parametros" (13 filas con código)
 
-- `Var_t: Disp` (Var_t: Disp, Horas): 18 hrs y 24 hrs. Horas programadas por día para disponibilidad. Valor por defecto en el reporte: 24 hrs.
-- `Confiabilidad` (Confiabilidad, Horas): 12 hrs, 18 hrs, 24 hrs. Horizonte t de confiabilidad. Valor por defecto en el reporte: 18 hrs.
-- Si el Excel trae otros parámetros (metas por equipo, horarios), se agregan aquí.
+GPO.CODIGOS → id_responsable, DENOMINACION DE CODIGO → denominacion, RESPONSABLE → responsable, DISPONIBILIDAD → disponibilidad. Filas sin código: se descartan.
 
-### Calendario (DIM_TIEMPO)
+### 1.4 tipos de mantenimiento: `Tabla9`, hoja "Parametros"
 
-No se carga: la app genera el calendario. Campos usados: Fecha, NbSemana (etiqueta "Sem 45/26"), Mes. Regla de semana: PENDIENTE (confirmar con el DAX o el Excel si es ISO o semana que empieza en domingo).
+IDTIPO DE MANTTO → id_tipo_mantto (PP, NPI, EPP), DESCRIPCION → descripcion.
+
+### 1.5 metas: `Tabla15`, hoja "METASMTTO" (216 filas)
+
+Fecha → mes (texto "dd/mm/aaaa", primer día del mes), Familia → equipo_descripcion (es la descripción del equipo, no la familia: en el modelo se relaciona con DIM_EQUIPOS[Descripcion]), Disponibilidad → meta_disp (fracción 0 a 1), MTTR, MTBF, Confiabilidad → meta_mttr, meta_mtbf, meta_conf (hoy vacías).
+
+La relación meta-equipo se hace por descripción recortada y sin distinguir mayúsculas.
+
+### 1.6 Parámetros fijos (no vienen del Excel)
+
+- Var t: Disp (horas programadas por día): 18 o 24. Valor inicial en el reporte guardado: 24.
+- Var t: Conf. (horizonte de confiabilidad): 12, 18 o 24. Valor inicial en el reporte guardado: 18.
 
 ## 2. Contexto de filtro
 
-| Filtro | Origen | Valores |
+Todas las medidas reciben:
+
+- `ini`, `fin`: fechas del segmentador Periodo (inclusive).
+- `equipos`: conjunto de id_equipo en contexto (filtro de la página, fila de la tabla, columna del gráfico o familia).
+- `disp`: valores elegidos en DISP. GLOBAL (Mecánica, Operacional o ambos). Filtra filas de paros por el campo `disp`; no cambia `equipos`.
+- `hDisp` (18/24) y `tConf` (12/18/24).
+
+En el modelo no hay relación entre el calendario y los paros: las medidas de ventana recortan cada paro a [ini, fin + 1 día) con su propia lógica.
+
+## 3. Medidas (traducción del DAX de `Metricas (2)`, `Metricas` y `Metas2026`)
+
+Notación: `P` = paros con id_equipo en `equipos` y `disp` en el filtro. Fechas como número de días (fracción = hora del día). `F0 = ini`, `F1 = fin + 1`. `hpm = hDisp * 60`.
+
+1. `minParoVentana(S)`: suma sobre las filas de S con `fin >= inicio`, `inicio < F1` y `fin > F0` de `s - r`, donde para `j = inicio`, `k = fin`:
+   - `dR = MIN(MAX(F0, j), k) - j`, `r = INT(dR) * hpm + MIN(MOD(dR * 1440, 1440), hpm)`
+   - `dS = MIN(MAX(F1, j), k) - j`, `s = INT(dS) * hpm + MIN(MOD(dS * 1440, 1440), hpm)`
+2. `tiempoProgramado = (fin - ini + 1) * 60 * hDisp * |equipos|` (minutos). Nulo si no hay fechas.
+3. `paroGeneralVentana = minParoVentana(P sin id_responsable = "T-FES-NI")`. Las filas con id_responsable vacío o desconocido sí cuentan.
+4. `paroNpiVentana = minParoVentana(P con id_responsable en {T-MTO-ME, T-MTO-EL} y id_tipo_mantto = "NPI")`.
+5. `fallasNpi` = número de filas de P con id_responsable en {T-MTO-ME, T-MTO-EL}, id_tipo_mantto = "NPI", `fin > inicio` (estricto), `inicio < F1` y `fin > F0`. 0 si no hay.
+6. `dispDin = MAX(0, tiempoProgramado - paroGeneralVentana) / tiempoProgramado` si tiempoProgramado > 0; si no, nulo. (Disp Din %)
+7. `mttrH = (paroNpiVentana / 60) / fallasNpi`; nulo si fallasNpi = 0. (MTTR_H)
+8. `mtbfH = (MAX(0, tiempoProgramado - paroNpiVentana) / 60) / fallasNpi`; nulo si fallasNpi = 0. (MTBF_H)
+9. `confiabilidad = 1` si mtbfH es nulo; `0` si mtbfH = 0; si no, `EXP(-tConf / mtbfH)`. (Confiabilidad_24h)
+10. `probFalla = 1 - confiabilidad`. (ProbabilidadDeFalla)
+11. `hrsParoVentana(S) = minParoVentana(S) / 60` si es > 0; si no, nulo. (Hrs Paro Ventana; en la tabla de paros S es la fila del paro)
+12. `metaDisp`: para cada mes que toca [ini, fin], `dias` = días del mes dentro de [ini, fin] y `metaMes` = promedio simple de `meta_disp` de las metas con `mes` = primer día de ese mes y equipo_descripcion igual a la descripción de algún equipo de `equipos`. Se omiten los meses sin meta. `metaDisp = Σ(metaMes * dias) / Σ dias`; nulo si ningún mes tiene meta. (Meta_Disp)
+13. `colorDisp = "#00493C"` si `metaDisp <= dispDin`, si no `"#F89221"`. (Color_Disponibilidad)
+
+Comprobado contra lo publicado: equipo 100362, MTBF_H 69.83, tConf 18: confiabilidad 77.28 %.
+
+### Semanas (Disp Mensual)
+
+Etiqueta `"Sem " & WEEKNUM(fecha) & "/" & aa`, con WEEKNUM de Excel/DAX tipo 1: la semana empieza en domingo y la semana 1 contiene el 1 de enero. Para cada semana, `ini` y `fin` son el primer y último día de la semana dentro del periodo elegido.
+
+## 4. Páginas y equipos
+
+El filtro de cada página se hace por id_equipo:
+
+| Página (ruta) | Título del gráfico | Equipos (id_equipo) |
 |---|---|---|
-| Periodo | segmentador entre fechas sobre DIM_TIEMPO[Fecha] | por defecto el rango de la última carga (en la captura: 01/11/2026 al 20/11/2026) |
-| Var t: Disp | parámetro | 18 o 24 h |
-| Var t: Conf. | parámetro | 12, 18 o 24 h |
-| DISP. GLOBAL | paros[disp] | Mecánica, Operacional o ambos; por defecto Mecánica |
-| Equipos de la página | filtro de página sobre DIM_EQUIPOS[Descripcion] | sección 4 |
-| Familia | DIM_EQUIPOS[Familia], selección única | solo Disp Mensual |
-| Equipo (filtro cruzado) | clic en una columna del gráfico | filtra la tabla de paros |
+| Disp Simba (/simba) | Tiro Largo | 618487, 100618, 100660 |
+| Disp Jumbo (/jumbo) | Perforación Mecánizada | 618269, 100636, 620903 |
+| Disp Sostenimiento (/sostenimiento) | Equipos de Sostenimiento | 618321, 100647, 618320, 621321 |
+| Disp Scooptram ST3.5 (/st35) | Cargadoras Bajo Perfil | 100362, 618486 |
+| Disp Scooptram ST1030 (/st1030) | Cargadoras Bajo Perfil | 618270, 100615, 100635, 100655, 100656, 100657 |
+| Resumen Disp. (/resumen) | tabla por equipo y por familia | las 18 anteriores |
+| Disp Mensual (/mensual) | Evolución semanal de disponibilidades % | las 18 anteriores (sin 100361 SCOOP3.5 No.02), filtradas por la familia elegida (selección única, inicial CARGADORAS BP) |
 
-## 3. Medidas
+Valores iniciales de los segmentadores, tomados del reporte guardado: Periodo del primer día del mes de la fecha de inicio más reciente de paros hasta esa fecha (en la captura, 01/11/2026 al 20/11/2026); en Disp Mensual, desde el primer día del mes cuatro meses antes (en la captura, 01/07/2026 al 05/11/2026). DISP. GLOBAL: Mecánica. hDisp 24, tConf 18.
 
-Fórmulas comprobadas con los valores publicados:
+## 5. Visuales
 
-- Confiabilidad(t) = exp(-t / MTBF_H). Equipo 100362: MTBF_H = 69.83, t = 18, resultado 77.28 %.
-- ProbabilidadDeFalla = 1 - Confiabilidad.
-- En el periodo 01 al 20/11 (20 días x 24 h = 480 h), un equipo sin fallas y parado todo el periodo muestra MTTR_H = 480, MTBF_H = 0, Disp = 0 % (618486, 618270, 618321).
+- Páginas de familia: gráfico de columnas `dispDin` por equipo con etiqueta en %, color según `colorDisp`, línea `metaDisp` con etiqueta; leyenda "% Disponibilidad Real" y "-- Meta Disp %". Tabla de paros con columnas Sap, Equipo, Aviso, Descripción del Paro, _F/H Inicio, _F/H Fin, Hrs Paro Ventana, Responsable, Tipo de Paro (= campo tipo_paro_pp_npi, columna "Tipo de Paro(PP/NPI)" del Excel); solo filas con Hrs Paro Ventana > 0, orden descendente por Hrs Paro Ventana. Clic en una columna filtra la tabla a ese equipo.
+- Resumen Disp.: tabla por equipo (EQUIPO, DENOMINACION, MTTR_Horas, MTBF_Horas, Meta_Disp, Disponibilidad % con círculo verde o rojo según colorDisp, Confiabilidad %, Prob. de Falla) y tabla por familia (Familia, MTTR, MTBF, Disponibilidad %, Confiabilidad %, Probabilidad de Falla). Segmentadores: Periodo, Var t: Conf., Var t: Disp, DISP. GLOBAL.
+- Disp Mensual: un panel por equipo (dos columnas), línea amarilla `dispDin` por semana y línea punteada azul `metaDisp`, etiquetas en %.
+- Formatos: horas con 2 decimales; disponibilidad y meta en % sin decimales; confiabilidad y probabilidad en % con 2 decimales; fechas "m/d/aaaa h:mm:ss AM/PM" (mes primero), como en el reporte.
 
-PENDIENTE DAX (lista de medidas que usan las 8 páginas):
+## 6. Notas de datos (verificadas con el Excel del 15-09-2026)
 
-| Medida | Tabla PBI | Dónde se ve |
-|---|---|---|
-| Disp Din % | Metricas (2) | gráficos de familia, Resumen, Disp Mensual |
-| MTTR_H, MTBF_H | Metricas (2) | Resumen |
-| Hrs Paro Ventana, Min Paro Ventana | Metricas (2) | tabla de paros |
-| Paro General 24h / 18h / Ventana, Paro NPI Mtto 24h / 18h / Ventana | Metricas (2) | base de Disp Din % |
-| _Cantidad Fallas NPI | Metricas (2) | base de MTTR y MTBF |
-| Disp Acum %, Disp Acum Final, Brecha_Disp dn, Título Ventana, Dif | Metricas (2) | revisar si alguna página visible las usa |
-| Confiabilidad_24h, ProbabilidadDeFalla | Metricas | Resumen |
-| HSelecDisp, HSelecConf | Metricas | horas seleccionadas en los parámetros |
-| Meta_Disp, Color_Disponibilidad, Brecha_Disp | Metas2026 | línea de meta, semáforo |
-
-## 4. Equipos por página (filtros del reporte)
-
-| Página | Equipos |
-|---|---|
-| Disp Simba (título "Tiro Largo") | JUMBO DE PERFORACION ATLAS SIMBA S7 N°1, N°2, N°3 |
-| Disp Jumbo (título "Perforación Mecanizada") | PERFORADORA BOOMER 282 EPIROC No. 01, No. 02, No. 03 |
-| Disp Sostenimiento | DESATADOR DE ROCAS SCALEMIN, DESATADOR DE ROCAS SCALEMIN No.2, EMPERNADOR BOLTEC EPIROC N°1, EMPERNADOR BOLTEC S10 S EPIROC N°2 |
-| Disp Scooptram ST3.5 | gráfico solo con CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER) y CARGADOR FRONTAL BP SCOOP 3.50 N°6 |
-| Disp Scooptram ST1030 | cargadoras de la página menos los dos 3.50 y "CARGADOR FRONTAL BP SCOOP3.5 No.02" (quedan ST1030 No. 01 a No. 06) |
-| Resumen Disp. | 21 descripciones (las 18 de la captura más variantes antiguas de nombre: CARGADOR FRONTAL BP WAGNER No.05, CARGADORA FRONTAL BP SCOOP 3.50 N°6, PERFORADORA BOOMER 282 EPIROC No.03) |
-| Disp Mensual | lista parecida a Resumen, sin filtro adicional de familia salvo el segmentador |
-
-Las variantes de nombre indican que el mismo equipo aparece con descripciones distintas en el histórico. En la app el filtro de página se hace por IDEQUIPO (SAP), no por descripción. PENDIENTE: confirmar con el Excel que cada variante corresponde al mismo SAP.
-
-## 5. Tabla de paros (páginas de familia)
-
-Columnas: Sap, Equipo, Aviso (conteo o primer valor), Descripcion del Paro, _F/H Inicio, _F/H Fin, Hrs Paro Ventana, Responsable, Tipo de Paro. Solo filas con Hrs Paro Ventana > 0, orden descendente por Hrs Paro Ventana.
+- `Resumen de actividad` está vacía en todas las filas, así que `tipo_paro` sale vacío; la tabla de paros usa `tipo_paro_pp_npi`.
+- `Duración parada` tiene 134 celdas con fórmula sin resultado guardado y 31 valores escritos a mano que no cuadran con fin - inicio. Las medidas de las 8 páginas visibles usan solo inicio y fin (minParoVentana), así que no las afecta. `minutos_ajustados` (usa duracion_min) queda para medidas de fase 2.
+- Hora fin "24:00:00" aparece en 911 filas; hora inicio "24:00:00" en 33.
+- Equipo y Aviso vienen como texto en la mayoría de filas y como número en 669.
+- Fila sin equipo en Tabla5: 2 700 (se descartan); sin fecha fin: 3. Paros válidos: 11 622.

@@ -1,0 +1,317 @@
+TableName,ColumnName,PandasDataType
+AnalisisCostos,SAP,string
+AnalisisCostos,Equipo,string
+AnalisisCostos,Indicador,string
+AnalisisCostos,Mes,string
+AnalisisCostos,Semana,Int64
+AnalisisCostos,Valor,Float64
+AnalisisCostosMes,SAP,string
+AnalisisCostosMes,Equipo,string
+AnalisisCostosMes,Indicador,string
+AnalisisCostosMes,Mes,string
+AnalisisCostosMes,Semana,Int64
+AnalisisCostosMes,Valor,Float64
+Confiabilidad,Confiabilidad,string
+Confiabilidad,Horas,Int64
+DIMHOROMETROS,IDEQUIPO,Int64
+DIMHOROMETROS,DESCHOROMETRO,string
+DIMHOROMETROS,TIPOHOROMETRO,string
+DIMHOROMETROS,PUNTODEMEDIDA,Int64
+DIM_EQUIPOS,IDEQUIPO,Int64
+DIM_EQUIPOS,Descripcion,string
+DIM_EQUIPOS,Familia,string
+DIM_RESPONSABLE,IDResponsable,string
+DIM_RESPONSABLE,Denominacion,string
+DIM_RESPONSABLE,RESPONSABLE,string
+DIM_RESPONSABLE,DISPONIBILIDAD,string
+DIM_TIEMPO,Date,datetime64[ns]
+DIM_TIEMPO,Fecha,datetime64[ns]
+DIM_TIEMPO,Año,Int64
+DIM_TIEMPO,Mes,Int64
+DIM_TIEMPO,Dia,Int64
+DIM_TIEMPO,FechaSk,Int64
+DIM_TIEMPO,Semestre,Float64
+DIM_TIEMPO,Cuatrimestre,Float64
+DIM_TIEMPO,Trimestre,Float64
+DIM_TIEMPO,Bimestre,Float64
+DIM_TIEMPO,Semana,Int64
+DIM_TIEMPO,AñoMes,string
+DIM_TIEMPO,DiaSemana,Int64
+DIM_TIEMPO,NbAño,Int64
+DIM_TIEMPO,NbSemestre,string
+DIM_TIEMPO,NbSemestreAño,string
+DIM_TIEMPO,NbCuatrimestre,string
+DIM_TIEMPO,NbCuatrimestreAño,string
+DIM_TIEMPO,NbTrimestre,string
+DIM_TIEMPO,NbTrimestreAño,string
+DIM_TIEMPO,NbBimestre,string
+DIM_TIEMPO,NbBimestreAño,string
+DIM_TIEMPO,NbMes,string
+DIM_TIEMPO,nbMes3L,string
+DIM_TIEMPO,NbDia,string
+DIM_TIEMPO,NbSemana,string
+DIM_TIEMPO,NdDiaSemana,string
+DIM_TIEMPO,MinutosDia,Int64
+DIM_TIPODETRABAJO,IDTIPODETRABAJO,string
+DIM_TIPODETRABAJO,Desc,string
+DIM_TIPOMANTTO,IDTIPO DE MANTTO,string
+DIM_TIPOMANTTO,DESCRIPCION,string
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Date,datetime64[ns]
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Año,Int64
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,NroMes,Int64
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Mes,string
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,NroTrimestre,Int64
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Trimestre,string
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Día,Int64
+Dim_Tiempo_Costo,Date,datetime64[ns]
+Dim_Tiempo_Costo,Fecha,datetime64[ns]
+Dim_Tiempo_Costo,Año,Int64
+Dim_Tiempo_Costo,Mes,Int64
+Dim_Tiempo_Costo,Dia,Int64
+Dim_Tiempo_Costo,FechaSk,Int64
+Dim_Tiempo_Costo,Semestre,Float64
+Dim_Tiempo_Costo,Cuatrimestre,Float64
+Dim_Tiempo_Costo,Trimestre,Float64
+Dim_Tiempo_Costo,Bimestre,Float64
+Dim_Tiempo_Costo,Semana,Int64
+Dim_Tiempo_Costo,AñoMes,string
+Dim_Tiempo_Costo,DiaSemana,Int64
+Dim_Tiempo_Costo,NbAño,Int64
+Dim_Tiempo_Costo,NbSemestre,string
+Dim_Tiempo_Costo,NbSemestreAño,string
+Dim_Tiempo_Costo,NbCuatrimestre,string
+Dim_Tiempo_Costo,NbCuatrimestreAño,string
+Dim_Tiempo_Costo,NbTrimestre,string
+Dim_Tiempo_Costo,NbTrimestreAño,string
+Dim_Tiempo_Costo,NbBimestre,string
+Dim_Tiempo_Costo,NbBimestreAño,string
+Dim_Tiempo_Costo,NbMes,string
+Dim_Tiempo_Costo,nbMes3L,string
+Dim_Tiempo_Costo,NbDia,string
+Dim_Tiempo_Costo,NbSemana,string
+Dim_Tiempo_Costo,NdDiaSemana,string
+HECHOS (iw39),Ubicac.técnica,string
+HECHOS (iw39),Clase de orden,string
+HECHOS (iw39),Orden,Int64
+HECHOS (iw39),Fecha creación,datetime64[ns]
+HECHOS (iw39),Status sistema,string
+HECHOS (iw39),Texto breve,string
+HECHOS (iw39),Equipo,Int64
+HECHOS (iw39),Denominación,string
+HECHOS (iw39),Grupo planif.,string
+HECHOS (iw39),Puesto trabajo,string
+HECHOS (iw39),Fe.inic.extrema,datetime64[ns]
+HECHOS (iw39),Fe.fin extrema,datetime64[ns]
+HECHOS (iw39),Pto.tbjo.resp.,string
+HECHOS (iw39),Plan mantenim.,Int64
+HECHOS (iw39),Pos.mantenim.,Int64
+HECHOS (iw39),TotGen. (plan),Float64
+HECHOS (iw39),TotalGen.(real),Float64
+HECHOS (iw39),Status usuario,string
+HECHOS (iw39),Aviso,Int64
+HECHOS (iw39),Fecha ref.,datetime64[ns]
+HECHOSMOVMERC,Orden,Int64
+HECHOSMOVMERC,Material,Int64
+HECHOSMOVMERC,DescMaterial,string
+HECHOSMOVMERC,Ctd,Int64
+HECHOSMOVMERC,UdM,string
+HECHOSMOVMERC,Importe(NIO),Float64
+HECHOSMOVMERC,Cl.movimiento,Int64
+HECHOSMOVMERC,Fecha de referencia,datetime64[ns]
+HECHOSMOVMERC,DescEquipo,string
+HECHOSMOVMERC,Importe (USD),Float64
+HECHOSMOVMERC,Semana,Int64
+HECHOSMOVMERC,MES,string
+HECHOSMOVMERC,Acumulado ,string
+HECHOSMOVMERC,ACTIVIDAD,string
+HECHOSMOVMERC,CATEGORIA,string
+HECHOS_DATAMES_NPI_PP,IDEQUIPO,Int64
+HECHOS_DATAMES_NPI_PP,Aviso,Int64
+HECHOS_DATAMES_NPI_PP,Fecha Inicio averia,datetime64[ns]
+HECHOS_DATAMES_NPI_PP,Hora inicio averia,string
+HECHOS_DATAMES_NPI_PP,Fecha Fin de avería,datetime64[ns]
+HECHOS_DATAMES_NPI_PP,Hora fin averia,string
+HECHOS_DATAMES_NPI_PP,Duración parada (Mins),Float64
+HECHOS_DATAMES_NPI_PP,Desc de Paro,string
+HECHOS_DATAMES_NPI_PP,IDResponsable,string
+HECHOS_DATAMES_NPI_PP,CodFalla,string
+HECHOS_DATAMES_NPI_PP,TextodelaFalla,string
+HECHOS_DATAMES_NPI_PP,IDTIPODEMANTTO,string
+HECHOS_DATAMES_NPI_PP,Resumen de la actividad,string
+HECHOS_DATAMES_NPI_PP,DesEquipo,string
+HECHOS_DATAMES_NPI_PP,Duracion del paro (Horas),Float64
+HECHOS_DATAMES_NPI_PP,Tipo de Paro,string
+HECHOS_DATAMES_NPI_PP,Tipo de Paro(PP/NPI),string
+HECHOS_DATAMES_NPI_PP,Responsable,string
+HECHOS_DATAMES_NPI_PP,DISP,string
+HECHOS_DATAMES_NPI_PP,Minutos_Paro_Ajustados,Float64
+HECHOS_DATAMES_NPI_PP,_F/H Fin,datetime64[ns]
+HECHOS_DATAMES_NPI_PP,_F/H Inicio,datetime64[ns]
+HECHOS_DATAMES_NPI_PP,_Paro Total (min),Float64
+HECHOS_H-ELEC,Fecha,datetime64[ns]
+HECHOS_H-ELEC,Documento med.,Int64
+HECHOS_H-ELEC,Punto de medida,Int64
+HECHOS_H-ELEC,ValMed/ValTotCn,Float64
+HECHOS_H-ELEC,Horas_Electrico,Float64
+HECHOS_H-ELEC,Diferencia,Float64
+HECHOS_H-ELEC,OT,Int64
+HECHOS_H-ELEC,TipoHorometro,string
+HECHOS_H-ELEC,Creado por,string
+HECHOS_H-ELEC,Equipo,Int64
+HECHOS_H-ELEC-P,FechaHorometro_ELEC_P,datetime64[ns]
+HECHOS_H-ELEC-P,Documento med.,Int64
+HECHOS_H-ELEC-P,Punto de medida,Int64
+HECHOS_H-ELEC-P,ValMed/ValTotCn,Float64
+HECHOS_H-ELEC-P,Valor contador,Float64
+HECHOS_H-ELEC-P,Diferencia,Float64
+HECHOS_H-ELEC-P,OT,Int64
+HECHOS_H-ELEC-P,TipoHorometro,string
+HECHOS_H-ELEC-P,Creado por,string
+HECHOS_H-ELEC-P,Equipo,Int64
+HECHOS_H-PERC,Fecha,datetime64[ns]
+HECHOS_H-PERC,Documento med.,Int64
+HECHOS_H-PERC,Punto de medida,Int64
+HECHOS_H-PERC,ValMed/ValTotCn,Float64
+HECHOS_H-PERC,Horas_Percusion1,Float64
+HECHOS_H-PERC,Diferencia,Float64
+HECHOS_H-PERC,OT,Int64
+HECHOS_H-PERC,TipoHorometro,string
+HECHOS_H-PERC,Creado por,string
+HECHOS_H-PERC,Equipo,Int64
+HECHOS_H-PERC (2),Fecha,datetime64[ns]
+HECHOS_H-PERC (2),Documento med.,Int64
+HECHOS_H-PERC (2),Punto de medida,Int64
+HECHOS_H-PERC (2),ValMed/ValTotCn,Float64
+HECHOS_H-PERC (2),Horas_Percusion2,Float64
+HECHOS_H-PERC (2),Diferencia,Float64
+HECHOS_H-PERC (2),OT,Int64
+HECHOS_H-PERC (2),TipoHorometro,string
+HECHOS_H-PERC (2),Creado por,string
+HECHOS_H-PERC (2),Equipo,Int64
+HECHOS_HMOTOR_D,Documento med.,Int64
+HECHOS_HMOTOR_D,Punto de medida,Int64
+HECHOS_HMOTOR_D,Horas_Diesel,Float64
+HECHOS_HMOTOR_D,Diferencia,Float64
+HECHOS_HMOTOR_D,OT,Int64
+HECHOS_HMOTOR_D,TipoHorometro,string
+HECHOS_HMOTOR_D,Creado por,string
+HECHOS_HMOTOR_D,Fecha,datetime64[ns]
+HECHOS_HMOTOR_D,Equipo,Int64
+HORO_CONSOL,Fecha,datetime64[ns]
+HORO_CONSOL,Equipo,Int64
+HORO_CONSOL,Max_Diesel,Float64
+HORO_CONSOL,Max_Electrico,Float64
+HORO_CONSOL,Max_Percusion1,Float64
+HORO_CONSOL,Max_Percusion2,Float64
+HORO_CONSOL,HorometroElecAjustado,Float64
+HORO_CONSOL,Punto de medida,Float64
+HORO_CONSOL,TIPOHOROMETRO,string
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Date,datetime64[ns]
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Año,Int64
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,NroMes,Int64
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Mes,string
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,NroTrimestre,Int64
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Trimestre,string
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Día,Int64
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Date,datetime64[ns]
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Año,Int64
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,NroMes,Int64
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Mes,string
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,NroTrimestre,Int64
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Trimestre,string
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Día,Int64
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Date,datetime64[ns]
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Año,Int64
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,NroMes,Int64
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Mes,string
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,NroTrimestre,Int64
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Trimestre,string
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Día,Int64
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Date,datetime64[ns]
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Año,Int64
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,NroMes,Int64
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Mes,string
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,NroTrimestre,Int64
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Trimestre,string
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Día,Int64
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Date,datetime64[ns]
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Año,Int64
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,NroMes,Int64
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Mes,string
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,NroTrimestre,Int64
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Trimestre,string
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Día,Int64
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Date,datetime64[ns]
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Año,Int64
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,NroMes,Int64
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Mes,string
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,NroTrimestre,Int64
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Trimestre,string
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Día,Int64
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Date,datetime64[ns]
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Año,Int64
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,NroMes,Int64
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Mes,string
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,NroTrimestre,Int64
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Trimestre,string
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Día,Int64
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Date,datetime64[ns]
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Año,Int64
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,NroMes,Int64
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Mes,string
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,NroTrimestre,Int64
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Trimestre,string
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Día,Int64
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Date,datetime64[ns]
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Año,Int64
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,NroMes,Int64
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Mes,string
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,NroTrimestre,Int64
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Trimestre,string
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Día,Int64
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Date,datetime64[ns]
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Año,Int64
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,NroMes,Int64
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Mes,string
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,NroTrimestre,Int64
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Trimestre,string
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Día,Int64
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Date,datetime64[ns]
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Año,Int64
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,NroMes,Int64
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Mes,string
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,NroTrimestre,Int64
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Trimestre,string
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Día,Int64
+Metas2026,Mes,datetime64[ns]
+Metas2026,Familia,string
+Metas2026,Meta_Disponibilidad,Float64
+Metas2026,Meta_MTTR,string
+Metas2026,Meta_MTBF,string
+Metas2026,Meta_Confiabilidad,string
+Metricas,Metricas,string
+Metricas (2),Columna1,string
+RelHorometros,IDEquipo,Int64
+RelHorometros,Descripción ,string
+RelHorometros,Motor Eléctrico (Sem),Float64
+RelHorometros,Motor Diesel (Sem),Float64
+RelHorometros,% Relación (Sem),Float64
+RelHorometros,Motor Eléctrico Mes,Float64
+RelHorometros,Motor Diesel (Mes),Float64
+RelHorometros,% Relación (Mes),Float64
+ResUtilizacion,SAP,Int64
+ResUtilizacion,EQUIPO ,string
+ResUtilizacion,% utilizacion ,Float64
+ResUtilizacion,%utilizacion Mes,Float64
+ResUtilizacion,SemAcum(Mes),string
+ResultadosCostoXHora,SAP,Int64
+ResultadosCostoXHora,EQUIPO ,string
+ResultadosCostoXHora,META (Costo/h),Float64
+ResultadosCostoXHora,Costo/h (Semana),Float64
+ResultadosCostoXHora,Horas,Float64
+ResultadosCostoXHora,ACUMULADO MES (Costo/h),Float64
+ResultadosCostoXHora,COMENTARIOS,string
+ResultadosCostoXHora,Nro,string
+ResultadosCostoXHora,Acumulado Mes(H),string
+Var_t: Disp,Var_t: Disp,string
+Var_t: Disp,Horas,Int64

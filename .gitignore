@@ -10,3 +10,6 @@ capturas/
 DATOS_CONEXION.txt
 SECRETO_GITHUB.txt
 tsconfig.tsbuildinfo
+*.xlsx
+*.pbix
+datos_local/

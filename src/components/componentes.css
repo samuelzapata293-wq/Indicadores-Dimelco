@@ -1,0 +1,144 @@
+/* Componentes visuales reutilizables (réplica del reporte Power BI) */
+
+/* Disposición: lateral de segmentadores + principal */
+.pbi-pagina { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; align-items: start; }
+.pbi-lateral { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pbi-principal { min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+
+/* Segmentadores */
+.seg { margin: 0 0 4px; }
+.seg-cabecera {
+  margin: 0;
+  padding: 3px 6px;
+  background: var(--verde-tabla);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.seg-cuerpo { padding: 8px 4px 4px; }
+.seg-fechas { display: flex; gap: 8px; }
+.seg-fecha {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 6px 6px;
+  font: inherit;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+.seg-botones { display: flex; gap: 4px; }
+.seg-boton {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 8px 6px;
+  font: inherit;
+  font-size: 14px;
+  color: #777;
+  background: #fff;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+.seg-boton:hover { background: #f2f2f2; }
+.seg-boton.activo { background: #333; border-color: #333; color: #fff; }
+.seg-boton:focus-visible, .seg-fecha:focus-visible { outline: 2px solid var(--verde-acento); outline-offset: 1px; }
+.seg-lista { display: flex; flex-direction: column; gap: 10px; padding-top: 10px; }
+.seg-item { display: flex; align-items: center; gap: 10px; font-size: 18px; color: #222; cursor: pointer; line-height: 1.2; }
+.seg-casilla, .seg-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #666;
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+}
+.seg-casilla:checked { background: #222; border-color: #222; }
+.seg-casilla:indeterminate::before { content: ""; width: 9px; height: 9px; background: #777; }
+.seg-radio { border-radius: 50%; }
+.seg-radio:checked { border: 1px solid #222; }
+.seg-radio:checked::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #222; }
+.seg-casilla:focus-visible, .seg-radio:focus-visible { outline: 2px solid var(--verde-acento); outline-offset: 2px; }
+
+/* Gráfico por familia */
+.graf-titulo {
+  margin: 0;
+  padding: 4px 8px;
+  background: var(--verde-tabla);
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+.graf-cuerpo { display: flex; align-items: flex-start; gap: 12px; }
+.graf-lienzo { flex: 1 1 0; min-width: 0; width: 100%; }
+.graf-leyenda { flex: 0 0 190px; display: flex; flex-direction: column; gap: 16px; padding-top: 24px; }
+.chip { display: block; padding: 10px 12px; border-radius: 8px; font-size: 15px; text-align: center; }
+.chip-amarillo { background: #f5d328; color: #333; }
+.chip-gris { background: #b3b3b3; color: #fff; }
+
+/* Paneles semanales */
+.paneles-leyenda { display: flex; gap: 14px; padding: 8px 4px; font-size: 14px; color: #555; }
+.paneles-leyenda .punto { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 4px; }
+.paneles-rejilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.paneles-rejilla.con-scroll { max-height: 640px; overflow-y: auto; }
+.panel-sem { border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 6px 8px 0; min-width: 0; }
+.panel-sem:nth-child(2n) { border-right: 0; }
+.panel-sem-titulo { margin: 6px 0 0 10px; font-size: 14px; font-weight: 400; color: #333; }
+.panel-sem-lienzo { width: 100%; height: 380px; }
+
+/* Tabla */
+.tabla-pbi { overflow: auto; width: 100%; background: #fff; }
+.tabla-pbi table { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 13px; }
+.tabla-pbi th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--verde-tabla);
+  color: #fff;
+  text-align: left;
+  font-weight: 400;
+  padding: 0;
+  white-space: nowrap;
+  border-bottom: 2px solid #1f8f78;
+}
+.th-boton {
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  text-align: inherit;
+  cursor: pointer;
+}
+.th-boton:focus-visible { outline: 2px solid var(--verde-acento); outline-offset: -2px; }
+.tabla-pbi td { padding: 4px 8px; border-bottom: 1px solid #e3e3e3; vertical-align: middle; }
+.tabla-pbi tbody tr:last-child td { border-bottom: 0; }
+.tabla-pbi td.np { white-space: nowrap; }
+.tabla-pbi table { min-width: 640px; }
+.tabla-pbi .der { text-align: right; }
+.tabla-pbi td.vacio { text-align: center; color: var(--texto-suave); padding: 16px; }
+.semaforo { display: inline-block; width: 16px; height: 16px; border-radius: 50%; vertical-align: middle; margin-right: 8px; }
+
+/* Bajo 900 px: segmentadores arriba en fila; gráfico y tabla a todo el ancho */
+@media (max-width: 899px) {
+  .pbi-pagina { grid-template-columns: minmax(0, 1fr); }
+  .pbi-lateral { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; }
+  .pbi-lateral .seg { flex: 1 1 240px; min-width: 0; }
+  .graf-cuerpo { flex-direction: column; gap: 4px; }
+  .graf-leyenda { flex: none; flex-direction: row; flex-wrap: wrap; padding: 0; width: 100%; }
+  .graf-leyenda .chip { flex: 1 1 140px; }
+}
+@media (max-width: 599px) {
+  .paneles-rejilla { grid-template-columns: minmax(0, 1fr); }
+  .panel-sem { border-right: 0; }
+  .paneles-rejilla.con-scroll { max-height: 700px; }
+}

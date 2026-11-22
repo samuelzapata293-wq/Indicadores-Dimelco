@@ -12,6 +12,7 @@ import St35 from "./pages/St35";
 import St1030 from "./pages/St1030";
 import Resumen from "./pages/Resumen";
 import Mensual from "./pages/Mensual";
+import Galeria from "./pages/Galeria";
 
 // Ruta "/cargar": solo administradores. Sin sesión de admin, va a /login.
 function RutaCargar() {
@@ -51,6 +52,7 @@ export default function App() {
         <Route path="/st1030" element={<Layout titulo="ST 1030"><St1030 /></Layout>} />
         <Route path="/resumen" element={<Layout titulo="Resumen"><Resumen /></Layout>} />
         <Route path="/mensual" element={<Layout titulo="Mensual"><Mensual /></Layout>} />
+        <Route path="/galeria" element={<Layout titulo="Galería de componentes"><Galeria /></Layout>} />
         <Route path="/login" element={<Layout titulo="Ingresar"><Login /></Layout>} />
         <Route path="/cargar" element={<RutaCargar />} />
         <Route path="*" element={<Navigate to="/" replace />} />

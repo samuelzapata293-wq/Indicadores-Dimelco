@@ -1,0 +1,71 @@
+TableName,Expression
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,"Calendar(Date(2015,1,1), Date(2015,1,1))"
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,"Calendar(Date(Year(MIN('HECHOS_DATAMES_NPI_PP'[Fecha Fin de avería])), 1, 1), Date(Year(MAX('HECHOS_DATAMES_NPI_PP'[Fecha Fin de avería])), 12, 31))"
+DIM_TIEMPO,"ADDCOLUMNS (
+    CALENDAR( DATE(2025, 1, 1), DATE(2026, 12, 31) ),
+    ""Fecha"", [Date],
+    ""Año"", YEAR([Date]),
+    ""Mes"", MONTH([Date]),
+    ""Dia"", DAY([Date]) ,
+    ""FechaSk"" , YEAR([Date])*10000 + MONTH([Date])*100 + DAY([Date]),
+    ""Semestre"", ROUNDUP(MONTH([Date])/6,0),
+    ""Cuatrimestre"", ROUNDUP(MONTH([Date])/4,0),
+    ""Trimestre"", ROUNDUP(MONTH([Date])/3,0),
+    ""Bimestre"", ROUNDUP(MONTH([Date])/2,0),
+    ""Semana"" , WEEKNUM([Date]),
+    ""AñoMes"" , YEAR([Date]) & FORMAT([Date],""mm""),
+    ""DiaSemana"", WEEKDAY([Date]),
+    ""NbAño"" , YEAR([Date]),
+    ""NbSemestre"" , ""S"" & ROUNDUP(MONTH([Date])/6,0),
+    ""NbSemestreAño"" , ""S"" & ROUNDUP(MONTH([Date])/6,0) & ""/""  & RIGHT(YEAR([Date]),2),
+    ""NbCuatrimestre"" , ""C"" & ROUNDUP(MONTH([Date])/4,0),
+    ""NbCuatrimestreAño"" , ""C"" & ROUNDUP(MONTH([Date])/4,0) & ""/"" & RIGHT(YEAR([Date]),2),
+    ""NbTrimestre"" , ""T"" & ROUNDUP(MONTH([Date])/3,0),
+    ""NbTrimestreAño"" ,""T"" & ROUNDUP(MONTH([Date])/3,0) & ""/"" & RIGHT(YEAR([Date]),2),
+    ""NbBimestre"" , ""B"" & ROUNDUP(MONTH([Date])/2,0),
+    ""NbBimestreAño"" , ""B"" & ROUNDUP(MONTH([Date])/2,0) & ""/"" & RIGHT(YEAR([Date]),2),
+    ""NbMes"" , UPPER(MID(FORMAT ([Date], ""mmmm""),1,1)) & MID(FORMAT ([Date], ""mmmm""),2,LEN(FORMAT ([Date], ""mmmm""))-1),
+    ""nbMes3L"" , LEFT(FORMAT ( [Date], ""mmmm""),3),
+    ""NbDia"" , DAY([Date]) & "" "" & LEFT(FORMAT ( [Date], ""mmmm""),3),
+    ""NbSemana"" , ""Sem "" & WEEKNUM([Date]) & ""/"" & RIGHT(YEAR([Date]),2),
+    ""NdDiaSemana"" , FORMAT([Date],""dddd""),
+    ""MinutosDia"", 1440
+)"
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,"Calendar(Date(Year(MIN('DIM_TIEMPO'[Date])), 1, 1), Date(Year(MAX('DIM_TIEMPO'[Date])), 12, 31))"
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,"Calendar(Date(Year(MIN('DIM_TIEMPO'[Fecha])), 1, 1), Date(Year(MAX('DIM_TIEMPO'[Fecha])), 12, 31))"
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,"Calendar(Date(Year(MIN('HECHOS (iw39)'[Fecha creación])), 1, 1), Date(Year(MAX('HECHOS (iw39)'[Fecha creación])), 12, 31))"
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,"Calendar(Date(Year(MIN('HECHOS (iw39)'[Fe.inic.extrema])), 1, 1), Date(Year(MAX('HECHOS (iw39)'[Fe.inic.extrema])), 12, 31))"
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,"Calendar(Date(Year(MIN('HECHOS (iw39)'[Fe.fin extrema])), 1, 1), Date(Year(MAX('HECHOS (iw39)'[Fe.fin extrema])), 12, 31))"
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,"Calendar(Date(Year(MIN('HECHOS (iw39)'[Fecha ref.])), 1, 1), Date(Year(MAX('HECHOS (iw39)'[Fecha ref.])), 12, 31))"
+Dim_Tiempo_Costo,"ADDCOLUMNS (
+                                CALENDAR(MIN(HECHOSMOVMERC[Fecha de referencia]),MAX(HECHOSMOVMERC[Fecha de referencia])),
+                                ""Fecha"",[Date],
+                                ""Año"",YEAR([Date]),
+                                ""Mes"",MONTH([Date]),
+                                ""Dia"",DAY([Date]) ,
+                                ""FechaSk"" , YEAR([Date])*10000 +MONTH([Date])*100 +DAY([Date]),
+                                ""Semestre"",ROUNDUP(MONTH([Date])/6,0),
+                                ""Cuatrimestre"",ROUNDUP(MONTH([Date])/4,0),
+                                ""Trimestre"",ROUNDUP(MONTH([Date])/3,0),
+                                ""Bimestre"",ROUNDUP(MONTH([Date])/2,0),
+                                ""Semana"" , WEEKNUM([Date]),
+                                ""AñoMes"" , YEAR([Date]) & FORMAT([Date],""mm""),
+                                ""DiaSemana"",WEEKDAY([Date]),
+                                ""NbAño"" , YEAR([Date]),
+                                ""NbSemestre"" , ""S""&ROUNDUP(MONTH([Date])/6,0),
+                                ""NbSemestreAño"" , ""S""&ROUNDUP(MONTH([Date])/6,0) & ""/""  & RIGHT(YEAR([Date]),2),
+                                ""NbCuatrimestre"" , ""C""&ROUNDUP(MONTH([Date])/4,0),
+                                ""NbCuatrimestreAño"" , ""C""&ROUNDUP(MONTH([Date])/4,0) &""/"" & RIGHT(YEAR([Date]),2),
+                                ""NbTrimestre"" , ""T""&ROUNDUP(MONTH([Date])/3,0),
+                                ""NbTrimestreAño"" ,""T""&ROUNDUP(MONTH([Date])/3,0) & ""/"" & RIGHT(YEAR([Date]),2),
+                                ""NbBimestre"" , ""B"" & ROUNDUP(MONTH([Date])/2,0),
+                                ""NbBimestreAño"" , ""B"" & ROUNDUP(MONTH([Date])/2,0) &""/"" & RIGHT(YEAR([Date]),2),
+                                ""NbMes"" , UPPER(MID(FORMAT ([Date], ""mmmm""),1,1)) & MID(FORMAT ([Date], ""mmmm""),2,LEN(FORMAT ([Date], ""mmmm""))-1),
+                                ""nbMes3L"" , left(FORMAT ( [Date], ""mmmm""),3),
+                                ""NbDia"" , DAY([Date]) & "" "" & left(FORMAT ( [Date], ""mmmm""),3),
+                                ""NbSemana"" , ""Sem "" & WEEKNUM([Date]) & ""/"" & RIGHT(YEAR([Date]),2),
+                                ""NdDiaSemana"" , FORMAT([Date],""dddd"") )"
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,"Calendar(Date(Year(MIN('Dim_Tiempo_Costo'[Date])), 1, 1), Date(Year(MAX('Dim_Tiempo_Costo'[Date])), 12, 31))"
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,"Calendar(Date(Year(MIN('Dim_Tiempo_Costo'[Fecha])), 1, 1), Date(Year(MAX('Dim_Tiempo_Costo'[Fecha])), 12, 31))"
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,"Calendar(Date(Year(MIN('HECHOS_DATAMES_NPI_PP'[_F/H Fin])), 1, 1), Date(Year(MAX('HECHOS_DATAMES_NPI_PP'[_F/H Fin])), 12, 31))"
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,"Calendar(Date(Year(MIN('HECHOS_DATAMES_NPI_PP'[_F/H Inicio])), 1, 1), Date(Year(MAX('HECHOS_DATAMES_NPI_PP'[_F/H Inicio])), 12, 31))"

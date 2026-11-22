@@ -1,0 +1,116 @@
+TableName,ColumnName,Expression
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Año,YEAR([Date])
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,NroMes,MONTH([Date])
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Mes,"FORMAT([Date], ""MMMM"")"
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,NroTrimestre,INT(([NroMes] + 2) / 3)
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Trimestre,"""Qtr "" & [NroTrimestre]"
+DateTableTemplate_01de78c2-214a-404e-a121-4092a5ea3cd3,Día,DAY([Date])
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Año,YEAR([Date])
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,NroMes,MONTH([Date])
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_96673174-eddf-4549-8663-bbdafbe552e3,Día,DAY([Date])
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Año,YEAR([Date])
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,NroMes,MONTH([Date])
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_7483ee39-3c4f-4b85-92bf-d5e05983b7af,Día,DAY([Date])
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Año,YEAR([Date])
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,NroMes,MONTH([Date])
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996,Día,DAY([Date])
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Año,YEAR([Date])
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,NroMes,MONTH([Date])
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_36ce07fd-2639-4e1b-9b40-534de5645bff,Día,DAY([Date])
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Año,YEAR([Date])
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,NroMes,MONTH([Date])
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_17805f94-a6a7-4927-a7a7-25e5c68766a6,Día,DAY([Date])
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Año,YEAR([Date])
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,NroMes,MONTH([Date])
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_34ae4b33-62f0-4f0b-bae1-82e81b08c6a6,Día,DAY([Date])
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Año,YEAR([Date])
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,NroMes,MONTH([Date])
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_ba582b7f-0142-4640-b2cc-e8e0a3574041,Día,DAY([Date])
+HORO_CONSOL,HorometroElecAjustado,"
+IF (
+    HORO_CONSOL[Equipo] IN { 100636, 620903, 618269 },
+    
+    // 🔒 CANDADO: Si alguna de las dos percusiones es nula o cero, la dejamos vacía
+    IF (
+        ISBLANK(HORO_CONSOL[Max_Percusion1]) || HORO_CONSOL[Max_Percusion1] = 0 ||
+        ISBLANK(HORO_CONSOL[Max_Percusion2]) || HORO_CONSOL[Max_Percusion2] = 0,
+        BLANK(), // Casilla en blanco para no afectar promedios
+        HORO_CONSOL[Max_Percusion1] + HORO_CONSOL[Max_Percusion2]
+    ),
+    
+    // Si es cualquier otro equipo, trae el horómetro eléctrico normal
+    HORO_CONSOL[Max_Electrico]
+)"
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Año,YEAR([Date])
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,NroMes,MONTH([Date])
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_c4bbd9c2-49f5-42e7-b97f-6e26294e3333,Día,DAY([Date])
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Año,YEAR([Date])
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,NroMes,MONTH([Date])
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_a1d42e7a-efac-41eb-963e-38ac57656b62,Día,DAY([Date])
+HECHOS_DATAMES_NPI_PP,Duracion del paro (Horas),"
+DIVIDE(HECHOS_DATAMES_NPI_PP[Minutos_Paro_Ajustados],60,BLANK())"
+HECHOS_DATAMES_NPI_PP,Responsable,"
+SWITCH(
+    TRUE(),
+    CONTAINSSTRING('HECHOS_DATAMES_NPI_PP'[IDResponsable], ""-MTO-""), ""Mantenimiento"",
+    CONTAINSSTRING('HECHOS_DATAMES_NPI_PP'[IDResponsable], ""-OPE-""), ""Operación"",
+    CONTAINSSTRING('HECHOS_DATAMES_NPI_PP'[IDResponsable], ""-OPH-""), ""Operación"",
+    'HECHOS_DATAMES_NPI_PP'[IDResponsable]
+)"
+HECHOS_DATAMES_NPI_PP,DISP,"
+SWITCH(
+    TRUE(),
+    CONTAINSSTRING('HECHOS_DATAMES_NPI_PP'[IDResponsable], ""-MTO-""), ""Mecánica"",
+    CONTAINSSTRING('HECHOS_DATAMES_NPI_PP'[IDResponsable], ""-OPE-""), ""Operacional"",
+    CONTAINSSTRING('HECHOS_DATAMES_NPI_PP'[IDResponsable], ""-OPH-""), ""Operacional"",
+    'HECHOS_DATAMES_NPI_PP'[IDResponsable]
+)"
+HECHOS_DATAMES_NPI_PP,Minutos_Paro_Ajustados,"
+VAR MinutosReportados = HECHOS_DATAMES_NPI_PP[Duración parada (Mins)]
+VAR DiasCompletos = INT ( MinutosReportados / 1440 )
+VAR MinutosRestantes = MOD ( MinutosReportados, 1440 )
+
+// Si el residuo cae en el turno muerto (más de 18h = 1080 mins), se topa a 1080 mins.
+VAR RestoAjustado = IF ( MinutosRestantes > 1080, 1080, MinutosRestantes )
+
+RETURN
+    (DiasCompletos * 1080) + RestoAjustado"
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Año,YEAR([Date])
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,NroMes,MONTH([Date])
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_32ebe947-7ba6-4f50-9dee-756d1ff26e75,Día,DAY([Date])
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Año,YEAR([Date])
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,NroMes,MONTH([Date])
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Mes,"FORMAT([Date], ""MMMM"")"
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,NroTrimestre,INT(([NroMes] + 2) / 3)
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Trimestre,"""Qtr "" & [NroTrimestre]"
+LocalDateTable_dd22223c-2998-47b7-9dec-eeac043b86c3,Día,DAY([Date])

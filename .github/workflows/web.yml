@@ -52,9 +52,12 @@ jobs:
         run: npm test
       - name: Compilar sitio
         if: steps.pages.outputs.listo == 'si'
+        # La URL del proyecto y la llave anon son públicas por diseño de Supabase: van dentro
+        # de la página publicada de todos modos. Sin sesión de administrador, las políticas
+        # de la base solo permiten leer. Nunca poner aquí la llave service_role.
         env:
-          VITE_SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_URL: https://sbjmjrjmfgcqpuofyjqo.supabase.co
+          VITE_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNiam1qcmptZmdjcXB1b2Z5anFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU2NDQxOTEsImV4cCI6MjExMTIyMDE5MX0.UOxOZPWdU-QmqhKyb-NEs5njXD-ikbkw5t93WFql-es
         run: npm run build:web
       - if: steps.pages.outputs.listo == 'si'
         uses: actions/configure-pages@v5

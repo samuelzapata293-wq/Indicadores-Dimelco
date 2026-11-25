@@ -2,7 +2,7 @@
 
 Esta guía deja la aplicación funcionando por primera vez: la base de datos en Supabase, el sitio en GitHub Pages y la primera carga del libro. Se hace una sola vez. Para las actualizaciones semanales o mensuales, ver `docs/manual_carga.md`.
 
-Hace falta acceso al panel de Supabase, permisos de administración en el repositorio de GitHub (<nombre del repo en GitHub>), el libro maestro de Excel (.xlsx) y el correo del administrador (<correo del administrador>).
+Hace falta acceso al panel de Supabase, permisos de administración en el repositorio de GitHub (`samuelzapata293-wq/Indicadores-Dimelco`), el libro maestro de Excel (.xlsx) y el correo del administrador.
 
 ## Base de datos
 
@@ -15,22 +15,20 @@ Hace falta acceso al panel de Supabase, permisos de administración en el reposi
 
    Si el correo no coincide con ninguna cuenta, la sentencia no da error y no inserta nada. Para comprobarlo, ejecutar `select * from administradores;`. Debe aparecer una fila.
 
-5. En Settings > API (en algunas versiones del panel, Project Settings > API Keys), copiar el Project URL (<URL del proyecto Supabase>) y la llave anon. No copiar la llave service_role.
+5. En Authentication > Sign In / Providers, desactivar "Allow new users to sign up", para que nadie más pueda crear usuarios desde la web.
+
+   En Project Settings > API Keys están el Project URL (hoy `https://sbjmjrjmfgcqpuofyjqo.supabase.co`) y la llave anon. No copiar la llave service_role en ningún lado.
 
 ## Sitio web en GitHub Pages
 
-6. En el repositorio, ir a Settings > Secrets and variables > Actions, abrir la pestaña Variables y crear con New repository variable:
-   - `SUPABASE_URL`, con el Project URL (<URL del proyecto Supabase>).
-   - `SUPABASE_ANON_KEY`, con la llave anon.
-
-   Son variables y no secretos, porque el flujo las lee como variables. La llave anon es pública por diseño: el navegador la envía en cada consulta. Sin sesión, las políticas de la base solo permiten leer. Escribir exige una sesión de administrador, y la base lo comprueba.
+6. El Project URL y la llave anon van escritos en `.github/workflows/web.yml` (paso "Compilar sitio"). Si se cambia de proyecto o se renueva la llave, se editan ahí. La llave anon es pública por diseño: el navegador la envía en cada consulta. Sin sesión, las políticas de la base solo permiten leer. Escribir exige una sesión de administrador, y la base lo comprueba.
 
 7. Ir a Settings > Pages > Build and deployment, y en Source elegir GitHub Actions.
 8. Hacer push a `main`. El flujo "Web de indicadores (GitHub Pages)" corre las pruebas, compila el sitio y lo publica. Si el cambio solo toca `docs/`, `supabase/`, `tools/` o archivos `.md`, el flujo no se dispara; en ese caso, en la pestaña Actions, elegir el flujo y usar Run workflow. Esperar a que termine en verde.
 
 ## Primera carga
 
-9. Abrir la web (<URL de la web>). En el pie de página, elegir Ingresar y entrar con el correo y la contraseña del administrador.
+9. Abrir la web (https://samuelzapata293-wq.github.io/Indicadores-Dimelco/). En el pie de página, elegir Ingresar y entrar con el correo y la contraseña del administrador.
 10. En el pie de página, elegir Cargar datos. Elegir el libro maestro (.xlsx) o arrastrarlo a la pantalla.
 11. Revisar la pantalla "Paso 2. Revisar". Si no hay errores, elegir Cargar a la base y confirmar con Sí, cargar.
 12. Al terminar, la pantalla muestra "Carga terminada" con el id de la carga. Elegir Ver tablero.
@@ -49,7 +47,7 @@ Sin sesión, el pie de página no muestra Cargar datos.
 
 ### La página muestra "Falta configurar la conexión a Supabase"
 
-Ocurre cuando el sitio se compiló sin `VITE_SUPABASE_URL` o `VITE_SUPABASE_ANON_KEY`. El flujo toma esos valores de las variables `SUPABASE_URL` y `SUPABASE_ANON_KEY`, así que hay que revisar que existan con esos nombres exactos. Como los valores se leen al compilar, después de corregirlos hay que volver a ejecutar el flujo.
+Ocurre cuando el sitio se compiló sin `VITE_SUPABASE_URL` o `VITE_SUPABASE_ANON_KEY`. El flujo toma esos valores del paso "Compilar sitio" de `.github/workflows/web.yml`, así que hay que revisar que estén ahí. Como los valores se leen al compilar, después de corregirlos hay que volver a ejecutar el flujo.
 
 ### Ingresar muestra "Correo o contraseña incorrectos"
 

@@ -85,13 +85,13 @@ export default function Portada({ fechaMin, fechaMax }: Props) {
           ))}
         </nav>
         <p className="portada-fecha" style={posicion(D.fecha)}>{fecha}</p>
-        <EnlacesSesion className="portada-enlaces" />
+        <EnlacesSesion className="portada-enlaces" exportarPdf />
       </LienzoPbi>
     );
   }
 
   return (
-    <Layout>
+    <Layout exportarPdf>
       <section className="portada" aria-labelledby="portada-titulo">
         <img className="portada-fondo" src={fondo} alt="" />
 

@@ -30,6 +30,7 @@ function medir(ancho: number, alto: number): EstadoLienzo {
 
 /** Modo y escala del lienzo según el tamaño de la ventana; se actualiza al redimensionar. */
 export function useEstadoLienzo(ancho: number = TAMANO_PAGINA.ancho, alto: number = TAMANO_PAGINA.alto): EstadoLienzo {
+  const forzado = useContext(CtxForzarLienzo);
   const [estado, setEstado] = useState(() => medir(ancho, alto));
   useEffect(() => {
     const actualizar = () =>
@@ -41,8 +42,13 @@ export function useEstadoLienzo(ancho: number = TAMANO_PAGINA.ancho, alto: numbe
     window.addEventListener("resize", actualizar);
     return () => window.removeEventListener("resize", actualizar);
   }, [ancho, alto]);
-  return estado;
+  // Exportación a PDF: siempre lienzo a escala 1, sin importar la ventana.
+  return forzado ? ESTADO_FORZADO : estado;
 }
+
+/** Dentro de este proveedor (con valor true) las páginas usan siempre el lienzo de 1280x720 a escala 1. */
+export const CtxForzarLienzo = createContext(false);
+const ESTADO_FORZADO: EstadoLienzo = { modo: "lienzo", escala: 1 };
 
 const CtxLienzo = createContext<EstadoLienzo>({ modo: "apilado", escala: 1 });
 

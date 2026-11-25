@@ -40,7 +40,7 @@ export default function PaginaPbi({ titulo, rectTitulo = BASE.titulo, rectPie = 
   if (estado.modo === "apilado") {
     return (
       <ProveedorLienzo value={estado}>
-        <Layout titulo={titulo} amplio>
+        <Layout titulo={titulo} amplio exportarPdf>
           <DisposicionPbi lateral={lateral} anchoLateral={anchoLateral}>
             {children}
           </DisposicionPbi>
@@ -61,7 +61,7 @@ export default function PaginaPbi({ titulo, rectTitulo = BASE.titulo, rectPie = 
         {/* Pie alineado al borde derecho del texto original; los enlaces de sesión siguen a su derecha. */}
         <div className="lienzo-pie" style={posicion(rectPie)}>
           <p>{TEXTO_PIE}</p>
-          <EnlacesSesion className="lienzo-enlaces" />
+          <EnlacesSesion className="lienzo-enlaces" exportarPdf />
         </div>
       </LienzoPbi>
     </ProveedorLienzo>

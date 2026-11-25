@@ -1,22 +1,26 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
+import BotonExportarPdf from "./ExportarPdf";
 
 interface Props {
   // Sin título no hay banda superior (así se muestra la Portada).
   titulo?: string;
   /** Contenido más ancho (páginas del tablero con tablas). */
   amplio?: boolean;
+  /** Muestra el botón "Exportar PDF" en el pie (solo dentro de los proveedores del tablero). */
+  exportarPdf?: boolean;
   children: ReactNode;
 }
 
 export const TEXTO_PIE = "© 2025 Distribuidora de Materiales Eléctricos S.A.";
 
 /** Enlaces de sesión: "Ingresar" o, con sesión, "Cargar datos" (administrador) y "Salir". */
-export function EnlacesSesion({ className = "pie-enlaces" }: { className?: string }) {
+export function EnlacesSesion({ className = "pie-enlaces", exportarPdf }: { className?: string; exportarPdf?: boolean }) {
   const { session, esAdmin, cerrarSesion } = useAuth();
   return (
     <nav className={className} aria-label="Sesión">
+      {exportarPdf && <BotonExportarPdf />}
       {session ? (
         <>
           {esAdmin && <Link to="/cargar">Cargar datos</Link>}
@@ -31,7 +35,7 @@ export function EnlacesSesion({ className = "pie-enlaces" }: { className?: strin
   );
 }
 
-export default function Layout({ titulo, amplio, children }: Props) {
+export default function Layout({ titulo, amplio, exportarPdf, children }: Props) {
   return (
     <div className="pagina">
       {titulo !== undefined && (
@@ -50,7 +54,7 @@ export default function Layout({ titulo, amplio, children }: Props) {
 
       <footer className="pie">
         <span className="pie-texto">{TEXTO_PIE}</span>
-        <EnlacesSesion />
+        <EnlacesSesion exportarPdf={exportarPdf} />
       </footer>
     </div>
   );

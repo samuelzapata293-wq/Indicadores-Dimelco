@@ -12,8 +12,7 @@ import Resumen from "./pages/Resumen";
 import Mensual from "./pages/Mensual";
 import { ModeloProvider, MODO_LOCAL } from "./datos/ModeloProvider";
 import { FiltrosProvider } from "./components/Filtros";
-import { EQUIPOS_POR_PAGINA } from "./medidas/contexto";
-import { DISENOS_FAMILIA } from "./pages/disenos";
+import { PAGINAS_FAMILIA } from "./pages/paginasFamilia";
 
 // La galería de componentes es solo para desarrollo: no entra al paquete de producción.
 const Galeria = import.meta.env.DEV ? lazy(() => import("./pages/Galeria")) : null;
@@ -28,17 +27,6 @@ function Tablero() {
     </ModeloProvider>
   );
 }
-
-// Las ST3.5 y ST1030 muestran en la tabla los paros de los 8 scoops (contrato, sección 7).
-const SCOOPS = [...EQUIPOS_POR_PAGINA.st35, ...EQUIPOS_POR_PAGINA.st1030];
-
-const PAGINAS_FAMILIA = [
-  { ruta: "/simba", titulo: "Tiro Largo", grafico: EQUIPOS_POR_PAGINA.simba, tabla: EQUIPOS_POR_PAGINA.simba, diseno: DISENOS_FAMILIA.simba },
-  { ruta: "/jumbo", titulo: "Perforación Mecánizada", grafico: EQUIPOS_POR_PAGINA.jumbo, tabla: EQUIPOS_POR_PAGINA.jumbo, diseno: DISENOS_FAMILIA.jumbo },
-  { ruta: "/sostenimiento", titulo: "Equipos de Sostenimiento", grafico: EQUIPOS_POR_PAGINA.sostenimiento, tabla: EQUIPOS_POR_PAGINA.sostenimiento, diseno: DISENOS_FAMILIA.sostenimiento },
-  { ruta: "/st35", titulo: "Cargadoras Bajo Perfil", grafico: EQUIPOS_POR_PAGINA.st35, tabla: SCOOPS, diseno: DISENOS_FAMILIA.st35 },
-  { ruta: "/st1030", titulo: "Cargadoras Bajo Perfil", grafico: EQUIPOS_POR_PAGINA.st1030, tabla: SCOOPS, diseno: DISENOS_FAMILIA.st1030 },
-];
 
 // Ruta "/cargar": solo administradores. Sin sesión de admin, va a /login.
 function RutaCargar() {

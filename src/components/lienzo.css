@@ -262,3 +262,37 @@
 @supports not selector(::-webkit-scrollbar) {
   .lienzo .tabla-pbi, .lienzo .paneles-rejilla { scrollbar-width: thin; scrollbar-color: #8a8a8a transparent; }
 }
+
+/* ---------- Exportar PDF ---------- */
+.boton-exportar-pdf { font: inherit; }
+.boton-exportar-pdf:disabled { cursor: progress; text-decoration: none; }
+.lienzo-enlaces .boton-exportar-pdf, .portada-enlaces .boton-exportar-pdf { white-space: nowrap; }
+.exportar-pdf-error {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(92vw, 640px);
+  padding: 8px 12px;
+  background: #fff;
+  color: #9b1c1c;
+  border: 1px solid #e0b4b4;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  font: 13px/1.3 "Segoe UI", Arial, sans-serif;
+}
+.exportar-pdf-error button { background: none; border: 0; font-size: 18px; line-height: 1; color: inherit; cursor: pointer; }
+
+/* Contenedor fuera de pantalla con las 8 páginas a escala 1 (nunca se ve). */
+.exportando-pdf { position: fixed; left: -20000px; top: 0; width: 1280px; pointer-events: none; }
+.exportando-pdf .hoja-pdf { position: relative; flex: none; overflow: hidden; }
+.exportando-pdf .lienzo-marco { position: relative; inset: auto; display: block; width: 1280px; height: 720px; background: none; }
+/* Lo que no va en el PDF: flecha de volver, indicador de guardado y enlaces de sesión (con el botón). */
+.exportando-pdf .lienzo-volver,
+.exportando-pdf .guardado-periodo,
+.exportando-pdf .lienzo-enlaces,
+.exportando-pdf .portada-enlaces { display: none !important; }

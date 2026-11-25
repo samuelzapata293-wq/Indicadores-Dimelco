@@ -208,6 +208,8 @@ class Decodificador:
         Para la columna j (orden del esquema S): bit j de "R" = igual a la fila
         anterior del mismo nivel; bit j de "\u00d8" = nulo; si no, se toma el
         siguiente valor de "C".
+      * La fila anterior para R se conserva por nivel entre grupos (matrices): la primera
+        fila hija de un grupo puede repetir la ultima del grupo anterior.
       * "S" (esquema) solo aparece en la primera fila de cada nivel y se hereda.
       * Columnas con "DN" guardan en C un indice a ValueDicts[DN].
       * Filas con "M" anidan un nivel inferior (series): cada fila hija se
@@ -276,12 +278,15 @@ class Decodificador:
 
     def nivel(self, filas, prof, dicts, sync, ctx):
         res = []
-        previa = None
+        # La fila previa (para el bit R) se conserva por profundidad durante todo el DS: en una
+        # matriz, la primera fila hija de un grupo repite la ultima del grupo anterior del mismo nivel.
+        previas = self.__dict__.setdefault("_previa", {})
+        previa = previas.get(prof)
         for fila in filas:
             if "S" in fila:
                 self.esq[prof] = fila["S"]
             cols = self.una_fila(fila, self.esq[prof], previa, dicts)
-            previa = cols
+            previa = previas[prof] = cols
             actual = dict(ctx)
             actual.update(cols)
             hijos = fila.get("M")
@@ -319,6 +324,7 @@ class Decodificador:
                     tabla += sub_dec.nivel(filas, 0, d2, {}, {})
             sync[sub["N"]] = tabla
         self.esq = {}
+        self._previa = {}
         out = []
         for ph in ds.get("PH", []):
             for _m, filas in ph.items():

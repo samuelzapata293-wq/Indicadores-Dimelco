@@ -1,0 +1,249 @@
+Show keyboard shortcuts
+Show screen reader tips
+Skip to main content
+Power BI Report
+
+DISIPONIBILIDAD-MTTR-MTBF (Z4 NPI MEC-ELC)
+
+Scroll up
+Scroll down
+Scroll left
+Scroll right
+Row Selection
+EQUIPO
+DENOMINACION
+ 
+MTTR_Horas
+MTBF_Horas
+Meta_Disp
+Disponibilidad %
+Confiabilidad %
+Prob. de Falla
+Select Row
+100362
+CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)
+10.17
+69.83
+73%
+83%
+77.28 %
+22.72 %
+Select Row
+618486
+CARGADOR FRONTAL BP SCOOP 3.50 N°6
+480.00
+0.00
+71%
+0%
+0.00 %
+100.00 %
+Select Row
+618270
+CARGADOR FRONTAL BP SCOOP ST1030 No. 01
+480.00
+0.00
+75%
+0%
+0.00 %
+100.00 %
+Select Row
+100615
+CARGADOR FRONTAL BP SCOOP ST1030 No. 02
+13.74
+26.26
+80%
+63%
+50.39 %
+49.61 %
+Select Row
+100635
+CARGADOR FRONTAL BP SCOOP ST1030 No. 03
+29.13
+39.44
+82%
+54%
+63.36 %
+36.64 %
+Select Row
+100655
+CARGADOR FRONTAL BP SCOOP ST1030 No. 04
+9.82
+70.18
+73%
+81%
+77.38 %
+22.62 %
+Select Row
+100656
+CARGADOR FRONTAL BP SCOOP ST1030 No. 05
+7.22
+46.11
+73%
+81%
+67.68 %
+32.32 %
+Select Row
+100657
+CARGADOR FRONTAL BP SCOOP ST1030 No. 06
+8.34
+15.66
+78%
+65%
+31.69 %
+68.31 %
+Select Row
+618321
+DESATADOR DE ROCAS SCALEMIN
+480.00
+0.00
+29%
+0%
+0.00 %
+100.00 %
+Select Row
+100647
+DESATADOR DE ROCAS SCALEMIN No.2
+49.91
+46.09
+80%
+48%
+67.67 %
+32.33 %
+Select Row
+618320
+EMPERNADOR BOLTEC EPIROC N°1
+3.86
+17.95
+81%
+77%
+36.69 %
+63.31 %
+Select Row
+621321
+EMPERNADOR BOLTEC S10 S EPIROC N°2
+4.60
+12.55
+81%
+65%
+23.82 %
+76.18 %
+Select Row
+618487
+JUMBO DE PERFORACION ATLAS SIMBA S7 N°1
+7.72
+18.95
+81%
+66%
+38.67 %
+61.33 %
+Select Row
+100618
+JUMBO DE PERFORACION ATLAS SIMBA S7 N°2
+4.39
+27.61
+82%
+81%
+52.10 %
+47.90 %
+Select Row
+100660
+JUMBO DE PERFORACION ATLAS SIMBA S7 N°3
+6.07
+41.93
+80%
+84%
+65.10 %
+34.90 %
+Select Row
+618269
+PERFORADORA BOOMER 282 EPIROC No. 01
+5.57
+12.89
+81%
+64%
+24.75 %
+75.25 %
+Select Row
+100636
+PERFORADORA BOOMER 282 EPIROC No. 02
+3.80
+24.44
+79%
+82%
+47.87 %
+52.13 %
+Select Row
+620903
+PERFORADORA BOOMER 282 EPIROC No. 03
+3.13
+50.20
+79%
+89%
+69.87 %
+30.13 %
+Periodo de tiempo
+Var t: Conf.
+12 hrs
+18 hrs
+24 hrs
+Var t: Disp
+18 hrs
+24 hrs
+DISP. GLOBAL
+Select all
+Mecánica
+Operacional
+Scroll up
+Scroll down
+Scroll left
+Scroll right
+Row Selection
+Familia
+ 
+MTTR (Horas)
+MTBF (Horas)
+Disponibilidad %
+Confiabilidad %
+Probabilidad de Falla
+Select Row
+TIRO LARGO
+6.17
+27.31
+77%
+51.74 %
+48.26 %
+Select Row
+PERFORACION MECANIZADA
+4.57
+23.12
+78%
+45.91 %
+54.09 %
+Select Row
+EQUIPOS DE SOSTENIMIENTO
+16.84
+17.44
+47%
+35.63 %
+64.37 %
+Select Row
+CARGADORAS BP FLOTA 3.5
+77.29
+59.86
+41%
+74.03 %
+25.97 %
+Select Row
+CARGADORAS BP
+20.72
+31.65
+58%
+56.62 %
+43.38 %
+-
++
+123%
+Microsoft Power BI
+7of8
+Report Zoomed To 123%
+Page 7 of 8 Next Page Button Pressed Enter or Space

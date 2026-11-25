@@ -62,48 +62,6 @@ _spec = importlib.util.spec_from_file_location(
 dq = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(dq)
 
-
-class DecodificadorCorregido(dq.Decodificador):
-    """Decodificador de tools/decodificar_querydata.py con la herencia "R" corregida entre grupos.
-
-    En una matriz (categoria x serie) el bit R de la primera fila hija de un grupo se refiere a la
-    ultima fila del grupo anterior del mismo nivel, no a "ninguna". La clase base reinicia la fila
-    previa en cada grupo y entrega nulo en vez del valor repetido (p. ej. Meta_Disp o Disp Din % de
-    la primera semana de un equipo cuando coincide con la ultima del equipo anterior). Aqui la fila
-    previa se conserva por profundidad durante todo el DS.
-    """
-
-    def filas_ds(self, ds, dicts_padre):
-        self._previa = {}
-        return super().filas_ds(ds, dicts_padre)
-
-    def nivel(self, filas, prof, dicts, sync, ctx):
-        res = []
-        previa = getattr(self, "_previa", {}).get(prof)
-        for fila in filas:
-            if "S" in fila:
-                self.esq[prof] = fila["S"]
-            cols = self.una_fila(fila, self.esq[prof], previa, dicts)
-            previa = cols
-            if hasattr(self, "_previa"):
-                self._previa[prof] = cols
-            actual = dict(ctx)
-            actual.update(cols)
-            hijos = fila.get("M")
-            if hijos:
-                for h in hijos:
-                    for _miembro, sub in h.items():
-                        res += self.nivel(sub, prof + 1, dicts, sync, actual)
-            else:
-                for nom in list(cols):
-                    if nom.startswith("SyncI") and cols[nom] is not None:
-                        for tabla in sync.values():
-                            if cols[nom] < len(tabla):
-                                for k, v in tabla[cols[nom]].items():
-                                    actual["sync." + k] = v
-                res.append(actual)
-        return res
-
 # ---------------------------------------------------------------------------
 # Visuales (consulta capturada de la que se parte) y escenarios
 # ---------------------------------------------------------------------------
@@ -334,7 +292,7 @@ def decodificar(response, base):
     r = response["results"][0]
     if "error" in r:
         raise RuntimeError("el servicio devolvio error en la consulta: %s" % json.dumps(r["error"])[:500])
-    dec = DecodificadorCorregido(r)
+    dec = dq.Decodificador(r)
     filas = [dq.nombre_fila(base["campos"], f) for f in dec.filas_con_nombre()]
     return filas, sorted(set(dec.avisos))
 

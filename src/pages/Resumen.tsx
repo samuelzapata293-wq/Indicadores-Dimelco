@@ -6,7 +6,7 @@ import DisposicionPbi from "../components/DisposicionPbi";
 import { useFiltros } from "../components/Filtros";
 import SegmentadorBotones from "../components/SegmentadorBotones";
 import SegmentadorLista from "../components/SegmentadorLista";
-import BotonFijarPeriodo from "../components/BotonFijarPeriodo";
+import IndicadorGuardado from "../components/IndicadorGuardado";
 import SegmentadorPeriodo from "../components/SegmentadorPeriodo";
 import TablaPbi, { type ColumnaPbi } from "../components/TablaPbi";
 import { COLORES } from "../components/formato";
@@ -57,7 +57,7 @@ function Contenido({ modelo }: { modelo: Modelo }) {
   const lateral = (
     <>
       <SegmentadorPeriodo valor={f.periodo} onChange={f.setPeriodo} min={f.rango.min} max={f.rango.max} />
-      <BotonFijarPeriodo />
+      <IndicadorGuardado />
       <SegmentadorBotones
         titulo="Var t: Conf."
         opciones={OPCIONES_T_CONF}

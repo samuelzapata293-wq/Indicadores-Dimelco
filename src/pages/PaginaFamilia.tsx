@@ -8,7 +8,7 @@ import { useFiltros } from "../components/Filtros";
 import GraficoDispFamilia, { type EquipoDisp } from "../components/GraficoDispFamilia";
 import SegmentadorBotones from "../components/SegmentadorBotones";
 import SegmentadorLista from "../components/SegmentadorLista";
-import BotonFijarPeriodo from "../components/BotonFijarPeriodo";
+import IndicadorGuardado from "../components/IndicadorGuardado";
 import SegmentadorPeriodo from "../components/SegmentadorPeriodo";
 import TablaPbi, { type ColumnaPbi } from "../components/TablaPbi";
 import type { Contexto, HorasDisp } from "../medidas/contexto";
@@ -74,7 +74,7 @@ function Contenido({ modelo, titulo, equiposGrafico, equiposTabla }: Props & { m
   const lateral = (
     <>
       <SegmentadorPeriodo valor={f.periodo} onChange={f.setPeriodo} min={f.rango.min} max={f.rango.max} />
-      <BotonFijarPeriodo />
+      <IndicadorGuardado />
       <SegmentadorBotones
         titulo="Var t: Disp"
         opciones={[{ valor: 18, etiqueta: "18 hrs" }, { valor: 24, etiqueta: "24 hrs" }]}

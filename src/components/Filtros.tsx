@@ -3,10 +3,15 @@
 // administrador (useConfiguracion) o, si no hay, de periodoInicial(modelo). Mientras el usuario no mueve un
 // periodo, ese periodo sigue al guardado o al de los datos; si ya lo movió, no se le pisa.
 
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useQueryClient } from "@tanstack/react-query";
+import { useAuth } from "../auth";
+import { clienteSupabase } from "../lib/supabase";
 import { useModelo } from "../datos/ModeloProvider";
-import { useConfiguracion } from "../datos/lectura";
-import { elegirPeriodo, mensualConfigurado, periodoConfigurado } from "../datos/periodos";
+import { CLAVE_CONFIGURACION, guardarPeriodo, useConfiguracion } from "../datos/lectura";
+import {
+  crearPlanificador, elegirPeriodo, mensualConfigurado, periodoConfigurado, type EstadoGuardado,
+} from "../datos/periodos";
 import { serialAIso } from "../medidas/contexto";
 import { VALORES_INICIALES, type HorasConf, type HorasDisp } from "../medidas/contexto";
 import type { Modelo } from "../medidas/modelo";
@@ -40,6 +45,8 @@ export interface Filtros {
   /** Periodo propio de Disp Mensual. */
   periodoMensual: Periodo;
   setPeriodoMensual: (p: Periodo) => void;
+  /** Estado del guardado automático del período (solo tiene sentido para el administrador). */
+  guardado: EstadoGuardado;
   hDisp: HorasDisp;
   setHDisp: (v: HorasDisp) => void;
   tConf: HorasConf;
@@ -79,14 +86,49 @@ export function FiltrosProvider({ children }: { children: ReactNode }) {
   const { data: config } = useConfiguracion();
 
   // null = el usuario no lo ha tocado: se usa el periodo inicial de los datos.
-  const [periodoUsuario, setPeriodo] = useState<Periodo | null>(null);
-  const [mensualUsuario, setPeriodoMensual] = useState<Periodo | null>(null);
+  const [periodoUsuario, setPeriodoUsuario] = useState<Periodo | null>(null);
+  const [mensualUsuario, setMensualUsuario] = useState<Periodo | null>(null);
   const [hDisp, setHDisp] = useState<HorasDisp>(VALORES_INICIALES.hDisp);
   const [tConf, setTConf] = useState<HorasConf>(VALORES_INICIALES.tConf);
   const [disp, setDisp] = useState<string[]>(VALORES_INICIALES.disp);
   const [familia, setFamilia] = useState<string>(VALORES_INICIALES.familiaMensual);
 
   const acotarPeriodo = useCallback((p: Periodo) => periodoAcotado(p, rango), [rango]);
+
+  // Guardado automático: solo por acción del administrador (los setters de abajo), nunca al montar ni
+  // cuando el valor viene de la configuración o del cálculo inicial.
+  const { esAdmin } = useAuth();
+  const qc = useQueryClient();
+  const [guardado, setGuardado] = useState<EstadoGuardado>({ fase: "reposo" });
+  const esAdminRef = useRef(esAdmin);
+  esAdminRef.current = esAdmin;
+  const planificador = useRef<ReturnType<typeof crearPlanificador> | null>(null);
+  if (!planificador.current) {
+    planificador.current = crearPlanificador({
+      habilitado: () => esAdminRef.current,
+      onEstado: setGuardado,
+      guardar: async (p) => {
+        await guardarPeriodo(clienteSupabase(), p);
+        await qc.invalidateQueries({ queryKey: CLAVE_CONFIGURACION });
+      },
+    });
+  }
+  useEffect(() => () => planificador.current?.cancelar(), []);
+
+  const setPeriodo = useCallback(
+    (p: Periodo) => {
+      setPeriodoUsuario(p);
+      planificador.current?.cambiar("general", { desde: p.desde, hasta: p.hasta });
+    },
+    [],
+  );
+  const setPeriodoMensual = useCallback(
+    (p: Periodo) => {
+      setMensualUsuario(p);
+      planificador.current?.cambiar("mensual", { desde: p.desde, hasta: p.hasta });
+    },
+    [],
+  );
 
   // Prioridad: lo que movió el usuario, luego lo guardado por el administrador, luego el calculado de los datos.
   const periodo = useMemo<Periodo>(() => {
@@ -109,10 +151,10 @@ export function FiltrosProvider({ children }: { children: ReactNode }) {
 
   const valor = useMemo<Filtros>(
     () => ({
-      modelo, rango, periodo, setPeriodo, periodoMensual, setPeriodoMensual,
+      modelo, rango, periodo, setPeriodo, periodoMensual, setPeriodoMensual, guardado,
       hDisp, setHDisp, tConf, setTConf, disp, setDisp, familia, setFamilia,
     }),
-    [modelo, rango, periodo, periodoMensual, hDisp, tConf, disp, familia],
+    [modelo, rango, periodo, periodoMensual, guardado, setPeriodo, setPeriodoMensual, hDisp, tConf, disp, familia],
   );
   return <Ctx.Provider value={valor}>{children}</Ctx.Provider>;
 }

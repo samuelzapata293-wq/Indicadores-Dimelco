@@ -1,0 +1,84 @@
+{
+  "escenario": "b",
+  "escenario_descripcion": "01 al 20/11/2026, 24 h, Operacional",
+  "visual_clave": "grafico_sostenimiento",
+  "obtenido_el": "2026-11-25T23:32:57Z",
+  "fuente": "reenvio directo a https://wabi-west-us-e-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true (consulta q_013 #0 con los filtros cambiados) del reporte https://app.powerbi.com/view?r=eyJrIjoiMTcxMjljZjktYmJkNC00YzllLTg4MDAtZDc3MzE0ZmMzMWJhIiwidCI6IjVlMTRjNzhkLWU2YmUtNDY2MS1hYWRjLWU5NDA2Y2NjNjcwMiIsImMiOjZ9",
+  "origen": "q_013.json",
+  "consulta": 0,
+  "pagina": "Disp Sostenimiento",
+  "pagina_numero": 4,
+  "visual": {
+    "tipo": "lineClusteredColumnComboChart",
+    "titulo": "Equipos de Sostenimiento",
+    "descripcion": "Disp Din % (columnas) y Meta_Disp (linea) por equipo"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "Descripcion"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disp Din %"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta_Disp"
+    },
+    {
+      "nombre": "Metas2026.Color_Disponibilidad",
+      "campo": "Metas2026[Color_Disponibilidad] (M)",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Metricas.MetaDispSimba",
+      "campo": "Metricas[MetaDispSimba] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "not_in": [
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02"
+      ],
+      "in": [
+        "DESATADOR DE ROCAS SCALEMIN",
+        "DESATADOR DE ROCAS SCALEMIN No.2",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "in": [
+        "Operacional"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    }
+  },
+  "cambios_de_filtro": [
+    "Fecha 2026-11-01 a 2026-11-20",
+    "DISP IN Operacional",
+    "Var t: Disp 24 hrs"
+  ],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.Descripcion": "DESATADOR DE ROCAS SCALEMIN", "Metricas (2).Disp Din %": 1, "Metas2026.Meta_Disp": 0.2918, "Metas2026.Color_Disponibilidad": "#00493C"},
+    {"DIM_EQUIPOS.Descripcion": "DESATADOR DE ROCAS SCALEMIN No.2", "Metricas (2).Disp Din %": 1, "Metas2026.Meta_Disp": 0.8022, "Metas2026.Color_Disponibilidad": "#00493C"},
+    {"DIM_EQUIPOS.Descripcion": "EMPERNADOR BOLTEC EPIROC N°1", "Metricas (2).Disp Din %": 0.9776041666664241, "Metas2026.Meta_Disp": 0.8083, "Metas2026.Color_Disponibilidad": "#00493C"},
+    {"DIM_EQUIPOS.Descripcion": "EMPERNADOR BOLTEC S10 S EPIROC N°2", "Metricas (2).Disp Din %": 0.9685069444447436, "Metas2026.Meta_Disp": 0.8067, "Metas2026.Color_Disponibilidad": "#00493C"}
+  ],
+  "request": {"version":"1.0.0","queries":[{"Query":{"Commands":[{"SemanticQueryDataShapeCommand":{"Query":{"Version":2,"From":[{"Name":"d","Entity":"DIM_EQUIPOS","Type":0},{"Name":"m","Entity":"Metricas (2)","Type":0},{"Name":"m1","Entity":"Metas2026","Type":0},{"Name":"m2","Entity":"Metricas","Type":0},{"Name":"d1","Entity":"DIM_TIEMPO","Type":0},{"Name":"h","Entity":"HECHOS_DATAMES_NPI_PP","Type":0},{"Name":"v","Entity":"Var_t: Disp","Type":0}],"Select":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"},"Name":"DIM_EQUIPOS.Descripcion","NativeReferenceName":"Descripcion"},{"Measure":{"Expression":{"SourceRef":{"Source":"m"}},"Property":"Disp Din %"},"Name":"Metricas (2).Disp Din %","NativeReferenceName":"Disp Din %"},{"Measure":{"Expression":{"SourceRef":{"Source":"m1"}},"Property":"Meta_Disp"},"Name":"Metas2026.Meta_Disp","NativeReferenceName":"Meta_Disp"},{"Measure":{"Expression":{"SourceRef":{"Source":"m1"}},"Property":"Color_Disponibilidad"},"Name":"Metas2026.Color_Disponibilidad"},{"Measure":{"Expression":{"SourceRef":{"Source":"m2"}},"Property":"MetaDispSimba"},"Name":"Metricas.MetaDispSimba"}],"Where":[{"Condition":{"Not":{"Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"}}],"Values":[[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP3.5 No.02'"}}]]}}}}},{"Condition":{"And":{"Left":{"Comparison":{"ComparisonKind":2,"Left":{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Fecha"}},"Right":{"Literal":{"Value":"datetime'2026-11-01T00:00:00'"}}}},"Right":{"Comparison":{"ComparisonKind":3,"Left":{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Fecha"}},"Right":{"Literal":{"Value":"datetime'2026-11-21T00:00:00'"}}}}}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"DISP"}}],"Values":[[{"Literal":{"Value":"'Operacional'"}}]]}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Var_t: Disp"}}],"Values":[[{"Literal":{"Value":"'24 hrs'"}}]]}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"}}],"Values":[[{"Literal":{"Value":"'DESATADOR DE ROCAS SCALEMIN'"}}],[{"Literal":{"Value":"'DESATADOR DE ROCAS SCALEMIN No.2'"}}],[{"Literal":{"Value":"'EMPERNADOR BOLTEC EPIROC N°1'"}}],[{"Literal":{"Value":"'EMPERNADOR BOLTEC S10 S EPIROC N°2'"}}]]}}}],"OrderBy":[{"Direction":1,"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"}}}]},"Binding":{"Primary":{"Groupings":[{"Projections":[0,1,2,3]}]},"Projections":[4],"DataReduction":{"DataVolume":4,"Primary":{"Window":{"Count":1000}}},"SuppressedJoinPredicates":[3],"Version":1},"ExecutionMetricsKind":1}}]},"CacheKey":"{\"Commands\":[{\"SemanticQueryDataShapeCommand\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EQUIPOS\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metricas (2)\",\"Type\":0},{\"Name\":\"m1\",\"Entity\":\"Metas2026\",\"Type\":0},{\"Name\":\"m2\",\"Entity\":\"Metricas\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"DIM_TIEMPO\",\"Type\":0},{\"Name\":\"h\",\"Entity\":\"HECHOS_DATAMES_NPI_PP\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Var_t: Disp\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"},\"Name\":\"DIM_EQUIPOS.Descripcion\",\"NativeReferenceName\":\"Descripcion\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Disp Din %\"},\"Name\":\"Metricas (2).Disp Din %\",\"NativeReferenceName\":\"Disp Din %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Meta_Disp\"},\"Name\":\"Metas2026.Meta_Disp\",\"NativeReferenceName\":\"Meta_Disp\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Color_Disponibilidad\"},\"Name\":\"Metas2026.Color_Disponibilidad\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m2\"}},\"Property\":\"MetaDispSimba\"},\"Name\":\"Metricas.MetaDispSimba\"}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP3.5 No.02'\"}}]]}}}}},{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Fecha\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-11-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Fecha\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-11-21T00:00:00'\"}}}}}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"DISP\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Operacional'\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Var_t: Disp\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'24 hrs'\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'DESATADOR DE ROCAS SCALEMIN'\"}}],[{\"Literal\":{\"Value\":\"'DESATADOR DE ROCAS SCALEMIN No.2'\"}}],[{\"Literal\":{\"Value\":\"'EMPERNADOR BOLTEC EPIROC N°1'\"}}],[{\"Literal\":{\"Value\":\"'EMPERNADOR BOLTEC S10 S EPIROC N°2'\"}}]]}}}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"}}}]},\"Binding\":{\"Primary\":{\"Groupings\":[{\"Projections\":[0,1,2,3]}]},\"Projections\":[4],\"DataReduction\":{\"DataVolume\":4,\"Primary\":{\"Window\":{\"Count\":1000}}},\"SuppressedJoinPredicates\":[3],\"Version\":1},\"ExecutionMetricsKind\":1}}]}","QueryId":"","ApplicationContext":{"DatasetId":"f1a887b3-7069-428a-b92a-ab8bc42a6c1a","Sources":[{"ReportId":"75b639d4-4059-40f3-8e81-97048dd2ff0d","VisualId":"60ef3317bb78cd3997c8"}]}}],"cancelQueries":[],"modelId":3031522},
+  "response": {"jobIds":["41f3d401-87a2-46f9-a444-a26b1ad70533"],"results":[{"jobId":"41f3d401-87a2-46f9-a444-a26b1ad70533","result":{"data":{"timestamp":"2026-11-25T23:32:57.663Z","rootActivityId":"856415db-37fe-4de3-b97d-245424fedf35","descriptor":{"Select":[{"Kind":1,"Depth":0,"Value":"G0","GroupKeys":[{"Source":{"Entity":"DIM_EQUIPOS","Property":"Descripcion"},"Calc":"G0","IsSameAsSelect":true}],"Name":"DIM_EQUIPOS.Descripcion"},{"Kind":2,"Value":"M0","Format":"0%;-0%;0%","Name":"Metricas (2).Disp Din %"},{"Kind":2,"Value":"M1","Format":"0%;-0%;0%","Name":"Metas2026.Meta_Disp"},{"Kind":2,"Value":"M2","Name":"Metas2026.Color_Disponibilidad"},{"Kind":2,"Value":"M3","Format":"0.00\\ %;-0.00\\ %;0.00\\ %","Name":"Metricas.MetaDispSimba"}],"Expressions":{"Primary":{"Groupings":[{"Keys":[{"Source":{"Entity":"DIM_EQUIPOS","Property":"Descripcion"},"Select":0}],"Member":"DM0"}]}},"Version":2},"metrics":{"Version":"1.0.0","Events":[{"Id":"c2620e2f-f065-481b-89ef-c10ec3f70bb9","Name":"Execute Semantic Query","Component":"DSE","Start":"2026-11-25T23:32:57.66358Z","End":"2026-11-25T23:32:57.7260997Z"},{"Id":"55347139-c74e-4da4-bc85-6fd5611aeb3f","ParentId":"c2620e2f-f065-481b-89ef-c10ec3f70bb9","Name":"Execute DAX Query","Component":"DSE","Start":"2026-11-25T23:32:57.66358Z","End":"2026-11-25T23:32:57.7170171Z","Metrics":{"RowCount":5}},{"Id":"C3DDCB1F-7B96-49B2-B424-C2A1AD3266D2","ParentId":"55347139-c74e-4da4-bc85-6fd5611aeb3f","Name":"Execute Query","Component":"AS","Start":"2026-11-25T23:32:57.693Z","End":"2026-11-25T23:32:57.717Z"},{"Id":"1D39E232-D2D0-49E1-B77B-7C90FA48378D","ParentId":"C3DDCB1F-7B96-49B2-B424-C2A1AD3266D2","Name":"Serialize Rowset","Component":"AS","Start":"2026-11-25T23:32:57.717Z","End":"2026-11-25T23:32:57.717Z"}]},"fromCache":false,"dsr":{"Version":2,"MinorVersion":1,"DS":[{"N":"DS0","S":[{"N":"M3","T":3}],"PH":[{"DM0":[{"S":[{"N":"G0","T":1},{"N":"M0","T":3},{"N":"M1","T":3},{"N":"M2","T":1}],"C":["DESATADOR DE ROCAS SCALEMIN",1,0.2918,"#00493C"]},{"C":["DESATADOR DE ROCAS SCALEMIN No.2",0.8022],"R":10},{"C":["EMPERNADOR BOLTEC EPIROC N°1","0.97760416666642413",0.8083],"R":8},{"C":["EMPERNADOR BOLTEC S10 S EPIROC N°2","0.96850694444474361",0.8067],"R":8}]}],"IC":true,"HAD":true}]}}}}]}
+}

@@ -1,0 +1,125 @@
+{
+  "escenario": "a",
+  "escenario_descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+  "visual_clave": "mensual",
+  "obtenido_el": "2026-11-25T23:32:28Z",
+  "fuente": "reenvio directo a https://wabi-west-us-e-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true (consulta q_024 #0 con los filtros cambiados) del reporte https://app.powerbi.com/view?r=eyJrIjoiMTcxMjljZjktYmJkNC00YzllLTg4MDAtZDc3MzE0ZmMzMWJhIiwidCI6IjVlMTRjNzhkLWU2YmUtNDY2MS1hYWRjLWU5NDA2Y2NjNjcwMiIsImMiOjZ9",
+  "origen": "q_024.json",
+  "consulta": 0,
+  "pagina": "Disp Mensual",
+  "pagina_numero": 8,
+  "visual": {
+    "tipo": "lineChart",
+    "titulo": "Evolucion Semanal de disponibilidades %",
+    "descripcion": "Categoria=DIM_TIEMPO[NbSemana], Series=DIM_EQUIPOS[Descripcion]"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_TIEMPO.NbSemana",
+      "campo": "DIM_TIEMPO[NbSemana]",
+      "alias_visual": "NbSemana"
+    },
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "Descripcion"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disponibilidad%"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta Disp"
+    },
+    {
+      "nombre": "Metricas.MetaDispSimba",
+      "campo": "Metricas[MetaDispSimba] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "not_in": [
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02"
+      ],
+      "in": [
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)",
+        "CARGADOR FRONTAL BP SCOOP 3.50 N°6",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 01",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 02",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 03",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 04",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 05",
+        "CARGADOR FRONTAL BP SCOOP ST1030 No. 06",
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02",
+        "DESATADOR DE ROCAS SCALEMIN",
+        "DESATADOR DE ROCAS SCALEMIN No.2",
+        "EMPERNADOR BOLTEC EPIROC N°1",
+        "EMPERNADOR BOLTEC S10 S EPIROC N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3",
+        "PERFORADORA BOOMER 282 EPIROC No. 01",
+        "PERFORADORA BOOMER 282 EPIROC No. 02",
+        "CARGADOR FRONTAL BP WAGNER No.05",
+        "CARGADORA FRONTAL BP SCOOP 3.50 N°6",
+        "PERFORADORA BOOMER 282 EPIROC No. 03"
+      ]
+    },
+    "LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996[Mes]": {
+      "not_in": [
+        null
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "18 hrs"
+      ]
+    },
+    "DIM_EQUIPOS[Familia]": {
+      "in": [
+        "CARGADORAS BP"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "not_in": [
+        "Operacional"
+      ]
+    }
+  },
+  "cambios_de_filtro": [
+    "Fecha 2026-11-01 a 2026-11-20",
+    "DISP NOT IN Operacional",
+    "Var t: Disp 18 hrs"
+  ],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7489, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 46/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7489, "DIM_TIEMPO.NbSemana_orden": 46},
+    {"DIM_TIEMPO.NbSemana": "Sem 47/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 01", "Metricas (2).Disp Din %": 0, "Metas2026.Meta_Disp": 0.7489, "DIM_TIEMPO.NbSemana_orden": 47},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.6937830687827609, "Metas2026.Meta_Disp": 0.8000999999999999, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 46/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.4398148148154308, "Metas2026.Meta_Disp": 0.8000999999999999, "DIM_TIEMPO.NbSemana_orden": 46},
+    {"DIM_TIEMPO.NbSemana": "Sem 47/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 02", "Metricas (2).Disp Din %": 0.6419753086423347, "Metas2026.Meta_Disp": 0.8001, "DIM_TIEMPO.NbSemana_orden": 47},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.6415343915342375, "Metas2026.Meta_Disp": 0.8166, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 46/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.6468253968258588, "Metas2026.Meta_Disp": 0.8166, "DIM_TIEMPO.NbSemana_orden": 46},
+    {"DIM_TIEMPO.NbSemana": "Sem 47/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 03", "Metricas (2).Disp Din %": 0.18287037036983142, "Metas2026.Meta_Disp": 0.8165999999999999, "DIM_TIEMPO.NbSemana_orden": 47},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.6843915343911032, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 46/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.8809523809523809, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 46},
+    {"DIM_TIEMPO.NbSemana": "Sem 47/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 04", "Metricas (2).Disp Din %": 0.7160493827169476, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 47},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.6666666666652807, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 46/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.7817460317455698, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 46},
+    {"DIM_TIEMPO.NbSemana": "Sem 47/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 05", "Metricas (2).Disp Din %": 0.8753086419746978, "Metas2026.Meta_Disp": 0.7308, "DIM_TIEMPO.NbSemana_orden": 47},
+    {"DIM_TIEMPO.NbSemana": "Sem 45/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.1236772486757088, "Metas2026.Meta_Disp": 0.7849, "DIM_TIEMPO.NbSemana_orden": 45},
+    {"DIM_TIEMPO.NbSemana": "Sem 46/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.90608465608481, "Metas2026.Meta_Disp": 0.7849, "DIM_TIEMPO.NbSemana_orden": 46},
+    {"DIM_TIEMPO.NbSemana": "Sem 47/26", "DIM_EQUIPOS.Descripcion": "CARGADOR FRONTAL BP SCOOP ST1030 No. 06", "Metricas (2).Disp Din %": 0.7361111111094942, "Metas2026.Meta_Disp": 0.7849, "DIM_TIEMPO.NbSemana_orden": 47}
+  ],
+  "request": {"version":"1.0.0","queries":[{"Query":{"Commands":[{"SemanticQueryDataShapeCommand":{"Query":{"Version":2,"From":[{"Name":"d","Entity":"DIM_TIEMPO","Type":0},{"Name":"d1","Entity":"DIM_EQUIPOS","Type":0},{"Name":"m","Entity":"Metricas (2)","Type":0},{"Name":"m1","Entity":"Metas2026","Type":0},{"Name":"m2","Entity":"Metricas","Type":0},{"Name":"l","Entity":"LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996","Type":0},{"Name":"v","Entity":"Var_t: Disp","Type":0},{"Name":"h","Entity":"HECHOS_DATAMES_NPI_PP","Type":0}],"Select":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"NbSemana"},"Name":"DIM_TIEMPO.NbSemana","NativeReferenceName":"NbSemana"},{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Descripcion"},"Name":"DIM_EQUIPOS.Descripcion","NativeReferenceName":"Descripcion"},{"Measure":{"Expression":{"SourceRef":{"Source":"m"}},"Property":"Disp Din %"},"Name":"Metricas (2).Disp Din %","NativeReferenceName":"Disponibilidad%"},{"Measure":{"Expression":{"SourceRef":{"Source":"m1"}},"Property":"Meta_Disp"},"Name":"Metas2026.Meta_Disp","NativeReferenceName":"Meta Disp"},{"Measure":{"Expression":{"SourceRef":{"Source":"m2"}},"Property":"MetaDispSimba"},"Name":"Metricas.MetaDispSimba"}],"Where":[{"Condition":{"Not":{"Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Descripcion"}}],"Values":[[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP3.5 No.02'"}}]]}}}}},{"Condition":{"Not":{"Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"l"}},"Property":"Mes"}}],"Values":[[{"Literal":{"Value":"null"}}]]}}}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Var_t: Disp"}}],"Values":[[{"Literal":{"Value":"'18 hrs'"}}]]}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Familia"}}],"Values":[[{"Literal":{"Value":"'CARGADORAS BP'"}}]]}}},{"Condition":{"And":{"Left":{"Comparison":{"ComparisonKind":2,"Left":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Fecha"}},"Right":{"Literal":{"Value":"datetime'2026-11-01T00:00:00'"}}}},"Right":{"Comparison":{"ComparisonKind":3,"Left":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Fecha"}},"Right":{"Literal":{"Value":"datetime'2026-11-21T00:00:00'"}}}}}}},{"Condition":{"Not":{"Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"DISP"}}],"Values":[[{"Literal":{"Value":"'Operacional'"}}]]}}}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Descripcion"}}],"Values":[[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP 3.50 N°6'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP ST1030 No. 01'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP ST1030 No. 02'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP ST1030 No. 03'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP ST1030 No. 04'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP ST1030 No. 05'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP ST1030 No. 06'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP3.5 No.02'"}}],[{"Literal":{"Value":"'DESATADOR DE ROCAS SCALEMIN'"}}],[{"Literal":{"Value":"'DESATADOR DE ROCAS SCALEMIN No.2'"}}],[{"Literal":{"Value":"'EMPERNADOR BOLTEC EPIROC N°1'"}}],[{"Literal":{"Value":"'EMPERNADOR BOLTEC S10 S EPIROC N°2'"}}],[{"Literal":{"Value":"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°1'"}}],[{"Literal":{"Value":"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°2'"}}],[{"Literal":{"Value":"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°3'"}}],[{"Literal":{"Value":"'PERFORADORA BOOMER 282 EPIROC No. 01'"}}],[{"Literal":{"Value":"'PERFORADORA BOOMER 282 EPIROC No. 02'"}}],[{"Literal":{"Value":"'CARGADOR FRONTAL BP WAGNER No.05'"}}],[{"Literal":{"Value":"'CARGADORA FRONTAL BP SCOOP 3.50 N°6'"}}],[{"Literal":{"Value":"'PERFORADORA BOOMER 282 EPIROC No. 03'"}}]]}}}],"OrderBy":[{"Direction":1,"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"NbSemana"}}}]},"Binding":{"Primary":{"Groupings":[{"Projections":[1]},{"Projections":[0,2,3]}],"Synchronization":[{"Groupings":[1]}]},"Projections":[4],"DataReduction":{"DataVolume":6,"Scoped":[{"Scope":{"Primary":[0]},"Algorithm":{"Window":{"Count":6}}},{"Scope":{"Primary":[1]},"Algorithm":{"Top":{}}}]},"Aggregates":[{"Select":2,"Aggregations":[{"Min":{}},{"Max":{}}]},{"Select":3,"Aggregations":[{"Min":{}},{"Max":{}}]}],"Version":1},"ExecutionMetricsKind":1}}]},"CacheKey":"{\"Commands\":[{\"SemanticQueryDataShapeCommand\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_TIEMPO\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"DIM_EQUIPOS\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metricas (2)\",\"Type\":0},{\"Name\":\"m1\",\"Entity\":\"Metas2026\",\"Type\":0},{\"Name\":\"m2\",\"Entity\":\"Metricas\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"LocalDateTable_69315bca-df3f-4271-ae99-0fdfaebf6996\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Var_t: Disp\",\"Type\":0},{\"Name\":\"h\",\"Entity\":\"HECHOS_DATAMES_NPI_PP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"NbSemana\"},\"Name\":\"DIM_TIEMPO.NbSemana\",\"NativeReferenceName\":\"NbSemana\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Descripcion\"},\"Name\":\"DIM_EQUIPOS.Descripcion\",\"NativeReferenceName\":\"Descripcion\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Disp Din %\"},\"Name\":\"Metricas (2).Disp Din %\",\"NativeReferenceName\":\"Disponibilidad%\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Meta_Disp\"},\"Name\":\"Metas2026.Meta_Disp\",\"NativeReferenceName\":\"Meta Disp\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m2\"}},\"Property\":\"MetaDispSimba\"},\"Name\":\"Metricas.MetaDispSimba\"}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Descripcion\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP3.5 No.02'\"}}]]}}}}},{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Mes\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Var_t: Disp\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'18 hrs'\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Familia\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CARGADORAS BP'\"}}]]}}},{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fecha\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-11-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fecha\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-11-21T00:00:00'\"}}}}}}},{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"DISP\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Operacional'\"}}]]}}}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Descripcion\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP 3.50 N°6'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP ST1030 No. 01'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP ST1030 No. 02'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP ST1030 No. 03'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP ST1030 No. 04'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP ST1030 No. 05'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP ST1030 No. 06'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP3.5 No.02'\"}}],[{\"Literal\":{\"Value\":\"'DESATADOR DE ROCAS SCALEMIN'\"}}],[{\"Literal\":{\"Value\":\"'DESATADOR DE ROCAS SCALEMIN No.2'\"}}],[{\"Literal\":{\"Value\":\"'EMPERNADOR BOLTEC EPIROC N°1'\"}}],[{\"Literal\":{\"Value\":\"'EMPERNADOR BOLTEC S10 S EPIROC N°2'\"}}],[{\"Literal\":{\"Value\":\"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°1'\"}}],[{\"Literal\":{\"Value\":\"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°2'\"}}],[{\"Literal\":{\"Value\":\"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°3'\"}}],[{\"Literal\":{\"Value\":\"'PERFORADORA BOOMER 282 EPIROC No. 01'\"}}],[{\"Literal\":{\"Value\":\"'PERFORADORA BOOMER 282 EPIROC No. 02'\"}}],[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP WAGNER No.05'\"}}],[{\"Literal\":{\"Value\":\"'CARGADORA FRONTAL BP SCOOP 3.50 N°6'\"}}],[{\"Literal\":{\"Value\":\"'PERFORADORA BOOMER 282 EPIROC No. 03'\"}}]]}}}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"NbSemana\"}}}]},\"Binding\":{\"Primary\":{\"Groupings\":[{\"Projections\":[1]},{\"Projections\":[0,2,3]}],\"Synchronization\":[{\"Groupings\":[1]}]},\"Projections\":[4],\"DataReduction\":{\"DataVolume\":6,\"Scoped\":[{\"Scope\":{\"Primary\":[0]},\"Algorithm\":{\"Window\":{\"Count\":6}}},{\"Scope\":{\"Primary\":[1]},\"Algorithm\":{\"Top\":{}}}]},\"Aggregates\":[{\"Select\":2,\"Aggregations\":[{\"Min\":{}},{\"Max\":{}}]},{\"Select\":3,\"Aggregations\":[{\"Min\":{}},{\"Max\":{}}]}],\"Version\":1},\"ExecutionMetricsKind\":1}}]}","QueryId":"","ApplicationContext":{"DatasetId":"f1a887b3-7069-428a-b92a-ab8bc42a6c1a","Sources":[{"ReportId":"75b639d4-4059-40f3-8e81-97048dd2ff0d","VisualId":"e4c2ec3e90301734ddce"}]}}],"cancelQueries":[],"modelId":3031522},
+  "response": {"jobIds":["d875f0e1-e65a-4150-98bc-5f082728654b"],"results":[{"jobId":"d875f0e1-e65a-4150-98bc-5f082728654b","result":{"data":{"timestamp":"2026-11-25T23:32:28.086Z","rootActivityId":"be680555-27b8-4a23-aa7c-d23167b5d67a","descriptor":{"Select":[{"Kind":1,"Depth":1,"Value":"G1","GroupKeys":[{"Source":{"Entity":"DIM_TIEMPO","Property":"NbSemana"},"Calc":"G1","IsSameAsSelect":true}],"Name":"DIM_TIEMPO.NbSemana","Synchronized":{"Depth":0,"Value":"G2","GroupKeys":[{"Source":{"Entity":"DIM_TIEMPO","Property":"NbSemana"},"Calc":"G2","IsSameAsSelect":true}]}},{"Kind":1,"Depth":0,"Value":"G0","GroupKeys":[{"Source":{"Entity":"DIM_EQUIPOS","Property":"Descripcion"},"Calc":"G0","IsSameAsSelect":true}],"Name":"DIM_EQUIPOS.Descripcion"},{"Kind":2,"Value":"M0","Format":"0%;-0%;0%","Min":["A0"],"Max":["A1"],"Aggregates":[{"Ids":["A0"],"Aggregate":{"Min":{}}},{"Ids":["A1"],"Aggregate":{"Max":{}}}],"Name":"Metricas (2).Disp Din %"},{"Kind":2,"Value":"M1","Format":"0%;-0%;0%","Min":["A2"],"Max":["A3"],"Aggregates":[{"Ids":["A2"],"Aggregate":{"Min":{}}},{"Ids":["A3"],"Aggregate":{"Max":{}}}],"Name":"Metas2026.Meta_Disp"},{"Kind":2,"Value":"M2","Format":"0.00\\ %;-0.00\\ %;0.00\\ %","Name":"Metricas.MetaDispSimba"}],"Expressions":{"Primary":{"Groupings":[{"Keys":[{"Source":{"Entity":"DIM_EQUIPOS","Property":"Descripcion"},"Select":1}],"Member":"DM0"},{"Keys":[{"Source":{"Entity":"DIM_TIEMPO","Property":"NbSemana"},"Select":0}],"Member":"DM1","SynchronizationIndex":"SyncI0","SynchronizedGroup":{"Keys":[{"Source":{"Entity":"DIM_TIEMPO","Property":"NbSemana"},"Select":0}],"Member":"DM2"}}],"Synchronization":[{"DataShape":"SyncDS0","Groupings":[1]}]}},"Limits":{"Scoped":[{"Id":"L0","Window":{"Count":6,"Calc":"A4"},"Scope":{"Primary":[0]}},{"Id":"L1","Top":{"Count":3500,"Calc":"A5"},"Scope":{"Primary":[1]}}]},"Version":2},"metrics":{"Version":"1.0.0","Events":[{"Id":"bb0e72d4-d49b-4636-b322-445957078194","Name":"Execute Semantic Query","Component":"DSE","Start":"2026-11-25T23:32:28.0867463Z","End":"2026-11-25T23:32:28.164833Z"},{"Id":"6f02edfb-0bea-4220-8cb2-6353de4c9703","ParentId":"bb0e72d4-d49b-4636-b322-445957078194","Name":"Execute DAX Query","Component":"DSE","Start":"2026-11-25T23:32:28.1023259Z","End":"2026-11-25T23:32:28.164833Z","Metrics":{"RowCount":23}},{"Id":"D37B1DCF-F648-44F2-AAC8-CB2093C921E8","ParentId":"6f02edfb-0bea-4220-8cb2-6353de4c9703","Name":"Execute Query","Component":"AS","Start":"2026-11-25T23:32:28.13Z","End":"2026-11-25T23:32:28.17Z"},{"Id":"8D0C5F81-A154-40BB-9E63-C07F2445DA4A","ParentId":"D37B1DCF-F648-44F2-AAC8-CB2093C921E8","Name":"Serialize Rowset","Component":"AS","Start":"2026-11-25T23:32:28.17Z","End":"2026-11-25T23:32:28.17Z"}]},"fromCache":false,"dsr":{"Version":2,"MinorVersion":1,"DS":[{"N":"DS0","DS":[{"N":"SyncDS0","PH":[{"DM2":[{"S":[{"N":"G2","T":1,"DN":"D0"},{"N":"G3","T":4}],"C":[0,45]},{"C":[1,46]},{"C":[2,47]}]}],"IC":true,"HAD":true}],"S":[{"N":"A0","T":3},{"N":"A1","T":3},{"N":"A2","T":3},{"N":"A3","T":3},{"N":"M2","T":3},{"N":"A4","T":4},{"N":"A5","T":4}],"C":[0,"0.90608465608481",0.7308,0.8166,6,3],"Ø":16,"PH":[{"DM0":[{"S":[{"N":"G0","T":1}],"G0":"CARGADOR FRONTAL BP SCOOP ST1030 No. 01","M":[{"DM1":[{"S":[{"N":"G1","T":1,"DN":"D0"},{"N":"K0","T":4},{"N":"M0","T":3},{"N":"M1","T":3},{"N":"SyncI0","T":4}],"C":[0,45,0,0.7489,0]},{"C":[1,46,1],"R":12},{"C":[2,47,2],"R":12}]}]},{"G0":"CARGADOR FRONTAL BP SCOOP ST1030 No. 02","M":[{"DM1":[{"C":[0,45,"0.69378306878276086","0.80009999999999992",0]},{"C":[1,46,"0.43981481481543078",1],"R":8},{"C":[2,47,"0.64197530864233465",0.8001,2]}]}]},{"G0":"CARGADOR FRONTAL BP SCOOP ST1030 No. 03","M":[{"DM1":[{"C":[0,45,"0.64153439153423752",0.8166,0]},{"C":[1,46,"0.64682539682585882",1],"R":8},{"C":[2,47,"0.18287037036983142","0.81659999999999988",2]}]}]},{"G0":"CARGADOR FRONTAL BP SCOOP ST1030 No. 04","M":[{"DM1":[{"C":[0,45,"0.68439153439110323",0.7308,0]},{"C":[1,46,"0.88095238095238093",1],"R":8},{"C":[2,47,"0.71604938271694762",2],"R":8}]}]},{"G0":"CARGADOR FRONTAL BP SCOOP ST1030 No. 05","M":[{"DM1":[{"C":[0,45,"0.66666666666528074",0],"R":8},{"C":[1,46,"0.78174603174556978",1],"R":8},{"C":[2,47,"0.87530864197469782",2],"R":8}]}]},{"G0":"CARGADOR FRONTAL BP SCOOP ST1030 No. 06","M":[{"DM1":[{"C":[0,45,"0.1236772486757088",0.7849,0]},{"C":[1,46,"0.90608465608481",1],"R":8},{"C":[2,47,"0.73611111110949423",2],"R":8}]}]}]}],"DW":[{"N":"L0","IC":true}],"HAD":true,"ValueDicts":{"D0":["Sem 45/26","Sem 46/26","Sem 47/26"]}}]}}}}]}
+}

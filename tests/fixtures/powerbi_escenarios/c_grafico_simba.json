@@ -1,0 +1,83 @@
+{
+  "escenario": "c",
+  "escenario_descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+  "visual_clave": "grafico_simba",
+  "obtenido_el": "2026-11-25T23:33:21Z",
+  "fuente": "reenvio directo a https://wabi-west-us-e-primary-api.analysis.windows.net/public/reports/querydata?synchronous=true (consulta q_021 #0 con los filtros cambiados) del reporte https://app.powerbi.com/view?r=eyJrIjoiMTcxMjljZjktYmJkNC00YzllLTg4MDAtZDc3MzE0ZmMzMWJhIiwidCI6IjVlMTRjNzhkLWU2YmUtNDY2MS1hYWRjLWU5NDA2Y2NjNjcwMiIsImMiOjZ9",
+  "origen": "q_021.json",
+  "consulta": 0,
+  "pagina": "Disp Simba",
+  "pagina_numero": 2,
+  "visual": {
+    "tipo": "lineClusteredColumnComboChart",
+    "titulo": "Tiro Largo",
+    "descripcion": "Disp Din % (columnas) y Meta_Disp (linea) por equipo"
+  },
+  "campos": [
+    {
+      "nombre": "DIM_EQUIPOS.Descripcion",
+      "campo": "DIM_EQUIPOS[Descripcion]",
+      "alias_visual": "Descripcion"
+    },
+    {
+      "nombre": "Metricas (2).Disp Din %",
+      "campo": "Metricas (2)[Disp Din %] (M)",
+      "alias_visual": "Disponibilidad %"
+    },
+    {
+      "nombre": "Metas2026.Meta_Disp",
+      "campo": "Metas2026[Meta_Disp] (M)",
+      "alias_visual": "Meta_Disp"
+    },
+    {
+      "nombre": "Metas2026.Color_Disponibilidad",
+      "campo": "Metas2026[Color_Disponibilidad] (M)",
+      "alias_visual": null
+    },
+    {
+      "nombre": "Metricas.MetaDispSimba",
+      "campo": "Metricas[MetaDispSimba] (M)",
+      "alias_visual": null
+    }
+  ],
+  "filtros": {
+    "DIM_EQUIPOS[Descripcion]": {
+      "not_in": [
+        "CARGADOR FRONTAL BP SCOOP3.5 No.02"
+      ],
+      "in": [
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2",
+        "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3"
+      ]
+    },
+    "DIM_TIEMPO[Fecha]": {
+      ">=": "2026-11-01T00:00:00",
+      "<": "2026-11-21T00:00:00"
+    },
+    "HECHOS_DATAMES_NPI_PP[DISP]": {
+      "in": [
+        "Mecánica",
+        "Operacional"
+      ]
+    },
+    "Var_t: Disp[Var_t: Disp]": {
+      "in": [
+        "24 hrs"
+      ]
+    }
+  },
+  "cambios_de_filtro": [
+    "Fecha 2026-11-01 a 2026-11-20",
+    "DISP IN Mecánica, Operacional",
+    "Var t: Disp 24 hrs"
+  ],
+  "avisos_decodificacion": [],
+  "filas": [
+    {"DIM_EQUIPOS.Descripcion": "JUMBO DE PERFORACION ATLAS SIMBA S7 N°1", "Metricas (2).Disp Din %": 0.6040277777778101, "Metas2026.Meta_Disp": 0.8067, "Metas2026.Color_Disponibilidad": "#F89221"},
+    {"DIM_EQUIPOS.Descripcion": "JUMBO DE PERFORACION ATLAS SIMBA S7 N°2", "Metricas (2).Disp Din %": 0.7721527777775918, "Metas2026.Meta_Disp": 0.8166, "Metas2026.Color_Disponibilidad": "#F89221"},
+    {"DIM_EQUIPOS.Descripcion": "JUMBO DE PERFORACION ATLAS SIMBA S7 N°3", "Metricas (2).Disp Din %": 0.778472222221535, "Metas2026.Meta_Disp": 0.8013, "Metas2026.Color_Disponibilidad": "#F89221"}
+  ],
+  "request": {"version":"1.0.0","queries":[{"Query":{"Commands":[{"SemanticQueryDataShapeCommand":{"Query":{"Version":2,"From":[{"Name":"d","Entity":"DIM_EQUIPOS","Type":0},{"Name":"m","Entity":"Metricas (2)","Type":0},{"Name":"m1","Entity":"Metas2026","Type":0},{"Name":"m2","Entity":"Metricas","Type":0},{"Name":"d1","Entity":"DIM_TIEMPO","Type":0},{"Name":"h","Entity":"HECHOS_DATAMES_NPI_PP","Type":0},{"Name":"v","Entity":"Var_t: Disp","Type":0}],"Select":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"},"Name":"DIM_EQUIPOS.Descripcion","NativeReferenceName":"Descripcion"},{"Measure":{"Expression":{"SourceRef":{"Source":"m"}},"Property":"Disp Din %"},"Name":"Metricas (2).Disp Din %","NativeReferenceName":"Disponibilidad %"},{"Measure":{"Expression":{"SourceRef":{"Source":"m1"}},"Property":"Meta_Disp"},"Name":"Metas2026.Meta_Disp","NativeReferenceName":"Meta_Disp"},{"Measure":{"Expression":{"SourceRef":{"Source":"m1"}},"Property":"Color_Disponibilidad"},"Name":"Metas2026.Color_Disponibilidad"},{"Measure":{"Expression":{"SourceRef":{"Source":"m2"}},"Property":"MetaDispSimba"},"Name":"Metricas.MetaDispSimba"}],"Where":[{"Condition":{"Not":{"Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"}}],"Values":[[{"Literal":{"Value":"'CARGADOR FRONTAL BP SCOOP3.5 No.02'"}}]]}}}}},{"Condition":{"And":{"Left":{"Comparison":{"ComparisonKind":2,"Left":{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Fecha"}},"Right":{"Literal":{"Value":"datetime'2026-11-01T00:00:00'"}}}},"Right":{"Comparison":{"ComparisonKind":3,"Left":{"Column":{"Expression":{"SourceRef":{"Source":"d1"}},"Property":"Fecha"}},"Right":{"Literal":{"Value":"datetime'2026-11-21T00:00:00'"}}}}}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"h"}},"Property":"DISP"}}],"Values":[[{"Literal":{"Value":"'Mecánica'"}}],[{"Literal":{"Value":"'Operacional'"}}]]}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"v"}},"Property":"Var_t: Disp"}}],"Values":[[{"Literal":{"Value":"'24 hrs'"}}]]}}},{"Condition":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"}}],"Values":[[{"Literal":{"Value":"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°1'"}}],[{"Literal":{"Value":"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°2'"}}],[{"Literal":{"Value":"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°3'"}}]]}}}],"OrderBy":[{"Direction":1,"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Descripcion"}}}]},"Binding":{"Primary":{"Groupings":[{"Projections":[0,1,2,3]}]},"Projections":[4],"DataReduction":{"DataVolume":4,"Primary":{"Window":{"Count":1000}}},"SuppressedJoinPredicates":[3],"Version":1},"ExecutionMetricsKind":1}}]},"CacheKey":"{\"Commands\":[{\"SemanticQueryDataShapeCommand\":{\"Query\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DIM_EQUIPOS\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Metricas (2)\",\"Type\":0},{\"Name\":\"m1\",\"Entity\":\"Metas2026\",\"Type\":0},{\"Name\":\"m2\",\"Entity\":\"Metricas\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"DIM_TIEMPO\",\"Type\":0},{\"Name\":\"h\",\"Entity\":\"HECHOS_DATAMES_NPI_PP\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Var_t: Disp\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"},\"Name\":\"DIM_EQUIPOS.Descripcion\",\"NativeReferenceName\":\"Descripcion\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Disp Din %\"},\"Name\":\"Metricas (2).Disp Din %\",\"NativeReferenceName\":\"Disponibilidad %\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Meta_Disp\"},\"Name\":\"Metas2026.Meta_Disp\",\"NativeReferenceName\":\"Meta_Disp\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m1\"}},\"Property\":\"Color_Disponibilidad\"},\"Name\":\"Metas2026.Color_Disponibilidad\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m2\"}},\"Property\":\"MetaDispSimba\"},\"Name\":\"Metricas.MetaDispSimba\"}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'CARGADOR FRONTAL BP SCOOP3.5 No.02'\"}}]]}}}}},{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Fecha\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-11-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Fecha\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-11-21T00:00:00'\"}}}}}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"DISP\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Mecánica'\"}}],[{\"Literal\":{\"Value\":\"'Operacional'\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Var_t: Disp\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'24 hrs'\"}}]]}}},{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°1'\"}}],[{\"Literal\":{\"Value\":\"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°2'\"}}],[{\"Literal\":{\"Value\":\"'JUMBO DE PERFORACION ATLAS SIMBA S7 N°3'\"}}]]}}}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Descripcion\"}}}]},\"Binding\":{\"Primary\":{\"Groupings\":[{\"Projections\":[0,1,2,3]}]},\"Projections\":[4],\"DataReduction\":{\"DataVolume\":4,\"Primary\":{\"Window\":{\"Count\":1000}}},\"SuppressedJoinPredicates\":[3],\"Version\":1},\"ExecutionMetricsKind\":1}}]}","QueryId":"","ApplicationContext":{"DatasetId":"f1a887b3-7069-428a-b92a-ab8bc42a6c1a","Sources":[{"ReportId":"75b639d4-4059-40f3-8e81-97048dd2ff0d","VisualId":"dfc01a4118f996c1449d"}]}}],"cancelQueries":[],"modelId":3031522},
+  "response": {"jobIds":["313589a1-63d4-4b32-a5e0-a6cfe472ec40"],"results":[{"jobId":"313589a1-63d4-4b32-a5e0-a6cfe472ec40","result":{"data":{"timestamp":"2026-11-25T23:33:21.163Z","rootActivityId":"51cb108d-91d8-4fbf-bab3-4b1ef7834f21","descriptor":{"Select":[{"Kind":1,"Depth":0,"Value":"G0","GroupKeys":[{"Source":{"Entity":"DIM_EQUIPOS","Property":"Descripcion"},"Calc":"G0","IsSameAsSelect":true}],"Name":"DIM_EQUIPOS.Descripcion"},{"Kind":2,"Value":"M0","Format":"0%;-0%;0%","Name":"Metricas (2).Disp Din %"},{"Kind":2,"Value":"M1","Format":"0%;-0%;0%","Name":"Metas2026.Meta_Disp"},{"Kind":2,"Value":"M2","Name":"Metas2026.Color_Disponibilidad"},{"Kind":2,"Value":"M3","Format":"0.00\\ %;-0.00\\ %;0.00\\ %","Name":"Metricas.MetaDispSimba"}],"Expressions":{"Primary":{"Groupings":[{"Keys":[{"Source":{"Entity":"DIM_EQUIPOS","Property":"Descripcion"},"Select":0}],"Member":"DM0"}]}},"Version":2},"metrics":{"Version":"1.0.0","Events":[{"Id":"52848f10-fd93-4791-956d-227267c9d26c","Name":"Execute Semantic Query","Component":"DSE","Start":"2026-11-25T23:33:21.1630133Z","End":"2026-11-25T23:33:21.2254099Z"},{"Id":"1c47cc7c-d55b-49b2-a101-fbd9da9f15ef","ParentId":"52848f10-fd93-4791-956d-227267c9d26c","Name":"Execute DAX Query","Component":"DSE","Start":"2026-11-25T23:33:21.1630133Z","End":"2026-11-25T23:33:21.2254099Z","Metrics":{"RowCount":4}},{"Id":"2F527AF9-C10E-4B43-A49C-E0FE0E2FB912","ParentId":"1c47cc7c-d55b-49b2-a101-fbd9da9f15ef","Name":"Execute Query","Component":"AS","Start":"2026-11-25T23:33:21.2Z","End":"2026-11-25T23:33:21.227Z"},{"Id":"8F2599A0-515D-45DA-A092-6B772B293C3B","ParentId":"2F527AF9-C10E-4B43-A49C-E0FE0E2FB912","Name":"Serialize Rowset","Component":"AS","Start":"2026-11-25T23:33:21.227Z","End":"2026-11-25T23:33:21.227Z"}]},"fromCache":false,"dsr":{"Version":2,"MinorVersion":1,"DS":[{"N":"DS0","S":[{"N":"M3","T":3}],"PH":[{"DM0":[{"S":[{"N":"G0","T":1},{"N":"M0","T":3},{"N":"M1","T":3},{"N":"M2","T":1}],"C":["JUMBO DE PERFORACION ATLAS SIMBA S7 N°1","0.60402777777781014",0.8067,"#F89221"]},{"C":["JUMBO DE PERFORACION ATLAS SIMBA S7 N°2","0.77215277777759184",0.8166],"R":8},{"C":["JUMBO DE PERFORACION ATLAS SIMBA S7 N°3","0.778472222221535",0.8013],"R":8}]}],"IC":true,"HAD":true}]}}}}]}
+}

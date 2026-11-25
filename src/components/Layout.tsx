@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
-import logo from "../assets/logo_dimelco_mineros.png";
 
 interface Props {
   // Sin título no hay banda superior (así se muestra la Portada).
@@ -11,9 +10,28 @@ interface Props {
   children: ReactNode;
 }
 
-export default function Layout({ titulo, amplio, children }: Props) {
-  const { session, esAdmin, cerrarSesion } = useAuth();
+export const TEXTO_PIE = "© 2025 Distribuidora de Materiales Eléctricos S.A.";
 
+/** Enlaces de sesión: "Ingresar" o, con sesión, "Cargar datos" (administrador) y "Salir". */
+export function EnlacesSesion({ className = "pie-enlaces" }: { className?: string }) {
+  const { session, esAdmin, cerrarSesion } = useAuth();
+  return (
+    <nav className={className} aria-label="Sesión">
+      {session ? (
+        <>
+          {esAdmin && <Link to="/cargar">Cargar datos</Link>}
+          <button type="button" className="enlace-boton" onClick={() => void cerrarSesion()}>
+            Salir
+          </button>
+        </>
+      ) : (
+        <Link to="/login">Ingresar</Link>
+      )}
+    </nav>
+  );
+}
+
+export default function Layout({ titulo, amplio, children }: Props) {
   return (
     <div className="pagina">
       {titulo !== undefined && (
@@ -31,20 +49,8 @@ export default function Layout({ titulo, amplio, children }: Props) {
       <main className={amplio ? "contenido contenido-amplio" : "contenido"}>{children}</main>
 
       <footer className="pie">
-        <img src={logo} alt="Dimelco Mineros" className="pie-logo" />
-        <span className="pie-texto">© 2025 Mineros</span>
-        <nav className="pie-enlaces">
-          {session ? (
-            <>
-              {esAdmin && <Link to="/cargar">Cargar datos</Link>}
-              <button type="button" className="enlace-boton" onClick={() => void cerrarSesion()}>
-                Salir
-              </button>
-            </>
-          ) : (
-            <Link to="/login">Ingresar</Link>
-          )}
-        </nav>
+        <span className="pie-texto">{TEXTO_PIE}</span>
+        <EnlacesSesion />
       </footer>
     </div>
   );

@@ -2,7 +2,8 @@
 
 import { useDeferredValue, useMemo } from "react";
 import ConModelo from "../components/ConModelo";
-import DisposicionPbi from "../components/DisposicionPbi";
+import { Caja } from "../components/LienzoPbi";
+import PaginaPbi from "../components/PaginaPbi";
 import { useFiltros } from "../components/Filtros";
 import PanelesSemanales, { type PanelSemanal } from "../components/PanelesSemanales";
 import SegmentadorBotones from "../components/SegmentadorBotones";
@@ -12,20 +13,24 @@ import SegmentadorPeriodo from "../components/SegmentadorPeriodo";
 import { EQUIPOS_RESUMEN, type Contexto, type HorasDisp } from "../medidas/contexto";
 import type { Modelo } from "../medidas/modelo";
 import { panelesSemanales } from "../medidas/visuales";
+import { DISENO_MENSUAL as D } from "./disenos";
 import { OPCIONES_DISP, OPCIONES_H_DISP } from "./opciones";
+
+const TITULO_PAGINA = "DISPONIBILIDADES";
+
+/** Familias que tienen equipos en esta página, en orden alfabético (como el segmentador del reporte). */
+function opcionesDeFamilia(modelo: Modelo | null): OpcionLista[] {
+  if (!modelo) return [];
+  const familias = new Set<string>();
+  for (const id of EQUIPOS_RESUMEN) {
+    const e = modelo.equipos.get(id);
+    if (e) familias.add(e.familia);
+  }
+  return [...familias].sort((a, b) => a.localeCompare(b, "es")).map((x) => ({ valor: x, etiqueta: x }));
+}
 
 function Contenido({ modelo }: { modelo: Modelo }) {
   const f = useFiltros();
-
-  // Familias que tienen equipos en esta página, en orden alfabético (como el segmentador del reporte).
-  const opcionesFamilia = useMemo<OpcionLista[]>(() => {
-    const familias = new Set<string>();
-    for (const id of EQUIPOS_RESUMEN) {
-      const e = modelo.equipos.get(id);
-      if (e) familias.add(e.familia);
-    }
-    return [...familias].sort((a, b) => a.localeCompare(b, "es")).map((x) => ({ valor: x, etiqueta: x }));
-  }, [modelo]);
 
   const ctxBase = useDeferredValue(
     useMemo(
@@ -47,34 +52,47 @@ function Contenido({ modelo }: { modelo: Modelo }) {
     }));
   }, [modelo, ctxBase]);
 
-  const lateral = (
-    <>
-      <SegmentadorPeriodo valor={f.periodoMensual} onChange={f.setPeriodoMensual} min={f.rango.min} max={f.rango.max} />
-      <IndicadorGuardado />
-      <SegmentadorBotones
-        titulo="Var t: Disp"
-        opciones={OPCIONES_H_DISP}
-        valor={f.hDisp}
-        onChange={(v) => f.setHDisp(v as HorasDisp)}
-      />
-      <SegmentadorLista titulo="DISP. GLOBAL" opciones={OPCIONES_DISP} seleccion={f.disp} onChange={f.setDisp} />
-      <SegmentadorLista
-        titulo="Familia"
-        modo="unica"
-        opciones={opcionesFamilia}
-        seleccion={f.familia}
-        onChange={f.setFamilia}
-      />
-    </>
-  );
-
   return (
-    <DisposicionPbi lateral={lateral} anchoLateral={330}>
-      <PanelesSemanales titulo="Evolución semanal de disponibilidades %" paneles={paneles} />
-    </DisposicionPbi>
+    <Caja r={D.paneles}>
+      <PanelesSemanales titulo="Evolución Semanal de disponibilidades %" paneles={paneles} />
+    </Caja>
   );
 }
 
 export default function Mensual() {
-  return <ConModelo>{(modelo) => <Contenido modelo={modelo} />}</ConModelo>;
+  const f = useFiltros();
+  const opcionesFamilia = useMemo(() => opcionesDeFamilia(f.modelo), [f.modelo]);
+  const lateral = (
+    <>
+      <Caja r={D.periodo}>
+        <SegmentadorPeriodo valor={f.periodoMensual} onChange={f.setPeriodoMensual} min={f.rango.min} max={f.rango.max} />
+        <IndicadorGuardado />
+      </Caja>
+      <Caja r={D.hDisp}>
+        <SegmentadorBotones
+          titulo="Var t: Disp"
+          opciones={OPCIONES_H_DISP}
+          valor={f.hDisp}
+          onChange={(v) => f.setHDisp(v as HorasDisp)}
+        />
+      </Caja>
+      <Caja r={D.disp}>
+        <SegmentadorLista titulo="DISP. GLOBAL" opciones={OPCIONES_DISP} seleccion={f.disp} onChange={f.setDisp} />
+      </Caja>
+      <Caja r={D.familia}>
+        <SegmentadorLista
+          titulo="Familia"
+          modo="unica"
+          opciones={opcionesFamilia}
+          seleccion={f.familia}
+          onChange={f.setFamilia}
+        />
+      </Caja>
+    </>
+  );
+  return (
+    <PaginaPbi titulo={TITULO_PAGINA} lateral={lateral} anchoLateral={330}>
+      <ConModelo>{(modelo) => <Contenido modelo={modelo} />}</ConModelo>
+    </PaginaPbi>
+  );
 }

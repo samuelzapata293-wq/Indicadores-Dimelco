@@ -82,7 +82,6 @@ a { color: var(--verde-tabla); }
   font-size: 13px;
   color: var(--texto-suave);
 }
-.pie-logo { height: 34px; width: auto; }
 .pie-enlaces { display: flex; align-items: center; gap: 16px; }
 .pie-enlaces a { color: var(--texto-suave); }
 .enlace-boton {

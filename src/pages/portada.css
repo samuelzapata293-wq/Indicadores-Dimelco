@@ -79,26 +79,6 @@ main.contenido:has(> .portada) {
 /* Pie: el contenedor no crea caja en escritorio, sus hijos se posicionan sobre la portada. */
 .portada-pie { display: contents; }
 
-/* Recuadro blanco con el logo de Dimelco, abajo a la izquierda. */
-.portada-logo {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 15.5cqw;
-  height: 5.8cqw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5cqw;
-  background: #ffffff;
-}
-.portada-logo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: none;
-}
-
 /* Fecha de datos, abajo a la derecha, en serif como en el reporte. */
 .portada-fecha {
   position: absolute;
@@ -159,18 +139,10 @@ main.contenido:has(> .portada) {
 
   .portada-pie {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-end;
     gap: 12px;
     margin-top: auto;
-  }
-
-  .portada-logo {
-    position: static;
-    width: 150px;
-    height: auto;
-    padding: 8px 10px;
-    flex-shrink: 0;
   }
 
   .portada-fecha {
@@ -183,3 +155,61 @@ main.contenido:has(> .portada) {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   }
 }
+
+/* ---------- Lienzo de escritorio (página 1 del reporte, 1280x720 escalado) ---------- */
+.portada-lienzo { background-color: #142c25; color: #fff; }
+.portada-lienzo .portada-h1 {
+  position: absolute;
+  margin: 0;
+  padding: 4px 0 0 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #fff;
+  white-space: nowrap;
+}
+.portada-lienzo .portada-h1 span { display: block; }
+.portada-lienzo .portada-botones {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(7, 160px);
+  column-gap: 13.6px;
+  padding: 2px 0 0 3.7px;
+  border: 1px solid #000;
+}
+.portada-lienzo .portada-boton {
+  height: 64px;
+  min-height: 0;
+  padding: 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: #00493c;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18.67px;
+  line-height: 23px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.35);
+}
+.portada-lienzo .portada-boton:hover { background: #006650; }
+.portada-lienzo .portada-fecha {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 0 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #fff;
+  white-space: nowrap;
+}
+.portada-enlaces {
+  position: absolute;
+  right: 14px;
+  top: 8px;
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  line-height: 16px;
+}
+.portada-enlaces a, .portada-enlaces .enlace-boton { color: rgba(255, 255, 255, 0.55); text-decoration: none; font-size: 11px; }
+.portada-enlaces a:hover, .portada-enlaces .enlace-boton:hover { color: #fff; text-decoration: underline; }

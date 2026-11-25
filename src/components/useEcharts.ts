@@ -3,9 +3,10 @@ import * as echarts from "echarts/core";
 import type { EChartsCoreOption, ECharts } from "echarts/core";
 import { BarChart, LineChart } from "echarts/charts";
 import { GridComponent, TooltipComponent } from "echarts/components";
-import { CanvasRenderer } from "echarts/renderers";
+import { SVGRenderer } from "echarts/renderers";
 
-echarts.use([BarChart, LineChart, GridComponent, TooltipComponent, CanvasRenderer]);
+// SVG: el lienzo de escritorio se escala con transform y el SVG queda nítido a cualquier escala.
+echarts.use([BarChart, LineChart, GridComponent, TooltipComponent, SVGRenderer]);
 
 /**
  * Crea una instancia de ECharts en un div, la redimensiona con ResizeObserver
@@ -23,7 +24,7 @@ export function useEcharts(
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const chart = echarts.init(el, undefined, { renderer: "canvas" });
+    const chart = echarts.init(el, undefined, { renderer: "svg" });
     chartRef.current = chart;
     chart.on("click", (p) => clickRef.current?.(p as unknown as Record<string, unknown>));
     const ro = new ResizeObserver(() => {

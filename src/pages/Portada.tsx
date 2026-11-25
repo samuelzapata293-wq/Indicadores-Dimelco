@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import fondo from "../assets/portada_mineros.png";
-import logo from "../assets/logo_dimelco_mineros.png";
+import Layout, { EnlacesSesion } from "../components/Layout";
+import LienzoPbi, { posicion, useEstadoLienzo } from "../components/LienzoPbi";
+import { DISENO_PORTADA as D } from "./disenos";
 import "./portada.css";
 
 const botones = [
@@ -64,29 +66,52 @@ interface Props {
 }
 
 export default function Portada({ fechaMin, fechaMax }: Props) {
+  const { modo, escala } = useEstadoLienzo();
+  const fecha = textoDataActualizada(fechaMin, fechaMax);
+
+  // Escritorio: la página 1 del reporte en el lienzo escalado, con las posiciones de Power BI.
+  if (modo === "lienzo") {
+    return (
+      <LienzoPbi escala={escala} fondo={fondo} className="portada-lienzo">
+        <h1 id="portada-titulo" className="portada-h1" style={posicion(D.titulo)}>
+          <span>PRESENTACIÓN DE INDICADORES DE MANTENIMIENTO</span>{" "}
+          <span>MINERÍA MECANIZADA</span>
+        </h1>
+        <nav className="portada-botones" aria-label="Secciones" style={posicion(D.botones)}>
+          {botones.map((b) => (
+            <Link key={b.ruta} to={b.ruta} className="portada-boton">
+              {b.texto}
+            </Link>
+          ))}
+        </nav>
+        <p className="portada-fecha" style={posicion(D.fecha)}>{fecha}</p>
+        <EnlacesSesion className="portada-enlaces" />
+      </LienzoPbi>
+    );
+  }
+
   return (
-    <section className="portada" aria-labelledby="portada-titulo">
-      <img className="portada-fondo" src={fondo} alt="" />
+    <Layout>
+      <section className="portada" aria-labelledby="portada-titulo">
+        <img className="portada-fondo" src={fondo} alt="" />
 
-      <h1 id="portada-titulo" className="portada-h1">
-        <span>PRESENTACIÓN DE INDICADORES DE MANTENIMIENTO</span>{" "}
-        <span>MINERÍA MECANIZADA</span>
-      </h1>
+        <h1 id="portada-titulo" className="portada-h1">
+          <span>PRESENTACIÓN DE INDICADORES DE MANTENIMIENTO</span>{" "}
+          <span>MINERÍA MECANIZADA</span>
+        </h1>
 
-      <nav className="portada-botones" aria-label="Secciones">
-        {botones.map((b) => (
-          <Link key={b.ruta} to={b.ruta} className="portada-boton">
-            {b.texto}
-          </Link>
-        ))}
-      </nav>
+        <nav className="portada-botones" aria-label="Secciones">
+          {botones.map((b) => (
+            <Link key={b.ruta} to={b.ruta} className="portada-boton">
+              {b.texto}
+            </Link>
+          ))}
+        </nav>
 
-      <div className="portada-pie">
-        <div className="portada-logo">
-          <img src={logo} alt="Dimelco Mineros" />
+        <div className="portada-pie">
+          <p className="portada-fecha">{fecha}</p>
         </div>
-        <p className="portada-fecha">{textoDataActualizada(fechaMin, fechaMax)}</p>
-      </div>
-    </section>
+      </section>
+    </Layout>
   );
 }

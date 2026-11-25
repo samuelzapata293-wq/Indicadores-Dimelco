@@ -3,9 +3,10 @@
 
 import { useDeferredValue, useMemo, useState } from "react";
 import ConModelo from "../components/ConModelo";
-import DisposicionPbi from "../components/DisposicionPbi";
 import { useFiltros } from "../components/Filtros";
-import GraficoDispFamilia, { type EquipoDisp } from "../components/GraficoDispFamilia";
+import GraficoDispFamilia, { ChipMeta, ChipReal, type EquipoDisp } from "../components/GraficoDispFamilia";
+import { Caja } from "../components/LienzoPbi";
+import PaginaPbi from "../components/PaginaPbi";
 import SegmentadorBotones from "../components/SegmentadorBotones";
 import SegmentadorLista from "../components/SegmentadorLista";
 import IndicadorGuardado from "../components/IndicadorGuardado";
@@ -14,7 +15,10 @@ import TablaPbi, { type ColumnaPbi } from "../components/TablaPbi";
 import type { Contexto, HorasDisp } from "../medidas/contexto";
 import type { Modelo } from "../medidas/modelo";
 import { graficoFamilia, tablaParos, type FilaParo } from "../medidas/visuales";
-import { OPCIONES_DISP } from "./opciones";
+import type { DisenoFamilia } from "./disenos";
+import { OPCIONES_DISP, OPCIONES_H_DISP } from "./opciones";
+
+const TITULO_PAGINA = "DISPONIBILIDADES";
 
 interface Props {
   /** Título del gráfico ("Tiro Largo"). */
@@ -23,12 +27,14 @@ interface Props {
   equiposGrafico: readonly number[];
   /** id_equipo de la tabla de paros (en ST3.5 y ST1030, los 8 scoops). */
   equiposTabla: readonly number[];
+  /** Posiciones de los visuales en el lienzo de escritorio. */
+  diseno: DisenoFamilia;
 }
 
 const COLUMNAS: ColumnaPbi<FilaParo>[] = [
-  { id: "sap", titulo: "Sap", valor: (f) => f.sap },
+  { id: "sap", titulo: "Sap", valor: (f) => f.sap, alinear: "der" },
   { id: "equipo", titulo: "Equipo", valor: (f) => f.equipo },
-  { id: "aviso", titulo: "Aviso", valor: (f) => f.aviso },
+  { id: "aviso", titulo: "Aviso", valor: (f) => f.aviso, alinear: "der" },
   { id: "descripcion", titulo: "Descripción del Paro", valor: (f) => f.descripcion },
   { id: "inicio", titulo: "_F/H Inicio", valor: (f) => f.inicio, formato: "fechaHora" },
   { id: "fin", titulo: "_F/H Fin", valor: (f) => f.fin, formato: "fechaHora" },
@@ -37,7 +43,7 @@ const COLUMNAS: ColumnaPbi<FilaParo>[] = [
   { id: "tipo", titulo: "Tipo de Paro", valor: (f) => f.tipoParo, sinPartir: true },
 ];
 
-function Contenido({ modelo, titulo, equiposGrafico, equiposTabla }: Props & { modelo: Modelo }) {
+function Contenido({ modelo, titulo, equiposGrafico, equiposTabla, diseno }: Props & { modelo: Modelo }) {
   const f = useFiltros();
   const [equipo, setEquipo] = useState<string | null>(null);
 
@@ -71,35 +77,57 @@ function Contenido({ modelo, titulo, equiposGrafico, equiposTabla }: Props & { m
     [filasTabla, equipo],
   );
 
-  const lateral = (
-    <>
-      <SegmentadorPeriodo valor={f.periodo} onChange={f.setPeriodo} min={f.rango.min} max={f.rango.max} />
-      <IndicadorGuardado />
-      <SegmentadorBotones
-        titulo="Var t: Disp"
-        opciones={[{ valor: 18, etiqueta: "18 hrs" }, { valor: 24, etiqueta: "24 hrs" }]}
-        valor={f.hDisp}
-        onChange={(v) => f.setHDisp(v as HorasDisp)}
-      />
-      <SegmentadorLista titulo="DISP. GLOBAL" opciones={OPCIONES_DISP} seleccion={f.disp} onChange={f.setDisp} />
-    </>
-  );
-
   return (
-    <DisposicionPbi lateral={lateral}>
-      <GraficoDispFamilia titulo={titulo} equipos={equipos} seleccionado={equipo} onClickEquipo={setEquipo} />
-      <TablaPbi
-        datos={filasVisibles}
-        columnas={COLUMNAS}
-        ordenInicial={{ id: "hrs", desc: true }}
-        alturaMax={300}
-        idFila={(r, i) => `${r.sap}-${r.aviso}-${r.inicioSerial}-${i}`}
-        mensajeVacio="Sin paros en el periodo."
-      />
-    </DisposicionPbi>
+    <>
+      <Caja r={diseno.grafico}>
+        <GraficoDispFamilia titulo={titulo} equipos={equipos} seleccionado={equipo} onClickEquipo={setEquipo} />
+      </Caja>
+      <Caja r={diseno.chipReal} soloLienzo>
+        <ChipReal />
+      </Caja>
+      <Caja r={diseno.chipMeta} soloLienzo>
+        <ChipMeta />
+      </Caja>
+      <Caja r={diseno.tabla} className="caja-tabla">
+        <TablaPbi
+          datos={filasVisibles}
+          columnas={COLUMNAS}
+          ordenInicial={{ id: "hrs", desc: true }}
+          alturaMax={300}
+          idFila={(r, i) => `${r.sap}-${r.aviso}-${r.inicioSerial}-${i}`}
+          mensajeVacio="Sin paros en el periodo."
+          className="tabla-paros"
+        />
+      </Caja>
+    </>
   );
 }
 
 export default function PaginaFamilia(props: Props) {
-  return <ConModelo>{(modelo) => <Contenido modelo={modelo} {...props} />}</ConModelo>;
+  const f = useFiltros();
+  const d = props.diseno;
+  const lateral = (
+    <>
+      <Caja r={d.periodo}>
+        <SegmentadorPeriodo valor={f.periodo} onChange={f.setPeriodo} min={f.rango.min} max={f.rango.max} />
+        <IndicadorGuardado />
+      </Caja>
+      <Caja r={d.hDisp}>
+        <SegmentadorBotones
+          titulo="Var t: Disp"
+          opciones={OPCIONES_H_DISP}
+          valor={f.hDisp}
+          onChange={(v) => f.setHDisp(v as HorasDisp)}
+        />
+      </Caja>
+      <Caja r={d.disp}>
+        <SegmentadorLista titulo="DISP. GLOBAL" opciones={OPCIONES_DISP} seleccion={f.disp} onChange={f.setDisp} />
+      </Caja>
+    </>
+  );
+  return (
+    <PaginaPbi titulo={TITULO_PAGINA} lateral={lateral}>
+      <ConModelo>{(modelo) => <Contenido modelo={modelo} {...props} />}</ConModelo>
+    </PaginaPbi>
+  );
 }

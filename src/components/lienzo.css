@@ -1,0 +1,264 @@
+/*
+ * Lienzo de escritorio: página fija de 1280x720 (como el reporte Power BI) escalada con transform.
+ * Las medidas de esta hoja están en píxeles de la página de Power BI (texto de 10 pt = 13.33 px).
+ */
+
+.lienzo-marco {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaeaea;
+}
+.lienzo-escala { position: relative; flex: none; overflow: hidden; }
+.lienzo {
+  --pbi-fuente: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pbi-fuente-titulo: "DIN", "D-DIN", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pbi-verde: #00493c;
+  --pbi-texto: #252423;
+  --pbi-gris: #605e5c;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  overflow: hidden;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 1280px 720px;
+  font-family: var(--pbi-fuente);
+  font-size: 13.33px;
+  line-height: 1.2;
+  color: var(--pbi-texto);
+}
+
+.caja { position: absolute; min-width: 0; min-height: 0; }
+.caja-apilada { display: contents; }
+
+/* Banda: la plantilla trae el fondo verde, la flecha verde y la marca (sin el texto del pie, que va aparte). */
+.lienzo-volver {
+  position: absolute;
+  display: block;
+  padding: 4px 0 0 5px;
+  color: #6f6f6f;
+  line-height: 0;
+  border-radius: 50%;
+}
+.lienzo-volver:hover { color: #9a9a9a; }
+.lienzo-volver:focus-visible { outline: 2px solid #3ddc84; outline-offset: -2px; }
+.lienzo-titulo {
+  position: absolute;
+  margin: 0;
+  padding: 0 0 0 6px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 50px;
+  color: #fff;
+  white-space: nowrap;
+}
+/* Pie: en el mismo lugar y tamaño del "© 2025 Mineros" de la plantilla original. */
+.lienzo-pie {
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.7px;
+  line-height: 16px;
+  color: #000;
+  text-align: right;
+  white-space: nowrap;
+}
+.lienzo-pie p { margin: 0; }
+
+/* Enlaces de sesión discretos, a la derecha del texto del pie. */
+.lienzo-enlaces {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+  font-family: var(--pbi-fuente);
+  font-size: 11px;
+  line-height: 16px;
+}
+.lienzo-enlaces a, .lienzo-enlaces .enlace-boton { color: #8a8886; text-decoration: none; font-size: 11px; }
+.lienzo-enlaces a:hover, .lienzo-enlaces .enlace-boton:hover { color: var(--pbi-texto); text-decoration: underline; }
+
+/* Avisos de carga dentro del área de contenido. */
+.lienzo-estado { position: absolute; left: 260px; top: 200px; right: 40px; }
+
+/* ---------- Segmentadores ---------- */
+.lienzo .seg { margin: 0; height: 100%; position: relative; }
+.lienzo .seg-cabecera {
+  height: 20px;
+  margin-top: 1px;
+  padding: 0 6px;
+  background: var(--pbi-verde);
+  font-family: var(--pbi-fuente-titulo);
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.lienzo .seg-cuerpo { padding: 0; }
+.lienzo .seg-fechas { gap: 7px; padding: 5px 0 0 13px; }
+.lienzo .seg-fecha {
+  flex: none;
+  width: 100px;
+  height: 27px;
+  padding: 0 2px 0 7px;
+  font-family: var(--pbi-fuente);
+  font-size: 13px;
+  color: var(--pbi-texto);
+  border: 1px solid #e6e6e6;
+  border-radius: 0;
+}
+.lienzo .seg-fecha::-webkit-calendar-picker-indicator { margin-left: 2px; opacity: 0.55; width: 11px; height: 11px; padding: 0; }
+.lienzo .seg-fecha::-webkit-datetime-edit { padding: 0; }
+.lienzo .seg-botones { gap: 2px; padding: 1px 24px 0 26px; }
+.lienzo .seg-boton {
+  height: 33px;
+  padding: 0 2px;
+  font-family: var(--pbi-fuente);
+  font-size: 13.33px;
+  color: #6f6f6f;
+  background: #fff;
+  border: 2px solid #bebebe;
+}
+.lienzo .seg-boton.activo { background: #333; border-color: #333; color: #fff; }
+.lienzo .seg-lista { gap: 0; padding: 0 0 0 13px; }
+.lienzo .seg-item { height: 29px; gap: 10px; font-size: 17.3px; line-height: 29px; color: var(--pbi-texto); white-space: nowrap; }
+.lienzo .seg-casilla { width: 15px; height: 15px; border: 1px solid #959595; }
+.lienzo .seg-casilla:checked { background: #242424; border-color: #242424; }
+.lienzo .seg-casilla:indeterminate { border-color: #757575; }
+.lienzo .seg-casilla:indeterminate::before { width: 9px; height: 9px; background: #757575; }
+.lienzo .seg-radio { width: 14px; height: 14px; border: 1px solid #959595; }
+.lienzo .seg-radio:checked { border: 1px solid #242424; }
+.lienzo .seg-radio:checked::before { width: 8px; height: 8px; background: #242424; }
+
+/* Aviso de guardado del período: discreto, bajo las fechas y dentro de la caja del segmentador. */
+.lienzo .guardado-periodo {
+  position: absolute;
+  left: 13px;
+  right: 4px;
+  top: 55px;
+  margin: 0;
+  padding: 0;
+  line-height: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lienzo .guardado-periodo-msg { font-size: 10.5px; }
+
+/* ---------- Gráfico por familia ---------- */
+.lienzo .graf-familia { height: 100%; display: flex; flex-direction: column; }
+.lienzo .graf-titulo {
+  flex: none;
+  height: 26px;
+  margin-top: 1px;
+  padding: 0 8px;
+  background: var(--pbi-verde);
+  font-family: var(--pbi-fuente);
+  font-size: 18.67px;
+  line-height: 25px;
+}
+.lienzo .graf-cuerpo { flex: 1 1 auto; min-height: 0; display: block; }
+.lienzo .graf-lienzo { height: 100%; }
+
+/* Leyendas sueltas (formas de Power BI) */
+.lienzo .chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  margin-top: 1px;
+  padding: 0 6px;
+  border-radius: 9px;
+  font-size: 13.33px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.lienzo .chip-amarillo { background: #f8d62f; color: var(--pbi-texto); }
+.lienzo .chip-gris { background: #b3b3b3; color: #fff; }
+
+/* ---------- Tablas ---------- */
+.lienzo .caja-tabla { padding: 5px 6px 6px; }
+.lienzo .tabla-pbi { height: 100%; }
+.lienzo .tabla-pbi table { font-size: 13.33px; line-height: 16px; color: var(--pbi-texto); }
+.lienzo .tabla-pbi th {
+  vertical-align: top;
+  text-align: left;
+  white-space: normal;
+  background: var(--pbi-verde);
+  border-bottom: 1px solid #118dff;
+  border-right: 1px solid #1d5e50;
+}
+.lienzo .tabla-pbi th:last-child { border-right: 0; }
+/* Tabla de paros: descripción con ancho mínimo como en el reporte; si no caben todas las columnas,
+   la tabla se desplaza hacia el lado dentro de su caja. */
+.lienzo .tabla-paros td:nth-child(2), .lienzo .tabla-resumen td:nth-child(2) { white-space: nowrap; }
+.lienzo .tabla-paros td:nth-child(4) { min-width: 290px; }
+.lienzo .th-boton { padding: 4px 6px 3px; line-height: 16px; }
+.lienzo .th-orden { display: block; height: 8px; font-size: 8px; line-height: 8px; }
+.lienzo .tabla-pbi td { padding: 3px 6px 2px; border-bottom: 1px solid #e9e9e9; }
+.lienzo .tabla-pbi tbody tr:last-child td { border-bottom: 1px solid #e9e9e9; }
+.lienzo .tabla-pbi .celda-sem { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.lienzo .tabla-pbi .semaforo { width: 15px; height: 15px; margin: 0; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28); }
+
+/* ---------- Paneles semanales (Disp Mensual) ---------- */
+.lienzo .paneles { height: 100%; display: flex; flex-direction: column; }
+.lienzo .paneles .graf-titulo { height: 26px; margin-top: 0; }
+.lienzo .paneles-leyenda { flex: none; height: 31px; gap: 8px; padding: 7px 0 0 7px; font-size: 14.67px; line-height: 20px; color: var(--pbi-gris); }
+.lienzo .paneles-leyenda span { display: inline-flex; align-items: center; }
+.lienzo .paneles-leyenda .punto { width: 11px; height: 11px; margin-right: 2px; }
+.lienzo .paneles-rejilla,
+.lienzo .paneles-rejilla.con-scroll {
+  flex: none;
+  height: 420px;
+  max-height: none;
+  margin: 0 12px 0 6px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  align-content: start;
+}
+.lienzo .panel-sem { position: relative; height: 210px; padding: 0; border-right: 1px solid #919190; border-bottom: 1px solid #919190; }
+.lienzo .panel-sem:nth-child(2n) { border-right: 0; }
+.lienzo .panel-sem-titulo {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  margin: 0;
+  padding: 10px 0 0 17px;
+  height: 30px;
+  font-family: var(--pbi-fuente-titulo);
+  font-size: 14.67px;
+  line-height: 18px;
+  color: var(--pbi-texto);
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* El gráfico ocupa todo el panel (bajo el título) para que las etiquetas cercanas al 100 % no se corten. */
+.lienzo .panel-sem-lienzo { position: absolute; inset: 0; height: auto; }
+.lienzo .paneles-ejes {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 70px;
+  margin: 0 12px 0 6px;
+  padding-right: 8px;
+  border-top: 1px solid #444;
+}
+.lienzo .paneles-eje { height: 100%; min-width: 0; }
+
+/* Barras de desplazamiento finas y grises, como las de Power BI (8 px fijos para alinear los ejes). */
+.lienzo ::-webkit-scrollbar { width: 8px; height: 8px; }
+.lienzo ::-webkit-scrollbar-track { background: transparent; }
+.lienzo ::-webkit-scrollbar-thumb { background: #8a8a8a; border-radius: 4px; }
+.lienzo ::-webkit-scrollbar-corner { background: transparent; }
+@supports not selector(::-webkit-scrollbar) {
+  .lienzo .tabla-pbi, .lienzo .paneles-rejilla { scrollbar-width: thin; scrollbar-color: #8a8a8a transparent; }
+}

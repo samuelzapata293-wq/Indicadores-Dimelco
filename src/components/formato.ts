@@ -4,14 +4,49 @@ export const COLORES = {
   verdeCumple: "#00493C",
   naranjaNoCumple: "#F89221",
   verdeTabla: "#0B4A3C",
-  semaforoVerde: "#5FB370",
-  semaforoRojo: "#F0625A",
-  amarilloEtiqueta: "#F5D328",
-  grisEtiqueta: "#BDBDBD",
-  metaLinea: "#F26B21",
-  lineaDisp: "#D4B106",
-  lineaMeta: "#1A2A9A",
+  semaforoVerde: "#64B178",
+  semaforoRojo: "#F26E5F",
+  amarilloEtiqueta: "#F8D62F",
+  grisEtiqueta: "#B3B3B3",
+  metaLinea: "#E66C37",
+  lineaDisp: "#D9B300",
+  lineaMeta: "#12239E",
+  textoEje: "#605E5C",
+  textoOscuro: "#252423",
 } as const;
+
+/** Familia tipográfica de los gráficos (la de Power BI, con respaldo de sistema). */
+export const FUENTE_GRAFICOS =
+  '"Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif';
+
+let contextoMedida: CanvasRenderingContext2D | null | undefined;
+
+/**
+ * Cantidad de líneas que ocupa un texto partido por palabras en un ancho dado (como overflow "break"
+ * de ECharts). Sin canvas (pruebas), estima por cantidad de caracteres.
+ */
+export function lineasEnvueltas(texto: string, ancho: number, fuente: string): number {
+  if (contextoMedida === undefined) {
+    contextoMedida = typeof document !== "undefined" ? document.createElement("canvas").getContext("2d") : null;
+  }
+  const medir = (t: string) => {
+    if (!contextoMedida) return t.length * 7.5;
+    contextoMedida.font = fuente;
+    return contextoMedida.measureText(t).width;
+  };
+  let lineas = 1;
+  let actual = "";
+  for (const palabra of texto.split(/\s+/).filter(Boolean)) {
+    const prueba = actual ? `${actual} ${palabra}` : palabra;
+    if (actual && medir(prueba) > ancho) {
+      lineas++;
+      actual = palabra;
+    } else {
+      actual = prueba;
+    }
+  }
+  return lineas;
+}
 
 export type FormatoCelda = "texto" | "entero" | "horas" | "pct0" | "pct2" | "fechaHora";
 

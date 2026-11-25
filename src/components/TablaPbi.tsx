@@ -8,6 +8,7 @@ import {
   type SortingState,
 } from "@tanstack/react-table";
 import { COLORES, esFormatoNumerico, formatear, type FormatoCelda } from "./formato";
+import { useModoPagina } from "./LienzoPbi";
 import "./componentes.css";
 
 export interface ColumnaPbi<T> {
@@ -29,10 +30,12 @@ interface Props<T> {
   columnas: ColumnaPbi<T>[];
   /** Orden inicial (p. ej. { id: "hrs", desc: true }). */
   ordenInicial?: { id: string; desc?: boolean };
-  /** Alto máximo en px; por encima hay scroll interno con cabecera fija. */
+  /** Alto máximo en px; por encima hay scroll interno con cabecera fija. En el lienzo, la tabla llena su caja. */
   alturaMax?: number;
   idFila?: (fila: T, indice: number) => string;
   mensajeVacio?: string;
+  /** Clase extra del contenedor (por ejemplo, "tabla-paros"). */
+  className?: string;
 }
 
 export default function TablaPbi<T>({
@@ -42,6 +45,7 @@ export default function TablaPbi<T>({
   alturaMax = 360,
   idFila,
   mensajeVacio = "Sin datos para mostrar.",
+  className,
 }: Props<T>) {
   const [orden, setOrden] = useState<SortingState>(
     ordenInicial ? [{ id: ordenInicial.id, desc: ordenInicial.desc ?? false }] : []
@@ -58,24 +62,24 @@ export default function TablaPbi<T>({
           const f = ctx.row.original;
           const sem = c.semaforo?.(f);
           const texto = c.formato || !c.semaforo ? formatear(ctx.getValue(), c.formato) : "";
+          if (sem === null || sem === undefined) return texto;
           return (
-            <>
-              {sem !== null && sem !== undefined && (
-                <span
-                  className="semaforo"
-                  style={{ background: sem ? COLORES.semaforoVerde : COLORES.semaforoRojo }}
-                  role="img"
-                  aria-label={sem ? "Cumple" : "No cumple"}
-                />
-              )}
-              {texto}
-            </>
+            <span className="celda-sem">
+              <span
+                className="semaforo"
+                style={{ background: sem ? COLORES.semaforoVerde : COLORES.semaforoRojo }}
+                role="img"
+                aria-label={sem ? "Cumple" : "No cumple"}
+              />
+              <span>{texto}</span>
+            </span>
           );
         },
       })),
     [columnas]
   );
 
+  const modo = useModoPagina();
   const tabla = useReactTable({
     data: datos,
     columns: defs,
@@ -92,7 +96,7 @@ export default function TablaPbi<T>({
     (c.alinear ?? (esFormatoNumerico(c.formato) ? "der" : "izq")) === "der" ? "der" : "izq";
 
   return (
-    <div className="tabla-pbi" style={{ maxHeight: alturaMax }}>
+    <div className={className ? `tabla-pbi ${className}` : "tabla-pbi"} style={modo === "lienzo" ? undefined : { maxHeight: alturaMax }}>
       <table>
         <thead>
           {tabla.getHeaderGroups().map((g) => (

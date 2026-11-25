@@ -147,3 +147,6 @@
 .guardado-periodo { margin: 0 0 8px; padding: 0 4px; }
 .guardado-periodo-msg { font-size: 13px; color: var(--verde-oscuro); }
 .guardado-periodo-msg.error { color: #9c0006; }
+
+/* Celda con semáforo (Resumen): círculo y valor */
+.celda-sem { display: inline-flex; align-items: center; }

@@ -2,7 +2,8 @@
 
 import { useDeferredValue, useMemo } from "react";
 import ConModelo from "../components/ConModelo";
-import DisposicionPbi from "../components/DisposicionPbi";
+import { Caja } from "../components/LienzoPbi";
+import PaginaPbi from "../components/PaginaPbi";
 import { useFiltros } from "../components/Filtros";
 import SegmentadorBotones from "../components/SegmentadorBotones";
 import SegmentadorLista from "../components/SegmentadorLista";
@@ -18,7 +19,10 @@ import {
   type FilaResumenEquipo,
   type FilaResumenFamilia,
 } from "../medidas/visuales";
+import { DISENO_RESUMEN as D } from "./disenos";
 import { OPCIONES_DISP, OPCIONES_H_DISP, OPCIONES_T_CONF } from "./opciones";
+
+const TITULO_PAGINA = "DISIPONIBILIDAD-MTTR-MTBF (Z4 NPI MEC-ELC)"; // con la errata del reporte original
 
 const cumple = (f: { color: string }) => f.color === COLORES.verdeCumple;
 
@@ -54,45 +58,62 @@ function Contenido({ modelo }: { modelo: Modelo }) {
   const porEquipo = useMemo(() => resumenPorEquipo(modelo, ctx), [modelo, ctx]);
   const porFamilia = useMemo(() => resumenPorFamilia(modelo, ctx), [modelo, ctx]);
 
-  const lateral = (
-    <>
-      <SegmentadorPeriodo valor={f.periodo} onChange={f.setPeriodo} min={f.rango.min} max={f.rango.max} />
-      <IndicadorGuardado />
-      <SegmentadorBotones
-        titulo="Var t: Conf."
-        opciones={OPCIONES_T_CONF}
-        valor={f.tConf}
-        onChange={(v) => f.setTConf(v as HorasConf)}
-      />
-      <SegmentadorBotones
-        titulo="Var t: Disp"
-        opciones={OPCIONES_H_DISP}
-        valor={f.hDisp}
-        onChange={(v) => f.setHDisp(v as HorasDisp)}
-      />
-      <SegmentadorLista titulo="DISP. GLOBAL" opciones={OPCIONES_DISP} seleccion={f.disp} onChange={f.setDisp} />
-    </>
-  );
-
   return (
-    <DisposicionPbi lateral={lateral}>
-      <TablaPbi
-        datos={porEquipo}
-        columnas={COLS_EQUIPO}
-        ordenInicial={{ id: "denominacion" }}
-        alturaMax={720}
-        idFila={(r) => String(r.id)}
-      />
-      <TablaPbi
-        datos={porFamilia}
-        columnas={COLS_FAMILIA}
-        ordenInicial={{ id: "familia", desc: true }}
-        idFila={(r) => r.familia}
-      />
-    </DisposicionPbi>
+    <>
+      <Caja r={D.tablaEquipo} className="caja-tabla">
+        <TablaPbi
+          datos={porEquipo}
+          columnas={COLS_EQUIPO}
+          ordenInicial={{ id: "denominacion" }}
+          alturaMax={720}
+          idFila={(r) => String(r.id)}
+          className="tabla-resumen"
+        />
+      </Caja>
+      <Caja r={D.tablaFamilia} className="caja-tabla">
+        <TablaPbi
+          datos={porFamilia}
+          columnas={COLS_FAMILIA}
+          ordenInicial={{ id: "familia", desc: true }}
+          idFila={(r) => r.familia}
+        />
+      </Caja>
+    </>
   );
 }
 
 export default function Resumen() {
-  return <ConModelo>{(modelo) => <Contenido modelo={modelo} />}</ConModelo>;
+  const f = useFiltros();
+  const lateral = (
+    <>
+      <Caja r={D.periodo}>
+        <SegmentadorPeriodo valor={f.periodo} onChange={f.setPeriodo} min={f.rango.min} max={f.rango.max} />
+        <IndicadorGuardado />
+      </Caja>
+      <Caja r={D.tConf}>
+        <SegmentadorBotones
+          titulo="Var t: Conf."
+          opciones={OPCIONES_T_CONF}
+          valor={f.tConf}
+          onChange={(v) => f.setTConf(v as HorasConf)}
+        />
+      </Caja>
+      <Caja r={D.hDisp}>
+        <SegmentadorBotones
+          titulo="Var t: Disp"
+          opciones={OPCIONES_H_DISP}
+          valor={f.hDisp}
+          onChange={(v) => f.setHDisp(v as HorasDisp)}
+        />
+      </Caja>
+      <Caja r={D.disp}>
+        <SegmentadorLista titulo="DISP. GLOBAL" opciones={OPCIONES_DISP} seleccion={f.disp} onChange={f.setDisp} />
+      </Caja>
+    </>
+  );
+  return (
+    <PaginaPbi titulo={TITULO_PAGINA} rectTitulo={D.titulo} rectPie={D.pie} lateral={lateral}>
+      <ConModelo>{(modelo) => <Contenido modelo={modelo} />}</ConModelo>
+    </PaginaPbi>
+  );
 }

@@ -326,6 +326,7 @@ export default function Cargar() {
       {fase.paso === "listo" && (
         <div className="carga-ok" role="status">
           <strong>Carga terminada.</strong>
+          <div>Ahora elige el período en cualquier página y pulsa Fijar este período para todos.</div>
           <div>Id de carga: {fase.id}</div>
           <div>Archivo: {fase.archivo}</div>
           <div>Hora: {fase.hora.toLocaleString("es-MX", { dateStyle: "short", timeStyle: "medium" })}</div>

@@ -18,7 +18,7 @@ src/medidas/      motor de medidas (traducción del DAX), contexto de filtros y 
 src/components/   piezas compartidas: encabezado, pie, segmentadores, tablas y gráficos
 src/pages/        una pantalla por ruta: portada, familias, Resumen, Mensual, Ingresar y Cargar datos
 src/lib/          cliente de Supabase
-supabase/         instalar_todo.sql (instalación completa) y migrations/ (001 a 004)
+supabase/         instalar_todo.sql (instalación completa) y migrations/ (001 a 006) y parche_2026-11-25.sql (solo 005 y 006, para producción)
 tools/            pruebas de la base y de la carga real, y utilidades para armar el instalador SQL y la muestra local
 tests/            pruebas de Vitest del motor y del lector de Excel, con datos de muestra en fixtures/
 docs/             contrato de datos y medidas, manual de carga, y material del reporte de Power BI

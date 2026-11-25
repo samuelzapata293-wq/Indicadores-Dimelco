@@ -28,6 +28,29 @@ begin
 end $$;
 grant execute on all functions in schema pruebas to anon, authenticated;
 
+-- 0. Ninguna función de public puede tener un DELETE sin WHERE (Supabase lo rechaza en su API:
+-- "DELETE requires a WHERE clause"). Para vaciar una tabla completa se usa TRUNCATE.
+-- Se quitan los comentarios de línea y se revisa cada sentencia "delete from ... ;" del código fuente.
+do $$
+declare f record; sentencia text; malas text := '';
+begin
+  for f in
+    select p.proname, regexp_replace(lower(p.prosrc), '--[^\n]*', '', 'g') as src
+    from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+    where n.nspname = 'public' and p.prokind = 'f'
+  loop
+    for sentencia in select m[1] from regexp_matches(f.src, '(\mdelete\s+from\s+[^;]*)', 'g') as m loop
+      if sentencia !~ '\mwhere\M' then
+        malas := malas || format('%s: «%s»; ', f.proname, left(regexp_replace(sentencia, '\s+', ' ', 'g'), 60));
+      end if;
+    end loop;
+  end loop;
+  if malas <> '' then
+    raise exception 'Hay funciones con DELETE sin WHERE (usar TRUNCATE o agregar WHERE): %', malas;
+  end if;
+end $$;
+\echo 'APROBADA: ninguna función de public tiene DELETE sin WHERE'
+
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-00000000000a', 'admin@x.com'),
   ('00000000-0000-0000-0000-00000000000b', 'otro@x.com');
@@ -128,6 +151,57 @@ set role anon;
 select pruebas.espera_error($q$select count(*) from storage.objects$q$, 'permission denied');
 reset role;
 \echo 'APROBADA: bucket excel privado, solo el admin sube y lee'
+
+-- 7. Vaciar con TRUNCATE: el dueño de cargar_datos puede truncar las cinco tablas y no la de cargas.
+select pruebas.igual(
+  (select bool_and(has_table_privilege(p.proowner, format('public.%I', t), 'TRUNCATE'))
+   from pg_proc p, unnest(array['paros','metas','tipos_mantto','responsables','equipos']) as t
+   where p.proname = 'cargar_datos' and p.pronamespace = 'public'::regnamespace),
+  true, 'el dueño de cargar_datos puede truncar las cinco tablas');
+select pruebas.igual((select count(*)::int from cargas), 2, 'cargas sigue con su historial');
+\echo 'APROBADA: el dueño de cargar_datos puede truncar y cargas no se toca'
+
+-- 8. Configuración del período compartido.
+set role anon;
+select pruebas.igual((select count(*)::int from configuracion), 0, 'anon lee configuracion (vacía)');
+select pruebas.espera_error($q$select guardar_periodo('2026-11-01', '2026-11-20', null, null)$q$, 'permission denied');
+select pruebas.espera_error($q$insert into configuracion (id, periodo_ini) values (1, now())$q$, 'permission denied');
+select pruebas.espera_error($q$update configuracion set periodo_ini = now()$q$, 'permission denied');
+reset role;
+\echo 'APROBADA: anon lee configuracion y no puede guardar_periodo ni escribir'
+
+set role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-00000000000b"}', false);
+select pruebas.espera_error($q$select guardar_periodo('2026-11-01', '2026-11-20', null, null)$q$, 'Solo el administrador');
+select pruebas.espera_error($q$update configuracion set periodo_ini = now()$q$, 'permission denied');
+reset role;
+\echo 'APROBADA: un autenticado que no es admin no puede guardar el período'
+
+set role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-00000000000a"}', false);
+select guardar_periodo('2026-11-01', '2026-11-20', '2026-07-01', '2026-11-05');
+select pruebas.igual((select periodo_ini from configuracion), date '2026-11-01', 'periodo_ini');
+select pruebas.igual((select periodo_fin from configuracion), date '2026-11-20', 'periodo_fin');
+select pruebas.igual((select mensual_ini from configuracion), date '2026-07-01', 'mensual_ini');
+select pruebas.igual((select mensual_fin from configuracion), date '2026-11-05', 'mensual_fin');
+select pruebas.igual((select actualizado_por from configuracion), '00000000-0000-0000-0000-00000000000a'::uuid, 'actualizado_por');
+-- Un par en null no cambia ese par.
+select guardar_periodo(null, null, '2026-08-01', '2026-11-10');
+select pruebas.igual((select periodo_ini from configuracion), date '2026-11-01', 'general intacto');
+select pruebas.igual((select mensual_ini from configuracion), date '2026-08-01', 'mensual cambiado');
+select guardar_periodo('2026-11-02', '2026-11-21', null, null);
+select pruebas.igual((select periodo_fin from configuracion), date '2026-11-21', 'general cambiado');
+select pruebas.igual((select mensual_fin from configuracion), date '2026-11-10', 'mensual intacto');
+select pruebas.igual((select count(*)::int from configuracion), 1, 'sigue una sola fila');
+-- ini > fin falla y no cambia nada.
+select pruebas.espera_error($q$select guardar_periodo('2026-11-20', '2026-11-01', null, null)$q$, 'inicio después del fin');
+select pruebas.espera_error($q$select guardar_periodo(null, null, '2026-11-20', '2026-11-01')$q$, 'inicio después del fin');
+select pruebas.igual((select periodo_ini from configuracion), date '2026-11-02', 'general intacto tras error');
+reset role;
+set role anon;
+select pruebas.igual((select periodo_ini from configuracion), date '2026-11-02', 'anon lee lo guardado');
+reset role;
+\echo 'APROBADA: el admin guarda y se lee; ini > fin falla; un par en null no se cambia'
 
 -- Limpieza para la prueba de volumen.
 delete from storage.objects;

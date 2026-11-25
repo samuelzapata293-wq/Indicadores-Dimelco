@@ -142,3 +142,20 @@
   .panel-sem { border-right: 0; }
   .paneles-rejilla.con-scroll { max-height: 700px; }
 }
+
+/* Botón del administrador bajo el segmentador de período */
+.fijar-periodo { display: flex; flex-direction: column; gap: 4px; margin: 0 0 8px; padding: 0 4px; }
+.fijar-periodo-boton {
+  padding: 4px 8px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--verde-tabla);
+  background: #fff;
+  border: 1px solid var(--verde-tabla);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.fijar-periodo-boton:hover:not(:disabled) { background: #eef6f3; }
+.fijar-periodo-boton:disabled { opacity: 0.6; cursor: default; }
+.fijar-periodo-msg { font-size: 13px; color: var(--verde-oscuro); }
+.fijar-periodo-msg.error { color: #9c0006; }

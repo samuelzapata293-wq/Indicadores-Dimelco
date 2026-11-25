@@ -1,32 +1,20 @@
-// Portada con el rango de fechas de los datos: de la última carga (Supabase) o, en modo local,
-// de las fechas de inicio de los paros del modelo.
+// Portada con el período que ve todo el mundo: el guardado por el administrador (configuración) o,
+// si no hay, el período inicial calculado del modelo (del primer día del mes de la última fecha de
+// inicio de los paros hasta esa fecha).
 
 import { useMemo } from "react";
-import { MODO_LOCAL, useModelo } from "../datos/ModeloProvider";
-import { useUltimaCarga } from "../datos/lectura";
-import { serialAIso } from "../medidas/contexto";
+import { useModelo } from "../datos/ModeloProvider";
+import { useConfiguracion } from "../datos/lectura";
+import { elegirPeriodo, periodoConfigurado } from "../datos/periodos";
+import { periodoInicial } from "../medidas/visuales";
 import Portada from "./Portada";
 
-function PortadaSupabase() {
-  const { data } = useUltimaCarga();
-  return <Portada fechaMin={data?.fecha_min?.slice(0, 10)} fechaMax={data?.fecha_max?.slice(0, 10)} />;
-}
-
-function PortadaLocal() {
-  const { modelo } = useModelo();
-  const rango = useMemo(() => {
-    if (!modelo || modelo.paros.length === 0) return {};
-    let a = Infinity;
-    let b = -Infinity;
-    for (const p of modelo.paros) {
-      if (p.inicio < a) a = p.inicio;
-      if (p.inicio > b) b = p.inicio;
-    }
-    return { fechaMin: serialAIso(a).slice(0, 10), fechaMax: serialAIso(b).slice(0, 10) };
-  }, [modelo]);
-  return <Portada {...rango} />;
-}
-
 export default function PortadaDatos() {
-  return MODO_LOCAL ? <PortadaLocal /> : <PortadaSupabase />;
+  const { modelo } = useModelo();
+  const { data: config } = useConfiguracion();
+  const periodo = useMemo(() => {
+    const inicial = modelo ? periodoInicial(modelo) : null;
+    return elegirPeriodo(null, periodoConfigurado(config), inicial && { desde: inicial.general.ini, hasta: inicial.general.fin });
+  }, [modelo, config]);
+  return <Portada fechaMin={periodo?.desde} fechaMax={periodo?.hasta} />;
 }

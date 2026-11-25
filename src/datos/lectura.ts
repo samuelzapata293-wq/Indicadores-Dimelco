@@ -4,6 +4,7 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { useQuery } from "@tanstack/react-query";
+import type { Configuracion } from "./periodos";
 import { clienteSupabase } from "../lib/supabase";
 import type { DatosModelo, Equipo, Meta, Paro, Responsable, TipoMantto } from "./tipos";
 
@@ -223,4 +224,62 @@ export function useUltimaCarga() {
     refetchOnWindowFocus: false,
   });
   return { ...q, data: q.data?.[0] ?? null };
+}
+
+// ---------- configuración (período compartido) ----------
+
+export const CLAVE_CONFIGURACION = ["configuracion"] as const;
+
+const fechaONula = (v: unknown): string | null => (v ? aTexto(v).slice(0, 10) : null);
+
+export function convertirConfiguracion(f: Crudo): Configuracion {
+  return {
+    periodo_ini: fechaONula(f.periodo_ini),
+    periodo_fin: fechaONula(f.periodo_fin),
+    mensual_ini: fechaONula(f.mensual_ini),
+    mensual_fin: fechaONula(f.mensual_fin),
+  };
+}
+
+/** Fila única de configuracion, o null si todavía no se guardó nada. */
+export async function leerConfiguracion(cliente: SupabaseClient): Promise<Configuracion | null> {
+  const { data, error } = await cliente
+    .from("configuracion")
+    .select("periodo_ini,periodo_fin,mensual_ini,mensual_fin")
+    .eq("id", 1)
+    .maybeSingle();
+  if (error) throw new Error(`No se pudo leer la configuración: ${error.message}`);
+  return data ? convertirConfiguracion(data as unknown as Crudo) : null;
+}
+
+export interface PeriodoAGuardar {
+  /** Un par en null no se cambia. */
+  periodoIni?: string | null;
+  periodoFin?: string | null;
+  mensualIni?: string | null;
+  mensualFin?: string | null;
+}
+
+/** Guarda el período (solo el administrador; la base lo exige). */
+export async function guardarPeriodo(cliente: SupabaseClient, p: PeriodoAGuardar): Promise<void> {
+  const { error } = await cliente.rpc("guardar_periodo", {
+    p_periodo_ini: p.periodoIni ?? null,
+    p_periodo_fin: p.periodoFin ?? null,
+    p_mensual_ini: p.mensualIni ?? null,
+    p_mensual_fin: p.mensualFin ?? null,
+  });
+  if (error) throw new Error(`No se pudo guardar el período: ${error.message}`);
+}
+
+// Modo local (VITE_DATOS_LOCAL=muestra): no hay base, así que no hay configuración.
+const SIN_BASE = import.meta.env.VITE_DATOS_LOCAL === "muestra";
+
+export function useConfiguracion() {
+  return useQuery({
+    queryKey: CLAVE_CONFIGURACION,
+    queryFn: async (): Promise<Configuracion | null> => (SIN_BASE ? null : leerConfiguracion(clienteSupabase())),
+    staleTime: CINCO_MIN,
+    retry: 1,
+    refetchOnWindowFocus: false,
+  });
 }

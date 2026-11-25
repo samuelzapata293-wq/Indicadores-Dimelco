@@ -7,6 +7,7 @@ import { useFiltros } from "../components/Filtros";
 import PanelesSemanales, { type PanelSemanal } from "../components/PanelesSemanales";
 import SegmentadorBotones from "../components/SegmentadorBotones";
 import SegmentadorLista, { type OpcionLista } from "../components/SegmentadorLista";
+import BotonFijarPeriodo from "../components/BotonFijarPeriodo";
 import SegmentadorPeriodo from "../components/SegmentadorPeriodo";
 import { EQUIPOS_RESUMEN, type Contexto, type HorasDisp } from "../medidas/contexto";
 import type { Modelo } from "../medidas/modelo";
@@ -49,6 +50,7 @@ function Contenido({ modelo }: { modelo: Modelo }) {
   const lateral = (
     <>
       <SegmentadorPeriodo valor={f.periodoMensual} onChange={f.setPeriodoMensual} min={f.rango.min} max={f.rango.max} />
+      <BotonFijarPeriodo mensual />
       <SegmentadorBotones
         titulo="Var t: Disp"
         opciones={OPCIONES_H_DISP}

@@ -1,6 +1,6 @@
 # Manual de carga del libro
 
-Este manual es para el administrador. Explica cómo actualizar los datos de la aplicación cada semana o cada mes con el libro maestro de Excel. La aplicación no modifica el libro: lee cinco tablas y reemplaza en la base todos los datos anteriores.
+Este manual es para el administrador. Explica cómo actualizar los datos de la aplicación cada semana o cada mes con el libro maestro de Excel. La aplicación no modifica el libro: lee cinco tablas y reemplaza en la base todos los datos anteriores. Para la rutina de cada mes, ver la sección siguiente.
 
 ## Qué lee la aplicación
 
@@ -24,9 +24,28 @@ Las columnas MTTR, MTBF y Confiabilidad de Tabla15 deben existir, aunque estén 
 
 El detalle de cada campo está en `docs/contrato.md`, sección 1.
 
+## Rutina mensual del administrador
+
+1. En el libro maestro, hoja "Data Mes" (Tabla2), borrar a mano las filas del mes en curso y pegar las filas nuevas de ese mes.
+2. Corregir a mano en el libro lo que haga falta (equipos, códigos, fechas, metas).
+3. En la web, cargar el mismo libro completo (ver "Pasos en la pantalla Cargar datos").
+4. Elegir el período en cualquier página y pulsar "Fijar este período para todos" (ver "Período que ven todos").
+
 ## Cada carga reemplaza todo
 
-Cada carga reemplaza todos los datos actuales por los del libro. El libro debe tener el historial completo de paros, no solo las filas del último mes. Si se carga solo el mes nuevo, los meses anteriores desaparecen de la aplicación.
+Cada carga reemplaza todos los datos actuales por los del libro. Por eso el libro conserva el historial: solo se reemplaza el mes en curso dentro del libro, y la carga sube el libro entero. Si se cargara solo el mes nuevo, los meses anteriores desaparecerían de la aplicación.
+
+## Período que ven todos
+
+El rango de fechas que el administrador deja fijado es el que ven todos al abrir la web, y la portada muestra "Data actualizada" con ese rango.
+
+1. Iniciar sesión como administrador.
+2. Elegir el período en el segmentador de fechas de cualquier página (Disp Simba, Jumbo, Sostenimiento, ST3.5, ST1030 o Resumen).
+3. Pulsar "Fijar este período para todos", debajo del segmentador. Aparece "Período guardado".
+
+Disp Mensual tiene su propio período, independiente. Para fijarlo, elegir las fechas en esa página y pulsar el mismo botón allí. Los invitados no ven el botón.
+
+Mientras no se fije un período, la web usa el calculado de los datos: del primer día del mes de la última fecha de inicio de los paros hasta esa fecha. Una carga nueva no cambia el período fijado: después de cargar hay que fijarlo de nuevo.
 
 ## Filas que se descartan
 
@@ -73,7 +92,7 @@ Si aparecen muchas filas quitadas, o si el rango nuevo termina antes que el actu
 
 Paso 3, cargar a la base. Elegir Cargar a la base y confirmar con Sí, cargar. La pantalla pide confirmación con el número de paros que se van a reemplazar.
 
-Al terminar, la pantalla muestra "Carga terminada" con el id de la carga. Ver tablero lleva a la portada, que muestra el nuevo rango de fechas.
+Al terminar, la pantalla muestra "Carga terminada" con el id de la carga. Debajo aparece el recordatorio de elegir el período y fijarlo para todos. Ver tablero lleva a la portada.
 
 ## Si algo falla
 

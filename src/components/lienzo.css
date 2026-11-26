@@ -71,14 +71,22 @@
 }
 .lienzo-pie p { margin: 0; }
 
+/* Pie: el texto y los enlaces de sesión forman una fila pegada al borde derecho del lienzo (right fijo),
+   para que los enlaces nunca se salgan aunque haya tres (Exportar PDF, Cargar datos, Salir). */
+.lienzo .lienzo-pie {
+  left: auto !important;
+  width: auto !important;
+  right: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 14px;
+}
 /* Enlaces de sesión discretos, a la derecha del texto del pie. */
 .lienzo-enlaces {
-  position: absolute;
-  left: 100%;
-  top: 0;
   display: flex;
+  flex: none;
   gap: 10px;
-  margin-left: 10px;
   font-family: var(--pbi-fuente);
   font-size: 11px;
   line-height: 16px;

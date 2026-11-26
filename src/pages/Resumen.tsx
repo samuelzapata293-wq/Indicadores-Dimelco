@@ -68,6 +68,7 @@ function Contenido({ modelo }: { modelo: Modelo }) {
           alturaMax={720}
           idFila={(r) => String(r.id)}
           className="tabla-resumen"
+          etiqueta="Resumen por equipo"
         />
       </Caja>
       <Caja r={D.tablaFamilia} className="caja-tabla">
@@ -76,6 +77,8 @@ function Contenido({ modelo }: { modelo: Modelo }) {
           columnas={COLS_FAMILIA}
           ordenInicial={{ id: "familia", desc: true }}
           idFila={(r) => r.familia}
+          className="tabla-familia"
+          etiqueta="Resumen por familia"
         />
       </Caja>
     </>

@@ -97,6 +97,7 @@ function Contenido({ modelo, titulo, equiposGrafico, equiposTabla, diseno }: Pro
           idFila={(r, i) => `${r.sap}-${r.aviso}-${r.inicioSerial}-${i}`}
           mensajeVacio="Sin paros en el periodo."
           className="tabla-paros"
+          etiqueta="Tabla de paros"
         />
       </Caja>
     </>

@@ -133,9 +133,8 @@ const R = {
   tiempos: {},
   consola: [],
   selectoresFaltantes: [
-    "DISP. GLOBAL: la lista de casillas no tiene role ni aria-label (los radiogroup de Var t: Disp, Var t: Conf. y Familia sí). Se usó section.seg con su h3 'DISP. GLOBAL' y getByLabel('Mecánica'|'Operacional').",
     "Periodo de tiempo: los dos input[type=date] tienen aria-label 'Desde' y 'Hasta' (estables); la sección que los contiene no tiene role ni nombre.",
-    "Tablas: no tienen caption ni aria-label. Se usaron las clases .tabla-paros y .tabla-resumen (tabla por equipo); la tabla por familia de Resumen no tiene clase propia (se usó '.caja-tabla .tabla-pbi:not(.tabla-resumen)').",
+    "Tablas: tienen aria-label (Tabla de paros, Resumen por equipo, Resumen por familia); la de familia usa la clase .tabla-familia.",
     "Gráfico de columnas: el contenedor tiene role=img y aria-label, pero los números solo existen dentro del SVG de ECharts, sin data-attributes. Se distinguen las series por el color del texto (#252423 Disp, #fff Meta) y el equipo por la posición x del eje.",
     "Disp Mensual: sin data-attributes en los puntos. Se leen los círculos del SVG por su relleno (#D9B300 Disp, #12239E Meta) y se convierte la posición y a % con la calibración del eje de PanelesSemanales.tsx (arriba 40 px, abajo 13 px, máximo 1.06). Si cambian esos márgenes la comparación de puntos hay que recalibrarla.",
     "Portada: el rango de fechas se lee de .portada-fecha y los botones de .portada-boton (clases, sin data-testid); la flecha de volver es a.lienzo-volver (tiene aria-label 'Volver a Portada').",
@@ -262,7 +261,7 @@ async function aplicarFiltros(page, f) {
 const leerTabla = (page, selector) =>
   page.evaluate((sel) => [...document.querySelectorAll(`${sel} tbody tr`)].map((tr) => [...tr.querySelectorAll("td")].map((td) => td.innerText.trim())).filter((f) => f.length > 1), selector);
 
-const SEL_TABLA = { equipo: ".tabla-resumen", familia: ".caja-tabla .tabla-pbi:not(.tabla-resumen)", paros: ".tabla-paros" };
+const SEL_TABLA = { equipo: ".tabla-resumen", familia: ".tabla-familia", paros: ".tabla-paros" };
 
 async function leerGrafico(page) {
   return page.evaluate(() => {

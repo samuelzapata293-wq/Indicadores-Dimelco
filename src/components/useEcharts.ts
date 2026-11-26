@@ -3,10 +3,11 @@ import * as echarts from "echarts/core";
 import type { EChartsCoreOption, ECharts } from "echarts/core";
 import { BarChart, LineChart } from "echarts/charts";
 import { GridComponent, TooltipComponent } from "echarts/components";
+import { LabelLayout } from "echarts/features";
 import { SVGRenderer } from "echarts/renderers";
 
 // SVG: el lienzo de escritorio se escala con transform y el SVG queda nítido a cualquier escala.
-echarts.use([BarChart, LineChart, GridComponent, TooltipComponent, SVGRenderer]);
+echarts.use([BarChart, LineChart, GridComponent, TooltipComponent, LabelLayout, SVGRenderer]);
 
 /**
  * Crea una instancia de ECharts en un div, la redimensiona con ResizeObserver

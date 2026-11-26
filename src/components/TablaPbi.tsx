@@ -34,6 +34,8 @@ interface Props<T> {
   alturaMax?: number;
   idFila?: (fila: T, indice: number) => string;
   mensajeVacio?: string;
+  /** Nombre accesible de la tabla (aria-label). */
+  etiqueta?: string;
   /** Clase extra del contenedor (por ejemplo, "tabla-paros"). */
   className?: string;
 }
@@ -45,6 +47,7 @@ export default function TablaPbi<T>({
   alturaMax = 360,
   idFila,
   mensajeVacio = "Sin datos para mostrar.",
+  etiqueta,
   className,
 }: Props<T>) {
   const [orden, setOrden] = useState<SortingState>(
@@ -97,7 +100,7 @@ export default function TablaPbi<T>({
 
   return (
     <div className={className ? `tabla-pbi ${className}` : "tabla-pbi"} style={modo === "lienzo" ? undefined : { maxHeight: alturaMax }}>
-      <table>
+      <table aria-label={etiqueta}>
         <thead>
           {tabla.getHeaderGroups().map((g) => (
             <tr key={g.id}>

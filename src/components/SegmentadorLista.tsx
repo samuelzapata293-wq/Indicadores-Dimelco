@@ -68,7 +68,7 @@ export default function SegmentadorLista(props: Props) {
   return (
     <section className="seg">
       <h3 className="seg-cabecera">{titulo}</h3>
-      <div className="seg-cuerpo seg-lista">
+      <div className="seg-cuerpo seg-lista" role="group" aria-label={titulo}>
         <CasillaSelectAll
           estado={estado}
           onChange={() => props.onChange(estado === "todo" ? [] : opciones.map((o) => o.valor))}

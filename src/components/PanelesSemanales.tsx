@@ -35,7 +35,7 @@ function Panel({ panel, lienzo }: { panel: PanelSemanal; lienzo: boolean }) {
   const option = useMemo(() => {
     // Holgura sobre el 100 % para que las etiquetas de arriba no toquen el título del panel.
     const maximo = Math.max(1, ...panel.disp.map((v) => v ?? 0), ...panel.meta.map((v) => v ?? 0)) * (lienzo ? 1.06 : 1);
-    const etiqueta = { show: true, formatter: (p: { value: number }) => pct0(p.value), color: COLORES.textoEje };
+    const etiqueta = { show: true, minMargin: 3, formatter: (p: { value: number }) => pct0(p.value), color: COLORES.textoEje };
     return {
       animation: false,
       textStyle: { fontFamily: FUENTE_GRAFICOS },

@@ -1,9 +1,13 @@
 name: Web de indicadores (GitHub Pages)
 
-# Publica la app como sitio web en GitHub Pages.
-# La conexión a Supabase se toma de las variables del repositorio (Settings > Secrets and variables > Actions > Variables):
-# SUPABASE_URL y SUPABASE_ANON_KEY. La llave anon es pública por diseño de Supabase; la seguridad
-# depende de las políticas de la base, no de esconder esta llave.
+# Publica la app como sitio web en GitHub Pages. La URL del proyecto Supabase y la llave anon van en
+# el paso "Compilar sitio"; la llave anon es pública por diseño de Supabase y la seguridad depende de
+# las políticas de la base, no de esconder esta llave.
+#
+# Dos trabajos, como recomienda GitHub: "compilar" prueba, compila y sube el paquete del sitio;
+# "publicar" lo despliega en otra máquina cuando el primero termina. Con un solo trabajo, el paso de
+# despliegue buscaba el paquete medio segundo después de subirlo y a veces GitHub todavía no lo
+# listaba ("No artifacts named github-pages were found").
 on:
   workflow_dispatch:
   push:
@@ -20,11 +24,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  publicar:
+  compilar:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.despliegue.outputs.page_url }}
+    outputs:
+      listo: ${{ steps.pages.outputs.listo }}
     steps:
       # Mientras GitHub Pages no esté activado (Settings > Pages > Source: GitHub Actions),
       # el flujo avisa y no publica, sin marcar error.
@@ -65,6 +68,14 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist-web
+
+  publicar:
+    needs: compilar
+    if: needs.compilar.outputs.listo == 'si'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
       - id: despliegue
-        if: steps.pages.outputs.listo == 'si'
         uses: actions/deploy-pages@v5

@@ -65,10 +65,11 @@ export const DISENO_RESUMEN = {
   tConf: r(0, 176, 255, 61),
   hDisp: r(0, 239, 254, 62),
   disp: r(0, 302, 254, 119),
-  tablaEquipo: r(255, 81, 991, 473),
-  tablaFamilia: r(328, 536, 915, 178),
-  // La tabla por familia tapa el lugar del pie: aquí va pegado al borde inferior.
-  pie: r(806, 702, 380, 16),
+  // En Power BI la tabla por equipo arranca en y=81 y se monta sobre la banda de cabecera (termina en
+  // y=106). Aquí arranca en la línea de la banda y la tabla por familia queda debajo, sin solaparse.
+  tablaEquipo: r(255, 106, 991, 432),
+  tablaFamilia: r(328, 546, 915, 156),
+  pie: r(806, 704, 380, 14),
 } as const;
 
 export const DISENO_MENSUAL = {

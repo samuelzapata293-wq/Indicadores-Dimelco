@@ -1,14 +1,14 @@
 # Informe de pruebas de punta a punta sobre la web publicada
 
-Fecha de ejecución: 2026-11-26. Web: https://samuelzapata293-wq.github.io/Indicadores-Dimelco/ (JS principal `index-C06yn9KY.js`). Navegador: Chromium 157.0.8103.78, ventana 1600x900, como invitado. Duración de la corrida: 138 s. Script: `tests/e2e/publicada.mjs`; datos crudos: `docs/pruebas/resultados_e2e.json`.
+Fecha de ejecución: 2026-11-26. Web: https://samuelzapata293-wq.github.io/Indicadores-Dimelco/ (JS principal `index-BT9q4XBA.js`). Navegador: Chromium 157.0.8103.78, ventana 1600x900, como invitado. Duración de la corrida: 137 s. Script: `tests/e2e/publicada.mjs`; datos crudos: `docs/pruebas/resultados_e2e.json`.
 
 ## Resumen
 
-- **Valores comparados contra Power BI: 10 701.** Iguales: **10 701**. Diferencias: **0**.
+- **Valores comparados contra Power BI: 10 466.** Iguales: **10 466**. Diferencias: **0**.
 - Fixtures de Power BI usados: 56 (13 de las capturas originales y 43 de los escenarios a, b, c, c_sindisp, d_conf12, d_conf24, e, f, g_tirolargo y g_sostenimiento).
-- **Comprobaciones funcionales: 22 de 23 pasaron.** Fallaron: F05c (detalle más abajo).
-- Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones con caché fría): 2.27 s, 1.61 s, 1.55 s; promedio 1.81 s.
-- Control negativo: con filtros distintos a los del fixture, la comparación sí detecta diferencias (72 de 144; 630 de 630; 3 de 12; 43 de 131), así que "0 diferencias" no es una comparación vacía.
+- **Comprobaciones funcionales: 23 de 23 pasaron.** No falló ninguna.
+- Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones con caché fría): 2.40 s, 1.62 s, 1.44 s; promedio 1.82 s.
+- Control negativo: con filtros distintos a los del fixture, la comparación sí detecta diferencias (72 de 144; 630 de 630; 3 de 12; 43 de 126), así que "0 diferencias" no es una comparación vacía.
 
 ## Qué se comparó y cómo se leyó cada visual
 
@@ -26,7 +26,7 @@ Para cada fixture se abre la página, se ponen en la interfaz los filtros del fi
 
 ### Escenario orig: Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)
 
-Valores comparados: 3 517; iguales: 3 517; diferencias: 0.
+Valores comparados: 3 425; iguales: 3 425; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
@@ -42,11 +42,11 @@ Valores comparados: 3 517; iguales: 3 517; diferencias: 0.
 | Disp Scooptram ST3.5 | tabla | `q_010_0` | 639 | 639 | 0 |
 | Disp Scooptram ST1030 | grafico | `q_006_0` | 18 | 18 | 0 |
 | Disp Scooptram ST1030 | tabla | `q_007_1` | 639 | 639 | 0 |
-| Disp Mensual | mensual | `q_024_0` | 481 | 481 | 0 |
+| Disp Mensual | mensual | `q_024_0` | 389 | 389 | 0 |
 
 ### Escenario a: 01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h
 
-Valores comparados: 1 275; iguales: 1 275; diferencias: 0.
+Valores comparados: 1 269; iguales: 1 269; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
@@ -54,13 +54,13 @@ Valores comparados: 1 275; iguales: 1 275; diferencias: 0.
 | Disp Simba | tabla | `a_tabla_simba` | 441 | 441 | 0 |
 | Disp Sostenimiento | grafico | `a_grafico_sostenimiento` | 12 | 12 | 0 |
 | Disp Sostenimiento | tabla | `a_tabla_sostenimiento` | 558 | 558 | 0 |
-| Disp Mensual | mensual | `a_mensual` | 81 | 81 | 0 |
+| Disp Mensual | mensual | `a_mensual` | 75 | 75 | 0 |
 | Resumen Disp. | resumen_equipo | `a_resumen_equipo` | 144 | 144 | 0 |
 | Resumen Disp. | resumen_familia | `a_resumen_familia` | 30 | 30 | 0 |
 
 ### Escenario b: 01 al 20/11/2026, 24 h, Operacional
 
-Valores comparados: 591; iguales: 591; diferencias: 0.
+Valores comparados: 585; iguales: 585; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
@@ -68,13 +68,13 @@ Valores comparados: 591; iguales: 591; diferencias: 0.
 | Disp Simba | tabla | `b_tabla_simba` | 189 | 189 | 0 |
 | Disp Sostenimiento | grafico | `b_grafico_sostenimiento` | 12 | 12 | 0 |
 | Disp Sostenimiento | tabla | `b_tabla_sostenimiento` | 126 | 126 | 0 |
-| Disp Mensual | mensual | `b_mensual` | 81 | 81 | 0 |
+| Disp Mensual | mensual | `b_mensual` | 75 | 75 | 0 |
 | Resumen Disp. | resumen_equipo | `b_resumen_equipo` | 144 | 144 | 0 |
 | Resumen Disp. | resumen_familia | `b_resumen_familia` | 30 | 30 | 0 |
 
 ### Escenario c: 01 al 20/11/2026, 24 h, Mecánica y Operacional
 
-Valores comparados: 1 590; iguales: 1 590; diferencias: 0.
+Valores comparados: 1 584; iguales: 1 584; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
@@ -82,7 +82,7 @@ Valores comparados: 1 590; iguales: 1 590; diferencias: 0.
 | Disp Simba | tabla | `c_tabla_simba` | 630 | 630 | 0 |
 | Disp Sostenimiento | grafico | `c_grafico_sostenimiento` | 12 | 12 | 0 |
 | Disp Sostenimiento | tabla | `c_tabla_sostenimiento` | 684 | 684 | 0 |
-| Disp Mensual | mensual | `c_mensual` | 81 | 81 | 0 |
+| Disp Mensual | mensual | `c_mensual` | 75 | 75 | 0 |
 | Resumen Disp. | resumen_equipo | `c_resumen_equipo` | 144 | 144 | 0 |
 | Resumen Disp. | resumen_familia | `c_resumen_familia` | 30 | 30 | 0 |
 
@@ -115,7 +115,7 @@ Valores comparados: 174; iguales: 174; diferencias: 0.
 
 ### Escenario e: Octubre 2026 completo, 24 h, Mecánica, Conf 18 h
 
-Valores comparados: 1 388; iguales: 1 388; diferencias: 0.
+Valores comparados: 1 382; iguales: 1 382; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
@@ -123,13 +123,13 @@ Valores comparados: 1 388; iguales: 1 388; diferencias: 0.
 | Disp Simba | tabla | `e_tabla_simba` | 531 | 531 | 0 |
 | Disp Sostenimiento | grafico | `e_grafico_sostenimiento` | 12 | 12 | 0 |
 | Disp Sostenimiento | tabla | `e_tabla_sostenimiento` | 531 | 531 | 0 |
-| Disp Mensual | mensual | `e_mensual` | 131 | 131 | 0 |
+| Disp Mensual | mensual | `e_mensual` | 125 | 125 | 0 |
 | Resumen Disp. | resumen_equipo | `e_resumen_equipo` | 144 | 144 | 0 |
 | Resumen Disp. | resumen_familia | `e_resumen_familia` | 30 | 30 | 0 |
 
 ### Escenario f: 15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica
 
-Valores comparados: 1 181; iguales: 1 181; diferencias: 0.
+Valores comparados: 1 176; iguales: 1 176; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
@@ -137,25 +137,25 @@ Valores comparados: 1 181; iguales: 1 181; diferencias: 0.
 | Disp Simba | tabla | `f_tabla_simba` | 324 | 324 | 0 |
 | Disp Sostenimiento | grafico | `f_grafico_sostenimiento` | 12 | 12 | 0 |
 | Disp Sostenimiento | tabla | `f_tabla_sostenimiento` | 531 | 531 | 0 |
-| Disp Mensual | mensual | `f_mensual` | 131 | 131 | 0 |
+| Disp Mensual | mensual | `f_mensual` | 126 | 126 | 0 |
 | Resumen Disp. | resumen_equipo | `f_resumen_equipo` | 144 | 144 | 0 |
 | Resumen Disp. | resumen_familia | `f_resumen_familia` | 30 | 30 | 0 |
 
 ### Escenario g_sostenimiento: Disp Mensual 01/07 al 20/11/2026, familia EQUIPOS DE SOSTENIMIENTO, 24 h, Mecánica
 
-Valores comparados: 361; iguales: 361; diferencias: 0.
+Valores comparados: 296; iguales: 296; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
-| Disp Mensual | mensual | `g_sostenimiento_mensual` | 361 | 361 | 0 |
+| Disp Mensual | mensual | `g_sostenimiento_mensual` | 296 | 296 | 0 |
 
 ### Escenario g_tirolargo: Disp Mensual 01/07 al 20/11/2026, familia TIRO LARGO, 24 h, Mecánica
 
-Valores comparados: 276; iguales: 276; diferencias: 0.
+Valores comparados: 227; iguales: 227; diferencias: 0.
 
 | Página | Visual | Fixture | Valores comparados | Iguales | Diferencias |
 |---|---|---|---:|---:|---:|
-| Disp Mensual | mensual | `g_tirolargo_mensual` | 276 | 276 | 0 |
+| Disp Mensual | mensual | `g_tirolargo_mensual` | 227 | 227 | 0 |
 
 ## Diferencias entre la web y Power BI
 
@@ -187,12 +187,12 @@ Valores comparados: 276; iguales: 276; diferencias: 0.
 | F03e | Clic en la cabecera Sap ordena numéricamente (ascendente) | pasa | primero 100618, último 618487 |
 | F05_1600 | Las 8 páginas sin scroll de documento a 1600x900 | pasa |  |
 | F05_1366 | Las 8 páginas sin scroll de documento a 1366x768 | pasa |  |
-| F05c | Enlaces del pie (Exportar PDF, Ingresar) completos dentro de la ventana | **falla** | 1600x900: "Ingresar" termina en x=1647 (la ventana mide 1600); páginas resumen, simba, jumbo, sostenimiento, st35, st1030, mensual \| 1366x768: "Ingresar" termina en x=1406 (la ventana mide 1366); páginas resumen, simba, jumbo, sostenimiento, st35, st1030, mensual |
+| F05c | Enlaces del pie (Exportar PDF, Ingresar) completos dentro de la ventana | pasa |  |
 | F08a | Un invitado no ve 'Cargar datos' en ninguna página | pasa | enlace "Ingresar" presente: true |
 | F08b | #/cargar manda a #/login a un invitado | pasa | destino #/login, formulario de ingreso: true |
-| F09 | Control negativo: con filtros distintos a los del fixture, la comparación detecta diferencias | pasa | Resumen por equipo con Var t: Disp 24 h contra el fixture de 18 h: 72 de 144 \| Tabla de paros de Simba con DISP Operacional contra el fixture de Mecánica: 630 de 630 \| Gráfico de Sostenimiento con otro período: 3 de 12 \| Disp Mensual con Var t: Disp 18 h contra el fixture de 24 h: 43 de 131 |
+| F09 | Control negativo: con filtros distintos a los del fixture, la comparación detecta diferencias | pasa | Resumen por equipo con Var t: Disp 24 h contra el fixture de 18 h: 72 de 144 \| Tabla de paros de Simba con DISP Operacional contra el fixture de Mecánica: 630 de 630 \| Gráfico de Sostenimiento con otro período: 3 de 12 \| Disp Mensual con Var t: Disp 18 h contra el fixture de 24 h: 43 de 126 |
 | F06 | Sin errores de consola, de página ni respuestas HTTP de error durante toda la sesión | pasa |  |
-| F07 | Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones) | pasa | 2270 ms, 1613 ms, 1551 ms (informativo; sin umbral) |
+| F07 | Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones) | pasa | 2402 ms, 1618 ms, 1440 ms (informativo; sin umbral) |
 
 Notas de método:
 
@@ -203,27 +203,14 @@ Notas de método:
 - F06 recoge `console.error`, errores de página, peticiones fallidas y respuestas HTTP 4xx o 5xx de toda la sesión.
 - F09 es el control negativo descrito en el resumen.
 
-## Observaciones
-
-- **Etiquetas de Disp Mensual.** En la captura `docs/pruebas/capturas_e2e/mensual_1600x900.png` algunas etiquetas de % de la misma semana se montan unas sobre otras (sobre todo en los paneles de ST1030 No. 02, No. 03 y No. 04, de la Sem 30/26 en adelante), y la lectura del SVG encontró todas las etiquetas presentes: 0 ocultas en las 8 corridas de Disp Mensual. En las capturas de Power BI solo se ven 169 de 228 etiquetas (`tests/fixtures/powerbi/INDICE.md`). La app declara `hideOverlap`, pero con estas etiquetas no oculta ninguna. Los valores son correctos; es un tema visual.
-- **Botón Exportar PDF.** La versión publicada ya trae el botón en el pie y en la Portada. No se probó su función (fuera del alcance de este informe); solo se midió su efecto en la maquetación (F05c).
-
-## Comprobaciones que fallaron
-
-### F05c: Enlaces del pie (Exportar PDF, Ingresar) completos dentro de la ventana
-
-Detalle: 1600x900: "Ingresar" termina en x=1647 (la ventana mide 1600); páginas resumen, simba, jumbo, sostenimiento, st35, st1030, mensual | 1366x768: "Ingresar" termina en x=1406 (la ventana mide 1366); páginas resumen, simba, jumbo, sostenimiento, st35, st1030, mensual
-
-Causa probable: el grupo de enlaces del pie (`.lienzo-enlaces`) arranca en x=1196 del lienzo de 1280 px (donde termina el texto del pie) y mide unos 122 px porque ahora contiene el botón Exportar PDF además de Ingresar. Termina en x=1318 del lienzo y se sale 38 px por la derecha; Ingresar queda cortado en la ventana (se ve "In"). En la Portada, los enlaces van arriba a la derecha y caben. Es un problema de maquetación, no de datos. No afecta a F05_1600 ni a F05_1366 porque el lienzo recorta lo que se sale y el documento no crece.
-
 ## Tiempos
 
 | Medición | Tiempo hasta ver números en Resumen |
 |---|---:|
-| 1 | 2.27 s (2270 ms) |
-| 2 | 1.61 s (1613 ms) |
-| 3 | 1.55 s (1551 ms) |
-| Promedio | 1.81 s |
+| 1 | 2.40 s (2402 ms) |
+| 2 | 1.62 s (1618 ms) |
+| 3 | 1.44 s (1440 ms) |
+| Promedio | 1.82 s |
 
 Cada medición abre un contexto nuevo del navegador (sin caché) en `#/resumen`, y termina cuando la primera fila de la tabla por equipo tiene MTTR numérico. Incluye descargar el sitio, leer las 5 tablas de Supabase (11 622 paros en varias peticiones) y calcular las medidas. Es un tiempo de punta a punta desde el entorno de pruebas, que sale por un proxy; desde otra red puede variar. En las exploraciones previas a esta corrida (versión publicada anterior y primeros intentos de la versión nueva), la tabla tardó más de 45 s y en un intento más de 240 s en aparecer; no se repitió en las mediciones finales, pero indica que la carga depende mucho de la red y de Supabase.
 
@@ -231,9 +218,8 @@ Cada medición abre un contexto nuevo del navegador (sin caché) en `#/resumen`,
 
 No se modificó `src/`. Estos son los puntos donde no hay un selector estable y qué se usó en su lugar:
 
-- DISP. GLOBAL: la lista de casillas no tiene role ni aria-label (los radiogroup de Var t: Disp, Var t: Conf. y Familia sí). Se usó section.seg con su h3 'DISP. GLOBAL' y getByLabel('Mecánica'|'Operacional').
 - Periodo de tiempo: los dos input[type=date] tienen aria-label 'Desde' y 'Hasta' (estables); la sección que los contiene no tiene role ni nombre.
-- Tablas: no tienen caption ni aria-label. Se usaron las clases .tabla-paros y .tabla-resumen (tabla por equipo); la tabla por familia de Resumen no tiene clase propia (se usó '.caja-tabla .tabla-pbi:not(.tabla-resumen)').
+- Tablas: tienen aria-label (Tabla de paros, Resumen por equipo, Resumen por familia); la de familia usa la clase .tabla-familia.
 - Gráfico de columnas: el contenedor tiene role=img y aria-label, pero los números solo existen dentro del SVG de ECharts, sin data-attributes. Se distinguen las series por el color del texto (#252423 Disp, #fff Meta) y el equipo por la posición x del eje.
 - Disp Mensual: sin data-attributes en los puntos. Se leen los círculos del SVG por su relleno (#D9B300 Disp, #12239E Meta) y se convierte la posición y a % con la calibración del eje de PanelesSemanales.tsx (arriba 40 px, abajo 13 px, máximo 1.06). Si cambian esos márgenes la comparación de puntos hay que recalibrarla.
 - Portada: el rango de fechas se lee de .portada-fecha y los botones de .portada-boton (clases, sin data-testid); la flecha de volver es a.lienzo-volver (tiene aria-label 'Volver a Portada').

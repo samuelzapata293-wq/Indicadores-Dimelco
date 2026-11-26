@@ -60,11 +60,11 @@ jobs:
           VITE_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNiam1qcmptZmdjcXB1b2Z5anFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU2NDQxOTEsImV4cCI6MjExMTIyMDE5MX0.UOxOZPWdU-QmqhKyb-NEs5njXD-ikbkw5t93WFql-es
         run: npm run build:web
       - if: steps.pages.outputs.listo == 'si'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - if: steps.pages.outputs.listo == 'si'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist-web
       - id: despliegue
         if: steps.pages.outputs.listo == 'si'
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

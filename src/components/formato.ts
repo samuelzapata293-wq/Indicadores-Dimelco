@@ -78,7 +78,7 @@ export function entero(v: number | Nulo): string {
 const RE_FECHA = /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?)?/;
 
 /**
- * Fecha y hora: "11/3/2026 6:00 PM" (mes/día/año, hora de 12 h, sin segundos).
+ * Fecha y hora: "03/11/2026 6:00 PM" (día/mes/año, hora de 12 h, sin segundos).
  * Acepta "aaaa-mm-ddThh:mm:ss" (sin cambiar de zona horaria) o un Date.
  */
 export function fechaHora(v: string | Date | Nulo): string {
@@ -96,7 +96,7 @@ export function fechaHora(v: string | Date | Nulo): string {
     tieneHora = r[4] !== undefined;
     h = +(r[4] ?? 0); mi = +(r[5] ?? 0); s = +(r[6] ?? 0);
   }
-  const fecha = `${m}/${d}/${y}`;
+  const fecha = `${String(d).padStart(2, "0")}/${String(m).padStart(2, "0")}/${y}`;
   if (!tieneHora) return fecha;
   const h12 = h % 12 === 0 ? 12 : h % 12;
   const dd = (n: number) => String(n).padStart(2, "0");

@@ -59,7 +59,7 @@ function fechaHora(iso) {
   const [, y, m, d, h, mi, s] = r.map(Number);
   const h12 = h % 12 === 0 ? 12 : h % 12;
   const dd = (n) => String(n).padStart(2, "0");
-  return `${m}/${d}/${y} ${h12}:${dd(mi)} ${h < 12 ? "AM" : "PM"}`;
+  return `${dd(d)}/${dd(m)}/${y} ${h12}:${dd(mi)} ${h < 12 ? "AM" : "PM"}`;
 }
 const norm = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
 

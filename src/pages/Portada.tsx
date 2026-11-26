@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import fondo from "../assets/portada_mineros.png";
 import Layout, { EnlacesSesion } from "../components/Layout";
+import NavegadorPaginas from "../components/NavegadorPaginas";
 import LienzoPbi, { posicion, useEstadoLienzo } from "../components/LienzoPbi";
 import { DISENO_PORTADA as D } from "./disenos";
 import "./portada.css";
@@ -85,13 +86,15 @@ export default function Portada({ fechaMin, fechaMax }: Props) {
           ))}
         </nav>
         <p className="portada-fecha" style={posicion(D.fecha)}>{fecha}</p>
+        {/* A la altura del texto de la fecha (centrado verticalmente en su caja). */}
+        <NavegadorPaginas y={D.fecha.y + D.fecha.h / 2 - 8} h={16} claro enLienzo />
         <EnlacesSesion className="portada-enlaces" exportarPdf />
       </LienzoPbi>
     );
   }
 
   return (
-    <Layout exportarPdf>
+    <Layout exportarPdf navegador>
       <section className="portada" aria-labelledby="portada-titulo">
         <img className="portada-fondo" src={fondo} alt="" />
 

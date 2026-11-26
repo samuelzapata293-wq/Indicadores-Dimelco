@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../auth";
 import BotonExportarPdf from "./ExportarPdf";
+import NavegadorPaginas from "./NavegadorPaginas";
 
 interface Props {
   // Sin título no hay banda superior (así se muestra la Portada).
@@ -10,6 +11,8 @@ interface Props {
   amplio?: boolean;
   /** Muestra el botón "Exportar PDF" en el pie (solo dentro de los proveedores del tablero). */
   exportarPdf?: boolean;
+  /** Muestra el navegador de páginas ("‹ 2 de 8 ›") en el pie. */
+  navegador?: boolean;
   children: ReactNode;
 }
 
@@ -35,7 +38,7 @@ export function EnlacesSesion({ className = "pie-enlaces", exportarPdf }: { clas
   );
 }
 
-export default function Layout({ titulo, amplio, exportarPdf, children }: Props) {
+export default function Layout({ titulo, amplio, exportarPdf, navegador, children }: Props) {
   return (
     <div className="pagina">
       {titulo !== undefined && (
@@ -54,6 +57,7 @@ export default function Layout({ titulo, amplio, exportarPdf, children }: Props)
 
       <footer className="pie">
         <span className="pie-texto">{TEXTO_PIE}</span>
+        {navegador && <NavegadorPaginas />}
         <EnlacesSesion exportarPdf={exportarPdf} />
       </footer>
     </div>

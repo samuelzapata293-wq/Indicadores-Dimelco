@@ -60,7 +60,8 @@ export default function GraficoDispFamilia({ titulo, equipos, seleccionado, onCl
       etiquetaEje = { width: anchoEtiqueta, overflow: "break", fontSize: 12, lineHeight: 15, margin: 12, color: COLORES.textoEje };
       tope = maximo * LIENZO.holgura;
     } else {
-      const lineas = equipos.length > 4 || angosto ? 3 : 2;
+      // Con nombres cortos, en un gráfico ancho cada nombre cabe en una línea; solo se parte si es angosto.
+      const lineas = !angosto ? 1 : equipos.length > 4 ? 3 : 2;
       grid = { left: 8, right: 8, top: 36, bottom: 8, containLabel: true };
       etiquetaEje = {
         color: COLORES.textoEje,

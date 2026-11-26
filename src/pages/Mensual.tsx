@@ -14,6 +14,7 @@ import { EQUIPOS_RESUMEN, type Contexto, type HorasDisp } from "../medidas/conte
 import type { Modelo } from "../medidas/modelo";
 import { panelesSemanales } from "../medidas/visuales";
 import { DISENO_MENSUAL as D } from "./disenos";
+import { nombreCorto } from "./nombresCortos";
 import { OPCIONES_DISP, OPCIONES_H_DISP } from "./opciones";
 
 const TITULO_PAGINA = "DISPONIBILIDADES";
@@ -45,7 +46,7 @@ function Contenido({ modelo }: { modelo: Modelo }) {
     const ctx: Contexto = { ...resto, equipos };
     return panelesSemanales(modelo, ctx).map((p) => ({
       id: String(p.id),
-      titulo: p.descripcion,
+      titulo: nombreCorto(p.id, p.descripcion),
       semanas: p.puntos.map((x) => x.etiqueta),
       disp: p.puntos.map((x) => x.dispDin),
       meta: p.puntos.map((x) => x.metaDisp),

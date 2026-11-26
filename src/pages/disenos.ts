@@ -67,7 +67,7 @@ export const DISENO_RESUMEN = {
   disp: r(0, 302, 254, 119),
   // En Power BI la tabla por equipo arranca en y=81 y se monta sobre la banda de cabecera (termina en
   // y=106). Aquí arranca en la línea de la banda y la tabla por familia queda debajo, sin solaparse.
-  tablaEquipo: r(255, 106, 991, 432),
+  tablaEquipo: r(255, 107, 991, 431),
   tablaFamilia: r(328, 546, 915, 156),
   pie: r(806, 704, 380, 14),
 } as const;

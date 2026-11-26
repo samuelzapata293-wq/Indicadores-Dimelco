@@ -1,6 +1,6 @@
 {
  "url": "https://samuelzapata293-wq.github.io/Indicadores-Dimelco/",
- "fecha": "2026-11-26T13:03:17.789Z",
+ "fecha": "2026-11-26T14:42:11.247Z",
  "navegador": "Chromium 157.0.8103.78",
  "comparaciones": [
   {
@@ -1257,18 +1257,6 @@
  ],
  "funcionales": [
   {
-   "id": "F04",
-   "nombre": "Portada: 'Data actualizada:' seguido de un rango de fechas válido",
-   "ok": true,
-   "detalle": "Data actualizada: 01 al 20 de noviembre 2026"
-  },
-  {
-   "id": "F04b",
-   "nombre": "Portada: los 7 botones llevan a su página",
-   "ok": true,
-   "detalle": ""
-  },
-  {
    "id": "F01a",
    "nombre": "Filtros encadenados: período, Var t: Disp y DISP de Simba se conservan en Jumbo, Sostenimiento, ST3.5, ST1030 y Resumen",
    "ok": true,
@@ -1332,13 +1320,13 @@
    "id": "F03c",
    "nombre": "Clic en la cabecera Equipo ordena la tabla por equipo (ascendente)",
    "ok": true,
-   "detalle": "primero \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°1\", último \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°3\""
+   "detalle": "primero \"SIMBA S7 N°1\", último \"SIMBA S7 N°3\""
   },
   {
    "id": "F03d",
    "nombre": "Segundo clic en Equipo invierte el orden (descendente)",
    "ok": true,
-   "detalle": "primero \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°3\", último \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°1\""
+   "detalle": "primero \"SIMBA S7 N°3\", último \"SIMBA S7 N°1\""
   },
   {
    "id": "F03e",
@@ -1347,14 +1335,14 @@
    "detalle": "primero 100618, último 618487"
   },
   {
-   "id": "F05_1600",
-   "nombre": "Las 8 páginas sin scroll de documento a 1600x900",
+   "id": "F04",
+   "nombre": "Portada: 'Data actualizada:' seguido de un rango de fechas válido",
    "ok": true,
-   "detalle": ""
+   "detalle": "Data actualizada: 01 al 20 de noviembre 2026"
   },
   {
-   "id": "F05_1366",
-   "nombre": "Las 8 páginas sin scroll de documento a 1366x768",
+   "id": "F04b",
+   "nombre": "Portada: los 7 botones llevan a su página",
    "ok": true,
    "detalle": ""
   },
@@ -1363,6 +1351,18 @@
    "nombre": "Enlaces del pie (Exportar PDF, Ingresar) completos dentro de la ventana",
    "ok": true,
    "detalle": ""
+  },
+  {
+   "id": "F06",
+   "nombre": "Sin errores de consola, de página ni respuestas HTTP de error durante toda la sesión",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "id": "F07",
+   "nombre": "Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones)",
+   "ok": true,
+   "detalle": "1977 ms, 1704 ms, 1698 ms (informativo; sin umbral)"
   },
   {
    "id": "F08a",
@@ -1383,27 +1383,159 @@
    "detalle": "Resumen por equipo con Var t: Disp 24 h contra el fixture de 18 h: 72 de 144 | Tabla de paros de Simba con DISP Operacional contra el fixture de Mecánica: 630 de 630 | Gráfico de Sostenimiento con otro período: 3 de 12 | Disp Mensual con Var t: Disp 18 h contra el fixture de 24 h: 43 de 126"
   },
   {
-   "id": "F06",
-   "nombre": "Sin errores de consola, de página ni respuestas HTTP de error durante toda la sesión",
+   "id": "F10",
+   "nombre": "Navegador de páginas: recorrido de las 8 páginas con '›' y regreso con '‹' (ruta, texto 'n de 8', extremos deshabilitados)",
+   "ok": true,
+   "detalle": "8 páginas, ida con \"›\" y vuelta con \"‹\": #/ > #/simba > #/jumbo > #/sostenimiento > #/st35 > #/st1030 > #/resumen > #/mensual; textos \"1 de 8\" a \"8 de 8\"; \"‹\" deshabilitado en la primera y \"›\" en la última; sin recargar"
+  },
+  {
+   "id": "F11",
+   "nombre": "Filtros conservados al navegar con el navegador de páginas (período, Var t: Disp, DISP, Var t: Conf.; Mensual con lo suyo)",
+   "ok": true,
+   "detalle": "general 2026-10-05 a 2026-10-25, 18 hrs, Operacional puesto en Simba y conservado en Jumbo, Sostenimiento, ST3.5, ST1030, Resumen y Mensual (ida y vuelta con el navegador); Var t: Conf. 24 hrs de Resumen conservado; Mensual con lo suyo (2026-07-06 a 2026-10-04, familia \"CARGADORAS BP FLOTA 3.5\") sin tocar el general y conservado al volver"
+  },
+  {
+   "id": "F12",
+   "nombre": "Teclas flecha derecha e izquierda cambian de página (y no actúan en los extremos ni dentro de un campo)",
+   "ok": true,
+   "detalle": "ArrowRight y ArrowLeft cambian de página; no hacen nada en los extremos, con Ctrl o Shift, ni con el foco en un campo de fecha"
+  },
+  {
+   "id": "F13a",
+   "nombre": "Navegador dentro del lienzo y sin solaparse con pie, enlaces, tablas ni gráficos en las 8 páginas a 1600x900",
+   "ok": true,
+   "detalle": "8 páginas a 1600x900: navegador centrado (x 560-720 del lienzo), abajo, dentro del lienzo y sin cruzarse con el texto del pie, los enlaces, tablas, gráficos ni segmentadores (portada y 693-709; simba y 674-690; jumbo y 674-690; sostenimiento y 674-690; st35 y 674-690; st1030 y 674-690; resumen y 704-718; mensual y 674-690)"
+  },
+  {
+   "id": "F13b",
+   "nombre": "Navegador dentro del lienzo y sin solaparse con pie, enlaces, tablas ni gráficos en las 8 páginas a 1366x768",
+   "ok": true,
+   "detalle": "8 páginas a 1366x768: navegador centrado (x 560-720 del lienzo), abajo, dentro del lienzo y sin cruzarse con el texto del pie, los enlaces, tablas, gráficos ni segmentadores (portada y 693-709; simba y 674-690; jumbo y 674-690; sostenimiento y 674-690; st35 y 674-690; st1030 y 674-690; resumen y 704-718; mensual y 674-690)"
+  },
+  {
+   "id": "F14a",
+   "nombre": "Nombres cortos en el eje de los 5 gráficos de familia (los 18 equipos, ninguno con nombre completo)",
+   "ok": true,
+   "detalle": "18 nombres: simba: SIMBA S7 N°1 / SIMBA S7 N°2 / SIMBA S7 N°3 | jumbo: BOOMER 282 No. 01 / BOOMER 282 No. 02 / BOOMER 282 No. 03 | sostenimiento: SCALEMIN / SCALEMIN No.2 / BOLTEC N°1 / BOLTEC S10 N°2 | st35: SCOOP 3.50 N°5 (WAGNER) / SCOOP 3.50 N°6 | st1030: ST1030 No. 01 / ST1030 No. 02 / ST1030 No. 03 / ST1030 No. 04 / ST1030 No. 05 / ST1030 No. 06"
+  },
+  {
+   "id": "F14b",
+   "nombre": "Columna Equipo de las tablas de paros con el nombre corto (por Sap) en las 5 páginas, con todos los paros del período completo",
+   "ok": true,
+   "detalle": "simba 2223 filas, 3 equipos; jumbo 1834 filas, 3 equipos; sostenimiento 2290 filas, 4 equipos; st35 3464 filas, 8 equipos; st1030 3464 filas, 8 equipos"
+  },
+  {
+   "id": "F14c",
+   "nombre": "Resumen Disp. muestra el nombre completo de los 18 equipos (no el corto)",
+   "ok": true,
+   "detalle": "18 equipos, p. ej. \"CARGADOR FRONTAL BP SCOOP 3.50 N°5 (WAGNER)\" y no \"SCOOP 3.50 N°5 (WAGNER)\""
+  },
+  {
+   "id": "F14d",
+   "nombre": "Títulos de los paneles de Disp Mensual con nombre corto (todas las familias)",
+   "ok": true,
+   "detalle": "18 títulos: CARGADORAS BP: ST1030 No. 01 / ST1030 No. 02 / ST1030 No. 03 / ST1030 No. 04 / ST1030 No. 05 / ST1030 No. 06 | CARGADORAS BP FLOTA 3.5: SCOOP 3.50 N°5 (WAGNER) / SCOOP 3.50 N°6 | EQUIPOS DE SOSTENIMIENTO: SCALEMIN / SCALEMIN No.2 / BOLTEC N°1 / BOLTEC S10 N°2 | PERFORACION MECANIZADA: BOOMER 282 No. 01 / BOOMER 282 No. 02 / BOOMER 282 No. 03 | TIRO LARGO: SIMBA S7 N°1 / SIMBA S7 N°2 / SIMBA S7 N°3"
+  },
+  {
+   "id": "F15a",
+   "nombre": "Tabla de paros sin barra horizontal (scrollWidth <= clientWidth) en las 5 páginas de familia a 1600x900, con el período completo",
+   "ok": true,
+   "detalle": "simba: scrollWidth 1260 / clientWidth 1260, 2223 filas, barra vertical sí; jumbo: scrollWidth 1260 / clientWidth 1260, 1834 filas, barra vertical sí; sostenimiento: scrollWidth 1260 / clientWidth 1260, 2290 filas, barra vertical sí; st35: scrollWidth 1260 / clientWidth 1260, 3464 filas, barra vertical sí; st1030: scrollWidth 1260 / clientWidth 1260, 3464 filas, barra vertical sí"
+  },
+  {
+   "id": "F15b",
+   "nombre": "Tabla de paros sin barra horizontal (scrollWidth <= clientWidth) en las 5 páginas de familia a 1366x768, con el período completo",
+   "ok": true,
+   "detalle": "simba: scrollWidth 1260 / clientWidth 1260, 2223 filas, barra vertical sí; jumbo: scrollWidth 1260 / clientWidth 1260, 1834 filas, barra vertical sí; sostenimiento: scrollWidth 1260 / clientWidth 1260, 2290 filas, barra vertical sí; st35: scrollWidth 1260 / clientWidth 1260, 3464 filas, barra vertical sí; st1030: scrollWidth 1260 / clientWidth 1260, 3464 filas, barra vertical sí"
+  },
+  {
+   "id": "F15c",
+   "nombre": "Título 'Hrs Paro Ventana' de la tabla de paros en máximo 2 líneas (5 páginas, 1600x900 y 1366x768)",
+   "ok": true,
+   "detalle": "10 medidas, todas en 2 líneas; ancho de la columna 78 px de lienzo"
+  },
+  {
+   "id": "F16a",
+   "nombre": "Resumen: borde superior de la tabla = borde inferior de la banda = borde superior de 'Periodo de tiempo' (tolerancia 1.5 px de lienzo)",
+   "ok": false,
+   "detalle": "cabecera de la tabla de Resumen y=106.00; borde inferior de la banda y=108.00; cabecera 'Periodo de tiempo' y=107.00; mayor diferencia 2.00 px (la tabla por familia empieza en y=546.00)"
+  },
+  {
+   "id": "F16b",
+   "nombre": "Páginas de familia: cabecera del gráfico alineada con la del segmentador de período (tolerancia 1.5 px de lienzo)",
+   "ok": true,
+   "detalle": "simba: gráfico y=107.00, 'Periodo de tiempo' y=107.00; jumbo: gráfico y=107.00, 'Periodo de tiempo' y=107.00; sostenimiento: gráfico y=107.00, 'Periodo de tiempo' y=107.00; st35: gráfico y=107.00, 'Periodo de tiempo' y=107.00; st1030: gráfico y=107.00, 'Periodo de tiempo' y=107.00. Informativo, fuera de la comprobación: en Disp Mensual el título de los paneles está en y=105.00 y 'Periodo de tiempo' en y=107.00"
+  },
+  {
+   "id": "F17a",
+   "nombre": "Exportar PDF como invitado: descarga con el nombre Indicadores_Dimelco_<desde>_<hasta>.pdf",
+   "ok": true,
+   "detalle": "archivo \"Indicadores_Dimelco_2026-11-01_2026-11-20.pdf\" (esperado \"Indicadores_Dimelco_2026-11-01_2026-11-20.pdf\"), generado y descargado en 9.5 s; filtros fijados: true"
+  },
+  {
+   "id": "F17b",
+   "nombre": "El PDF exportado tiene 8 páginas (pdfinfo)",
+   "ok": true,
+   "detalle": "Pages: 8; tamaño de página 1280 x 720 pts; 3196 KB"
+  },
+  {
+   "id": "F17c",
+   "nombre": "Páginas 2 a 8 del PDF sin barras de desplazamiento (píxeles; imagen de la página 2 en capturas_e2e/pdf_pagina2.png)",
+   "ok": true,
+   "detalle": "8 páginas convertidas con pdftoppm a 2560x1440; sin barras en ninguna (la tabla de paros de Simba tenía 49 filas en pantalla)"
+  },
+  {
+   "id": "F17d",
+   "nombre": "Páginas 2 a 8 del PDF sin el navegador '‹ n de 8 ›' (zona central del pie vacía)",
+   "ok": true,
+   "detalle": "zona x 560-720 del lienzo, a la altura del pie, en blanco en las 7 páginas"
+  },
+  {
+   "id": "F17e",
+   "nombre": "Páginas 2 a 8 del PDF sin los enlaces de sesión (el texto del pie queda como un solo bloque pegado al borde derecho)",
+   "ok": true,
+   "detalle": "texto del pie en x=1053.5-1271, un solo bloque (hueco máximo 4.5 px); con los enlaces habría un bloque aparte entre x=1150 y 1272"
+  },
+  {
+   "id": "F17f",
+   "nombre": "Durante la generación: enlaces de sesión, botón Exportar PDF, flecha, navegador e indicador de guardado ocultos; tablas con overflow oculto",
+   "ok": true,
+   "detalle": "30 muestras con las 8 hojas montadas; 8 navegadores presentes pero ocultos por CSS"
+  },
+  {
+   "id": "F17g",
+   "nombre": "Control del detector: encuentra la barra de desplazamiento de la tabla de paros en la captura de la página en pantalla",
+   "ok": true,
+   "detalle": "barra de 10 columnas x 16.8 px en x=1266.4-1274.4 (captura de Simba con el período completo); en el PDF no aparece ninguna"
+  },
+  {
+   "id": "F18",
+   "nombre": "Portada: 'Data actualizada' igual al período guardado en la tabla configuracion",
+   "ok": true,
+   "detalle": "configuracion (GET /rest/v1/configuracion, llave anon): periodo_ini 2026-11-01, periodo_fin 2026-11-20; Portada: \"Data actualizada: 01 al 20 de noviembre 2026\"; esperado: \"Data actualizada: 01 al 20 de noviembre 2026\""
+  },
+  {
+   "id": "F05_1366",
+   "nombre": "Las 8 páginas sin scroll de documento a 1366x768",
    "ok": true,
    "detalle": ""
   },
   {
-   "id": "F07",
-   "nombre": "Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones)",
+   "id": "F05_1600",
+   "nombre": "Las 8 páginas sin scroll de documento a 1600x900",
    "ok": true,
-   "detalle": "3373 ms, 1904 ms, 1815 ms (informativo; sin umbral)"
+   "detalle": ""
   }
  ],
  "tiempos": {
   "resumenMs": [
-   3373,
-   1904,
-   1815
+   1977,
+   1704,
+   1698
   ],
-  "promedioMs": 2364,
-  "minimoMs": 1815,
-  "maximoMs": 3373
+  "promedioMs": 1793,
+  "minimoMs": 1698,
+  "maximoMs": 1977
  },
  "consola": [],
  "selectoresFaltantes": [
@@ -1414,7 +1546,7 @@
   "Portada: el rango de fechas se lee de .portada-fecha y los botones de .portada-boton (clases, sin data-testid); la flecha de volver es a.lienzo-volver (tiene aria-label 'Volver a Portada')."
  ],
  "notas": [],
- "jsPrincipal": "index-1enDnb4W.js",
+ "jsPrincipal": "index-BFj2Adwi.js",
  "periodoInicial": {
   "desde": "2026-11-01",
   "hasta": "2026-11-20",
@@ -1446,13 +1578,20 @@
    "diferencias": 43
   }
  ],
- "duracionS": 141,
+ "configuracion": {
+  "periodo_ini": "2026-11-01",
+  "periodo_fin": "2026-11-20",
+  "mensual_ini": null,
+  "mensual_fin": null,
+  "actualizado": "2026-11-26T00:49:53.449813+00:00"
+ },
+ "duracionS": 270,
  "resumen": {
   "comparados": 10466,
   "iguales": 10466,
   "diferencias": 0,
-  "funcionalesPasan": 23,
-  "funcionalesTotal": 23,
+  "funcionalesPasan": 44,
+  "funcionalesTotal": 45,
   "fixtures": 56
  }
 }

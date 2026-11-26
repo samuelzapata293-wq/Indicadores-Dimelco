@@ -217,8 +217,8 @@
 .lienzo .tabla-paros th:nth-child(2) { width: 192px; }
 .lienzo .tabla-paros th:nth-child(3) { width: 88px; }
 .lienzo .tabla-paros th:nth-child(4) { width: auto; }
-.lienzo .tabla-paros th:nth-child(5) { width: 164px; }
-.lienzo .tabla-paros th:nth-child(6) { width: 164px; }
+.lienzo .tabla-paros th:nth-child(5) { width: 148px; }
+.lienzo .tabla-paros th:nth-child(6) { width: 148px; }
 .lienzo .tabla-paros th:nth-child(7) { width: 92px; white-space: nowrap; }
 .lienzo .tabla-paros th:nth-child(8) { width: 104px; }
 .lienzo .tabla-paros th:nth-child(9) { width: 108px; }

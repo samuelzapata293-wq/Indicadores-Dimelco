@@ -78,7 +78,7 @@ export function entero(v: number | Nulo): string {
 const RE_FECHA = /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?)?/;
 
 /**
- * Fecha y hora como en el reporte: "11/3/2026 6:00:00 PM" (mes/día/año, hora de 12 h).
+ * Fecha y hora: "11/3/2026 6:00 PM" (mes/día/año, hora de 12 h, sin segundos).
  * Acepta "aaaa-mm-ddThh:mm:ss" (sin cambiar de zona horaria) o un Date.
  */
 export function fechaHora(v: string | Date | Nulo): string {
@@ -100,7 +100,8 @@ export function fechaHora(v: string | Date | Nulo): string {
   if (!tieneHora) return fecha;
   const h12 = h % 12 === 0 ? 12 : h % 12;
   const dd = (n: number) => String(n).padStart(2, "0");
-  return `${fecha} ${h12}:${dd(mi)}:${dd(s)} ${h < 12 ? "AM" : "PM"}`;
+  void s; // los segundos no se muestran
+  return `${fecha} ${h12}:${dd(mi)} ${h < 12 ? "AM" : "PM"}`;
 }
 
 /** Aplica un formato de celda a un valor cualquiera. */

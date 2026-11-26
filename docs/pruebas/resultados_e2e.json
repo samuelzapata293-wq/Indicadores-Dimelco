@@ -1,6 +1,6 @@
 {
  "url": "https://samuelzapata293-wq.github.io/Indicadores-Dimelco/",
- "fecha": "2026-11-26T00:24:30.466Z",
+ "fecha": "2026-11-26T13:03:17.789Z",
  "navegador": "Chromium 157.0.8103.78",
  "comparaciones": [
   {
@@ -1260,7 +1260,7 @@
    "id": "F04",
    "nombre": "Portada: 'Data actualizada:' seguido de un rango de fechas válido",
    "ok": true,
-   "detalle": "Data actualizada: 01 al 18 de noviembre 2026"
+   "detalle": "Data actualizada: 01 al 20 de noviembre 2026"
   },
   {
    "id": "F04b",
@@ -1392,18 +1392,18 @@
    "id": "F07",
    "nombre": "Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones)",
    "ok": true,
-   "detalle": "2402 ms, 1618 ms, 1440 ms (informativo; sin umbral)"
+   "detalle": "3373 ms, 1904 ms, 1815 ms (informativo; sin umbral)"
   }
  ],
  "tiempos": {
   "resumenMs": [
-   2402,
-   1618,
-   1440
+   3373,
+   1904,
+   1815
   ],
-  "promedioMs": 1820,
-  "minimoMs": 1440,
-  "maximoMs": 2402
+  "promedioMs": 2364,
+  "minimoMs": 1815,
+  "maximoMs": 3373
  },
  "consola": [],
  "selectoresFaltantes": [
@@ -1414,11 +1414,11 @@
   "Portada: el rango de fechas se lee de .portada-fecha y los botones de .portada-boton (clases, sin data-testid); la flecha de volver es a.lienzo-volver (tiene aria-label 'Volver a Portada')."
  ],
  "notas": [],
- "jsPrincipal": "index-BT9q4XBA.js",
+ "jsPrincipal": "index-1enDnb4W.js",
  "periodoInicial": {
   "desde": "2026-11-01",
-  "hasta": "2026-11-18",
-  "portada": "Data actualizada: 01 al 18 de noviembre 2026",
+  "hasta": "2026-11-20",
+  "portada": "Data actualizada: 01 al 20 de noviembre 2026",
   "mensual": {
    "desde": "2026-07-01",
    "hasta": "2026-11-20"
@@ -1446,7 +1446,7 @@
    "diferencias": 43
   }
  ],
- "duracionS": 137,
+ "duracionS": 141,
  "resumen": {
   "comparados": 10466,
   "iguales": 10466,

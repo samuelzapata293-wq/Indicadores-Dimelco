@@ -1,13 +1,13 @@
 # Informe de pruebas de punta a punta sobre la web publicada
 
-Fecha de ejecución: 2026-11-26. Web: https://samuelzapata293-wq.github.io/Indicadores-Dimelco/ (JS principal `index-BT9q4XBA.js`). Navegador: Chromium 157.0.8103.78, ventana 1600x900, como invitado. Duración de la corrida: 137 s. Script: `tests/e2e/publicada.mjs`; datos crudos: `docs/pruebas/resultados_e2e.json`.
+Fecha de ejecución: 2026-11-26. Web: https://samuelzapata293-wq.github.io/Indicadores-Dimelco/ (JS principal `index-1enDnb4W.js`). Navegador: Chromium 157.0.8103.78, ventana 1600x900, como invitado. Duración de la corrida: 141 s. Script: `tests/e2e/publicada.mjs`; datos crudos: `docs/pruebas/resultados_e2e.json`.
 
 ## Resumen
 
 - **Valores comparados contra Power BI: 10 466.** Iguales: **10 466**. Diferencias: **0**.
 - Fixtures de Power BI usados: 56 (13 de las capturas originales y 43 de los escenarios a, b, c, c_sindisp, d_conf12, d_conf24, e, f, g_tirolargo y g_sostenimiento).
 - **Comprobaciones funcionales: 23 de 23 pasaron.** No falló ninguna.
-- Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones con caché fría): 2.40 s, 1.62 s, 1.44 s; promedio 1.82 s.
+- Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones con caché fría): 3.37 s, 1.90 s, 1.81 s; promedio 2.36 s.
 - Control negativo: con filtros distintos a los del fixture, la comparación sí detecta diferencias (72 de 144; 630 de 630; 3 de 12; 43 de 126), así que "0 diferencias" no es una comparación vacía.
 
 ## Qué se comparó y cómo se leyó cada visual
@@ -170,7 +170,7 @@ Valores comparados: 227; iguales: 227; diferencias: 0.
 
 | Id | Comprobación | Resultado | Detalle |
 |---|---|---|---|
-| F04 | Portada: 'Data actualizada:' seguido de un rango de fechas válido | pasa | Data actualizada: 01 al 18 de noviembre 2026 |
+| F04 | Portada: 'Data actualizada:' seguido de un rango de fechas válido | pasa | Data actualizada: 01 al 20 de noviembre 2026 |
 | F04b | Portada: los 7 botones llevan a su página | pasa |  |
 | F01a | Filtros encadenados: período, Var t: Disp y DISP de Simba se conservan en Jumbo, Sostenimiento, ST3.5, ST1030 y Resumen | pasa |  |
 | F01b | Con los filtros cambiados, Disp % de cada gráfico de familia coincide con la de Resumen | pasa |  |
@@ -192,13 +192,13 @@ Valores comparados: 227; iguales: 227; diferencias: 0.
 | F08b | #/cargar manda a #/login a un invitado | pasa | destino #/login, formulario de ingreso: true |
 | F09 | Control negativo: con filtros distintos a los del fixture, la comparación detecta diferencias | pasa | Resumen por equipo con Var t: Disp 24 h contra el fixture de 18 h: 72 de 144 \| Tabla de paros de Simba con DISP Operacional contra el fixture de Mecánica: 630 de 630 \| Gráfico de Sostenimiento con otro período: 3 de 12 \| Disp Mensual con Var t: Disp 18 h contra el fixture de 24 h: 43 de 126 |
 | F06 | Sin errores de consola, de página ni respuestas HTTP de error durante toda la sesión | pasa |  |
-| F07 | Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones) | pasa | 2402 ms, 1618 ms, 1440 ms (informativo; sin umbral) |
+| F07 | Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones) | pasa | 3373 ms, 1904 ms, 1815 ms (informativo; sin umbral) |
 
 Notas de método:
 
 - F01 cambia período, Var t: Disp y DISP en Simba (01/10 al 31/10/2026, 18 hrs, solo Operacional) y llega a las demás páginas con los enlaces de la app (flecha de volver y botones de la Portada), no con la URL, para comprobar también la navegación.
 - F02 hace clic con el mouse en el centro de la segunda columna del gráfico de Simba. Confirma que la tabla queda solo con ese equipo y con todas sus filas, que las otras columnas se atenúan (opacidad 0.3) y que el segundo clic devuelve las filas originales.
-- F04: la Portada muestra "Data actualizada: 01 al 18 de noviembre 2026". El período inicial de Resumen es 2026-11-01 a 2026-11-18 (coincide con la Portada) y el de Disp Mensual 2026-07-01 a 2026-11-20. Disp Mensual no hereda el período general: arranca en su propio rango, distinto al de las demás páginas.
+- F04: la Portada muestra "Data actualizada: 01 al 20 de noviembre 2026". El período inicial de Resumen es 2026-11-01 a 2026-11-20 (coincide con la Portada) y el de Disp Mensual 2026-07-01 a 2026-11-20. Disp Mensual no hereda el período general: arranca en su propio rango, distinto al de las demás páginas.
 - F05 mide `scrollHeight` y `scrollWidth` del documento en las 8 páginas (Portada y 7 de tablero) a 1600x900 y a 1366x768. Las capturas de las 8 páginas a 1600x900, con los filtros iniciales, quedaron en `docs/pruebas/capturas_e2e/`.
 - F06 recoge `console.error`, errores de página, peticiones fallidas y respuestas HTTP 4xx o 5xx de toda la sesión.
 - F09 es el control negativo descrito en el resumen.
@@ -207,10 +207,10 @@ Notas de método:
 
 | Medición | Tiempo hasta ver números en Resumen |
 |---|---:|
-| 1 | 2.40 s (2402 ms) |
-| 2 | 1.62 s (1618 ms) |
-| 3 | 1.44 s (1440 ms) |
-| Promedio | 1.82 s |
+| 1 | 3.37 s (3373 ms) |
+| 2 | 1.90 s (1904 ms) |
+| 3 | 1.81 s (1815 ms) |
+| Promedio | 2.36 s |
 
 Cada medición abre un contexto nuevo del navegador (sin caché) en `#/resumen`, y termina cuando la primera fila de la tabla por equipo tiene MTTR numérico. Incluye descargar el sitio, leer las 5 tablas de Supabase (11 622 paros en varias peticiones) y calcular las medidas. Es un tiempo de punta a punta desde el entorno de pruebas, que sale por un proxy; desde otra red puede variar. En las exploraciones previas a esta corrida (versión publicada anterior y primeros intentos de la versión nueva), la tabla tardó más de 45 s y en un intento más de 240 s en aparecer; no se repitió en las mediciones finales, pero indica que la carga depende mucho de la red y de Supabase.
 

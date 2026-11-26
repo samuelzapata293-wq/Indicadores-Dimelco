@@ -16,6 +16,7 @@ import type { Contexto, HorasDisp } from "../medidas/contexto";
 import type { Modelo } from "../medidas/modelo";
 import { graficoFamilia, tablaParos, type FilaParo } from "../medidas/visuales";
 import type { DisenoFamilia } from "./disenos";
+import { nombreCorto } from "./nombresCortos";
 import { OPCIONES_DISP, OPCIONES_H_DISP } from "./opciones";
 
 const TITULO_PAGINA = "DISPONIBILIDADES";
@@ -33,7 +34,7 @@ interface Props {
 
 const COLUMNAS: ColumnaPbi<FilaParo>[] = [
   { id: "sap", titulo: "Sap", valor: (f) => f.sap, alinear: "der" },
-  { id: "equipo", titulo: "Equipo", valor: (f) => f.equipo },
+  { id: "equipo", titulo: "Equipo", valor: (f) => nombreCorto(f.sap, f.equipo) },
   { id: "aviso", titulo: "Aviso", valor: (f) => f.aviso, alinear: "der" },
   { id: "descripcion", titulo: "Descripción del Paro", valor: (f) => f.descripcion },
   { id: "inicio", titulo: "_F/H Inicio", valor: (f) => f.inicio, formato: "fechaHora" },
@@ -62,7 +63,7 @@ function Contenido({ modelo, titulo, equiposGrafico, equiposTabla, diseno }: Pro
 
   const equipos = useMemo<EquipoDisp[]>(
     () =>
-      filasGrafico.map((r) => ({ id: String(r.id), nombre: r.descripcion, disp: r.dispDin, meta: r.metaDisp, color: r.color })),
+      filasGrafico.map((r) => ({ id: String(r.id), nombre: nombreCorto(r.id, r.descripcion), disp: r.dispDin, meta: r.metaDisp, color: r.color })),
     [filasGrafico],
   );
 

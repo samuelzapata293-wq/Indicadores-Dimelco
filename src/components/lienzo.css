@@ -209,11 +209,12 @@
 .lienzo .tabla-pbi th:last-child { border-right: 0; }
 .lienzo .tabla-resumen td:nth-child(2) { white-space: nowrap; }
 /* Tabla de paros: anchos fijos que suman el ancho de la caja (1268 px), así no hay barra horizontal.
-   Equipo y Descripción parten en dos líneas cuando no caben; Hrs Paro Ventana tiene ancho para
-   que su título quede en dos líneas ("Hrs Paro" / "Ventana"). */
+   Equipo va en una sola línea: 192 px = nombre corto más largo ("SCOOP 3.50 N°5 (WAGNER)", 178.2 px a
+   13.33px) + 12 px de relleno. Descripción toma el resto y parte en dos líneas cuando no cabe; Hrs Paro
+   Ventana tiene ancho para que su título quede en dos líneas ("Hrs Paro" / "Ventana"). */
 .lienzo .tabla-paros table { table-layout: fixed; width: 100%; }
 .lienzo .tabla-paros th:nth-child(1) { width: 62px; }
-.lienzo .tabla-paros th:nth-child(2) { width: 320px; }
+.lienzo .tabla-paros th:nth-child(2) { width: 192px; }
 .lienzo .tabla-paros th:nth-child(3) { width: 88px; }
 .lienzo .tabla-paros th:nth-child(4) { width: auto; }
 .lienzo .tabla-paros th:nth-child(5) { width: 164px; }
@@ -221,7 +222,7 @@
 .lienzo .tabla-paros th:nth-child(7) { width: 78px; }
 .lienzo .tabla-paros th:nth-child(8) { width: 104px; }
 .lienzo .tabla-paros th:nth-child(9) { width: 108px; }
-.lienzo .tabla-paros td:nth-child(1), .lienzo .tabla-paros td:nth-child(3),
+.lienzo .tabla-paros td:nth-child(1), .lienzo .tabla-paros td:nth-child(2), .lienzo .tabla-paros td:nth-child(3),
 .lienzo .tabla-paros td:nth-child(5), .lienzo .tabla-paros td:nth-child(6),
 .lienzo .tabla-paros td:nth-child(7), .lienzo .tabla-paros td:nth-child(8),
 .lienzo .tabla-paros td:nth-child(9) { white-space: nowrap; }
@@ -320,4 +321,12 @@
 .exportando-pdf .lienzo-volver,
 .exportando-pdf .guardado-periodo,
 .exportando-pdf .lienzo-enlaces,
+.exportando-pdf .nav-paginas,
 .exportando-pdf .portada-enlaces { display: none !important; }
+
+/* ---------- Navegador de páginas ("‹  2 de 8  ›") ---------- */
+/* Centrado en el lienzo, en la franja del pie (el texto y los enlaces del pie van pegados a la derecha). */
+.lienzo .lienzo-nav { justify-content: center; font-family: var(--pbi-fuente); font-size: 11px; line-height: 16px; }
+.lienzo-nav .nav-paginas-boton { font-size: 16px; }
+.lienzo .nav-paginas-claro { color: rgba(255, 255, 255, 0.55); }
+.lienzo .nav-paginas-claro .nav-paginas-boton:not(:disabled):hover { color: #fff; }

@@ -180,3 +180,28 @@ a { color: var(--verde-tabla); }
   }
   .contenido { padding: 20px 16px; }
 }
+
+/* Navegador de páginas ("‹  2 de 8  ›"), discreto. En el lienzo se posiciona desde lienzo.css. */
+.nav-paginas {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #605e5c;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.nav-paginas-texto { min-width: 3.4em; text-align: center; font-variant-numeric: tabular-nums; }
+.nav-paginas-boton {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0 6px;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+}
+.nav-paginas-boton:not(:disabled):hover { color: #252423; }
+.nav-paginas-boton:focus-visible { outline: 2px solid #3ddc84; outline-offset: 1px; border-radius: 3px; }
+.nav-paginas-boton:disabled { opacity: 0.35; cursor: default; }

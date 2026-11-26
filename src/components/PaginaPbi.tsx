@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import DisposicionPbi from "./DisposicionPbi";
 import Layout, { EnlacesSesion, TEXTO_PIE } from "./Layout";
+import NavegadorPaginas from "./NavegadorPaginas";
 import LienzoPbi, { ProveedorLienzo, posicion, useEstadoLienzo } from "./LienzoPbi";
 import { BASE, type Rect } from "../pages/disenos";
 import plantilla from "../assets/plantilla_cabecera.jpg";
@@ -40,7 +41,7 @@ export default function PaginaPbi({ titulo, rectTitulo = BASE.titulo, rectPie = 
   if (estado.modo === "apilado") {
     return (
       <ProveedorLienzo value={estado}>
-        <Layout titulo={titulo} amplio exportarPdf>
+        <Layout titulo={titulo} amplio exportarPdf navegador>
           <DisposicionPbi lateral={lateral} anchoLateral={anchoLateral}>
             {children}
           </DisposicionPbi>
@@ -58,6 +59,8 @@ export default function PaginaPbi({ titulo, rectTitulo = BASE.titulo, rectPie = 
         </h1>
         {lateral}
         {children}
+        {/* Navegador de páginas: centrado, a la altura del pie (que va pegado a la derecha). */}
+        <NavegadorPaginas y={rectPie.y} h={rectPie.h} />
         {/* Pie alineado al borde derecho del texto original; los enlaces de sesión siguen a su derecha. */}
         <div className="lienzo-pie" style={posicion(rectPie)}>
           <p>{TEXTO_PIE}</p>

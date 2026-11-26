@@ -37,9 +37,9 @@ const COLUMNAS: ColumnaPbi<FilaParo>[] = [
   { id: "equipo", titulo: "Equipo", valor: (f) => nombreCorto(f.sap, f.equipo) },
   { id: "aviso", titulo: "Aviso", valor: (f) => f.aviso, alinear: "der" },
   { id: "descripcion", titulo: "Descripción del Paro", valor: (f) => f.descripcion },
-  { id: "inicio", titulo: "_F/H Inicio", valor: (f) => f.inicio, formato: "fechaHora" },
-  { id: "fin", titulo: "_F/H Fin", valor: (f) => f.fin, formato: "fechaHora" },
-  { id: "hrs", titulo: "Hrs Paro Ventana", valor: (f) => f.hrsParoVentana, formato: "horas" },
+  { id: "inicio", titulo: "Inicio del Paro", valor: (f) => f.inicio, formato: "fechaHora" },
+  { id: "fin", titulo: "Fin del Paro", valor: (f) => f.fin, formato: "fechaHora" },
+  { id: "hrs", titulo: "Hrs de Paro", valor: (f) => f.hrsParoVentana, formato: "horas" },
   { id: "responsable", titulo: "Responsable", valor: (f) => f.responsable, sinPartir: true },
   { id: "tipo", titulo: "Tipo de Paro", valor: (f) => f.tipoParo, sinPartir: true },
 ];

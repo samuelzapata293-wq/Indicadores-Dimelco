@@ -210,8 +210,8 @@
 .lienzo .tabla-resumen td:nth-child(2) { white-space: nowrap; }
 /* Tabla de paros: anchos fijos que suman el ancho de la caja (1268 px), así no hay barra horizontal.
    Equipo va en una sola línea: 192 px = nombre corto más largo ("SCOOP 3.50 N°5 (WAGNER)", 178.2 px a
-   13.33px) + 12 px de relleno. Descripción toma el resto y parte en dos líneas cuando no cabe; Hrs Paro
-   Ventana tiene ancho para que su título quede en dos líneas ("Hrs Paro" / "Ventana"). */
+   13.33px) + 12 px de relleno. Descripción toma el resto y parte en dos líneas cuando no cabe; "Hrs de Paro"
+   tiene ancho para que su título quede en una línea. */
 .lienzo .tabla-paros table { table-layout: fixed; width: 100%; }
 .lienzo .tabla-paros th:nth-child(1) { width: 62px; }
 .lienzo .tabla-paros th:nth-child(2) { width: 192px; }
@@ -219,7 +219,7 @@
 .lienzo .tabla-paros th:nth-child(4) { width: auto; }
 .lienzo .tabla-paros th:nth-child(5) { width: 164px; }
 .lienzo .tabla-paros th:nth-child(6) { width: 164px; }
-.lienzo .tabla-paros th:nth-child(7) { width: 78px; }
+.lienzo .tabla-paros th:nth-child(7) { width: 92px; white-space: nowrap; }
 .lienzo .tabla-paros th:nth-child(8) { width: 104px; }
 .lienzo .tabla-paros th:nth-child(9) { width: 108px; }
 .lienzo .tabla-paros td:nth-child(1), .lienzo .tabla-paros td:nth-child(2), .lienzo .tabla-paros td:nth-child(3),

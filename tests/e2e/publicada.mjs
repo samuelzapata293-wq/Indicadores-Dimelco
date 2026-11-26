@@ -427,7 +427,7 @@ function compararParos(c, filas, fx) {
     const k = clave(f[0], f[2], f[4], f[5]);
     (web.get(k) ?? web.set(k, []).get(k)).push(f);
   }
-  const campos = ["Sap", "Equipo", "Aviso", "Descripción del Paro", "_F/H Inicio", "_F/H Fin", "Hrs Paro Ventana", "Responsable", "Tipo de Paro"];
+  const campos = ["Sap", "Equipo", "Aviso", "Descripción del Paro", "Inicio del Paro", "Fin del Paro", "Hrs de Paro", "Responsable", "Tipo de Paro"];
   for (const e of esp) {
     const k = clave(e.sap, e.aviso, e.ini, e.fin);
     const it = `${e.sap} aviso ${e.aviso} ${e.ini}`;
@@ -703,13 +703,13 @@ async function funcionales(browser, contexto, page) {
   // F03: orden de la tabla de paros.
   const horasDe = (filas) => filas.map((f) => parseFloat(f[6]));
   const ordenIni = horasDe(todas);
-  const ariaIni = await page.locator(".tabla-paros th", { hasText: "Hrs Paro Ventana" }).getAttribute("aria-sort");
+  const ariaIni = await page.locator(".tabla-paros th", { hasText: "Hrs de Paro" }).getAttribute("aria-sort");
   funcional("F03a", "Tabla de paros ordenada de mayor a menor Hrs Paro Ventana al abrir", esNoDecreciente(ordenIni) && ariaIni === "descending", `${todas.length} filas, primera ${ordenIni[0]}, última ${ordenIni.at(-1)}, aria-sort ${ariaIni}`);
   const cabecera = (t) => page.locator(".tabla-paros th button", { hasText: t });
-  await cabecera("Hrs Paro Ventana").click();
+  await cabecera("Hrs de Paro").click();
   await esperarEstable(page, 400);
   const asc = horasDe(await leerTabla(page, SEL_TABLA.paros));
-  funcional("F03b", "Clic en la cabecera Hrs Paro Ventana la pasa a ascendente", esNoDecreciente([...asc].reverse()) && asc[0] <= asc.at(-1), `primera ${asc[0]}, última ${asc.at(-1)}`);
+  funcional("F03b", "Clic en la cabecera Hrs de Paro la pasa a ascendente", esNoDecreciente([...asc].reverse()) && asc[0] <= asc.at(-1), `primera ${asc[0]}, última ${asc.at(-1)}`);
   await cabecera("Equipo").click();
   await esperarEstable(page, 400);
   const porEquipo = (await leerTabla(page, SEL_TABLA.paros)).map((f) => f[1]);
@@ -1112,7 +1112,7 @@ async function f15(page) {
         const f = new Function(`${GEO}
           const t = document.querySelector('.tabla-paros');
           const tab = t.querySelector('table');
-          const b = [...t.querySelectorAll('th button')].find((x) => x.textContent.includes('Hrs Paro Ventana'));
+          const b = [...t.querySelectorAll('th button')].find((x) => x.textContent.includes('Hrs de Paro'));
           const g = document.createRange();
           g.selectNodeContents(b.firstChild);
           const tops = new Set([...g.getClientRects()].map((r) => Math.round(r.top)));
@@ -1130,8 +1130,8 @@ async function f15(page) {
     funcional(id, `Tabla de paros sin barra horizontal (scrollWidth <= clientWidth) en las 5 páginas de familia a ${w}x${h}, con el período completo`, fallos.length === 0, fallos.length ? fallos.join(" | ") : filas.join("; "));
   }
   await page.setViewportSize(VENTANA);
-  const malas = lineas.filter((l) => l.lineas > 2 || l.lineas < 1 || l.titulo !== "Hrs Paro Ventana");
-  funcional("F15c", "Título 'Hrs Paro Ventana' de la tabla de paros en máximo 2 líneas (5 páginas, 1600x900 y 1366x768)", malas.length === 0, malas.length ? malas.map((l) => `${l.pagina} ${l.ventana}: ${l.lineas} líneas ("${l.titulo}")`).join(" | ") : `${lineas.length} medidas, todas en ${[...new Set(lineas.map((l) => l.lineas))].join(" o ")} líneas; ancho de la columna ${lineas[0].anchoTh.toFixed(0)} px de lienzo`);
+  const malas = lineas.filter((l) => l.lineas > 1 || l.lineas < 1 || l.titulo !== "Hrs de Paro");
+  funcional("F15c", "Título 'Hrs de Paro' de la tabla de paros en una línea (5 páginas, 1600x900 y 1366x768)", malas.length === 0, malas.length ? malas.map((l) => `${l.pagina} ${l.ventana}: ${l.lineas} líneas ("${l.titulo}")`).join(" | ") : `${lineas.length} medidas, todas en ${[...new Set(lineas.map((l) => l.lineas))].join(" o ")} líneas; ancho de la columna ${lineas[0].anchoTh.toFixed(0)} px de lienzo`);
 }
 
 // F16 ---------------------------------------------------------------------------------------------

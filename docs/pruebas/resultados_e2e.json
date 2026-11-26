@@ -1,0 +1,1459 @@
+{
+ "url": "https://samuelzapata293-wq.github.io/Indicadores-Dimelco/",
+ "fecha": "2026-11-26T00:15:21.507Z",
+ "navegador": "Chromium 157.0.8103.78",
+ "comparaciones": [
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_001_0",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_000_1",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_021_0",
+   "pagina": "Disp Simba",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 9,
+   "iguales": 9,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_022_1",
+   "pagina": "Disp Simba",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 441,
+   "iguales": 441,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_018_0",
+   "pagina": "Disp Jumbo",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 9,
+   "iguales": 9,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_017_1",
+   "pagina": "Disp Jumbo",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 531,
+   "iguales": 531,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_013_0",
+   "pagina": "Disp Sostenimiento",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 12,
+   "iguales": 12,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_014_1",
+   "pagina": "Disp Sostenimiento",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 558,
+   "iguales": 558,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_008_0",
+   "pagina": "Disp Scooptram ST3.5",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 6,
+   "iguales": 6,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_010_0",
+   "pagina": "Disp Scooptram ST3.5",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 639,
+   "iguales": 639,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_006_0",
+   "pagina": "Disp Scooptram ST1030",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 18,
+   "iguales": 18,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_007_1",
+   "pagina": "Disp Scooptram ST1030",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 639,
+   "iguales": 639,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "orig",
+   "descripcion": "Capturas originales: 01 al 20/11/2026, 24 h, Mecánica, Conf. 18 h (Mensual 01/07 al 05/11)",
+   "fixture": "q_024_0",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-07-01",
+    "hasta": "2026-11-05",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": "CARGADORAS BP"
+   },
+   "comparados": 481,
+   "iguales": 481,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 228; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  },
+  {
+   "esc": "a",
+   "descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+   "fixture": "a_grafico_simba",
+   "pagina": "Disp Simba",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 18,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 9,
+   "iguales": 9,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "a",
+   "descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+   "fixture": "a_tabla_simba",
+   "pagina": "Disp Simba",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 18,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 441,
+   "iguales": 441,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "a",
+   "descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+   "fixture": "a_grafico_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 18,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 12,
+   "iguales": 12,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "a",
+   "descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+   "fixture": "a_tabla_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 18,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 558,
+   "iguales": 558,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "a",
+   "descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+   "fixture": "a_mensual",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 18,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": "CARGADORAS BP"
+   },
+   "comparados": 81,
+   "iguales": 81,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 36; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  },
+  {
+   "esc": "a",
+   "descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+   "fixture": "a_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 18,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "a",
+   "descripcion": "01 al 20/11/2026, Var t: Disp 18 h, Mecánica, Conf 18 h",
+   "fixture": "a_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 18,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "b",
+   "descripcion": "01 al 20/11/2026, 24 h, Operacional",
+   "fixture": "b_grafico_simba",
+   "pagina": "Disp Simba",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 9,
+   "iguales": 9,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "b",
+   "descripcion": "01 al 20/11/2026, 24 h, Operacional",
+   "fixture": "b_tabla_simba",
+   "pagina": "Disp Simba",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 189,
+   "iguales": 189,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "b",
+   "descripcion": "01 al 20/11/2026, 24 h, Operacional",
+   "fixture": "b_grafico_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 12,
+   "iguales": 12,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "b",
+   "descripcion": "01 al 20/11/2026, 24 h, Operacional",
+   "fixture": "b_tabla_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 126,
+   "iguales": 126,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "b",
+   "descripcion": "01 al 20/11/2026, 24 h, Operacional",
+   "fixture": "b_mensual",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Operacional"
+    ],
+    "familia": "CARGADORAS BP"
+   },
+   "comparados": 81,
+   "iguales": 81,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 36; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  },
+  {
+   "esc": "b",
+   "descripcion": "01 al 20/11/2026, 24 h, Operacional",
+   "fixture": "b_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "b",
+   "descripcion": "01 al 20/11/2026, 24 h, Operacional",
+   "fixture": "b_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+   "fixture": "c_grafico_simba",
+   "pagina": "Disp Simba",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica",
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 9,
+   "iguales": 9,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+   "fixture": "c_tabla_simba",
+   "pagina": "Disp Simba",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica",
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 630,
+   "iguales": 630,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+   "fixture": "c_grafico_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica",
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 12,
+   "iguales": 12,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+   "fixture": "c_tabla_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica",
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 684,
+   "iguales": 684,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+   "fixture": "c_mensual",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica",
+     "Operacional"
+    ],
+    "familia": "CARGADORAS BP"
+   },
+   "comparados": 81,
+   "iguales": 81,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 36; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  },
+  {
+   "esc": "c",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+   "fixture": "c_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica",
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica y Operacional",
+   "fixture": "c_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica",
+     "Operacional"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c_sindisp",
+   "descripcion": "01 al 20/11/2026, 24 h, sin filtro de DISP (incluye los códigos sueltos); solo Resumen",
+   "fixture": "c_sindisp_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "c_sindisp",
+   "descripcion": "01 al 20/11/2026, 24 h, sin filtro de DISP (incluye los códigos sueltos); solo Resumen",
+   "fixture": "c_sindisp_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "d_conf12",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica, Var t: Conf. 12 h (solo Resumen)",
+   "fixture": "d_conf12_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 12,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "d_conf12",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica, Var t: Conf. 12 h (solo Resumen)",
+   "fixture": "d_conf12_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 12,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "d_conf24",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica, Var t: Conf. 24 h (solo Resumen)",
+   "fixture": "d_conf24_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 24,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "d_conf24",
+   "descripcion": "01 al 20/11/2026, 24 h, Mecánica, Var t: Conf. 24 h (solo Resumen)",
+   "fixture": "d_conf24_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-11-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": 24,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "e",
+   "descripcion": "Octubre 2026 completo, 24 h, Mecánica, Conf 18 h",
+   "fixture": "e_grafico_simba",
+   "pagina": "Disp Simba",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-10-01",
+    "hasta": "2026-10-31",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 9,
+   "iguales": 9,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "e",
+   "descripcion": "Octubre 2026 completo, 24 h, Mecánica, Conf 18 h",
+   "fixture": "e_tabla_simba",
+   "pagina": "Disp Simba",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-10-01",
+    "hasta": "2026-10-31",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 531,
+   "iguales": 531,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "e",
+   "descripcion": "Octubre 2026 completo, 24 h, Mecánica, Conf 18 h",
+   "fixture": "e_grafico_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-10-01",
+    "hasta": "2026-10-31",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 12,
+   "iguales": 12,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "e",
+   "descripcion": "Octubre 2026 completo, 24 h, Mecánica, Conf 18 h",
+   "fixture": "e_tabla_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-10-01",
+    "hasta": "2026-10-31",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 531,
+   "iguales": 531,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "e",
+   "descripcion": "Octubre 2026 completo, 24 h, Mecánica, Conf 18 h",
+   "fixture": "e_mensual",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-10-01",
+    "hasta": "2026-10-31",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": "CARGADORAS BP"
+   },
+   "comparados": 131,
+   "iguales": 131,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 60; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  },
+  {
+   "esc": "e",
+   "descripcion": "Octubre 2026 completo, 24 h, Mecánica, Conf 18 h",
+   "fixture": "e_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-10-01",
+    "hasta": "2026-10-31",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "e",
+   "descripcion": "Octubre 2026 completo, 24 h, Mecánica, Conf 18 h",
+   "fixture": "e_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-10-01",
+    "hasta": "2026-10-31",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "f",
+   "descripcion": "15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica",
+   "fixture": "f_grafico_simba",
+   "pagina": "Disp Simba",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-09-15",
+    "hasta": "2026-10-15",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 9,
+   "iguales": 9,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "f",
+   "descripcion": "15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica",
+   "fixture": "f_tabla_simba",
+   "pagina": "Disp Simba",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-09-15",
+    "hasta": "2026-10-15",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 324,
+   "iguales": 324,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "f",
+   "descripcion": "15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica",
+   "fixture": "f_grafico_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "grafico",
+   "filtros": {
+    "desde": "2026-09-15",
+    "hasta": "2026-10-15",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 12,
+   "iguales": 12,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "f",
+   "descripcion": "15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica",
+   "fixture": "f_tabla_sostenimiento",
+   "pagina": "Disp Sostenimiento",
+   "visual": "tabla",
+   "filtros": {
+    "desde": "2026-09-15",
+    "hasta": "2026-10-15",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 531,
+   "iguales": 531,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "f",
+   "descripcion": "15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica",
+   "fixture": "f_mensual",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-09-15",
+    "hasta": "2026-10-15",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": "CARGADORAS BP"
+   },
+   "comparados": 131,
+   "iguales": 131,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 60; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  },
+  {
+   "esc": "f",
+   "descripcion": "15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica",
+   "fixture": "f_resumen_equipo",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_equipo",
+   "filtros": {
+    "desde": "2026-09-15",
+    "hasta": "2026-10-15",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 144,
+   "iguales": 144,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "f",
+   "descripcion": "15/09 al 15/10/2026 (cruza meses), 24 h, Mecánica",
+   "fixture": "f_resumen_familia",
+   "pagina": "Resumen Disp.",
+   "visual": "resumen_familia",
+   "filtros": {
+    "desde": "2026-09-15",
+    "hasta": "2026-10-15",
+    "hDisp": 24,
+    "tConf": 18,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": null
+   },
+   "comparados": 30,
+   "iguales": 30,
+   "diferencias": [],
+   "informativas": [],
+   "notas": []
+  },
+  {
+   "esc": "g_sostenimiento",
+   "descripcion": "Disp Mensual 01/07 al 20/11/2026, familia EQUIPOS DE SOSTENIMIENTO, 24 h, Mecánica",
+   "fixture": "g_sostenimiento_mensual",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-07-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": "EQUIPOS DE SOSTENIMIENTO"
+   },
+   "comparados": 361,
+   "iguales": 361,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 168; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  },
+  {
+   "esc": "g_tirolargo",
+   "descripcion": "Disp Mensual 01/07 al 20/11/2026, familia TIRO LARGO, 24 h, Mecánica",
+   "fixture": "g_tirolargo_mensual",
+   "pagina": "Disp Mensual",
+   "visual": "mensual",
+   "filtros": {
+    "desde": "2026-07-01",
+    "hasta": "2026-11-20",
+    "hDisp": 24,
+    "tConf": null,
+    "disp": [
+     "Mecánica"
+    ],
+    "familia": "TIRO LARGO"
+   },
+   "comparados": 276,
+   "iguales": 276,
+   "diferencias": [],
+   "informativas": [],
+   "notas": [
+    "Etiquetas de % visibles: 126; sin mostrar por solape (hideOverlap): 0. Los puntos (Disp y Meta de cada semana) se leen de la geometría del SVG, así que quedan comprobados aunque su etiqueta se oculte."
+   ]
+  }
+ ],
+ "funcionales": [
+  {
+   "id": "F04",
+   "nombre": "Portada: 'Data actualizada:' seguido de un rango de fechas válido",
+   "ok": true,
+   "detalle": "Data actualizada: 01 al 18 de noviembre 2026"
+  },
+  {
+   "id": "F04b",
+   "nombre": "Portada: los 7 botones llevan a su página",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "id": "F01a",
+   "nombre": "Filtros encadenados: período, Var t: Disp y DISP de Simba se conservan en Jumbo, Sostenimiento, ST3.5, ST1030 y Resumen",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "id": "F01b",
+   "nombre": "Con los filtros cambiados, Disp % de cada gráfico de familia coincide con la de Resumen",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "id": "F01c",
+   "nombre": "Var t: Conf. de Resumen se conserva al salir y volver",
+   "ok": true,
+   "detalle": "Var t: Conf. = 12 hrs"
+  },
+  {
+   "id": "F01d",
+   "nombre": "Disp Mensual no hereda el período general (Oct 2026 en Simba)",
+   "ok": true,
+   "detalle": "Mensual muestra 2026-07-01 a 2026-11-20; inicial 2026-07-01 a 2026-11-20"
+  },
+  {
+   "id": "F01e",
+   "nombre": "Disp Mensual comparte Var t: Disp y DISP con el resto (18 hrs y Operacional)",
+   "ok": true,
+   "detalle": "Var t: Disp 18 hrs, DISP [\"Operacional\"]"
+  },
+  {
+   "id": "F01f",
+   "nombre": "Cambiar el período de Disp Mensual no cambia el período general",
+   "ok": true,
+   "detalle": "Simba muestra 2026-10-01 a 2026-10-31"
+  },
+  {
+   "id": "F01g",
+   "nombre": "Disp Mensual conserva su período al cambiar el general y volver",
+   "ok": true,
+   "detalle": "Mensual muestra 2026-08-03 a 2026-11-09 (previo 2026-07-01 a 2026-11-20)"
+  },
+  {
+   "id": "F02",
+   "nombre": "Filtro cruzado: clic en una columna de Simba deja solo ese equipo en la tabla de paros; el segundo clic lo suelta",
+   "ok": true,
+   "detalle": "opacidad de las columnas tras el clic: [\"0.3\",\"0.3\"] (equipos con paros: 3; filas totales 49)"
+  },
+  {
+   "id": "F03a",
+   "nombre": "Tabla de paros ordenada de mayor a menor Hrs Paro Ventana al abrir",
+   "ok": true,
+   "detalle": "49 filas, primera 46.33, última 0.17, aria-sort descending"
+  },
+  {
+   "id": "F03b",
+   "nombre": "Clic en la cabecera Hrs Paro Ventana la pasa a ascendente",
+   "ok": true,
+   "detalle": "primera 0.17, última 46.33"
+  },
+  {
+   "id": "F03c",
+   "nombre": "Clic en la cabecera Equipo ordena la tabla por equipo (ascendente)",
+   "ok": true,
+   "detalle": "primero \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°1\", último \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°3\""
+  },
+  {
+   "id": "F03d",
+   "nombre": "Segundo clic en Equipo invierte el orden (descendente)",
+   "ok": true,
+   "detalle": "primero \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°3\", último \"JUMBO DE PERFORACION ATLAS SIMBA S7 N°1\""
+  },
+  {
+   "id": "F03e",
+   "nombre": "Clic en la cabecera Sap ordena numéricamente (ascendente)",
+   "ok": true,
+   "detalle": "primero 100618, último 618487"
+  },
+  {
+   "id": "F05_1600",
+   "nombre": "Las 8 páginas sin scroll de documento a 1600x900",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "id": "F05_1366",
+   "nombre": "Las 8 páginas sin scroll de documento a 1366x768",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "id": "F05c",
+   "nombre": "Enlaces del pie (Exportar PDF, Ingresar) completos dentro de la ventana",
+   "ok": false,
+   "detalle": "1600x900: \"Ingresar\" termina en x=1647 (la ventana mide 1600); páginas resumen, simba, jumbo, sostenimiento, st35, st1030, mensual | 1366x768: \"Ingresar\" termina en x=1406 (la ventana mide 1366); páginas resumen, simba, jumbo, sostenimiento, st35, st1030, mensual"
+  },
+  {
+   "id": "F08a",
+   "nombre": "Un invitado no ve 'Cargar datos' en ninguna página",
+   "ok": true,
+   "detalle": "enlace \"Ingresar\" presente: true"
+  },
+  {
+   "id": "F08b",
+   "nombre": "#/cargar manda a #/login a un invitado",
+   "ok": true,
+   "detalle": "destino #/login, formulario de ingreso: true"
+  },
+  {
+   "id": "F09",
+   "nombre": "Control negativo: con filtros distintos a los del fixture, la comparación detecta diferencias",
+   "ok": true,
+   "detalle": "Resumen por equipo con Var t: Disp 24 h contra el fixture de 18 h: 72 de 144 | Tabla de paros de Simba con DISP Operacional contra el fixture de Mecánica: 630 de 630 | Gráfico de Sostenimiento con otro período: 3 de 12 | Disp Mensual con Var t: Disp 18 h contra el fixture de 24 h: 43 de 131"
+  },
+  {
+   "id": "F06",
+   "nombre": "Sin errores de consola, de página ni respuestas HTTP de error durante toda la sesión",
+   "ok": true,
+   "detalle": ""
+  },
+  {
+   "id": "F07",
+   "nombre": "Tiempo desde abrir la web hasta ver números en Resumen (3 mediciones)",
+   "ok": true,
+   "detalle": "2270 ms, 1613 ms, 1551 ms (informativo; sin umbral)"
+  }
+ ],
+ "tiempos": {
+  "resumenMs": [
+   2270,
+   1613,
+   1551
+  ],
+  "promedioMs": 1811,
+  "minimoMs": 1551,
+  "maximoMs": 2270
+ },
+ "consola": [],
+ "selectoresFaltantes": [
+  "DISP. GLOBAL: la lista de casillas no tiene role ni aria-label (los radiogroup de Var t: Disp, Var t: Conf. y Familia sí). Se usó section.seg con su h3 'DISP. GLOBAL' y getByLabel('Mecánica'|'Operacional').",
+  "Periodo de tiempo: los dos input[type=date] tienen aria-label 'Desde' y 'Hasta' (estables); la sección que los contiene no tiene role ni nombre.",
+  "Tablas: no tienen caption ni aria-label. Se usaron las clases .tabla-paros y .tabla-resumen (tabla por equipo); la tabla por familia de Resumen no tiene clase propia (se usó '.caja-tabla .tabla-pbi:not(.tabla-resumen)').",
+  "Gráfico de columnas: el contenedor tiene role=img y aria-label, pero los números solo existen dentro del SVG de ECharts, sin data-attributes. Se distinguen las series por el color del texto (#252423 Disp, #fff Meta) y el equipo por la posición x del eje.",
+  "Disp Mensual: sin data-attributes en los puntos. Se leen los círculos del SVG por su relleno (#D9B300 Disp, #12239E Meta) y se convierte la posición y a % con la calibración del eje de PanelesSemanales.tsx (arriba 40 px, abajo 13 px, máximo 1.06). Si cambian esos márgenes la comparación de puntos hay que recalibrarla.",
+  "Portada: el rango de fechas se lee de .portada-fecha y los botones de .portada-boton (clases, sin data-testid); la flecha de volver es a.lienzo-volver (tiene aria-label 'Volver a Portada')."
+ ],
+ "notas": [],
+ "jsPrincipal": "index-C06yn9KY.js",
+ "periodoInicial": {
+  "desde": "2026-11-01",
+  "hasta": "2026-11-18",
+  "portada": "Data actualizada: 01 al 18 de noviembre 2026",
+  "mensual": {
+   "desde": "2026-07-01",
+   "hasta": "2026-11-20"
+  }
+ },
+ "control": [
+  {
+   "caso": "Resumen por equipo con Var t: Disp 24 h contra el fixture de 18 h",
+   "comparados": 144,
+   "diferencias": 72
+  },
+  {
+   "caso": "Tabla de paros de Simba con DISP Operacional contra el fixture de Mecánica",
+   "comparados": 630,
+   "diferencias": 630
+  },
+  {
+   "caso": "Gráfico de Sostenimiento con otro período",
+   "comparados": 12,
+   "diferencias": 3
+  },
+  {
+   "caso": "Disp Mensual con Var t: Disp 18 h contra el fixture de 24 h",
+   "comparados": 131,
+   "diferencias": 43
+  }
+ ],
+ "duracionS": 138,
+ "resumen": {
+  "comparados": 10701,
+  "iguales": 10701,
+  "diferencias": 0,
+  "funcionalesPasan": 22,
+  "funcionalesTotal": 23,
+  "fixtures": 56
+ }
+}

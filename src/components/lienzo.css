@@ -194,7 +194,8 @@
 .lienzo .chip-gris { background: #b3b3b3; color: #fff; }
 
 /* ---------- Tablas ---------- */
-.lienzo .caja-tabla { padding: 5px 6px 6px; }
+/* Sin margen arriba: la cabecera verde de la tabla queda a la misma altura que la del segmentador vecino. */
+.lienzo .caja-tabla { padding: 0 6px 6px; }
 .lienzo .tabla-pbi { height: 100%; }
 .lienzo .tabla-pbi table { font-size: 13.33px; line-height: 16px; color: var(--pbi-texto); }
 .lienzo .tabla-pbi th {
@@ -206,10 +207,24 @@
   border-right: 1px solid #1d5e50;
 }
 .lienzo .tabla-pbi th:last-child { border-right: 0; }
-/* Tabla de paros: descripción con ancho mínimo como en el reporte; si no caben todas las columnas,
-   la tabla se desplaza hacia el lado dentro de su caja. */
-.lienzo .tabla-paros td:nth-child(2), .lienzo .tabla-resumen td:nth-child(2) { white-space: nowrap; }
-.lienzo .tabla-paros td:nth-child(4) { min-width: 290px; }
+.lienzo .tabla-resumen td:nth-child(2) { white-space: nowrap; }
+/* Tabla de paros: anchos fijos que suman el ancho de la caja (1268 px), así no hay barra horizontal.
+   Equipo y Descripción parten en dos líneas cuando no caben; Hrs Paro Ventana tiene ancho para
+   que su título quede en dos líneas ("Hrs Paro" / "Ventana"). */
+.lienzo .tabla-paros table { table-layout: fixed; width: 100%; }
+.lienzo .tabla-paros th:nth-child(1) { width: 62px; }
+.lienzo .tabla-paros th:nth-child(2) { width: 320px; }
+.lienzo .tabla-paros th:nth-child(3) { width: 88px; }
+.lienzo .tabla-paros th:nth-child(4) { width: auto; }
+.lienzo .tabla-paros th:nth-child(5) { width: 164px; }
+.lienzo .tabla-paros th:nth-child(6) { width: 164px; }
+.lienzo .tabla-paros th:nth-child(7) { width: 78px; }
+.lienzo .tabla-paros th:nth-child(8) { width: 104px; }
+.lienzo .tabla-paros th:nth-child(9) { width: 108px; }
+.lienzo .tabla-paros td:nth-child(1), .lienzo .tabla-paros td:nth-child(3),
+.lienzo .tabla-paros td:nth-child(5), .lienzo .tabla-paros td:nth-child(6),
+.lienzo .tabla-paros td:nth-child(7), .lienzo .tabla-paros td:nth-child(8),
+.lienzo .tabla-paros td:nth-child(9) { white-space: nowrap; }
 .lienzo .th-boton { padding: 4px 6px 3px; line-height: 16px; }
 .lienzo .th-orden { display: block; height: 8px; font-size: 8px; line-height: 8px; }
 .lienzo .tabla-pbi td { padding: 3px 6px 2px; border-bottom: 1px solid #e9e9e9; }
